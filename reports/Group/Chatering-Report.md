@@ -12,7 +12,7 @@ La selección de los miembros del grupo de trabajo se realizó de manera sencill
 | **Surname(s)** | **Name(s)** | **Corporate Email** | **Picture** |
 |---------------|------------|---------------------|------------|
 | Ferrer Álvarez       | Ángel Manuel   | angferalv@alum.us.es   | https://github.com/user-attachments/assets/26161fd0-f43d-452f-9c8d-f88949fc83e0 |
-| Ramírez Morales      | Juan           | juarammor2@alum.us.es             | https://github.com/user-attachments/assets/6ce555b7-0aa9-4a59-ba84-c83678a10c46
+| Ramírez Morales      | Juan           | juarammor2@alum.us.es             | https://github.com/user-attachments/assets/6ce555b7-0aa9-4a59-ba84-c83678a10c46|
    |
 | Rivas Becerra        | Mario          | marrivbec1@alum.us.es             | [Foto]     |
 | Baladrón Caballero   | Álvaro         | alvbalcab@alum.us.es              | [Foto]     |
