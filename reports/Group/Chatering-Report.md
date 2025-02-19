@@ -92,7 +92,7 @@ Los miembros del grupo confirman su compromiso con este acuerdo firmando a conti
 | Juan Ramírez Morales	       | [Firma]      |
 | Mario Rivas Becerra          | [Firma]      |
 | Álvaro Baladrón Caballero    | [Firma]      |
-| Jesús Villalba Fernández     | [Firma]      |
+| Jesús Villalba Fernández     |https://github.com/user-attachments/assets/746089f7-971f-4265-82f1-074a56a29a5a|
 
 
 **Fecha:** 19/02/2025
