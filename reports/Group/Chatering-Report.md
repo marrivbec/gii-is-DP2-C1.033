@@ -16,7 +16,7 @@ La selección de los miembros del grupo de trabajo se realizó de manera sencill
 | Rivas Becerra        | Mario          | marrivbec1@alum.us.es             | [Foto]     |
 | Baladrón Caballero   | Álvaro         | alvbalcab@alum.us.es              | [Foto]     |
 | Villalba Fernández   | Jesús          | jesvilfer@alum.us.es              | https://github.com/user-attachments/assets/f4a138bc-6b6a-4822-991c-6e77a3b728f2
-    |
+    
 
 
 ---
