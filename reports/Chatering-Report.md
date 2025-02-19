@@ -3,7 +3,7 @@
 ## **1. Resumen**
 La selección de los miembros del grupo de trabajo se realizó de manera sencilla a través del foro. Para elegir a los integrantes, nos enfocamos en personas con las que ya habíamos trabajado anteriormente, priorizando la confianza y el conocimiento de su forma de trabajo. En este caso, ya habíamos coincidido en proyectos previos, lo que facilitó la decisión.
 
-**Enlace al hilo del foro de reclutamiento:** [https://ev.us.es/webapps/discussionboard/do/message?action=list_messages&course_id=_89154_1&nav=discussion_board&conf_id=_426211_1&forum_id=_253523_1&message_id=_456394_1]
+**Enlace al hilo del foro de reclutamiento:** https://ev.us.es/webapps/discussionboard/do/message?action=list_messages&course_id=_89154_1&nav=discussion_board&conf_id=_426211_1&forum_id=_253523_1&message_id=_456394_1
 
 ---
 
