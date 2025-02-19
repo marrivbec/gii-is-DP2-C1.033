@@ -11,11 +11,11 @@ La selección de los miembros del grupo de trabajo se realizó de manera sencill
 
 | **Surname(s)** | **Name(s)** | **Corporate Email** | **Picture** |
 |---------------|------------|---------------------|------------|
-| [Ferrer Álvarez]       | [Ángel Manuel]   | [angferalv@alum.us.es]              | [Foto]     |
-| [Ramírez Morales]      | [Juan]           | [juarammor2@alum.us.es]             | [Foto]     |
-| [Rivas Becerra]        | [Mario]          | [marrivbec1@alum.us.es]             | [Foto]     |
-| [Baladrón Caballero]   | [Álvaro]         | [alvbalcab@alum.us.es]              | [Foto]     |
-| [Villalba Fernández]   | [Jesús]          | [jesvilfer@alum.us.es]              | [Foto]     |
+| Ferrer Álvarez       | Ángel Manuel   | angferalv@alum.us.es   | https://github.com/user-attachments/assets/26161fd0-f43d-452f-9c8d-f88949fc83e0 |
+| Ramírez Morales      | Juan           | juarammor2@alum.us.es             | [Foto]     |
+| Rivas Becerra        | Mario          | marrivbec1@alum.us.es             | [Foto]     |
+| Baladrón Caballero   | Álvaro         | alvbalcab@alum.us.es              | [Foto]     |
+| Villalba Fernández   | Jesús          | jesvilfer@alum.us.es              | [Foto]     |
 
 
 ---
@@ -87,11 +87,11 @@ Los miembros del grupo confirman su compromiso con este acuerdo firmando a conti
 
 | **Surname(s) & Name(s)** | **Signature** |
 |-------------------------|-------------|
-| [Ángel Manuel, Ferrer Álvarez] | [Firma]      |
-| [Juan Ramírez Morales	]        | [Firma]      |
-| [Mario Rivas Becerra]          | [Firma]      |
-| [Álvaro Baladrón Caballero]    | [Firma]      |
-| [Jesús Villalba Fernández]     | [Firma]      |
+| Ángel Manuel, Ferrer Álvarez | [Firma]      |
+| Juan Ramírez Morales	        | [Firma]      |
+| Mario Rivas Becerra          | [Firma]      |
+| Álvaro Baladrón Caballero    | [Firma]      |
+| Jesús Villalba Fernández     | [Firma]      |
 
 
 **Fecha:** [DD/MM/AAAA]
