@@ -8,4 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-- Rafael Corchuelo (corchu@us.es)
+- Ángel Manuel Ferrer (angferalv@alum.us.es)
+- Jesús Villaba (jesvilfer@alum.us.es)
+- Mario Rivas (marrivbec1@alum.us.es)
+- Álvaro Baladrón (alvbalcab@alum.us.es)
+- Juan Ramírez (juarammor2@alum.us.es)
