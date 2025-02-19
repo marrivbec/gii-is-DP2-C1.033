@@ -1,4 +1,4 @@
-# **Chartering Report**
+    # **Chartering Report**
 
 ## **1. Resumen**
 La selección de los miembros del grupo de trabajo se realizó de manera sencilla a través del foro. Para elegir a los integrantes, nos enfocamos en personas con las que ya habíamos trabajado anteriormente, priorizando la confianza y el conocimiento de su forma de trabajo. En este caso, ya habíamos coincidido en proyectos previos, lo que facilitó la decisión.
@@ -14,7 +14,8 @@ La selección de los miembros del grupo de trabajo se realizó de manera sencill
 | Ferrer Álvarez       | Ángel Manuel   | angferalv@alum.us.es   | https://github.com/user-attachments/assets/26161fd0-f43d-452f-9c8d-f88949fc83e0 |
 | Ramírez Morales      | Juan           | juarammor2@alum.us.es             | https://github.com/user-attachments/assets/814c7c12-bc1b-4659-b6d1-5e4ba205b8b6 |
 | Rivas Becerra        | Mario          | marrivbec1@alum.us.es             | https://github.com/user-attachments/assets/6ce555b7-0aa9-4a59-ba84-c83678a10c46 |
-| Baladrón Caballero   | Álvaro         | alvbalcab@alum.us.es              | [Foto]     |
+| Baladrón Caballero   | Álvaro         | alvbalcab@alum.us.es              | ![IMG_1036](https://github.com/user-attachments/assets/340de3e2-7506-478d-9569-f78bf1d550e0)
+     |
 | Villalba Fernández   | Jesús          | jesvilfer@alum.us.es              | https://github.com/user-attachments/assets/f4a138bc-6b6a-4822-991c-6e77a3b728f2
     
 
@@ -91,7 +92,8 @@ Los miembros del grupo confirman su compromiso con este acuerdo firmando a conti
 | Ángel Manuel, Ferrer Álvarez | https://github.com/user-attachments/assets/b0eea935-52c7-405f-b05c-7948e168a628 |
 | Juan Ramírez Morales	       | https://github.com/user-attachments/assets/d510550c-b6b8-48d6-8d50-47a993c50bba |
 | Mario Rivas Becerra          | https://github.com/user-attachments/assets/1e1464e6-6406-4702-90ce-1b024e80102d |
-| Álvaro Baladrón Caballero    | [Firma]      |
+| Álvaro Baladrón Caballero    | ![8CA41B62-B8D3-4017-971C-847A8205AA66](https://github.com/user-attachments/assets/ad6a10e6-65d7-4726-9325-66e18f31e0e6)
+      |
 | Jesús Villalba Fernández     |https://github.com/user-attachments/assets/746089f7-971f-4265-82f1-074a56a29a5a|
 
 
