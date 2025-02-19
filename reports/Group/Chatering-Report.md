@@ -89,8 +89,8 @@ Los miembros del grupo confirman su compromiso con este acuerdo firmando a conti
 | **Surname(s) & Name(s)** | **Signature** |
 |-------------------------|-------------|
 | Ángel Manuel, Ferrer Álvarez | https://github.com/user-attachments/assets/b0eea935-52c7-405f-b05c-7948e168a628 |
-| Juan Ramírez Morales	       | [Firma]      |
-| Mario Rivas Becerra          | [Firma]      |
+| Juan Ramírez Morales	       | https://github.com/user-attachments/assets/d510550c-b6b8-48d6-8d50-47a993c50bba |
+| Mario Rivas Becerra          | https://github.com/user-attachments/assets/1e1464e6-6406-4702-90ce-1b024e80102d |
 | Álvaro Baladrón Caballero    | [Firma]      |
 | Jesús Villalba Fernández     |https://github.com/user-attachments/assets/746089f7-971f-4265-82f1-074a56a29a5a|
 
