@@ -18,4 +18,7 @@ taking into account that you must link the appropriate version of the Acme-Frame
 the following resources:
 
 - **/fragments/**
- 
+
+
+-**/Board/**
+https://github.com/users/marrivbec/projects/1
