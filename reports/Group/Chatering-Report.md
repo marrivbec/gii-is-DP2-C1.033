@@ -94,5 +94,5 @@ Los miembros del grupo confirman su compromiso con este acuerdo firmando a conti
 | Jesús Villalba Fernández     | [Firma]      |
 
 
-**Fecha:** [DD/MM/AAAA]
+**Fecha:** 19/02/2025
 
