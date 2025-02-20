@@ -30,7 +30,7 @@ Before studying this subject, we were not fully aware of the architectural patte
 
 **Summary of Gaps in Knowledge**
 
-Before this subject, our knowledge of WIS architecture was fragmented and mostly focused on individual technologies rather than a holistic system. We lacked:
+Before DP2, our knowledge of WIS architecture was fragmented and mostly focused on individual technologies rather than a holistic system. We lacked:
 - A clear definition of WIS and its scope.
 - Understanding of different architectural styles used in WIS.
 - Awareness of best practices in designing scalable and secure WIS.
