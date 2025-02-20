@@ -19,7 +19,11 @@
 <acme:menu-bar>
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="76585025: Ferrer Álvarez, Ángel Manuel" action="https://zoomquilt.org/"/>
+			<acme:menu-suboption code="29584798: Villalba Fernández, Jesús" action="https://orangetv.orange.es/brw"/>
+			<acme:menu-suboption code="29550304: Rivas Becerra, Mario" action="http://eelslap.com/"/>
+			<acme:menu-suboption code="49093416: Ramirez Morales, Juan" action="https://www.apple.com/"/>
+			<acme:menu-suboption code="77859734: Baladrón Caballero, Álvaro" action="https://www.realbetisbalompie.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
