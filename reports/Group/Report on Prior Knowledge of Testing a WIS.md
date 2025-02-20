@@ -1,4 +1,4 @@
-**Report on Prior Knowledge of Testing a WIS**
+# **Report on Prior Knowledge of Testing a WIS**
 
 Before taking this subject, our knowledge of testing a Web Information System (WIS) was quite limited. We had not encountered this topic in detail before, and most of our understanding came from general software testing concepts rather than specific WIS testing methodologies. Below is a summary of what we knew before engaging in this topic more thoroughly.
 
