@@ -12,6 +12,7 @@ import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidIATA;
 import acme.constraints.ValidPhone;
 import acme.constraints.ValidShortText;
+import acme.datatypes.Phone;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -67,6 +68,6 @@ public class Airport extends AbstractEntity {
 	@Mandatory
 	@ValidPhone
 	@Automapped
-	private String				contact_phone_number;
+	private Phone				contact_phone_number;
 
 }
