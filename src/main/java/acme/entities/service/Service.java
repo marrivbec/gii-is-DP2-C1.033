@@ -50,4 +50,9 @@ public class Service extends AbstractEntity {
 	@ValidMoney
 	@Automapped
 	private Money				money;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+
 }
