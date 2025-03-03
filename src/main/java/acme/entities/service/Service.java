@@ -39,7 +39,7 @@ public class Service extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private double				averageDwellTime;
+	private Double				averageDwellTime;
 
 	@Optional
 	@ValidPromoCode

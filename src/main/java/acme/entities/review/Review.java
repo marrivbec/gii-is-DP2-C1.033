@@ -53,10 +53,14 @@ public class Review extends AbstractEntity {
 	@Optional
 	@ValidScore
 	@Automapped
-	private String				score;
+	private Double				score;
 
 	@Mandatory
 	@Automapped
-	private boolean				recommended;
+	private Boolean				recommended;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 
 }

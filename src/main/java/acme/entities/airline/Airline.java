@@ -51,7 +51,6 @@ public class Airline extends AbstractEntity {
 	private AirlineType			tipo;
 
 	@Mandatory
-	@Automapped
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.DATE)
 	private Date				fechaFundacion;
@@ -64,5 +63,9 @@ public class Airline extends AbstractEntity {
 	@Automapped
 	@ValidPhone
 	private Phone				telefono;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 
 }
