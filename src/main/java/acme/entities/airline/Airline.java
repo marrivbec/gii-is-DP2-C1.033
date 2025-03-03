@@ -1,14 +1,22 @@
 
 package acme.entities.airline;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIATA;
+import acme.constraints.ValidPhone;
+import acme.constraints.ValidShortText;
+import acme.datatypes.Phone;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,14 +33,17 @@ public class Airline extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
+	@ValidShortText
 	private String				name;
 
 	@Mandatory
 	@Automapped
+	@ValidIATA
 	private String				iata;
 
 	@Mandatory
 	@Automapped
+	@ValidUrl
 	private String				web;
 
 	@Mandatory
@@ -40,7 +51,10 @@ public class Airline extends AbstractEntity {
 	private AirlineType			tipo;
 
 	@Mandatory
-	private LocalDate			fechaFundacion;
+	@Automapped
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.DATE)
+	private Date				fechaFundacion;
 
 	@Optional
 	@Automapped
@@ -48,11 +62,7 @@ public class Airline extends AbstractEntity {
 
 	@Optional
 	@Automapped
-	private String				telefono;
-
-
-	public Airline() {
-		// TODO Auto-generated constructor stub
-	}
+	@ValidPhone
+	private Phone				telefono;
 
 }
