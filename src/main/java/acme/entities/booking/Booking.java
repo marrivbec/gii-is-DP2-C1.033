@@ -1,22 +1,22 @@
 
 package acme.entities.booking;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Pattern;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.constraints.ValidPastDate;
+import acme.client.components.validation.ValidMoment;
+import acme.constraints.ValidLocatorCode;
 import acme.entities.customer.Customer;
+import acme.entities.flight.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,27 +33,25 @@ public class Booking extends AbstractEntity {
 
 	@Mandatory
 	@Column(unique = true)
+	@ValidLocatorCode
 	private String				locatorCode;
 
 	@Mandatory
-	@ValidPastDate
-	@Automapped
-	private LocalDateTime		purchaseMoment;
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				purchaseMoment;
 
 	@Mandatory
-	@Enumerated(EnumType.STRING)
 	@Automapped
 	private TravelClass			travelClass;
 
 	@Mandatory
-	@DecimalMin(value = "0.0", inclusive = true, message = "Price must be a positive value")
 	@Automapped
 	private Double				price;
 
 	@Optional
-	@Pattern(regexp = "^\\d{4}$", message = "Invalid credit card nibble format")
 	@Automapped
-	private String				creditCardNibble;
+	private String				creditCardLastNibble;
 
 	// Relationships ----------------------------------------------------------
 
@@ -61,5 +59,10 @@ public class Booking extends AbstractEntity {
 	@ManyToOne
 	@Automapped
 	private Customer			customer;
+
+	@Mandatory
+	@ManyToOne
+	@Automapped
+	private Flight				flight;
 
 }
