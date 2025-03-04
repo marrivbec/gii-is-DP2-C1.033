@@ -1,5 +1,5 @@
 
-package acme.entities.Airport;
+package acme.entities.airport;
 
 public enum OperationalScope {
 	INTERNATIONAL, DOMESTIC, REGIONAL
