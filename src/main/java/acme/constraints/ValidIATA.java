@@ -12,9 +12,11 @@ import javax.validation.ReportAsSingleViolation;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-@Target(ElementType.FIELD)
-@Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {})
+@Target({
+	ElementType.FIELD
+})
+@Retention(RetentionPolicy.RUNTIME)
 @ReportAsSingleViolation
 
 @NotBlank
@@ -22,11 +24,9 @@ import javax.validation.constraints.Pattern;
 
 public @interface ValidIATA {
 
-	// Standard validation properties -----------------------------------------
-
 	String message() default "{acme.validation.iata.message}";
 
 	Class<?>[] groups() default {};
-	Class<? extends Payload>[] payload() default {};
 
+	Class<? extends Payload>[] payload() default {};
 }
