@@ -1,9 +1,10 @@
 
-package acme.entities.flightAssignment;
+package acme.entities.activityLog;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -11,9 +12,10 @@ import javax.persistence.TemporalType;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidLongText;
+import acme.constraints.ValidSeverityLevel;
+import acme.constraints.ValidShortText;
 import acme.entities.flightCrewMembers.FlightCrewMember;
 import acme.entities.leg.Leg;
 import lombok.Getter;
@@ -23,7 +25,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class FlightAssignment extends AbstractEntity {
+public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -32,29 +34,31 @@ public class FlightAssignment extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Automapped
-	private DutyType			duty;
-
-	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.DATE)
-	private Date				moment;
+	private Date				registration_moment;
 
 	@Mandatory
+	@ValidShortText
 	@Automapped
-	private Status				current_status;
+	private String				type_of_incident;
 
-	@Optional
+	@Mandatory
 	@ValidLongText
 	@Automapped
-	private String				remarks;
+	private String				description;
+
+	@Mandatory
+	@ValidSeverityLevel
+	@Automapped
+	private Integer				severity_level;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@OneToOne
+	@ManyToOne
 	@Automapped
 	private FlightCrewMember	flight_crew_member;
 
@@ -62,5 +66,4 @@ public class FlightAssignment extends AbstractEntity {
 	@OneToOne
 	@Automapped
 	private Leg					leg;
-
 }
