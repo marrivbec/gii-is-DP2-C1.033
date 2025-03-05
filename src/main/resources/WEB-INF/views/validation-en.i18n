@@ -8,4 +8,5 @@ acme.validation.iata.message        = The IATA code must contain exactly 3 upper
 acme.validation.cargo.message       = The cargo weight must be between 2,000 and 50,000 kg.
 acme.validation.promo.message = The promotion code must have 4 uppercase letters, a hyphen, and the last two digits must correspond to the current year (example: ABCD-25).
 acme.validation.score.message = La puntuación debe estar entre 0 y 10, con un máximo de un decimal.
+acme.validation.flight.number.message = The flight number must consist of 3 uppercase letters followed by 4 digits (example: ABC1234).
 
