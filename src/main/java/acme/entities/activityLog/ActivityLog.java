@@ -1,30 +1,31 @@
 
-package acme.entities.airline;
+package acme.entities.activityLog;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidIATA;
-import acme.constraints.ValidPhone;
+import acme.constraints.ValidLongText;
+import acme.constraints.ValidSeverityLevel;
 import acme.constraints.ValidShortText;
-import acme.datatypes.Phone;
+import acme.entities.flightCrewMembers.FlightCrewMember;
+import acme.entities.leg.Leg;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Airline extends AbstractEntity {
+
+public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -33,41 +34,36 @@ public class Airline extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Automapped
-	@ValidShortText
-	private String				name;
-
-	@Mandatory
-	@Automapped
-	@ValidIATA
-	private String				iata;
-
-	@Mandatory
-	@Automapped
-	@ValidUrl
-	private String				web;
-
-	@Mandatory
-	@Automapped
-	private AirlineType			type;
-
-	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.DATE)
-	private Date				dateFundation;
+	private Date				registration_moment;
 
-	@Optional
+	@Mandatory
+	@ValidShortText
 	@Automapped
-	@ValidEmail
-	private String				mail;
+	private String				type_of_incident;
 
-	@Optional
+	@Mandatory
+	@ValidLongText
 	@Automapped
-	@ValidPhone
-	private Phone				phone;
+	private String				description;
+
+	@Mandatory
+	@ValidSeverityLevel
+	@Automapped
+	private Integer				severity_level;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
+	@Mandatory
+	@ManyToOne
+	@Automapped
+	private FlightCrewMember	flight_crew_member;
+
+	@Mandatory
+	@OneToOne
+	@Automapped
+	private Leg					leg;
 }

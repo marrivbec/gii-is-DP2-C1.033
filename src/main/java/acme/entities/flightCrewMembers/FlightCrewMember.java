@@ -1,30 +1,27 @@
 
-package acme.entities.airline;
+package acme.entities.flightCrewMembers;
 
-import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidEmail;
-import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidIATA;
+import acme.constraints.ValidEmployeeCode;
+import acme.constraints.ValidLongText;
 import acme.constraints.ValidPhone;
-import acme.constraints.ValidShortText;
 import acme.datatypes.Phone;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Airline extends AbstractEntity {
+
+public class FlightCrewMember extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -33,41 +30,38 @@ public class Airline extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Automapped
-	@ValidShortText
-	private String				name;
+	@Column(unique = true)
+	@ValidEmployeeCode
+	private String				employee_code;
 
 	@Mandatory
-	@Automapped
-	@ValidIATA
-	private String				iata;
-
-	@Mandatory
-	@Automapped
-	@ValidUrl
-	private String				web;
-
-	@Mandatory
-	@Automapped
-	private AirlineType			type;
-
-	@Mandatory
-	@ValidMoment(past = true)
-	@Temporal(TemporalType.DATE)
-	private Date				dateFundation;
-
-	@Optional
-	@Automapped
-	@ValidEmail
-	private String				mail;
-
-	@Optional
-	@Automapped
 	@ValidPhone
-	private Phone				phone;
+	@Automapped
+	private Phone				phone_number;
+
+	@Mandatory
+	@ValidLongText
+	@Automapped
+	private String				language_skills;
+
+	@Mandatory
+	@Automapped
+	private AvailabilityStatus	availability_status;
+
+	@Mandatory
+	@Automapped
+	private Integer				salary;
+
+	@Optional
+	@Automapped
+	private Integer				years_of_experience;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
+	@Mandatory
+	@ManyToOne
+	@Automapped
+	private Airline				airline;
 }

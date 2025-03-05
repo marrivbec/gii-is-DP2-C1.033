@@ -8,5 +8,6 @@ acme.validation.iata.message = El código IATA debe contener exactamente 3 letra
 acme.validation.cargo.message = El peso de carga debe estar entre 2,000 y 50,000 kg.
 acme.validation.promo.message = El código de promoción debe tener 4 letras mayúsculas, un guion y los dos últimos dígitos deben corresponder al año actual (ejemplo: ABCD-25).
 acme.validation.score.message = La puntuación debe estar entre 0 y 10, con un máximo de un decimal.
+acme.validation.flight.number.message = El número de vuelo debe estar compuesto por 3 letras mayúsculas seguidas de 4 dígitos (ejemplo: ABC1234).
 
 
