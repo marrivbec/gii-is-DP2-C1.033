@@ -4,7 +4,7 @@ package acme.entities.customer;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRealm;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -20,7 +20,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Customer extends AbstractEntity {
+public class Customer extends AbstractRealm {
 
 	// Serialisation version --------------------------------------------------
 
