@@ -1,19 +1,23 @@
 
-package acme.entities.aircraft;
+package acme.entities.activityLog;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
-import acme.constraints.ValidEmployeeCode;
+import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidLongText;
-import acme.constraints.ValidPhone;
-import acme.datatypes.Phone;
-import acme.entities.airline.Airline;
+import acme.constraints.ValidSeverityLevel;
+import acme.constraints.ValidShortText;
+import acme.entities.flightCrewMembers.FlightCrewMember;
+import acme.entities.leg.Leg;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,7 +25,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class FlightCrewMember extends AbstractEntity {
+public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -30,31 +34,24 @@ public class FlightCrewMember extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Column(unique = true)
-	@ValidEmployeeCode
-	private String				employee_code;
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.DATE)
+	private Date				registration_moment;
 
 	@Mandatory
-	@ValidPhone
+	@ValidShortText
 	@Automapped
-	private Phone				phone_number;
+	private String				type_of_incident;
 
 	@Mandatory
 	@ValidLongText
 	@Automapped
-	private String				language_skills;
+	private String				description;
 
 	@Mandatory
+	@ValidSeverityLevel
 	@Automapped
-	private AvailabilityStatus	availability_status;
-
-	@Mandatory
-	@Automapped
-	private Integer				salary;
-
-	@Optional
-	@Automapped
-	private Integer				years_of_experience;
+	private Integer				severity_level;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -63,5 +60,10 @@ public class FlightCrewMember extends AbstractEntity {
 	@Mandatory
 	@ManyToOne
 	@Automapped
-	private Airline				airline;
+	private FlightCrewMember	flight_crew_member;
+
+	@Mandatory
+	@OneToOne
+	@Automapped
+	private Leg					leg;
 }

@@ -1,5 +1,5 @@
 
-package acme.entities.aircraft;
+package acme.entities.flightAssignment;
 
 import java.util.Date;
 
@@ -14,6 +14,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidLongText;
+import acme.entities.flightCrewMembers.FlightCrewMember;
 import acme.entities.leg.Leg;
 import lombok.Getter;
 import lombok.Setter;
