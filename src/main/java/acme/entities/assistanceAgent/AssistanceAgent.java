@@ -39,10 +39,10 @@ public class AssistanceAgent extends AbstractEntity {
 	@Mandatory
 	private String				employeeCode;
 
-	//	@ValidLongList
-	//	@Automapped
-	//	@Mandatory
-	//	private List<String>		spokenLanguages;
+	@ValidLongText
+	@Automapped
+	@Mandatory
+	private String				spokenLanguages;
 
 	@Mandatory
 	@ValidMoment(past = true)

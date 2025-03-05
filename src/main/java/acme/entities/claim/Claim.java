@@ -43,6 +43,14 @@ public class Claim extends AbstractEntity {
 	@Automapped
 	private String				description;
 
+	@Mandatory
+	@Automapped
+	private Type				type;
+
+	@Mandatory
+	@Automapped
+	private Boolean				indicator;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
@@ -51,4 +59,5 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@Automapped
 	private AssistanceAgent		assistanceAgent;
+
 }
