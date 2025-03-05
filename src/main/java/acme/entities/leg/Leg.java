@@ -1,17 +1,22 @@
 
 package acme.entities.leg;
 
-import java.time.LocalTime;
+import java.time.Duration;
+import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.constraints.ValidFlightNumber;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
+import acme.entities.flight.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,19 +33,21 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
+	@Column(unique = true)
+	@ValidFlightNumber
 	private String				flightNumber;
 
 	@Mandatory
 	@Automapped
-	private LocalTime			scheduledDeparture;
+	private LocalDateTime		scheduledDeparture;
 
 	@Mandatory
 	@Automapped
-	private LocalTime			scheduledArrival;
+	private LocalDateTime		scheduledArrival;
 
 	@Mandatory
 	@Automapped
-	private Integer				duration;
+	private Duration			duration;
 
 	@Mandatory
 	@Automapped
@@ -51,18 +58,22 @@ public class Leg extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@OneToOne
+	@ManyToOne
 	@Valid
 	private Airport				departureAirport;
 
 	@Mandatory
-	@OneToOne
+	@ManyToOne
 	@Valid
-	private Airport				arraivalAirport;
+	private Airport				arrivalAirport;
 
 	@Mandatory
-	@OneToOne
+	@ManyToOne
 	@Valid
 	private Aircraft			aircraft;
+
+	@ManyToOne
+	@JoinColumn(name = "flight_id", nullable = false)
+	private Flight				flight;
 
 }
