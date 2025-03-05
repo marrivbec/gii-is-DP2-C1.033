@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z0-9]{6,8}$", message = "Invalid locator code format")
+@Pattern(regexp = "^[A-Z0-9]{6,8}$")
 
 public @interface ValidLocatorCode {
 

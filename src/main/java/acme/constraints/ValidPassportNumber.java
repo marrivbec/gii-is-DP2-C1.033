@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z0-9]{6,9}$", message = "Invalid passport number format")
+@Pattern(regexp = "^[A-Z0-9]{6,9}$")
 
 public @interface ValidPassportNumber {
 

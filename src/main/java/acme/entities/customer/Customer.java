@@ -3,9 +3,8 @@ package acme.entities.customer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRealm;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -15,14 +14,13 @@ import acme.constraints.ValidLongText;
 import acme.constraints.ValidPhone;
 import acme.constraints.ValidShortText;
 import acme.datatypes.Phone;
-import acme.entities.flight.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Customer extends AbstractEntity {
+public class Customer extends AbstractRealm {
 
 	// Serialisation version --------------------------------------------------
 
@@ -63,9 +61,5 @@ public class Customer extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	@Mandatory
-	@ManyToOne
-	@Automapped
-	private Flight				flight;
 
 }
