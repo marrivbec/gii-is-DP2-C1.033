@@ -1,68 +1,47 @@
 
-package acme.entities.assistanceAgent;
+package acme.entities.claim;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
-import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidEmployeeCode;
 import acme.constraints.ValidLongText;
-import acme.entities.airline.Airline;
+import acme.entities.assistanceAgent.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class AssistanceAgent extends AbstractEntity {
-
+public class Claim extends AbstractEntity {
 	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
-	@ValidEmployeeCode
-	@Column(unique = true)
-	@Mandatory
-	private String				employeeCode;
-
-	//	@ValidLongList
-	//	@Automapped
-	//	@Mandatory
-	//	private List<String>		spokenLanguages;
-
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				moment;
+	private Date				registrationMoment;
 
-	@Optional
+	@Mandatory
+	@ValidEmail
+	@Automapped
+	private String				passengerEmail;
+
+	@Mandatory
 	@ValidLongText
 	@Automapped
-	private String				briefBio;
-
-	@Mandatory
-	@ValidMoney
-	@Automapped
-	private Money				salary;
-
-	@Mandatory
-	@ValidUrl
-	@Automapped
-	private String				photo;
+	private String				description;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -71,5 +50,5 @@ public class AssistanceAgent extends AbstractEntity {
 	@ManyToOne
 	@Mandatory
 	@Automapped
-	private Airline				airline;
+	private AssistanceAgent		assistanceAgent;
 }
