@@ -1,19 +1,20 @@
 
 package acme.entities.aircraft;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.constraints.ValidEmployeeCode;
+import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidLongText;
-import acme.constraints.ValidPhone;
-import acme.datatypes.Phone;
-import acme.entities.airline.Airline;
+import acme.entities.leg.Leg;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,7 +22,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class FlightCrewMember extends AbstractEntity {
+public class FlightAssignment extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -30,38 +31,35 @@ public class FlightCrewMember extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Column(unique = true)
-	@ValidEmployeeCode
-	private String				employee_code;
+	@Automapped
+	private DutyType			duty;
 
 	@Mandatory
-	@ValidPhone
-	@Automapped
-	private Phone				phone_number;
-
-	@Mandatory
-	@ValidLongText
-	@Automapped
-	private String				language_skills;
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.DATE)
+	private Date				moment;
 
 	@Mandatory
 	@Automapped
-	private AvailabilityStatus	availability_status;
-
-	@Mandatory
-	@Automapped
-	private Integer				salary;
+	private Status				current_status;
 
 	@Optional
+	@ValidLongText
 	@Automapped
-	private Integer				years_of_experience;
+	private String				remarks;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@ManyToOne
+	@OneToOne
 	@Automapped
-	private Airline				airline;
+	private FlightCrewMember	flight_crew_member;
+
+	@Mandatory
+	@OneToOne
+	@Automapped
+	private Leg					leg;
+
 }
