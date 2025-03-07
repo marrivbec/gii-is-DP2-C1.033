@@ -1,3 +1,4 @@
+
 package acme.entities.airport;
 
 import javax.persistence.Entity;
@@ -19,49 +20,49 @@ import lombok.Setter;
 
 public class Airport extends AbstractEntity {
 
-    // Serialisation version --------------------------------------------------
+	// Serialisation version --------------------------------------------------
 
-    private static final long serialVersionUID = 1L;
+	private static final long	serialVersionUID	= 1L;
 
-    // Attributes -------------------------------------------------------------
+	// Attributes -------------------------------------------------------------
 
-    @Mandatory
-    @ValidShortText
-    @Automapped
-    private String name;
+	@Mandatory
+	@ValidShortText
+	@Automapped
+	private String				name;
 
-    @Mandatory
-    @ValidIATA
-    @Automapped
-    private String IATA_code;
+	@Mandatory
+	@ValidIATA
+	@Automapped
+	private String				IATACode;
 
-    @Mandatory
-    @Automapped
-    private OperationalScope operational_scope;
+	@Mandatory
+	@Automapped
+	private OperationalScope	operationalScope;
 
-    @Mandatory
-    @ValidShortText
-    @Automapped
-    private String city;
+	@Mandatory
+	@ValidShortText
+	@Automapped
+	private String				city;
 
-    @Mandatory
-    @ValidShortText
-    @Automapped
-    private String country;
+	@Mandatory
+	@ValidShortText
+	@Automapped
+	private String				country;
 
-    @Mandatory
-    @ValidUrl
-    @Automapped
-    private String website;
+	@Mandatory
+	@ValidUrl
+	@Automapped
+	private String				website;
 
-    @Mandatory
-    @ValidShortText
-    @Automapped
-    private String email_address;
+	@Mandatory
+	@ValidShortText
+	@Automapped
+	private String				emailAddress;
 
-    @Mandatory
-    @ValidPhone
-    @Automapped
-    private Phone contact_phone_number;
+	@Mandatory
+	@ValidPhone
+	@Automapped
+	private Phone				contactPhoneNumber;
 
 }

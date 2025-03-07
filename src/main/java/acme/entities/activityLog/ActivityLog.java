@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -36,12 +37,12 @@ public class ActivityLog extends AbstractEntity {
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.DATE)
-	private Date				registration_moment;
+	private Date				registrationMoment;
 
 	@Mandatory
 	@ValidShortText
 	@Automapped
-	private String				type_of_incident;
+	private String				typeOfIncident;
 
 	@Mandatory
 	@ValidLongText
@@ -51,7 +52,7 @@ public class ActivityLog extends AbstractEntity {
 	@Mandatory
 	@ValidSeverityLevel
 	@Automapped
-	private Integer				severity_level;
+	private Integer				severityLevel;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -59,11 +60,11 @@ public class ActivityLog extends AbstractEntity {
 
 	@Mandatory
 	@ManyToOne
-	@Automapped
-	private FlightCrewMember	flight_crew_member;
+	@Valid
+	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
 	@OneToOne
-	@Automapped
+	@Valid
 	private Leg					leg;
 }

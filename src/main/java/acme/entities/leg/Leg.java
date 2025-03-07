@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
@@ -72,8 +71,9 @@ public class Leg extends AbstractEntity {
 	@Valid
 	private Aircraft			aircraft;
 
+	@Mandatory
 	@ManyToOne
-	@JoinColumn(name = "flight_id", nullable = false)
+	@Valid
 	private Flight				flight;
 
 }

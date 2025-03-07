@@ -1,5 +1,5 @@
 
-package acme.entities.passenger;
+package acme.realms;
 
 import java.util.Date;
 
@@ -56,5 +56,4 @@ public class Passenger extends AbstractEntity {
 	private String				specialNeeds;
 
 	// Relationships ----------------------------------------------------------
-
 }

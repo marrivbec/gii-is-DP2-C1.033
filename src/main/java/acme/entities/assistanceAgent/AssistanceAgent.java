@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -70,6 +71,6 @@ public class AssistanceAgent extends AbstractEntity {
 
 	@ManyToOne
 	@Mandatory
-	@Automapped
+	@Valid
 	private Airline				airline;
 }

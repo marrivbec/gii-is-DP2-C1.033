@@ -4,11 +4,8 @@ package acme.entities.flight;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Transient;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -17,7 +14,6 @@ import acme.client.components.validation.Optional;
 import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
-import acme.entities.leg.Leg;
 import acme.entities.leg.LegRepository;
 import lombok.Getter;
 import lombok.Setter;
@@ -89,11 +85,5 @@ public class Flight extends AbstractEntity {
 	}
 
 	// Relationships ----------------------------------------------------------
-
-
-	@Mandatory
-	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
-	@Valid
-	private List<Leg> leg;
 
 }

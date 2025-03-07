@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -42,7 +43,7 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private Status				current_status;
+	private Status				currentStatus;
 
 	@Optional
 	@ValidLongText
@@ -55,12 +56,12 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Mandatory
 	@OneToOne
-	@Automapped
-	private FlightCrewMember	flight_crew_member;
+	@Valid
+	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
 	@OneToOne
-	@Automapped
+	@Valid
 	private Leg					leg;
 
 }
