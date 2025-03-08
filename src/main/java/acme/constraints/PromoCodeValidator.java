@@ -4,25 +4,54 @@ package acme.constraints;
 import java.time.Year;
 import java.util.regex.Pattern;
 
-import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class PromoCodeValidator implements ConstraintValidator<ValidPromoCode, String> {
+import acme.client.components.validation.AbstractValidator;
+import acme.client.components.validation.Validator;
 
-	private static final Pattern PROMO_PATTERN = Pattern.compile("^[A-Z]{4}-[0-9]{2}$");
+@Validator
+public class PromoCodeValidator extends AbstractValidator<ValidPromoCode, String> {
 
+	@Override
+	public void initialize(final ValidPromoCode annotation) {
+		assert annotation != null;
+	}
 
 	@Override
 	public boolean isValid(final String promoCode, final ConstraintValidatorContext context) {
-		if (promoCode == null)
-			return false;
+		assert context != null;
 
-		if (!PromoCodeValidator.PROMO_PATTERN.matcher(promoCode).matches())
-			return false;
+		boolean result;
 
-		String yearSuffix = promoCode.substring(5);
-		int currentYear = Year.now().getValue() % 100;
+		if (promoCode != null) {
+			{
+				boolean patternMatched = Pattern.matches("^[A-Z]{4}-[0-9]{2}$", promoCode);
 
-		return yearSuffix.equals(String.format("%02d", currentYear));
+				super.state(context, patternMatched, "*", "acme.validation.promo.error.message");
+			}
+			{
+				boolean lastTwoDigitsMatchYear;
+
+				try {
+					int length = promoCode.length();
+					String lastTwoDigitsString = promoCode.substring(length - 2, length);
+					int lastTwoDigits = Integer.parseInt(lastTwoDigitsString);
+
+					int year = Year.now().getValue() % 100;
+
+					lastTwoDigitsMatchYear = lastTwoDigits == year;
+
+				} catch (Error e) {
+					lastTwoDigitsMatchYear = false;
+				}
+
+				super.state(context, lastTwoDigitsMatchYear, "*", "acme.validation.promo.last-digits.message");
+			}
+		}
+
+		result = !super.hasErrors(context);
+
+		return result;
+
 	}
 }

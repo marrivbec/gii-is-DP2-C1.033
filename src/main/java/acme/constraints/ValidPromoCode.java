@@ -12,9 +12,10 @@ import javax.validation.Payload;
 @Constraint(validatedBy = PromoCodeValidator.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+
 public @interface ValidPromoCode {
 
-	String message() default "{acme.validation.promo.message}";
+	String message() default "{acme.validation.promo.error.message}";
 
 	Class<?>[] groups() default {};
 
