@@ -24,7 +24,7 @@ public @interface ValidSeverityLevel {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.text.message}";
+	String message() default "{acme.validation.severityLevel.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
