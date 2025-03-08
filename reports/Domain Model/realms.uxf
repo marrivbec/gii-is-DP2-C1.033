@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
+      <x>310</x>
       <y>250</y>
       <w>520</w>
       <h>150</h>
@@ -25,7 +25,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
+      <x>360</x>
       <y>440</y>
       <w>420</w>
       <h>110</h>
@@ -36,6 +36,46 @@ Provider
 + company: String {Mandatory, ValidString, Automapped}
 + sector: String {Mandatory, ValidString, Automapped}
 bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>60</y>
+      <w>480</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Passenger
+--
++ fullName: String {Mandatory, ValidLongText), Automapped}
++ email: String {Mandatory, ValidEmail, Automapped}
++ passportNumber: String {Mandatory, ValidPassportNumber, Automapped}
++ dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
+- specialNeeds: String {Optional, ValidShortText, Automapped}
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>50</y>
+      <w>480</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+--
++ identifier: String {Mandatory, Column(unique=true), ValidIdentifierNumber}
++ phoneNumber: String {Mandatory, ValidPhone, Automapped}
++ physicalAddress: String {Mandatory, ValidLongText, Automapped}
++ city: String {Mandatory, ValidShortText, Automapped}
++ country: String {Mandatory, ValidShortText, Automapped}
+- earnedPoints: Integer {Optional, ValidEarnedPoints, Automapped}
+bg=pink
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
