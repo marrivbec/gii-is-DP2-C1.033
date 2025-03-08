@@ -47,6 +47,7 @@ public class Booking extends AbstractEntity {
 	private Date				purchaseMoment;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private TravelClass			travelClass;
 

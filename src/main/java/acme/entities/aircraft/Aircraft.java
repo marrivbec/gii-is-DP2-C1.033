@@ -46,6 +46,7 @@ public class Aircraft extends AbstractEntity {
 	private Integer				cargoWeight;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private AircraftStatus		status;
 

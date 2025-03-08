@@ -3,8 +3,9 @@ package acme.entities.customer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
-import acme.client.components.basis.AbstractRealm;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -20,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Customer extends AbstractRealm {
+public class Customer extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -33,7 +34,7 @@ public class Customer extends AbstractRealm {
 	@Column(unique = true)
 	private String				identifier;
 
-	@Optional
+	@Mandatory
 	@ValidPhone
 	@Automapped
 	private Phone				phoneNumber;
@@ -58,8 +59,12 @@ public class Customer extends AbstractRealm {
 	@Automapped
 	private Integer				earnedPoints;
 
-	// Derived attributes -----------------------------------------------------
 
+	// Derived attributes -----------------------------------------------------
+	@Transient
+	public String initials() {
+		return this.identifier.substring(0, this.identifier.length() - 6);
+	}
 	// Relationships ----------------------------------------------------------
 
 }

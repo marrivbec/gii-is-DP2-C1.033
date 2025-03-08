@@ -12,7 +12,6 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidScore;
 import acme.constraints.ValidShortText;
@@ -41,7 +40,7 @@ public class Review extends AbstractEntity {
 	private Date				moment;
 
 	@Mandatory
-	@ValidUrl
+	@ValidShortText
 	@Automapped
 	private String				subject;
 
@@ -55,7 +54,7 @@ public class Review extends AbstractEntity {
 	@Automapped
 	private Double				score;
 
-	@Mandatory
+	@Optional
 	@Automapped
 	private Boolean				recommended;
 
