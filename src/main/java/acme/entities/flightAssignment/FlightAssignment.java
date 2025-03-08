@@ -33,6 +33,7 @@ public class FlightAssignment extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private DutyType			duty;
 
@@ -42,6 +43,7 @@ public class FlightAssignment extends AbstractEntity {
 	private Date				moment;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private Status				currentStatus;
 
@@ -55,8 +57,8 @@ public class FlightAssignment extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@OneToOne
 	@Valid
+	@OneToOne
 	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
