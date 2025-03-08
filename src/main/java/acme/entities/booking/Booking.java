@@ -17,7 +17,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
-import acme.client.components.validation.ValidString;
+import acme.constraints.ValidLastNibble;
 import acme.constraints.ValidLocatorCode;
 import acme.entities.flight.Flight;
 import acme.realms.Customer;
@@ -47,6 +47,7 @@ public class Booking extends AbstractEntity {
 	private Date				purchaseMoment;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private TravelClass			travelClass;
 
@@ -57,7 +58,7 @@ public class Booking extends AbstractEntity {
 
 	@Optional
 	@Automapped
-	@ValidString(min = 4, max = 4, pattern = "^[0-9]{4}$")
+	@ValidLastNibble
 	private String				lastNibble;
 
 	// Relationships ----------------------------------------------------------
