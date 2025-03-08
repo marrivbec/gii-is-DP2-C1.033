@@ -14,3 +14,5 @@ acme.validation.passport.message = Invalid passport number. It must be 6 to 9 ch
 acme.validation.locatorCode.message = Invalid locator code. It must be between 6 and 8 characters long, using only uppercase letters and numbers.
 acme.validation.earnedPoints.message = Invalid points value. Customers can have up to 500,000 points.
 acme.validation.identifier.message = Invalid identifier. It must start with 2 to 3 uppercase letters (A-Z), followed by exactly 6 digits (0-9).
+acme.validation.employeeCode.message = Invalid identifier. Unique, pattern "^[A-Z]{2-3}\d{6}$", where the first two or three letters correspond to their initials.
+acme.validation.severityLevel.message = Ranging from 0 to 10, where 0 indicates no issue and 10 represents a highly critical sit-uation.
