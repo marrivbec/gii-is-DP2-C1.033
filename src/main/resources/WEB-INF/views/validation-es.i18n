@@ -16,3 +16,5 @@ acme.validation.earnedPoints.message = Valor de puntos inválido. Los clientes p
 acme.validation.identifier.message = Identificador inválido. Debe comenzar con 2 a 3 letras mayúsculas (A-Z), seguidas de exactamente 6 dígitos (0-9).
 acme.validation.employeeCode.message = Identificador inválido. El patrón debe ser "^[A-Z]{2-3}\d{6}$", donde las primeras dos o tres letras corresponden a sus iniciales.
 acme.validation.severityLevel.message = Escala inválida. La escala va de 0 a 10, donde 0 indica que no hay ningún problema y 10 representa una situación muy crítica.
+acme.validation.lastnibble.message = El último nibble debe contener exactamente 4 dígitos.
+
