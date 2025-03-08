@@ -7,6 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -31,8 +32,8 @@ public class FlightCrewMember extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Column(unique = true)
 	@ValidEmployeeCode
+	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
@@ -46,14 +47,17 @@ public class FlightCrewMember extends AbstractEntity {
 	private String				languageSkills;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private AvailabilityStatus	availabilityStatus;
 
 	@Mandatory
+	@Valid
 	@Automapped
-	private Integer				salary;
+	private Money				salary;
 
 	@Optional
+	@Valid
 	@Automapped
 	private Integer				yearsOfExperience;
 
@@ -62,7 +66,7 @@ public class FlightCrewMember extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@ManyToOne
 	@Valid
+	@ManyToOne(optional = false)
 	private Airline				airline;
 }
