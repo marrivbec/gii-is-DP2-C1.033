@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>210</y>
+      <x>120</x>
+      <y>160</y>
       <w>190</w>
       <h>90</h>
     </coordinates>
@@ -20,8 +20,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>320</y>
+      <x>120</x>
+      <y>270</y>
       <w>190</w>
       <h>90</h>
     </coordinates>
@@ -36,8 +36,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>210</y>
+      <x>340</x>
+      <y>160</y>
       <w>330</w>
       <h>100</h>
     </coordinates>
@@ -53,8 +53,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>430</y>
+      <x>120</x>
+      <y>380</y>
       <w>190</w>
       <h>90</h>
     </coordinates>
@@ -69,8 +69,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>320</y>
+      <x>340</x>
+      <y>270</y>
       <w>370</w>
       <h>110</h>
     </coordinates>
@@ -86,8 +86,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>440</y>
+      <x>340</x>
+      <y>390</y>
       <w>260</w>
       <h>90</h>
     </coordinates>
@@ -96,6 +96,71 @@ ValidIATA
 --
 + NotBlank
 + code must match pattern "^[A-Z]{3}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>160</y>
+      <w>280</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidLicenseNumber
+--
++ NotBlank
++ Must be unique
++ Must match pattern "^[A-Z]{2-3}\d{6}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>270</y>
+      <w>330</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidPhoneNumber
+--
++ NotBlank
++ Must match pattern "^\+?\d{6,15}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>390</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidSpecialisation
+--
++ NotBlank
++ Max length 50 characters
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>860</x>
+      <y>390</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidCertifications
+--
++ Optional
++ Max length 255 characters
 bg=RED</panel_attributes>
     <additional_attributes/>
   </element>

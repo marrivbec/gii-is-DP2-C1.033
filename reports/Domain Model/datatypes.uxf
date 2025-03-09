@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>310</y>
+      <x>450</x>
+      <y>280</y>
       <w>170</w>
       <h>120</h>
     </coordinates>
@@ -23,9 +23,9 @@ bg=LIGHT_GRAY</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>320</x>
-      <y>170</y>
-      <w>210</w>
-      <h>110</h>
+      <y>160</y>
+      <w>100</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 TravelClass
@@ -40,9 +40,9 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>310</y>
-      <w>210</w>
+      <x>630</x>
+      <y>280</y>
+      <w>140</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
@@ -58,9 +58,9 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>450</y>
-      <w>210</w>
+      <x>780</x>
+      <y>280</y>
+      <w>120</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
@@ -77,9 +77,9 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>310</x>
-      <y>440</y>
-      <w>210</w>
+      <x>910</x>
+      <y>280</y>
+      <w>160</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
@@ -97,8 +97,8 @@ bg=LIGHT_GRAY</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>320</x>
-      <y>320</y>
-      <w>210</w>
+      <y>280</y>
+      <w>120</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
@@ -115,10 +115,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>170</y>
-      <w>210</w>
-      <h>110</h>
+      <x>430</x>
+      <y>160</y>
+      <w>110</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 AircraftStatus
@@ -128,6 +128,41 @@ AircraftStatus
 + IMPORTANT
 
 
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>160</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TaskType
+--
++ MAINTENANCE
++ INSPECTION
++ REPAIR
++ SYSTEM_CHECK
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>160</y>
+      <w>140</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+MaintenanceStatus
+--
++ PENDING
++ IN_PROGRESS
++ COMPLETED
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
