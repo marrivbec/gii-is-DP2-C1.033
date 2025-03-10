@@ -10,7 +10,7 @@ import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.constraints.ValidIdentifierNumber;
+import acme.constraints.ValidEmployeeCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,7 +27,7 @@ public class AirlineManager extends AbstractRole {
 
 	@Mandatory
 	@Column(unique = true)
-	@ValidIdentifierNumber
+	@ValidEmployeeCode
 	private String				numberID;
 
 	@Mandatory

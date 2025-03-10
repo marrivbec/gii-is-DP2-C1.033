@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>5</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>365</y>
-      <w>260</w>
-      <h>75</h>
+      <x>234</x>
+      <y>360</y>
+      <w>468</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AssistanceAgent
@@ -25,10 +25,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>370</y>
-      <w>210</w>
-      <h>45</h>
+      <x>756</x>
+      <y>369</y>
+      <w>378</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Provider
@@ -41,10 +41,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>285</y>
-      <w>270</w>
-      <h>65</h>
+      <x>234</x>
+      <y>216</y>
+      <w>486</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Passenger
@@ -60,10 +60,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>280</y>
-      <w>240</w>
-      <h>75</h>
+      <x>747</x>
+      <y>189</y>
+      <w>432</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Customer
@@ -74,6 +74,9 @@ Customer
 + city: String {Mandatory, ValidShortText, Automapped}
 + country: String {Mandatory, ValidShortText, Automapped}
 - earnedPoints: Integer {Optional, ValidEarnedPoints, Automapped}
+--
+/+ intials: String
+bg=orange
 bg=pink
 </panel_attributes>
     <additional_attributes/>
@@ -81,10 +84,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>460</y>
-      <w>335</w>
-      <h>75</h>
+      <x>234</x>
+      <y>513</y>
+      <w>603</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Technician
@@ -103,10 +106,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>675</x>
-      <y>465</y>
-      <w>255</w>
-      <h>60</h>
+      <x>864</x>
+      <y>513</y>
+      <w>459</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
@@ -118,5 +121,29 @@ AirlineManager
 
 bg=pink</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1206</x>
+      <y>396</y>
+      <w>288</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>+ initials = String that corresponds to the first two 
+or three letters of the identifier.
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1170</x>
+      <y>270</y>
+      <w>90</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>80.0;140.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

@@ -10,7 +10,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.constraints.ValidEarnedPoints;
-import acme.constraints.ValidIdentifierNumber;
+import acme.constraints.ValidEmployeeCode;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidPhone;
 import acme.constraints.ValidShortText;
@@ -30,7 +30,7 @@ public class Customer extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidIdentifierNumber
+	@ValidEmployeeCode
 	@Column(unique = true)
 	private String				identifier;
 
