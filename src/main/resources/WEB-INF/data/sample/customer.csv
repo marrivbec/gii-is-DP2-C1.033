@@ -1,0 +1,3 @@
+key,identifier,phoneNumber,physicalAddress,city,country,earnedPoints:user-account
+customer1,AD126457,987654321,123 Main StreetApartment 4B, New York, USA,135000,user-account-manager-01
+customer2,AD126458,983748321,789 Elm Street Suite 200, Los Angeles, USA,243000,user-account-manager-02
