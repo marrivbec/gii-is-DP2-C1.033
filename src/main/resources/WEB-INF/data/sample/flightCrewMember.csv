@@ -1,6 +1,6 @@
-key,employeeCode,phoneNumber,languageSkills,availabilityStatus,salary, yearsOfExperiencie, key:airline, key:user-account
-flight-crew-member-01,AB123456,6119876543, English, AVAILABLE,1500, 1, airline-01, user-account-member-01
-flight-crew-member-02,XYZ987654,6116789012,Spanish, AVAILABLE, 2000, 2, airline-02, user-account-member-02
-flight-crew-member-03,CD456789,6111234567, German, AVAILABLE, 2500, 3, airline-03, user-account-member-03
-flight-crew-member-04,EFG123098,6113456789, Spanish, AVAILABLE, 2000, 4, airline-04, user-account-member-04
-flight-crew-member-05,LM543210,6114567890, English, AVAILABLE, 1700, 5, airline-05, user-account-member-05
+key,employeeCode,phoneNumber,languageSkills,availabilityStatus,salary,yearsOfExperience,key:airline,key:user-account
+flight-crew-member-01,AB123456,6119876543,English,AVAILABLE,EUR 5000.00,1,airline-01,user-account-member-01
+flight-crew-member-02,XYZ987654,6116789012,Spanish,AVAILABLE,EUR 2000.00,2,airline-02,user-account-member-02
+flight-crew-member-03,CD456789,6111234567,German,AVAILABLE,EUR 3000.00,3,airline-03,user-account-member-03
+flight-crew-member-04,EFG123098,6113456789,Spanish,AVAILABLE,EUR 4000.00,4,airline-04,user-account-member-04
+flight-crew-member-05,LM543210,6114567890,English,AVAILABLE,EUR 6000.00,5,airline-05,user-account-member-05
