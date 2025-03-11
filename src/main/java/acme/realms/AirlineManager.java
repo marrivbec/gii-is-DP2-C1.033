@@ -1,7 +1,7 @@
 
 package acme.realms;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,9 @@ import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidEmployeeCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,11 +35,16 @@ public class AirlineManager extends AbstractRole {
 
 	@Mandatory
 	@Automapped
+	@ValidNumber(min = 0)
 	private Integer				yearsExp;
 
 	@Mandatory
-	private LocalDate			dateBirth;
+	@ValidMoment(past = true)
+	@Automapped
+	private Date				dateBirth;
 
 	@Optional
+	@ValidUrl
+	@Automapped
 	private String				urlImage;
 }
