@@ -19,7 +19,7 @@ import acme.constraints.ValidFlightNumber;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
-import acme.realms.AirlineManager;
+import acme.realms.employee.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 

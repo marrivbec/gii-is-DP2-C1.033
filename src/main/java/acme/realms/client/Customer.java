@@ -1,33 +1,26 @@
 
-package acme.realms;
-
-import java.util.Date;
+package acme.realms.client;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
-import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
-import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidEarnedPoints;
 import acme.constraints.ValidEmployeeCode;
 import acme.constraints.ValidLongText;
-import acme.entities.airline.Airline;
+import acme.constraints.ValidPhone;
+import acme.constraints.ValidShortText;
+import acme.datatypes.Phone;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class AssistanceAgent extends AbstractRole {
+public class Customer extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -35,42 +28,38 @@ public class AssistanceAgent extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
+	@Mandatory
 	@ValidEmployeeCode
 	@Column(unique = true)
-	@Mandatory
-	private String				employeeCode;
+	private String				identifier;
 
+	@Mandatory
+	@ValidPhone
+	@Automapped
+	private Phone				phoneNumber;
+
+	@Mandatory
 	@ValidLongText
 	@Automapped
-	@Mandatory
-	private String				spokenLanguages;
+	private String				physicalAddress;
 
 	@Mandatory
-	@ValidMoment(past = true)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				moment;
+	@ValidShortText
+	@Automapped
+	private String				city;
+
+	@Mandatory
+	@ValidShortText
+	@Automapped
+	private String				country;
 
 	@Optional
-	@ValidLongText
+	@ValidEarnedPoints
 	@Automapped
-	private String				briefBio;
-
-	@Optional
-	@ValidMoney
-	@Automapped
-	private Money				salary;
-
-	@Optional
-	@ValidUrl
-	@Automapped
-	private String				photo;
+	private Integer				earnedPoints;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne(optional = false)
-	@Mandatory
-	@Valid
-	private Airline				airline;
 }
