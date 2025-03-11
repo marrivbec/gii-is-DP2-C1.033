@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidIATA;
@@ -54,17 +55,17 @@ public class Airport extends AbstractEntity {
 	@Automapped
 	private String				country;
 
-	@Mandatory
+	@Optional
 	@ValidUrl
 	@Automapped
 	private String				website;
 
-	@Mandatory
+	@Optional
 	@ValidEmail
 	@Automapped
 	private String				emailAddress;
 
-	@Mandatory
+	@Optional
 	@ValidPhone
 	@Automapped
 	private Phone				contactPhoneNumber;
