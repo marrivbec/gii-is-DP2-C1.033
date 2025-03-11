@@ -1,33 +1,28 @@
 
-package acme.realms;
+package acme.realms.employee;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
-import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidEmployeeCode;
-import acme.constraints.ValidLongText;
-import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class AssistanceAgent extends AbstractRole {
+public class AirlineManager extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -35,42 +30,23 @@ public class AssistanceAgent extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
-	@ValidEmployeeCode
+	@Mandatory
 	@Column(unique = true)
-	@Mandatory
-	private String				employeeCode;
+	@ValidEmployeeCode
+	private String				numberID;
 
-	@ValidLongText
-	@Automapped
 	@Mandatory
-	private String				spokenLanguages;
+	@Automapped
+	@ValidNumber(min = 0)
+	private Integer				yearsExp;
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				moment;
+	@Temporal(TemporalType.DATE)
+	private Date				dateBirth;
 
 	@Optional
-	@ValidLongText
-	@Automapped
-	private String				briefBio;
-
-	@Mandatory
-	@ValidMoney
-	@Automapped
-	private Money				salary;
-
-	@Mandatory
 	@ValidUrl
 	@Automapped
-	private String				photo;
-
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
-
-	@ManyToOne
-	@Mandatory
-	@Valid
-	private Airline				airline;
+	private String				urlImage;
 }

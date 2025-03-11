@@ -19,7 +19,7 @@ import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
 import acme.entities.leg.LegRepository;
-import acme.realms.AirlineManager;
+import acme.realms.employee.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 
