@@ -55,6 +55,7 @@ public class Review extends AbstractEntity {
 	private double				score;
 
 	@Optional
+	// HINT: @Valid by default.
 	@Automapped
 	private boolean				recommended;
 

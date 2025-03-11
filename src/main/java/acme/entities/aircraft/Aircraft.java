@@ -10,7 +10,9 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidCargoWeight;
+import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
 import acme.entities.airline.Airline;
 import lombok.Getter;
@@ -33,10 +35,12 @@ public class Aircraft extends AbstractEntity {
 	private String				model;
 
 	@Mandatory
+	@ValidShortText
 	@Column(unique = true)
 	private String				registrationNumber;
 
 	@Mandatory
+	@ValidNumber(min = 0)
 	@Automapped
 	private int					capacity;
 
@@ -51,6 +55,7 @@ public class Aircraft extends AbstractEntity {
 	private AircraftStatus		status;
 
 	@Optional
+	@ValidLongText
 	@Automapped
 	private String				details;
 

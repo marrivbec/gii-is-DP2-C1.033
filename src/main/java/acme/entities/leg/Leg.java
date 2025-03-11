@@ -35,7 +35,6 @@ public class Leg extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Automapped
 	@Column(unique = true)
 	@ValidFlightNumber
 	private String				flightNumber;
