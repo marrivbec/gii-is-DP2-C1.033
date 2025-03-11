@@ -2,20 +2,24 @@
 package acme.entities.leg;
 
 import java.time.Duration;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidFlightNumber;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
+import acme.realms.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,18 +41,22 @@ public class Leg extends AbstractEntity {
 	private String				flightNumber;
 
 	@Mandatory
-	@Automapped
-	private LocalDateTime		scheduledDeparture;
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				scheduledDeparture;
 
 	@Mandatory
-	@Automapped
-	private LocalDateTime		scheduledArrival;
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				scheduledArrival;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private Duration			duration;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private Status				status;
 
@@ -57,23 +65,28 @@ public class Leg extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
 	private Airport				departureAirport;
 
 	@Mandatory
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
 	private Airport				arrivalAirport;
 
 	@Mandatory
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
 	private Aircraft			aircraft;
 
 	@Mandatory
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
 	private Flight				flight;
+
+	@Mandatory
+	@ManyToOne(optional = false)
+	@Valid
+	private AirlineManager		airlineManager;
 
 }
