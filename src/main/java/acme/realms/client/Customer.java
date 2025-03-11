@@ -13,7 +13,6 @@ import acme.constraints.ValidEmployeeCode;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidPhone;
 import acme.constraints.ValidShortText;
-import acme.datatypes.Phone;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,7 +35,7 @@ public class Customer extends AbstractRole {
 	@Mandatory
 	@ValidPhone
 	@Automapped
-	private Phone				phoneNumber;
+	private String				phoneNumber;
 
 	@Mandatory
 	@ValidLongText
