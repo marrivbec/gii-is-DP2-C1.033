@@ -17,6 +17,7 @@ import acme.constraints.ValidLongText;
 import acme.constraints.ValidPhone;
 import acme.datatypes.Phone;
 import acme.entities.airline.Airline;
+import acme.entities.flightAssignment.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -58,7 +59,7 @@ public class FlightCrewMember extends AbstractEntity {
 	private Money				salary;
 
 	@Optional
-	@ValidNumber(min = 0)
+	@ValidNumber(min = 0, max = 80)
 	@Automapped
 	private Integer				yearsOfExperience;
 
@@ -70,4 +71,10 @@ public class FlightCrewMember extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Airline				airline;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private FlightAssignment	flightAssignment;
+
 }
