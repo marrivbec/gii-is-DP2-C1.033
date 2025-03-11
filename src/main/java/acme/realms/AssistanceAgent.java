@@ -55,12 +55,12 @@ public class AssistanceAgent extends AbstractRole {
 	@Automapped
 	private String				briefBio;
 
-	@Mandatory
+	@Optional
 	@ValidMoney
 	@Automapped
 	private Money				salary;
 
-	@Mandatory
+	@Optional
 	@ValidUrl
 	@Automapped
 	private String				photo;
@@ -69,7 +69,7 @@ public class AssistanceAgent extends AbstractRole {
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Mandatory
 	@Valid
 	private Airline				airline;

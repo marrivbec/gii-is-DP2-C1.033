@@ -59,12 +59,12 @@ public class Claim extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Mandatory
 	@Valid
-	private AssistanceAgent		assistanceAgent;
+	private AssistanceAgent		assistanceAgents;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Mandatory
 	@Valid
 	private Leg					leg;
