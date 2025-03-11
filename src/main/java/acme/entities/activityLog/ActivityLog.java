@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -17,8 +16,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidSeverityLevel;
 import acme.constraints.ValidShortText;
-import acme.entities.flightCrewMembers.FlightCrewMember;
-import acme.entities.leg.Leg;
+import acme.realms.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -59,12 +57,8 @@ public class ActivityLog extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
 	private FlightCrewMember	flightCrewMember;
 
-	@Mandatory
-	@OneToOne
-	@Valid
-	private Leg					leg;
 }

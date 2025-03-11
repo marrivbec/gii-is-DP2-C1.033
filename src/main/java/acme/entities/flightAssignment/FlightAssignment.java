@@ -56,7 +56,7 @@ public class FlightAssignment extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@OneToOne
+	@OneToOne(optional = false)
 	@Valid
 	private Leg					leg;
 
