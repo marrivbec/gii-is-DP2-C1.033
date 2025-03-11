@@ -49,7 +49,7 @@ public class TrackingLog extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean				indicator;
+	private Indicator			indicator;
 
 	@ValidLongText
 	@Automapped
