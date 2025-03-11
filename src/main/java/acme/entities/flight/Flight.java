@@ -5,16 +5,21 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoney;
 import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
 import acme.entities.leg.LegRepository;
+import acme.realms.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,11 +41,13 @@ public class Flight extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
+	@Valid
 	private Boolean				selfTransfer;
 
 	@Mandatory
 	@Automapped
-	private Integer				cost;
+	@ValidMoney
+	private Money				cost;
 
 	@Optional
 	@Automapped
@@ -85,5 +92,11 @@ public class Flight extends AbstractEntity {
 	}
 
 	// Relationships ----------------------------------------------------------
+
+
+	@Mandatory
+	@ManyToOne(optional = false)
+	@Valid
+	private AirlineManager airlineManager;
 
 }
