@@ -38,7 +38,7 @@ public class Aircraft extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private Integer				capacity;
+	private int					capacity;
 
 	@Mandatory
 	@ValidCargoWeight
@@ -60,6 +60,6 @@ public class Aircraft extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Airline				airline;
 }
