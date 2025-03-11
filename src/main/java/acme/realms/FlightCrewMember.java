@@ -1,5 +1,5 @@
 
-package acme.entities.flightCrewMembers;
+package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -58,7 +58,7 @@ public class FlightCrewMember extends AbstractEntity {
 	private Money				salary;
 
 	@Optional
-	@ValidNumber(min = 0)
+	@ValidNumber(min = 0, max = 80)
 	@Automapped
 	private Integer				yearsOfExperience;
 
@@ -70,4 +70,5 @@ public class FlightCrewMember extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Airline				airline;
+
 }
