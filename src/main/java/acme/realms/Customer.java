@@ -3,7 +3,6 @@ package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Transient;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -59,12 +58,8 @@ public class Customer extends AbstractRole {
 	@Automapped
 	private Integer				earnedPoints;
 
-
 	// Derived attributes -----------------------------------------------------
-	@Transient
-	public String initials() {
-		return this.identifier.substring(0, this.identifier.length() - 6);
-	}
+
 	// Relationships ----------------------------------------------------------
 
 }

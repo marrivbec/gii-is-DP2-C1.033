@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>234</x>
+      <x>0</x>
       <y>360</y>
       <w>468</w>
       <h>135</h>
@@ -25,7 +25,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>756</x>
+      <x>522</x>
       <y>369</y>
       <w>378</w>
       <h>81</h>
@@ -41,7 +41,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>234</x>
+      <x>0</x>
       <y>216</y>
       <w>486</w>
       <h>117</h>
@@ -60,7 +60,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>747</x>
+      <x>513</x>
       <y>189</y>
       <w>432</w>
       <h>153</h>
@@ -74,9 +74,6 @@ Customer
 + city: String {Mandatory, ValidShortText, Automapped}
 + country: String {Mandatory, ValidShortText, Automapped}
 - earnedPoints: Integer {Optional, ValidEarnedPoints, Automapped}
---
-/+ intials: String
-bg=orange
 bg=pink
 </panel_attributes>
     <additional_attributes/>
@@ -84,7 +81,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>234</x>
+      <x>0</x>
       <y>513</y>
       <w>603</w>
       <h>135</h>
@@ -106,7 +103,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
+      <x>630</x>
       <y>513</y>
       <w>459</w>
       <h>108</h>
@@ -121,29 +118,5 @@ AirlineManager
 
 bg=pink</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>1206</x>
-      <y>396</y>
-      <w>288</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>+ initials = String that corresponds to the first two 
-or three letters of the identifier.
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1170</x>
-      <y>270</y>
-      <w>90</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>80.0;140.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
