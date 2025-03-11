@@ -21,7 +21,6 @@ import acme.constraints.ValidLastNibble;
 import acme.constraints.ValidLocatorCode;
 import acme.entities.flight.Flight;
 import acme.realms.Customer;
-import acme.realms.Passenger;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -61,6 +60,8 @@ public class Booking extends AbstractEntity {
 	@ValidLastNibble
 	private String				lastNibble;
 
+	// Attributes -------------------------------------------------------------
+
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
@@ -72,10 +73,5 @@ public class Booking extends AbstractEntity {
 	@ManyToOne
 	@Valid
 	private Flight				flight;
-
-	@Mandatory
-	@ManyToOne
-	@Valid
-	private Passenger			passenger;
 
 }
