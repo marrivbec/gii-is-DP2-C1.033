@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>360</y>
-      <w>468</w>
-      <h>135</h>
+      <x>138</x>
+      <y>324</y>
+      <w>312</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AssistanceAgent
@@ -25,10 +25,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>522</x>
-      <y>369</y>
-      <w>378</w>
-      <h>81</h>
+      <x>486</x>
+      <y>330</y>
+      <w>252</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Provider
@@ -41,10 +41,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>216</y>
-      <w>486</w>
-      <h>117</h>
+      <x>138</x>
+      <y>228</y>
+      <w>324</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Passenger
@@ -60,10 +60,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>513</x>
-      <y>189</y>
-      <w>432</w>
-      <h>153</h>
+      <x>480</x>
+      <y>210</y>
+      <w>288</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Customer
@@ -81,10 +81,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>513</y>
-      <w>603</w>
-      <h>135</h>
+      <x>138</x>
+      <y>426</y>
+      <w>402</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Technician
@@ -103,10 +103,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>513</y>
-      <w>459</w>
-      <h>108</h>
+      <x>558</x>
+      <y>426</y>
+      <w>306</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
@@ -115,6 +115,27 @@ AirlineManager
 + yearsExp: Integer {Mandatory, Automapped}
 + dateBirth: LocalDate {Mandatory}
 + urlImage: String {Optional}
+
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>786</x>
+      <y>228</y>
+      <w>318</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+FlightCrewMembers
+--
++ employeeCode: String {Mandatory, ValidShortText, Column(unique = true)}
++ phoneNumber: Phone {Mandatory, ValidPhone, Automapped}
++ languageSkills: OperationalScope {Mandatory, ValidLongText, Automapped}
++ availabilityStatus: AvailabilityStatus {Mandatory, Valid, Automapped}
++ salary: Money {Mandatory, Valid, Automapped}
++ yearsOfExperience: Integer {Mandaroy, Valid, Automapped}
 
 bg=pink</panel_attributes>
     <additional_attributes/>
