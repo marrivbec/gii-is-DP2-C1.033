@@ -22,7 +22,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
+      <x>480</x>
       <y>360</y>
       <w>120</w>
       <h>120</h>
@@ -107,25 +107,6 @@ AvailabilityStatus
 + AVAILABLE
 + ON_VACATION
 + ON_LEAVE
-
-
-bg=LIGHT_GRAY</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>480</x>
-      <y>360</y>
-      <w>132</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Enum&gt;&gt;
-AircraftStatus
---
-+ INFO
-+ WARNING
-+ IMPORTANT
 
 
 bg=LIGHT_GRAY</panel_attributes>

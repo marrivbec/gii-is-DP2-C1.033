@@ -51,7 +51,7 @@ public class Claim extends AbstractEntity {
 	private ClaimType			type;
 
 	@Mandatory
-	@Valid
+	// HINT: @Valid by default.
 	@Automapped
 	private Boolean				indicator;
 

@@ -41,25 +41,6 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>228</y>
-      <w>324</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Passenger
---
-+ fullName: String {Mandatory, ValidLongText), Automapped}
-+ email: String {Mandatory, ValidEmail, Automapped}
-+ passportNumber: String {Mandatory, ValidPassportNumber, Automapped}
-+ dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-- specialNeeds: String {Optional, ValidShortText, Automapped}
-bg=pink</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>480</x>
       <y>210</y>
       <w>288</w>
