@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>13</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>221</x>
-      <y>156</y>
-      <w>247</w>
-      <h>117</h>
+      <x>84</x>
+      <y>84</y>
+      <w>228</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidShortText
@@ -20,10 +20,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>221</x>
-      <y>299</y>
-      <w>247</w>
-      <h>117</h>
+      <x>84</x>
+      <y>216</y>
+      <w>228</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidLongText
@@ -36,15 +36,14 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>507</x>
-      <y>156</y>
-      <w>429</w>
-      <h>130</h>
+      <x>348</x>
+      <y>84</y>
+      <w>396</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidPromoCode
 --
-+ NotBlank
 + code must match pattern "^[A-Z]{4}-[0-9]{2}$"
 + The last two digits correspond to the current year
 bg=RED</panel_attributes>
@@ -53,10 +52,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1014</x>
-      <y>299</y>
-      <w>247</w>
-      <h>117</h>
+      <x>816</x>
+      <y>216</y>
+      <w>228</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidSeverityLevel
@@ -69,10 +68,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>507</x>
-      <y>299</y>
-      <w>481</w>
-      <h>143</h>
+      <x>348</x>
+      <y>216</y>
+      <w>444</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidPhone
@@ -86,10 +85,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>221</x>
-      <y>455</y>
-      <w>338</w>
-      <h>117</h>
+      <x>84</x>
+      <y>360</y>
+      <w>312</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidIATA
@@ -102,10 +101,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>962</x>
-      <y>156</y>
-      <w>364</w>
-      <h>130</h>
+      <x>768</x>
+      <y>84</y>
+      <w>336</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidPassportNumber
@@ -118,10 +117,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>988</x>
-      <y>455</y>
-      <w>364</w>
-      <h>130</h>
+      <x>792</x>
+      <y>360</y>
+      <w>336</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidLocatorCode
@@ -134,10 +133,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>221</x>
-      <y>598</y>
-      <w>364</w>
-      <h>130</h>
+      <x>84</x>
+      <y>492</y>
+      <w>336</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidLastNibble
@@ -150,10 +149,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>611</x>
-      <y>598</y>
-      <w>364</w>
-      <h>117</h>
+      <x>444</x>
+      <y>492</y>
+      <w>336</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidFlightNumber
@@ -166,10 +165,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>585</x>
-      <y>455</y>
-      <w>364</w>
-      <h>130</h>
+      <x>420</x>
+      <y>360</y>
+      <w>336</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidEmployeeCode
@@ -182,10 +181,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
-      <y>598</y>
-      <w>364</w>
-      <h>78</h>
+      <x>804</x>
+      <y>492</y>
+      <w>336</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidEarnedPoints
@@ -197,10 +196,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>221</x>
-      <y>754</y>
-      <w>364</w>
-      <h>91</h>
+      <x>84</x>
+      <y>636</y>
+      <w>336</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidCargoWeight

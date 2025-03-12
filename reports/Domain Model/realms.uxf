@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>6</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>324</y>
-      <w>312</w>
-      <h>90</h>
+      <x>192</x>
+      <y>368</y>
+      <w>416</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AssistanceAgent
@@ -25,10 +25,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>486</x>
-      <y>330</y>
-      <w>252</w>
-      <h>54</h>
+      <x>656</x>
+      <y>376</y>
+      <w>336</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Provider
@@ -41,10 +41,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>210</y>
-      <w>288</w>
-      <h>102</h>
+      <x>208</x>
+      <y>208</y>
+      <w>384</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Customer
@@ -62,10 +62,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>426</y>
-      <w>402</w>
-      <h>90</h>
+      <x>192</x>
+      <y>504</y>
+      <w>536</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Technician
@@ -84,10 +84,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>558</x>
-      <y>426</y>
-      <w>306</w>
-      <h>72</h>
+      <x>752</x>
+      <y>504</y>
+      <w>408</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
@@ -103,10 +103,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>786</x>
-      <y>228</y>
-      <w>318</w>
-      <h>96</h>
+      <x>624</x>
+      <y>216</y>
+      <w>424</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 FlightCrewMembers
