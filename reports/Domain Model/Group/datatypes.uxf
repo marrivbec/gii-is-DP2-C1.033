@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>504</y>
+      <x>324</x>
+      <y>456</y>
       <w>204</w>
       <h>144</h>
     </coordinates>
@@ -22,8 +22,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>360</y>
+      <x>300</x>
+      <y>312</y>
       <w>120</w>
       <h>120</h>
     </coordinates>
@@ -40,8 +40,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>504</y>
+      <x>540</x>
+      <y>456</y>
       <w>168</w>
       <h>132</h>
     </coordinates>
@@ -58,8 +58,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>504</y>
+      <x>720</x>
+      <y>456</y>
       <w>144</w>
       <h>132</h>
     </coordinates>
@@ -77,8 +77,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1056</x>
-      <y>504</y>
+      <x>876</x>
+      <y>456</y>
       <w>192</w>
       <h>144</h>
     </coordinates>
@@ -96,8 +96,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
-      <y>504</y>
+      <x>168</x>
+      <y>456</y>
       <w>144</w>
       <h>132</h>
     </coordinates>
@@ -115,8 +115,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>804</x>
-      <y>360</y>
+      <x>624</x>
+      <y>312</y>
       <w>168</w>
       <h>132</h>
     </coordinates>
@@ -133,8 +133,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
-      <y>360</y>
+      <x>444</x>
+      <y>312</y>
       <w>168</w>
       <h>120</h>
     </coordinates>
@@ -144,6 +144,23 @@ MaintenanceStatus
 + PENDING
 + IN_PROGRESS
 + COMPLETED
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>828</x>
+      <y>324</y>
+      <w>132</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Indicator
+--
++ PENDING
++ ACCEPTED
++ REJECTED
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>

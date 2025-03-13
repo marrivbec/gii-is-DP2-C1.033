@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1170</x>
-      <y>10</y>
+      <y>5</y>
       <w>260</w>
       <h>65</h>
     </coordinates>
@@ -25,7 +25,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1195</x>
-      <y>130</y>
+      <y>125</y>
       <w>300</w>
       <h>65</h>
     </coordinates>
@@ -45,7 +45,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1645</x>
-      <y>130</y>
+      <y>125</y>
       <w>290</w>
       <h>65</h>
     </coordinates>
@@ -55,7 +55,7 @@ TrackingLog
 + lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + step: String {Mandatory, ValidShortText, Automapped}
 + resolutionPercentage: Double {Mandatory, ValidNumber(min = 0), Automapped}
-+ indicator: Boolean {Mandatory, Valid, Automapped}
++ indicator: Indicator {Mandatory, Valid, Automapped}
 + resolution: String {Mandatory, ValidLongText, Automapped}
 
 bg=green</panel_attributes>
@@ -65,7 +65,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1055</x>
-      <y>460</y>
+      <y>455</y>
       <w>245</w>
       <h>100</h>
     </coordinates>
@@ -88,7 +88,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>265</x>
-      <y>600</y>
+      <y>595</y>
       <w>325</w>
       <h>65</h>
     </coordinates>
@@ -107,7 +107,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>285</x>
-      <y>335</y>
+      <y>330</y>
       <w>290</w>
       <h>65</h>
     </coordinates>
@@ -126,7 +126,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>85</x>
-      <y>480</y>
+      <y>475</y>
       <w>190</w>
       <h>170</h>
     </coordinates>
@@ -142,7 +142,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>85</x>
-      <y>365</y>
+      <y>360</y>
       <w>210</w>
       <h>125</h>
     </coordinates>
@@ -158,7 +158,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>430</x>
-      <y>395</y>
+      <y>390</y>
       <w>65</w>
       <h>90</h>
     </coordinates>
@@ -174,7 +174,7 @@ m2=1
     <id>UMLClass</id>
     <coordinates>
       <x>960</x>
-      <y>150</y>
+      <y>145</y>
       <w>75</w>
       <h>25</h>
     </coordinates>
@@ -187,7 +187,7 @@ bg=pink</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>545</x>
-      <y>155</y>
+      <y>150</y>
       <w>425</w>
       <h>80</h>
     </coordinates>
@@ -203,7 +203,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1030</x>
-      <y>155</y>
+      <y>150</y>
       <w>175</w>
       <h>30</h>
     </coordinates>
@@ -219,7 +219,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1490</x>
-      <y>155</y>
+      <y>150</y>
       <w>165</w>
       <h>30</h>
     </coordinates>
@@ -235,7 +235,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>850</x>
-      <y>5</y>
+      <y>0</y>
       <w>260</w>
       <h>75</h>
     </coordinates>
@@ -256,7 +256,7 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>680</x>
-      <y>190</y>
+      <y>185</y>
       <w>240</w>
       <h>85</h>
     </coordinates>
@@ -266,7 +266,7 @@ Aircraft
 + model: String {Mandatory, ValidShortText, Automapped}
 + registrationNumber: String {Mandatory, Column(unique=true), ValidShortText, Automapped}
 + capacity: Integer {Mandatory, Automapped}
-+ cargoWeight: Integer {Mandatory, ValidCargoWeight, Automapped}
++ cargoWeight: Double {Mandatory, ValidCargoWeight, Automapped}
 + status: boolean {Mandatory, Automapped}
 - details: String {Optional, ValidLongText, Automapped}
 bg=green
@@ -277,7 +277,7 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>1060</x>
-      <y>635</y>
+      <y>630</y>
       <w>295</w>
       <h>65</h>
     </coordinates>
@@ -297,7 +297,7 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>1070</x>
-      <y>270</y>
+      <y>265</y>
       <w>335</w>
       <h>65</h>
     </coordinates>
@@ -318,7 +318,7 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>1445</x>
-      <y>390</y>
+      <y>385</y>
       <w>370</w>
       <h>60</h>
     </coordinates>
@@ -336,7 +336,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>210</x>
-      <y>190</y>
+      <y>185</y>
       <w>340</w>
       <h>85</h>
     </coordinates>
@@ -359,7 +359,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>685</x>
-      <y>635</y>
+      <y>630</y>
       <w>210</w>
       <h>100</h>
     </coordinates>
@@ -383,7 +383,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>280</x>
-      <y>475</y>
+      <y>470</y>
       <w>320</w>
       <h>80</h>
     </coordinates>
@@ -393,7 +393,7 @@ Leg
 + flightNumber: String {Mandatory, ValidFlightNumber, Automapped, Column(unique = true)}
 + scheduledDeparture: LocalDateTime {Mandatory, Automapped}
 + scheduledArrival: LocalDateTime {Mandatory, Automapped}
-+ duration: Duration {Mandatory, Automapped}
++ duration: Integer {Mandatory, Automapped}
 + status: Status {Mandatory, Automapped}
 
 
@@ -406,7 +406,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>545</x>
-      <y>225</y>
+      <y>220</y>
       <w>145</w>
       <h>30</h>
     </coordinates>
@@ -422,7 +422,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>85</x>
-      <y>235</y>
+      <y>230</y>
       <w>135</w>
       <h>245</h>
     </coordinates>
@@ -438,7 +438,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>1630</x>
-      <y>660</y>
+      <y>655</y>
       <w>75</w>
       <h>25</h>
     </coordinates>
@@ -451,7 +451,7 @@ bg=pink</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1350</x>
-      <y>660</y>
+      <y>655</y>
       <w>290</w>
       <h>30</h>
     </coordinates>
@@ -467,7 +467,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>660</y>
+      <y>655</y>
       <w>180</w>
       <h>30</h>
     </coordinates>
@@ -483,7 +483,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>505</y>
+      <y>500</y>
       <w>470</w>
       <h>30</h>
     </coordinates>
@@ -499,7 +499,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>515</y>
+      <y>510</y>
       <w>470</w>
       <h>30</h>
     </coordinates>
@@ -515,7 +515,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>270</y>
+      <y>265</y>
       <w>260</w>
       <h>245</h>
     </coordinates>
@@ -531,7 +531,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>530</y>
+      <y>525</y>
       <w>115</w>
       <h>150</h>
     </coordinates>
@@ -547,7 +547,7 @@ m2=*
     <id>UMLNote</id>
     <coordinates>
       <x>835</x>
-      <y>785</y>
+      <y>780</y>
       <w>225</w>
       <h>115</h>
     </coordinates>
@@ -571,7 +571,7 @@ bg=orange</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>785</x>
-      <y>730</y>
+      <y>725</y>
       <w>80</w>
       <h>65</h>
     </coordinates>
@@ -582,7 +582,7 @@ bg=orange</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>455</y>
+      <y>450</y>
       <w>90</w>
       <h>45</h>
     </coordinates>
@@ -595,7 +595,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1485</x>
-      <y>720</y>
+      <y>715</y>
       <w>270</w>
       <h>65</h>
     </coordinates>
@@ -614,7 +614,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1305</x>
-      <y>740</y>
+      <y>735</y>
       <w>80</w>
       <h>25</h>
     </coordinates>
@@ -627,7 +627,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1195</x>
-      <y>695</y>
+      <y>690</y>
       <w>120</w>
       <h>75</h>
     </coordinates>
@@ -643,7 +643,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1380</x>
-      <y>745</y>
+      <y>740</y>
       <w>115</w>
       <h>30</h>
     </coordinates>
@@ -659,7 +659,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>175</y>
+      <y>170</y>
       <w>610</w>
       <h>345</h>
     </coordinates>
@@ -675,7 +675,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>670</x>
-      <y>730</y>
+      <y>725</y>
       <w>110</w>
       <h>60</h>
     </coordinates>
@@ -691,7 +691,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>600</x>
-      <y>760</y>
+      <y>755</y>
       <w>75</w>
       <h>25</h>
     </coordinates>
@@ -704,7 +704,7 @@ bg=pink</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>540</y>
+      <y>535</y>
       <w>75</w>
       <h>230</h>
     </coordinates>
@@ -720,7 +720,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>330</y>
+      <y>325</y>
       <w>45</w>
       <h>80</h>
     </coordinates>
@@ -736,7 +736,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>1200</x>
-      <y>400</y>
+      <y>395</y>
       <w>75</w>
       <h>25</h>
     </coordinates>
@@ -749,7 +749,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1595</x>
-      <y>295</y>
+      <y>290</y>
       <w>80</w>
       <h>25</h>
     </coordinates>
@@ -762,7 +762,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1630</x>
-      <y>315</y>
+      <y>310</y>
       <w>55</w>
       <h>85</h>
     </coordinates>
@@ -778,7 +778,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1400</x>
-      <y>295</y>
+      <y>290</y>
       <w>205</w>
       <h>30</h>
     </coordinates>
@@ -794,7 +794,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>915</x>
-      <y>235</y>
+      <y>230</y>
       <w>165</w>
       <h>90</h>
     </coordinates>

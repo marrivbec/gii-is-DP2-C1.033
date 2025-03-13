@@ -1,0 +1,11 @@
+key,name,picture,averageDwellTime,promotionCode,money
+service-01,"Premium Cleaning","https://example.com/images/cleaning.jpg",2.5,"CLEA-25",EUR 500.00
+service-02,"Express Delivery","https://example.com/images/delivery.jpg",1.0,"FAST-10",EUR 100.00
+service-03,"Home Repair","https://example.com/images/repair.jpg",3.0,"FRRT-25",EUR 100.00
+service-04,"Car Wash","https://example.com/images/car-wash.jpg",1.5,"CARS-25",EUR 75.00
+service-05,"Personal Training","https://example.com/images/training.jpg",2.0,"FIT-25",EUR 200.00
+service-06,"Pet Grooming","https://example.com/images/pet-grooming.jpg",1.2,"PETS-25",EUR 50.00
+service-07,"Gardening Service","https://example.com/images/gardening.jpg",3.5,"PLNT-25",EUR 150.00
+service-08,"Tech Support","https://example.com/images/tech-support.jpg",2.0,"TECH-25",EUR 120.00
+service-09,"House Cleaning","https://example.com/images/house-cleaning.jpg",2.8,"HOMC-25",EUR 90.00
+service-10,"Massage Therapy","https://example.com/images/massage.jpg",1.0,"RELX-25",EUR 80.00

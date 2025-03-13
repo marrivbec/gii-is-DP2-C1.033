@@ -1,0 +1,11 @@
+key,lastUpdateMoment,step,resolutionPercentage,indicator,resolution,key:claim
+log-01,2020/03/07 15:30,"Initial Review",10.0,PENDING,"Claim received and under initial review",claim-01
+log-02,2021/03/07 15:30,"Documents Requested",30.0,PENDING,"Passenger requested to submit additional documents",claim-01
+log-03,2022/03/07 15:30,"Documents Received",50.0,ACCEPTED,"Documents verified moving to next step",claim-01
+log-04,2023/03/07 15:30,"Inspection",70.0,PENDING,"Luggage inspection completed awaiting confirmation",claim-02
+log-05,2024/03/07 15:30,"Awaiting Airline Response",80.0,ACCEPTED,"Airline is reviewing the case",claim-02
+log-06,2020/03/07 15:30,"Resolution Proposed",90.0,REJECTED,"Compensation proposal sent to passenger",claim-03
+log-07,2021/03/07 15:30,"Finalized",100.0,ACCEPTED,"Claim successfully resolved",claim-03
+log-08,2023/03/07 15:30,"Pending Passenger Confirmation",85.0,PENDING,"Passenger needs to confirm resolution agreement",claim-04
+log-09,2022/03/07 15:30,"Airline Approved Compensation",95.0,ACCEPTED,"Compensation approved finalizing details",claim-05
+log-10,2024/03/07 15:30,"Closed",100.0,ACCEPTED,"Claim fully resolved and case closed",claim-06

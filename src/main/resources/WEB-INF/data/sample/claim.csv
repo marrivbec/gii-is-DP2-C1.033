@@ -1,0 +1,11 @@
+key,registrationMoment,passengerEmail,description,type,indicator,key:assistanceAgents,key:leg
+claim-01,2020/01/01 00:00,"john.doe@example.com","Lost luggage during the flight",FLIGHT_ISSUES,true,agent1,leg-01
+claim-02,2020/01/01 00:00,"jane.smith@example.com","Flight delay caused a missed connection",LUGGAGE_ISSUES,true,agent2,leg-02
+claim-03,2020/01/01 00:00,"michael.johnson@example.com","Seat was broken and uncomfortable",LUGGAGE_ISSUES,false,agent1,leg-03
+claim-04,2020/01/01 00:00,"alice.brown@example.com","Food poisoning from in-flight meal",LUGGAGE_ISSUES,true,agent1,leg-04
+claim-05,2020/01/01 00:00,"robert.wilson@example.com","Lost valuable items in checked baggage",SECURITY_INCIDENT,true,agent1,leg-05
+claim-06,2021/01/01 00:00,"emily.clark@example.com","Flight cancellation without proper notice",SECURITY_INCIDENT,false,agent2,leg-06
+claim-07,2022/01/01 00:00,"david.lee@example.com","Overbooked flight",OTHER_ISSUES,true,agent1,leg-07
+claim-08,2023/01/01 00:00,"sophia.martin@example.com","Inappropriate crew behavior",SECURITY_INCIDENT,false,agent2,leg-08
+claim-09,2024/01/01 00:00,"william.taylor@example.com","Damaged luggage upon arrival",OTHER_ISSUES,true,agent1,leg-09
+claim-10,2026/01/01 00:00,"olivia.anderson@example.com","Inadequate assistance for disabled passenger",FLIGHT_ISSUES,true,agent2,leg-10
