@@ -1,7 +1,6 @@
 
 package acme.entities.leg;
 
-import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,6 +14,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidFlightNumber;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
@@ -50,9 +50,9 @@ public class Leg extends AbstractEntity {
 	private Date				scheduledArrival;
 
 	@Mandatory
-	@Valid
+	@ValidNumber(min = 0)
 	@Automapped
-	private Duration			duration;
+	private Integer				duration;
 
 	@Mandatory
 	@Valid

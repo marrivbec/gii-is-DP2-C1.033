@@ -1,25 +1,25 @@
-key,maintenanceMoment,estimatedCost,nextInspectionDue,notes,status,key:aircraft
-maintenance-01,2015/01/01 00:00,1500 USD,2026/05/01 00:00,Routine maintenance,COMPLETED,aircraft-A
-maintenance-02,2015/01/01 00:00,1800 USD,2026/06/10 00:00,Engine check,COMPLETED,aircraft-B
-maintenance-03,2000/01/01 00:00,1500 USD,2026/05/01 00:00,Routine maintenance,COMPLETED,aircraft-C
-maintenance-04,2000/01/01 00:01,1500 USD,2026/05/01 00:00,Hydraulics review,IN_PROGRESS,aircraft-D
-maintenance-05,2022/07/29 23:59,1500 USD,2026/05/01 00:00,Software update,PENDING,aircraft-E
-maintenance-06,2022/07/30 00:00,1500 USD,2026/05/01 00:00,Routine maintenance,COMPLETED,aircraft-F
-maintenance-07,2015/01/01 00:00,0.00 USD,2026/05/01 00:00,Battery check,COMPLETED,aircraft-G
-maintenance-08,2015/01/01 00:00,0.01 USD,2026/05/01 00:00,Minor calibration,IN_PROGRESS,aircraft-H
-maintenance-09,2015/01/01 00:00,999999.99 USD,2026/05/01 00:00,Full system overhaul,COMPLETED,aircraft-I
-maintenance-10,2015/01/01 00:00,1000000.00 USD,2026/05/01 00:00,Engine replacement,PENDING,aircraft-J
-maintenance-11,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,General diagnostics,COMPLETED,aircraft-K
-maintenance-12,2015/01/01 00:00,1500.00 USD,2022/07/30 00:01,Propeller inspection,IN_PROGRESS,aircraft-L
-maintenance-13,2015/01/01 00:00,1500.00 USD,2199/12/31 23:59,Electronics check,COMPLETED,aircraft-M
-maintenance-14,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Avionics update,PENDING,aircraft-N
-maintenance-15,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,Short note,COMPLETED,aircraft-O
-maintenance-16,2015/01/01 00:00,1500.00 USD,2022/07/30 00:01,Detailed report required,IN_PROGRESS,aircraft-P
-maintenance-17,2015/01/01 00:00,1500.00 USD,2199/12/31 23:59,Extended safety assessment report pending,COMPLETED,aircraft-Q
-maintenance-18,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Thorough wear-and-tear analysis completed,COMPLETED,aircraft-R
-maintenance-19,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,機械検査,IN_PROGRESS,aircraft-S
-maintenance-20,2015/01/01 00:00,1500.00 USD,2022/07/30 00:01,فحص عام,COMPLETED,aircraft-T
-maintenance-21,2015/01/01 00:00,1500.00 USD,2199/12/31 23:59,全面检查,PENDING,aircraft-U
-maintenance-22,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Routine check with no issues detected,COMPLETED,aircraft-V
-maintenance-23,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,Extended flight range tested,IN_PROGRESS,aircraft-W
-maintenance-24,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Oxygen system verified,PENDING,aircraft-X
+key,maintenanceMoment,estimatedCost,nextInspectionDue,notes,status,key:technician
+maintenance-01,2015/01/01 00:00,1500 USD,2026/05/01 00:00,Routine maintenance,COMPLETED,technician-01
+maintenance-02,2015/01/01 00:00,1800 USD,2026/06/10 00:00,Engine check,COMPLETED,technician-01
+maintenance-03,2000/01/01 00:00,1500 USD,2026/05/01 00:00,Routine maintenance,COMPLETED,technician-02
+maintenance-04,2000/01/01 00:01,1500 USD,2026/05/01 00:00,Hydraulics review,IN_PROGRESS,technician-02
+maintenance-05,2022/07/29 23:59,1500 USD,2026/05/01 00:00,Software update,PENDING,technician-01
+maintenance-06,2022/07/30 00:00,1500 USD,2026/05/01 00:00,Routine maintenance,COMPLETED,technician-02
+maintenance-07,2015/01/01 00:00,0.00 USD,2026/05/01 00:00,Battery check,COMPLETED,technician-01
+maintenance-08,2015/01/01 00:00,0.01 USD,2026/05/01 00:00,Minor calibration,IN_PROGRESS,technician-01
+maintenance-09,2015/01/01 00:00,999999.99 USD,2026/05/01 00:00,Full system overhaul,COMPLETED,technician-02
+maintenance-10,2015/01/01 00:00,1000000.00 USD,2026/05/01 00:00,Engine replacement,PENDING,technician-02
+maintenance-11,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,General diagnostics,COMPLETED,technician-02
+maintenance-12,2015/01/01 00:00,1500.00 USD,2022/07/30 00:01,Propeller inspection,IN_PROGRESS,technician-01
+maintenance-13,2015/01/01 00:00,1500.00 USD,2199/12/31 23:59,Electronics check,COMPLETED,technician-01
+maintenance-14,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Avionics update,PENDING,technician-01
+maintenance-15,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,Short note,COMPLETED,technician-01
+maintenance-16,2015/01/01 00:00,1500.00 USD,2022/07/30 00:01,Detailed report required,IN_PROGRESS,technician-01
+maintenance-17,2015/01/01 00:00,1500.00 USD,2199/12/31 23:59,Extended safety assessment report pending,COMPLETED,technician-02
+maintenance-18,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Thorough wear-and-tear analysis completed,COMPLETED,technician-02
+maintenance-19,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,機械検査,IN_PROGRESS,technician-01
+maintenance-20,2015/01/01 00:00,1500.00 USD,2022/07/30 00:01,فحص عام,COMPLETED,technician-01
+maintenance-21,2015/01/01 00:00,1500.00 USD,2199/12/31 23:59,全面检查,PENDING,technician-02
+maintenance-22,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Routine check with no issues detected,COMPLETED,technician-02
+maintenance-23,2015/01/01 00:00,1500.00 USD,2022/07/30 00:00,Extended flight range tested,IN_PROGRESS,technician-01
+maintenance-24,2015/01/01 00:00,1500.00 USD,2200/01/01 00:00,Oxygen system verified,PENDING,technician-02

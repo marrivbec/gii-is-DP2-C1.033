@@ -1,10 +1,10 @@
-key,capacity,cargoWeight,details,active,model,registrationNumber,key:airline
+key,capacity,cargoWeight,details,status,model,registrationNumber,key:airline
 aircraft-01,50,23000.0,very good details,True,aircraft-pro,123456,airline-01
 aircraft-02,100,30000.0,very good details,False,airbus100,789012,airline-02
 aircraft-03,1,2000.0,,True,aircraft-pro,12,airline-01
 aircraft-04,24,2000.01,very good details,True,aircraft-pro,123,airline-01
 aircraft-05,50,49000.99,very good details,False,aircraft-pro,1234,airline-01
-aircraft-06,100,50000.0,,False,aircraft-pro,12345,airline-01
+aircraft-06,100,50000.0,Yes,False,aircraft-pro,12345,airline-01
 aircraft-07,50,20000.3,Recently updated specifications,True,aircraft-pro,654,airline-01
 aircraft-08,50,20000.3,Basic,False,aircraft-pro,65,airline-01
 aircraft-09,50,20000.3,Standard,False,aircraft-pro,6543,airline-01

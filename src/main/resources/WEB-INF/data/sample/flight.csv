@@ -1,28 +1,28 @@
-key,cost,description,self_transfer,tag,key:airline,key:manager
-flight-01,USD 75.50,Short domestic trip,False,Budget Saver,airline-A,manager-01
-flight-02,USD 1200.00,Luxury long-haul flight,False,Premium Travel,airline-B,manager-02
-flight-03,USD 0.01,,True,Last Minute Deal,airline-C,manager-03
-flight-04,USD 5.99,Special holiday offer,False,Promo Flight,airline-D,manager-04
-flight-05,USD 850.75,International connection,True,Flexible Booking,airline-E,manager-05
-flight-06,USD 999.99,Standard economy service,False,Saver Seat,airline-F,manager-06
-flight-07,USD 75.50,Experience first-class comfort with additional legroom and gourmet meals.,False,Budget Saver,airline-A,manager-07
-flight-08,USD 75.50,X,True,Budget Saver,airline-B,manager-01
-flight-09,USD 75.50,Exclusive business lounge access available.,False,Budget Saver,airline-C,manager-01
-flight-10,USD 75.50,全球旅行，舒适体验,False,Budget Saver,airline-D,manager-02
-flight-11,USD 75.50,رحلات مميزة حول العالم,True,Budget Saver,airline-E,manager-03
-flight-12,USD 75.50,เที่ยวบินสุดหรู,False,Budget Saver,airline-F,manager-04
-flight-13,USD 75.50,Early bird discount applied,False,Budget Saver,airline-G,manager-05
-flight-14,USD 75.50,"Travel now, pay later options available.",False,Budget Saver,airline-H,manager-06
-flight-15,USD 75.50,Flexible rescheduling with zero extra charge,True,Budget Saver,airline-I,manager-07
-flight-28,USD 75.50,,True,Budget Saver,airline-J,manager-08
-flight-16,USD 75.50,Short domestic trip,False,Comfort Class,airline-K,manager-09
-flight-17,USD 75.50,Luxury long-haul flight,False,X,airline-L,manager-10
-flight-18,USD 75.50,,False,Special Offer,airline-M,manager-11
-flight-19,USD 75.50,VIP experience included,False,Priority Boarding,airline-N,manager-12
-flight-20,USD 75.50,Eco-friendly travel choice,False,Green Flight,airline-O,manager-13
-flight-21,USD 75.50,Short domestic trip,False,เที่ยวบินราคาถูก,airline-P,manager-14
-flight-22,USD 75.50,Luxury long-haul flight,False,رحلات مميزة,airline-Q,manager-15
-flight-23,USD 75.50,,False,全球旅游,airline-R,manager-16
-flight-24,USD 75.50,Flexible cancellation policy,False,Business Elite,airline-S,manager-17
-flight-25,USD 75.50,,False,Exclusive Club,airline-T,manager-18
-flight-26,USD 75.50,Extra legroom seats available,False,Quick Getaway,airline-U,manager-19
+key,cost,description,self_transfer,tag,key:airline_manager
+flight-01,USD 75.50,Short domestic trip,False,Budget Saver,manager1
+flight-02,USD 1200.00,Luxury long-haul flight,False,Premium Travel,manager2
+flight-03,USD 0.01,,True,Last Minute Deal,manager1
+flight-04,USD 5.99,Special holiday offer,False,Promo Flight,manager2
+flight-05,USD 850.75,International connection,True,Flexible Booking,manager1
+flight-06,USD 999.99,Standard economy service,False,Saver Seat,manager2
+flight-07,USD 75.50,Experience first-class comfort with additional legroom and gourmet meals.,False,Budget Saver,manager1
+flight-08,USD 75.50,X,True,Budget Saver,manager1
+flight-09,USD 75.50,Exclusive business lounge access available.,False,Budget Saver,manager2
+flight-10,USD 75.50,全球旅行，舒适体验,False,Budget Saver,manager1
+flight-11,USD 75.50,رحلات مميزة حول العالم,True,Budget Saver,manager2
+flight-12,USD 75.50,เที่ยวบินสุดหรู,False,Budget Saver,manager2
+flight-13,USD 75.50,Early bird discount applied,False,Budget Saver,manager1
+flight-14,USD 75.50,Travel now pay later options available.,False,Budget Saver,manager1
+flight-15,USD 75.50,Flexible rescheduling with zero extra charge,True,Budget Saver,manager1
+flight-28,USD 75.50,,True,Budget Saver,manager2
+flight-16,USD 75.50,Short domestic trip,False,Comfort Class,manager2
+flight-17,USD 75.50,Luxury long-haul flight,False,X,manager2
+flight-18,USD 75.50,,False,Special Offer,manager1
+flight-19,USD 75.50,VIP experience included,False,Priority Boarding,manager1
+flight-20,USD 75.50,Eco-friendly travel choice,False,Green Flight,manager2
+flight-21,USD 75.50,Short domestic trip,False,เที่ยวบินราคาถูก,manager2
+flight-22,USD 75.50,Luxury long-haul flight,False,رحلات مميزة,manager2
+flight-23,USD 75.50,,False,全球旅游,manager1
+flight-24,USD 75.50,Flexible cancellation policy,False,Business Elite,manager1
+flight-25,USD 75.50,,False,Exclusive Club,manager1
+flight-26,USD 75.50,Extra legroom seats available,False,Quick Getaway,manager1
