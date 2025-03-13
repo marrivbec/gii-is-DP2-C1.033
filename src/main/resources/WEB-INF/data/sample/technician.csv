@@ -1,0 +1,4 @@
+key,licenseNumber,phoneNumber,specialisation,passedAnnualHealthTest,experienceYears,certifications
+technician-01,AM123456,+34111222333,mechanics,True,4,,
+technician-02,AC223456,+34111222444,mechanics,True,23,,
+technician-03,CO222222,+34111222333,mechanics,False,0,,
