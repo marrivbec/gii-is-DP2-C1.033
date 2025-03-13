@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>854</x>
+      <y>469</y>
+      <w>294</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight
+--
++ tag: String {Mandatory, ValidShortText,Automapped}
++ selfTransfer: Boolean {Mandatory, Automapped}
++ cost: Integer {Mandatory, Automapped}
++ description: String {Optional, Automapped, ValidLongText}
+--
+/+ scheduledDeparture: LocalDateTime
+/+ scheduledArrival: LocalDateTime
+/+ originCity: String
+/+ destinationCity: String
+/+ layovers: Integer
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>217</x>
+      <y>280</y>
+      <w>448</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Leg
+--
++ flightNumber: String {Mandatory, ValidFlightNumber, Automapped, Column(unique = true)}
++ scheduledDeparture: LocalDateTime {Mandatory, Automapped}
++ scheduledArrival: LocalDateTime {Mandatory, Automapped}
++ duration: Integer {Mandatory, Automapped}
++ status: Status {Mandatory, Automapped}
+
+
+
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>644</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AirlineManager
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>322</y>
+      <w>210</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>represents v
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>280.0;300.0;190.0;300.0;190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>791</x>
+      <y>602</y>
+      <w>224</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>creates &gt;
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;90.0;300.0;90.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>336</y>
+      <w>119</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>creates ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>90.0;440.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>938</x>
+      <y>308</y>
+      <w>112</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airport
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>938</x>
+      <y>259</y>
+      <w>112</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airport
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>273</y>
+      <w>294</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lands at &gt;
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>301</y>
+      <w>294</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>departs from &gt;
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>602</y>
+      <w>112</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>140.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1162</x>
+      <y>679</y>
+      <w>315</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>+ scheduledDeparture = first scheduled departure moment 
+among the legs of the flight.
+
++ scheduledArrival = last scheduled arrival moment 
+among the legs of the flight.
+
++ originCity = city of the departure airport of
+the first leg of the flight.
+
++ destinationCity = city of the arrival airport of the last leg of the flight.
+
++ layovers = number of layovers based on the 
+intermediate stops between the first and last leg of the flight.
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>133</y>
+      <w>84</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>assigned to ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>413</x>
+      <y>98</y>
+      <w>112</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Aircraft
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
