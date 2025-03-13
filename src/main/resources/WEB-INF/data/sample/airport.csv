@@ -1,0 +1,22 @@
+key,name,IATACode,operationalScope,city,country,website,emailAddress,contactPhoneNumber
+airport-00,Sky Harbor International,SHA,INTERNATIONAL,Phoenix,USA,http://skyharbor.com,contact@skyharbor.com,+16025551234
+airport-01,J,JFK,INTERNATIONAL,New York,USA,http://jfkairport.com,info@jfkairport.com,+17185551234
+airport-02,Jo,LAX,INTERNATIONAL,Los Angeles,USA,http://lax.com,support@lax.com,+13235551234
+airport-03,John F. Kennedy International Airport,MIA,INTERNATIONAL,Miami,USA,http://miaairport.com,contact@miaairport.com,+13055551234
+airport-04,Los Angeles International,SFO,INTERNATIONAL,San Francisco,USA,http://sfo.com,support@sfo.com,+14155551234
+airport-05,机场名称,PEK,INTERNATIONAL,Beijing,China,http://pekairport.com,info@pekairport.com,+86105551234
+airport-06,مطار,DXB,INTERNATIONAL,Dubai,UAE,http://dxbairport.com,contact@dxbairport.com,+97145551234
+airport-07,ロサンゼルス国際空港,HND,INTERNATIONAL,Tokyo,Japan,http://hndairport.com,info@hndairport.com,+81355551234
+airport-08,Heathrow Airport,LHR,INTERNATIONAL,London,UK,http://heathrow.com,support@heathrow.com,+442075551234
+airport-09,Changi Airport,SIN,INTERNATIONAL,Singapore,Singapore,http://changiairport.com,info@changiairport.com,+6565551234
+airport-10,Sydney Airport,SYD,INTERNATIONAL,Sydney,Australia,http://sydneyairport.com,support@sydneyairport.com,+6125551234
+airport-11,Toronto Pearson,YYZ,INTERNATIONAL,Toronto,Canada,http://torontoairport.com,contact@torontoairport.com,+14165551234
+airport-12,Munich Airport,MUC,INTERNATIONAL,Munich,Germany,http://munich-airport.com,info@munich-airport.com,+49895551234
+airport-13,Amsterdam Schiphol,AMS,INTERNATIONAL,Amsterdam,Netherlands,http://schiphol.com,support@schiphol.com,+31205551234
+airport-14,Hong Kong International,HKG,INTERNATIONAL,Hong Kong,China,http://hkgairport.com,info@hkgairport.com,+8525551234
+airport-15,Frankfurt Airport,FRA,INTERNATIONAL,Frankfurt,Germany,http://frankfurt-airport.com,contact@frankfurt-airport.com,+49695551234
+airport-16,Madrid Barajas,MAD,INTERNATIONAL,Madrid,Spain,http://madrid-airport.com,info@madrid-airport.com,+34915551234
+airport-17,Barcelona El Prat,BCN,DOMESTIC,Barcelona,Spain,http://bcn-airport.com,support@bcn-airport.com,+34935551234
+airport-18,Shanghai Pudong,PVG,REGIONAL,Shanghai,China,http://pvg-airport.com,info@pvg-airport.com,+86215551234
+airport-19,Bangkok Suvarnabhumi,BKK,INTERNATIONAL,Bangkok,Thailand,http://bkk-airport.com,contact@bkk-airport.com,+6625551234
+airport-20,Delhi Indira Gandhi,DEL,INTERNATIONAL,Delhi,India,http://delhi-airport.com,info@delhi-airport.com,+91115551234

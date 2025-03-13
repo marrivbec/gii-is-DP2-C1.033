@@ -1,0 +1,16 @@
+key,duration,flight_number,scheduled_arrival,scheduled_departure,status,key:aircraft,key:destination,key:origin,key:flight,key:manager
+leg-01,2,XYZ9876,2027/05/15 18:30,2027/05/15 16:30,ON_TIME,aircraft-A,airport-X,airport-Y,flight-101,manager-A
+leg-02,1,DEF6543,2015/03/10 14:00,2015/03/10 13:00,CANCELLED,aircraft-B,airport-Y,airport-X,flight-102,manager-B
+leg-03,1,XYZ9877,2001/02/15 06:00,2001/02/15 05:00,CANCELLED,aircraft-C,airport-X,airport-Y,flight-103,manager-C
+leg-04,1,XYZ9878,2002/11/01 12:01,2002/11/01 11:01,DELAYED,aircraft-D,airport-Y,airport-X,flight-104,manager-D
+leg-05,1,XYZ9879,2005/07/20 23:45,2005/07/20 22:45,DELAYED,aircraft-E,airport-X,airport-Y,flight-105,manager-E
+leg-06,3,XYZ9880,2025/08/19 21:59,2025/08/19 18:59,LANDED,aircraft-F,airport-Y,airport-X,flight-106,manager-F
+leg-07,4,ABC1122,2026/10/10 14:00,2026/10/10 10:00,ON_TIME,aircraft-G,airport-Z,airport-W,flight-107,manager-G
+leg-08,2,DEF3344,2023/06/21 11:30,2023/06/21 09:30,DELAYED,aircraft-H,airport-W,airport-Z,flight-108,manager-H
+leg-09,5,XYZ5555,2022/04/05 16:45,2022/04/05 11:45,CANCELLED,aircraft-I,airport-X,airport-Y,flight-109,manager-I
+leg-10,3,PQR6677,2019/12/25 23:59,2019/12/25 20:59,ON_TIME,aircraft-J,airport-Y,airport-X,flight-110,manager-J
+leg-11,6,LMN7788,2028/01/15 08:00,2028/01/15 02:00,LANDED,aircraft-K,airport-Z,airport-W,flight-111,manager-K
+leg-12,1,JKL8899,2015/07/07 05:30,2015/07/07 04:30,DELAYED,aircraft-L,airport-W,airport-Z,flight-112,manager-L
+leg-13,2,QWE9900,2020/11/30 10:15,2020/11/30 08:15,CANCELLED,aircraft-M,airport-X,airport-Y,flight-113,manager-M
+leg-14,4,ASD1234,2027/02/28 15:45,2027/02/28 11:45,ON_TIME,aircraft-N,airport-Y,airport-X,flight-114,manager-N
+leg-15,3,ZXC5678,2029/06/18 19:00,2029/06/18 16:00,LANDED,aircraft-O,airport-Z,airport-W,flight-115,manager-O
