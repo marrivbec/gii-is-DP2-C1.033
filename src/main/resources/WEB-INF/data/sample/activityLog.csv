@@ -1,0 +1,7 @@
+key,registrationMoment,typeOfIncident,description,severityLevel,key:flightCrewMember
+activity-log-01,2012/07/02 00:00,Route and Navigation Issues,Routine assignment,2,flight-crew-member-01
+activity-log-02,2012/07/02 00:00,Crash,Pending review,5,flight-crew-member-02
+activity-log-03,2012/07/02 00:00,Weather,Cancelled due to weather,8,flight-crew-member-03
+activity-log-04,2012/07/02 00:00,Mechanical and Technical Issues,Engine Failure,3,flight-crew-member-04
+activity-log-05,2012/07/02 00:00,Passenger,Unruly Passenger,1,flight-crew-member-05
+

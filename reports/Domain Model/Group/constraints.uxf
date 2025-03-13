@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>84</x>
+      <x>72</x>
       <y>84</y>
       <w>228</w>
       <h>108</h>
@@ -20,7 +20,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>84</x>
+      <x>72</x>
       <y>216</y>
       <w>228</w>
       <h>108</h>
@@ -36,7 +36,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
+      <x>336</x>
       <y>84</y>
       <w>396</w>
       <h>120</h>
@@ -52,7 +52,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>816</x>
+      <x>804</x>
       <y>216</y>
       <w>228</w>
       <h>108</h>
@@ -68,7 +68,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
+      <x>336</x>
       <y>216</y>
       <w>444</w>
       <h>132</h>
@@ -85,7 +85,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>84</x>
+      <x>72</x>
       <y>360</y>
       <w>312</w>
       <h>108</h>
@@ -101,7 +101,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>768</x>
+      <x>756</x>
       <y>84</y>
       <w>336</w>
       <h>120</h>
@@ -117,7 +117,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
+      <x>780</x>
       <y>360</y>
       <w>336</w>
       <h>120</h>
@@ -133,7 +133,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>84</x>
+      <x>72</x>
       <y>492</y>
       <w>336</w>
       <h>120</h>
@@ -149,7 +149,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>444</x>
+      <x>432</x>
       <y>492</y>
       <w>336</w>
       <h>108</h>
@@ -165,7 +165,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
+      <x>408</x>
       <y>360</y>
       <w>336</w>
       <h>120</h>
@@ -181,7 +181,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>804</x>
+      <x>792</x>
       <y>492</y>
       <w>336</w>
       <h>72</h>
@@ -196,7 +196,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>84</x>
+      <x>72</x>
       <y>636</y>
       <w>336</w>
       <h>84</h>

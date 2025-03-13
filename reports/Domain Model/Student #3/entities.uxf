@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>260</y>
+      <w>180</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+FlightCrewMembers
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>80</y>
+      <w>420</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>is represent by  v
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;220.0;270.0;220.0;270.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>20</y>
+      <w>580</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+FlightAssigment
+--
++ duty: DutyType {Mandatory, Valid, Automapped}
++ moment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.DATE)}
++ currentStatus: Status {Mandatory, Valid, Automapped}
++ remarks: String {Optional, ValidLongText, Automapped}
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>140</y>
+      <w>130</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>is assigned to v
+lt=&lt;-x
+m1=1
+m2=1
+
+</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>300</y>
+      <w>640</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Leg
+
+
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>320</y>
+      <w>380</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>logged by ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0;130.0;310.0;360.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>560</y>
+      <w>650</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+ActivityLog
+--
++ registrationMoment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.DATE))}
++ typeOfIncident: String {Mandatory, ValidShortText, Automapped}
++ description: String {Mandatory, ValidLongText, Automapped}
++ severityLevel: Integer {Mandatory, ValidSeverityLevel, Automapped}
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
