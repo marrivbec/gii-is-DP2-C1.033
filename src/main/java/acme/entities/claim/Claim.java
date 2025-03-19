@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -14,8 +15,11 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
+import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidLongText;
 import acme.entities.leg.Leg;
+import acme.entities.trackingLog.Indicator;
+import acme.entities.trackingLog.TrackingLog;
 import acme.realms.employee.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
@@ -46,26 +50,45 @@ public class Claim extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@Automapped
 	@Valid
-	private ClaimType			type;
-
-	@Mandatory
-	// HINT: @Valid by default.
 	@Automapped
-	private boolean				indicator;
+	private ClaimType			type;
 
 	// Derived attributes -----------------------------------------------------
 
+
+	@Transient
+	public Boolean indicator() {
+		Boolean result;
+		ClaimRepository repository;
+		TrackingLog trackingLog;
+
+		repository = SpringHelper.getBean(ClaimRepository.class);
+		trackingLog = repository.findLastTrackingLogByClaimId(this.getId()).orElse(null);
+		if (trackingLog == null)
+			result = null;
+		else {
+			Indicator indicator = trackingLog.getIndicator();
+			if (indicator.equals(Indicator.ACCEPTED))
+				result = true;
+			else if (indicator.equals(Indicator.REJECTED))
+				result = false;
+			else
+				result = null;
+		}
+		return result;
+	}
+
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne(optional = false)
-	@Mandatory
-	@Valid
-	private AssistanceAgent		assistanceAgents;
 
-	@ManyToOne(optional = false)
 	@Mandatory
 	@Valid
-	private Leg					leg;
+	@ManyToOne(optional = false)
+	private AssistanceAgent	assistanceAgents;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg				leg;
 }

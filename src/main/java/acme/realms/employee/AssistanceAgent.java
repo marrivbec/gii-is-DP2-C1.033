@@ -35,14 +35,14 @@ public class AssistanceAgent extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
+	@Mandatory
 	@ValidEmployeeCode
 	@Column(unique = true)
-	@Mandatory
 	private String				employeeCode;
 
+	@Mandatory
 	@ValidLongText
 	@Automapped
-	@Mandatory
 	private String				spokenLanguages;
 
 	@Mandatory
@@ -69,8 +69,8 @@ public class AssistanceAgent extends AbstractRole {
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne(optional = false)
 	@Mandatory
 	@Valid
+	@ManyToOne(optional = false)
 	private Airline				airline;
 }

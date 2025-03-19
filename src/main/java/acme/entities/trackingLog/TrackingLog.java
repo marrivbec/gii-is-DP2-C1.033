@@ -51,18 +51,18 @@ public class TrackingLog extends AbstractEntity {
 	@Automapped
 	private Indicator			indicator;
 
+	@Mandatory
 	@ValidLongText
 	@Automapped
-	@Mandatory
 	private String				resolution;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne(optional = false)
 	@Mandatory
 	@Valid
+	@ManyToOne(optional = false)
 	private Claim				claim;
 
 }
