@@ -12,6 +12,7 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidLongText;
@@ -51,7 +52,7 @@ public class TrackingLog extends AbstractEntity {
 	@Automapped
 	private Indicator			indicator;
 
-	@Mandatory
+	@Optional
 	@ValidLongText
 	@Automapped
 	private String				resolution;
