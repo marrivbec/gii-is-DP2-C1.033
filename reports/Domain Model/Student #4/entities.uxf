@@ -16,7 +16,7 @@ TrackingLog
 + step: String {Mandatory, ValidShortText, Automapped}
 + resolutionPercentage: Double {Mandatory, ValidNumber(min = 0), Automapped}
 + indicator: Indicator {Mandatory, Valid, Automapped}
-+ resolution: String {Mandatory, ValidLongText, Automapped}
++ resolution: String {Optional, ValidLongText, Automapped}
 
 bg=green</panel_attributes>
     <additional_attributes/>

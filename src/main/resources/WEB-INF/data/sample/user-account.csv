@@ -21,3 +21,5 @@ user-account-customer-03,true,"UserIdentity{name: 'Ángel Manuel', surname: 'Fer
 user-account-technician-01,true,"UserIdentity{name: 'Carlos Cerda', surname: 'Gala', email: 'tata@acme.com'}",technician1,technician1
 user-account-technician-02,true,"UserIdentity{name: 'Pepe Carlos', surname: 'Garcia', email: 'gaga@acme.com'}",technician2,technician2
 user-account-technician-03,true,"UserIdentity{name: 'Tata', surname: 'Martn', email: 'tama@acme.com'}",technician3,technician3
+user-account-administrator-02,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator1,administrator1
+user-account-administrator-03,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator2,administrator2
