@@ -20,7 +20,6 @@
 	<acme:list-column code="administrator.airport.list.label.city" path="city" width="25%"/>
 	<acme:list-column code="administrator.airport.list.label.emailAddress" path="emailAddress" width="25%"/>
 	<acme:list-column code="administrator.airport.list.label.contactPhoneNumber" path="contactPhoneNumber" width="25%"/>
-	
 	<acme:list-payload path="payload"/>
 </acme:list>
 

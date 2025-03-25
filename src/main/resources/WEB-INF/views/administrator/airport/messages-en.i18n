@@ -12,6 +12,14 @@ administrator.airport.form.title = airport form
 administrator.airport.list.title = Listing of airports
 
 administrator.airport.form.label.name = Name:
+administrator.airport.form.label.IATACode = IATACode:
+administrator.airport.form.label.operationalScope = Operational scope:
+administrator.airport.form.label.city = City:
+administrator.airport.form.label.country = Country:
+administrator.airport.form.label.website = Website:
+administrator.airport.form.label.emailAddress = Email:
+administrator.airport.form.label.contactPhoneNumber = Phone number:
+
 
 administrator.airport.form.button.create = Create
 administrator.airport.form.button.update = Update
