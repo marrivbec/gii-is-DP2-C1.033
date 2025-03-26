@@ -156,4 +156,20 @@ m2=*
 </panel_attributes>
     <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
   </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
+      <y>174</y>
+      <w>180</w>
+      <h>222</h>
+    </coordinates>
+    <panel_attributes>is owned ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>210.0;10.0;210.0;340.0;10.0;340.0</additional_attributes>
+  </element>
 </diagram>
