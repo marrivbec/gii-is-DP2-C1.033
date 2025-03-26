@@ -280,7 +280,7 @@ bg=green
       <x>1272</x>
       <y>756</y>
       <w>354</w>
-      <h>78</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Booking
@@ -288,8 +288,10 @@ Booking
 + locatorCode: String {Mandatory, Colum(unique=true), ValidLocatorCode}
 + purchaseMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
-+ price: Money {Mandatory, ValidMoney, Automapped}
 - lastCardNibble: String {Optional, ValidLastNibble, Automapped}
++ published: booleean {Mandatory, Automapped]
+--
+/+ price: Money
 bg=green
 </panel_attributes>
     <additional_attributes/>
@@ -595,10 +597,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1782</x>
-      <y>858</y>
+      <x>1794</x>
+      <y>894</y>
       <w>324</w>
-      <h>78</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Passenger
@@ -608,6 +610,7 @@ Passenger
 + passportNumber: String {Mandatory, ValidPassportNumber, Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 - specialNeeds: String {Optional, ValidShortText, Automapped}
++ published: booleean {Mandatory, Automapped]
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -615,7 +618,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1566</x>
-      <y>882</y>
+      <y>918</y>
       <w>96</w>
       <h>30</h>
     </coordinates>
@@ -627,34 +630,34 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1434</x>
-      <y>828</y>
-      <w>144</w>
-      <h>90</h>
+      <x>1422</x>
+      <y>834</y>
+      <w>156</w>
+      <h>120</h>
     </coordinates>
-    <panel_attributes>&lt; involved in
+    <panel_attributes>&lt; belongs to
 lt=&lt;-x
 m1=1
 m2=*
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0;220.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;240.0;160.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1656</x>
-      <y>888</y>
-      <w>138</w>
+      <y>924</y>
+      <w>150</w>
       <h>36</h>
     </coordinates>
-    <panel_attributes>Involves &gt;
+    <panel_attributes>refers to &gt;
 lt=&lt;-x
 m1=1
 m2=*
 
 </panel_attributes>
-    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -829,5 +832,21 @@ bg=orange</panel_attributes>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>230.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1998</x>
+      <y>810</y>
+      <w>60</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>is owned ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
   </element>
 </diagram>

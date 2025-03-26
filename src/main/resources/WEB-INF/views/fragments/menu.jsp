@@ -45,8 +45,13 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
+            <acme:menu-suboption code="master.menu.customer.booking" action="/customer/booking/list" />
+            <acme:menu-separator />
+            <acme:menu-suboption code="master.menu.customer.passenger" action="/customer/passenger/list" />
+        </acme:menu-option>
 	</acme:menu-left>
-
+		
 	<acme:menu-right>		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>
