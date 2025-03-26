@@ -288,8 +288,9 @@ Booking
 + locatorCode: String {Mandatory, Colum(unique=true), ValidLocatorCode}
 + purchaseMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
-+ price: Money {Mandatory, ValidMoney, Automapped}
 - lastCardNibble: String {Optional, ValidLastNibble, Automapped}
+--
+/+ price: Money
 bg=green
 </panel_attributes>
     <additional_attributes/>
@@ -632,7 +633,7 @@ bg=green</panel_attributes>
       <w>144</w>
       <h>90</h>
     </coordinates>
-    <panel_attributes>&lt; involved in
+    <panel_attributes>&lt; belongs to
 lt=&lt;-x
 m1=1
 m2=*
@@ -648,7 +649,7 @@ m2=*
       <w>138</w>
       <h>36</h>
     </coordinates>
-    <panel_attributes>Involves &gt;
+    <panel_attributes>refers to &gt;
 lt=&lt;-x
 m1=1
 m2=*
