@@ -33,6 +33,13 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.assistanceAgent ##########################################################
+
+master.menu.assistanceAgent = Assistance Agent
+master.menu.assistanceAgent.list-claims = List completed claims
+master.menu.assistanceAgent.list-claims-pending = List pending claims
+master.menu.assistanceAgent.list-trackingLog = List Tracking logs
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

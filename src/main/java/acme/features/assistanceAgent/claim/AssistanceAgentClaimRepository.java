@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.airport;
+package acme.features.assistanceAgent.claim;
 
 import java.util.Collection;
 
@@ -18,15 +18,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.entities.airport.Airport;
+import acme.entities.claim.Claim;
 
 @Repository
-public interface AdministratorAirportRepository extends AbstractRepository {
+public interface AssistanceAgentClaimRepository extends AbstractRepository {
 
-	@Query("select a from Airport a where a.id = :id")
-	Airport findAirportById(int id);
+	@Query("SELECT DISTINCT c FROM Claim c JOIN TrackingLog t ON t.claim.id = c.id WHERE (t.indicator != 'PENDING' AND c.assistanceAgents.id = :agentId)")
+	Collection<Claim> findAllCompletedClaimsByAgentId(int agentId);
 
-	@Query("select a from Airport a")
-	Collection<Airport> findAllAirports();
+	@Query("SELECT c FROM Claim c WHERE c.id = :id")
+	Claim findClaimById(int id);
 
+	@Query("SELECT DISTINCT c FROM Claim c JOIN TrackingLog t ON t.claim.id = c.id WHERE (t.indicator = 'PENDING' AND c.assistanceAgents.id = :agentId)")
+	Collection<Claim> findAllPendingClaimsByAgentId(int agentId);
 }

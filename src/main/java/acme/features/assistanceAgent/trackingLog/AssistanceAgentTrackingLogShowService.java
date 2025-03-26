@@ -1,5 +1,5 @@
 /*
- * AssistanceAgentTrackingLogListService.java
+ * AssistanceAgentTrackingLogShowService.java
  *
  * Copyright (C) 2012-2025 Rafael Corchuelo.
  *
@@ -10,25 +10,23 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.airport;
-
-import java.util.Collection;
+package acme.features.assistanceAgent.trackingLog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
-import acme.client.components.principals.Administrator;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.airport.Airport;
+import acme.entities.trackingLog.TrackingLog;
+import acme.realms.employee.AssistanceAgent;
 
 @GuiService
-public class AdministratorAirportListService extends AbstractGuiService<Administrator, Airport> {
+public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<AssistanceAgent, TrackingLog> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AdministratorAirportRepository repository;
+	private AssistanceAgentTrackingLogRepository repository;
 
 	// AbstractGuiService interface -------------------------------------------
 
@@ -40,18 +38,20 @@ public class AdministratorAirportListService extends AbstractGuiService<Administ
 
 	@Override
 	public void load() {
-		Collection<Airport> airports;
+		TrackingLog trackingLog;
+		int id;
 
-		airports = this.repository.findAllAirports();
+		id = super.getRequest().getData("id", int.class);
+		trackingLog = this.repository.findTrackingLogById(id);
 
-		super.getBuffer().addData(airports);
+		super.getBuffer().addData(trackingLog);
 	}
 
 	@Override
-	public void unbind(final Airport airport) {
+	public void unbind(final TrackingLog trackingLog) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(airport, "name", "city", "emailAddress", "contactPhoneNumber");
+		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "claim");
 
 		super.getResponse().addData(dataset);
 	}
