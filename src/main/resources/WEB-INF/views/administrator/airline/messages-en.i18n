@@ -1,0 +1,30 @@
+# messages-en.i18n
+
+administrator.airline.form.title = Company Details
+administrator.airline.list.title = Company List
+
+administrator.airline.form.label.name = Name:
+administrator.airline.form.label.iata = IATA Code:
+administrator.airline.form.label.web = Website:
+administrator.airline.form.label.type = Airline Type:
+administrator.airline.form.label.dateFundation = Date of Foundation:
+administrator.airline.form.label.mail = Email: (Optional)
+administrator.airline.form.label.phone = Phone: (Optional)
+
+administrator.airline.form.button.create = Create
+administrator.airline.form.button.update = Update
+administrator.airline.form.button.delete = Delete
+
+administrator.airline.list.label.name = Name:
+administrator.airline.list.label.iata = IATA Code:
+administrator.airline.list.label.web = Website:
+administrator.airline.list.label.type = Airline Type:
+administrator.airline.list.label.dateFundation = Date of Foundation:
+administrator.airline.list.label.mail = Email: (Optional)
+administrator.airline.list.label.phone = Phone: (Optional)
+
+administrator.airline.list.button.create = Create
+
+administrator.airline.delete.company-linked = This airline has associated aircraft or assistance agents
+
+administrator.airline.form.label.confirmation = Confirm changes

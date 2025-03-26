@@ -16,6 +16,7 @@ master.menu.anonymous.favourite-link = Enlace favorito
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.list-airlines = ver aerolinias
 master.menu.administrator.list-user-accounts = Ver cuentas de usuario
 master.menu.administrator.list-airports = Ver lista de aeropuertos
 master.menu.administrator.populate-db-initial = Poblar BD (inicial)
