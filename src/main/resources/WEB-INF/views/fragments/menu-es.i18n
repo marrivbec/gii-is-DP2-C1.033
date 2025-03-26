@@ -33,6 +33,12 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.consumer ##########################################################
+
+master.menu.customer.booking = Menú de Booking
+master.menu.customer.passenger = Menú de Passenger
+master.menu.customer = Menú de Customer
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

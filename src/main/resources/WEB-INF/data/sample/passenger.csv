@@ -1,26 +1,26 @@
-key,fullName,email,passportNumber,dateOfBirth,specialNeeds
-passenger-01,John Doe,user1@example.com,B1000001,2001/02/02 00:00,None
-passenger-02,Alice Smith,user2@example.com,C1000002,2001/03/03 00:00,Wheelchair access
-passenger-03,Lorem ipsum dolor sit amea consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,user3@example.com,D1000003,2003/04/04 00:00,None
-passenger-04,Emma Brown,user4@example.com,E1000004,2004/05/05 00:00,Gluten-free meal
-passenger-05,Michael White,user5@example.com,F1000005,2005/06/06 00:00,None
-passenger-06,Sarah Connor,user6@example.com,G1000006,2003/07/07 00:00,None
-passenger-07,Lorem ipsum dolor sit amea consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,user7@example.com,H1000007,2004/08/08 00:00,None
-passenger-08,Cl,user8@example.com,I1000008,2002/09/09 00:00,Vegan meal
-passenger-09,D,user9@example.com,J1000009,2002/10/10 00:00,
-passenger-10,Bruce Wayne,user10@example.com,K1000010,2000/11/11 00:00,Hearing assistance
-passenger-11,Tony Stark,user11@example.com,L1000011,2001/12/12 00:00,None
-passenger-12,Peter Parker,user12@example.com,M1000012,2002/01/13 00:00,None
-passenger-13,Natasha Romanoff,user13@example.com,N1000013,2003/02/14 00:00,None
-passenger-14,Steve Rogers,user14@example.com,O1000014,2004/03/15 00:00,Extra legroom
-passenger-15,Thor Odinson,user15@example.com,P1000015,2005/04/16 00:00,None
-passenger-16,Loki Laufeyson,user16@example.com,Q1000016,2006/05/17 00:00,None
-passenger-17,Wanda Maximoff,user17@example.com,R1000017,2007/06/18 00:00,Wheelchair access
-passenger-18,Vision,user18@example.com,S1000018,2008/07/19 00:00,None
-passenger-19,T'Challa,user19@example.com,T1000019,2003/08/20 00:00,None
-passenger-20,Stephen Strange,user20@example.com,U1000020,2000/09/21 00:00,
-passenger-21,Nick Fury,user21@example.com,V1000021,2001/10/22 00:00,None
-passenger-22,Hank Pym,user22@example.com,W1000022,2002/11/23 00:00,None
-passenger-23,Scott Lang,user23@example.com,X1000023,2003/12/24 00:00,None
-passenger-24,Hope van Dyne,user24@example.com,Y1000024,2004/01/25 00:00,None
-passenger-25,Jean Grey,user25@example.com,Z1000025,2005/02/26 00:00,None
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,published,key:customer
+passenger-01,John Doe,user1@example.com,B1000001,2001/02/02 00:00,None,true,customer1
+passenger-02,Alice Smith,user2@example.com,C1000002,2001/03/03 00:00,Wheelchair access,false,customer2
+passenger-03,Lorem ipsum dolor sit amea consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,user3@example.com,D1000003,2003/04/04 00:00,None,true,customer1
+passenger-04,Emma Brown,user4@example.com,E1000004,2004/05/05 00:00,Gluten-free meal,true,customer2
+passenger-05,Michael White,user5@example.com,F1000005,2005/06/06 00:00,None,true,customer1
+passenger-06,Sarah Connor,user6@example.com,G1000006,2003/07/07 00:00,None,false,customer2
+passenger-07,Lorem ipsum dolor sit amea consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,user7@example.com,H1000007,2004/08/08 00:00,None,false,customer1
+passenger-08,Cl,user8@example.com,I1000008,2002/09/09 00:00,Vegan meal,true,customer2
+passenger-09,D,user9@example.com,J1000009,2002/10/10 00:00,,true,customer1
+passenger-10,Bruce Wayne,user10@example.com,K1000010,2000/11/11 00:00,Hearing assistance,false,customer2
+passenger-11,Tony Stark,user11@example.com,L1000011,2001/12/12 00:00,None,true,customer1
+passenger-12,Peter Parker,user12@example.com,M1000012,2002/01/13 00:00,None,true,customer2
+passenger-13,Natasha Romanoff,user13@example.com,N1000013,2003/02/14 00:00,None,false,customer1
+passenger-14,Steve Rogers,user14@example.com,O1000014,2004/03/15 00:00,Extra legroom,false,customer2
+passenger-15,Thor Odinson,user15@example.com,P1000015,2005/04/16 00:00,None,true,customer1
+passenger-16,Loki Laufeyson,user16@example.com,Q1000016,2006/05/17 00:00,None,true,customer2
+passenger-17,Wanda Maximoff,user17@example.com,R1000017,2007/06/18 00:00,Wheelchair access,false,customer1
+passenger-18,Vision,user18@example.com,S1000018,2008/07/19 00:00,None,true,customer2
+passenger-19,T'Challa,user19@example.com,T1000019,2003/08/20 00:00,None,false,customer1
+passenger-20,Stephen Strange,user20@example.com,U1000020,2000/09/21 00:00,,true,customer2
+passenger-21,Nick Fury,user21@example.com,V1000021,2001/10/22 00:00,None,false,customer1
+passenger-22,Hank Pym,user22@example.com,W1000022,2002/11/23 00:00,None,true,customer2
+passenger-23,Scott Lang,user23@example.com,X1000023,2003/12/24 00:00,None,true,customer1
+passenger-24,Hope van Dyne,user24@example.com,Y1000024,2004/01/25 00:00,None,false,customer2
+passenger-25,Jean Grey,user25@example.com,Z1000025,2005/02/26 00:00,None,true,customer1

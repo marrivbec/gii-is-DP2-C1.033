@@ -57,11 +57,15 @@ public class Booking extends AbstractEntity {
 	@ValidLastNibble
 	private String				lastNibble;
 
+	@Mandatory
+	@Automapped
+	private boolean				published;
+
 	// Derived attributes -----------------------------------------------------
 
 
 	@Transient
-	public Money countPassengerByBookingId() {
+	public Money price() {
 		Money money = new Money();
 		PassengerRepository repository = SpringHelper.getBean(PassengerRepository.class);
 		int numberOfPassengers = repository.countPassengerByBookingId(this.getId());

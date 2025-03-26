@@ -280,7 +280,7 @@ bg=green
       <x>1272</x>
       <y>756</y>
       <w>354</w>
-      <h>78</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Booking
@@ -289,6 +289,7 @@ Booking
 + purchaseMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
 - lastCardNibble: String {Optional, ValidLastNibble, Automapped}
++ published: booleean {Mandatory, Automapped]
 --
 /+ price: Money
 bg=green
@@ -599,7 +600,7 @@ bg=pink</panel_attributes>
       <x>1794</x>
       <y>894</y>
       <w>324</w>
-      <h>78</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Passenger
@@ -609,6 +610,7 @@ Passenger
 + passportNumber: String {Mandatory, ValidPassportNumber, Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 - specialNeeds: String {Optional, ValidShortText, Automapped}
++ published: booleean {Mandatory, Automapped]
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>

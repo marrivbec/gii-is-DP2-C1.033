@@ -22,7 +22,7 @@ bg=pink
       <x>432</x>
       <y>114</y>
       <w>354</w>
-      <h>78</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Booking
@@ -31,6 +31,7 @@ Booking
 + purchaseMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
 - lastCardNibble: String {Optional, ValidLastNibble, Automapped}
++ published: booleean {Mandatory, Automapped]
 --
 /+ price: Money
 bg=green
@@ -99,7 +100,7 @@ m2=*
       <x>594</x>
       <y>336</y>
       <w>324</w>
-      <h>78</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Passenger
@@ -109,6 +110,7 @@ Passenger
 + passportNumber: String {Mandatory, ValidPassportNumber, Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 - specialNeeds: String {Optional, ValidShortText, Automapped}
++ published: booleean {Mandatory, Automapped]
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -129,9 +131,9 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>582</x>
-      <y>186</y>
+      <y>198</y>
       <w>132</w>
-      <h>84</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt; belongs to
 lt=&lt;-x
@@ -139,7 +141,7 @@ m1=1
 m2=*
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0;200.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;200.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
