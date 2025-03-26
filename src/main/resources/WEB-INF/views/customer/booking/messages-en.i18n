@@ -1,0 +1,18 @@
+# messages-en.i18n
+customer.passenger.list.label.fullName=Full Name
+customer.passenger.list.label.email= Email
+customer.passenger.list.label.passportNumber=Passport Number
+customer.passenger.list.label.specialNeeds=Special needs
+customer.passenger.list.label.dateOfBirth=Date of birth
+customer.passenger.list.button.create=Create Passenger
+customer.passenger.list.title=Passengers
+customer.passenger.form.title=Passenger Details
+customer.passenger.form.label.fullName=Full Name
+customer.passenger.form.label.email= Email
+customer.passenger.form.label.passportNumber=Passport number
+customer.passenger.form.label.specialNeeds=Special needs
+customer.passenger.form.label.dateOfBirth=Date of birth
+customer.passenger.form.button.create=Create
+customer.passenger.form.button.update= Update
+customer.passenger.form.button.publish= Publish
+customer.passenger.form.label.confirmation= Confirm
