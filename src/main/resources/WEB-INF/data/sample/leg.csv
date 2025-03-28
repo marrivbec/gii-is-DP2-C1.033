@@ -13,7 +13,7 @@ leg-11,6,LMN7788,2022/01/16 08:00,2022/01/15 02:00,LANDED,aircraft-11,airport-10
 leg-12,1,JKL8899,2015/07/08 05:30,2015/07/07 04:30,DELAYED,aircraft-12,airport-11,airport-03,flight-03
 leg-13,2,QWE9900,2020/12/01 10:15,2020/11/30 08:15,CANCELLED,aircraft-13,airport-12,airport-02,flight-02
 leg-14,4,ASD1234,2023/02/28 15:45,2023/02/28 11:45,ON_TIME,aircraft-14,airport-13,airport-01,flight-01
-leg-15,3,ZXC5678,2024/06/18 19:00,20224/06/18 16:00,LANDED,aircraft-15,airport-14,airport-00,flight-15
+leg-15,3,ZXC5678,2024/06/18 19:00,2024/06/18 16:00,LANDED,aircraft-15,airport-14,airport-00,flight-15
 leg-16,1,FLG161,2023/07/17 09:00,2023/07/17 08:00,DELAYED,aircraft-16,airport-16,airport-18,flight-16
 leg-17,3,FLG170,2023/07/18 11:00,2023/07/18 08:00,LANDED,aircraft-17,airport-15,airport-17,flight-17
 leg-18,2,FLG180,2023/07/19 10:00,2023/07/19 08:00,DELAYED,aircraft-18,airport-19,airport-14,flight-18

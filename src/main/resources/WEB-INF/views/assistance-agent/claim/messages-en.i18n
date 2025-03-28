@@ -17,7 +17,7 @@ assistanceAgent.claim.form.label.description = Description:
 assistanceAgent.claim.form.label.type = Type:
 assistanceAgent.claim.form.label.leg = Leg:
 assistanceAgent.claim.form.label.indicator = Indicator:
-assistanceAgent.claim.form.label.confirmation = Do you want to confirm?
+assistanceAgent.claim.form.button.publish = Publish
 
 assistanceAgent.claim.form.button.create = Create
 assistanceAgent.claim.form.button.update = Update

@@ -17,7 +17,7 @@ assistanceAgent.claim.form.label.description = Descripcion:
 assistanceAgent.claim.form.label.type = Tipo:
 assistanceAgent.claim.form.label.leg = Tramo de vuelo
 assistanceAgent.claim.form.label.indicator = Indicador:
-assistanceAgent.claim.form.label.confirmation = ¿Desea confirmar?
+assistanceAgent.claim.form.button.publish = Publicar
 
 assistanceAgent.claim.form.button.create = Crear
 assistanceAgent.claim.form.button.update = Actualizar

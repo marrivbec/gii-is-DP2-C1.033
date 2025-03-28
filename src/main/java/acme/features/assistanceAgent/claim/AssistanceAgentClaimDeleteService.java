@@ -42,11 +42,12 @@ public class AssistanceAgentClaimDeleteService extends AbstractGuiService<Assist
 		boolean status;
 		Claim claim;
 		int id;
+		AssistanceAgent assistanceAgent;
 
 		id = super.getRequest().getData("id", int.class);
 		claim = this.repository.findClaimById(id);
-		status = claim != null && super.getRequest().getPrincipal().hasRealm(claim.getAssistanceAgents());
-
+		assistanceAgent = claim == null ? null : claim.getAssistanceAgents();
+		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.isDraftMode());
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -91,7 +92,7 @@ public class AssistanceAgentClaimDeleteService extends AbstractGuiService<Assist
 		legs = this.repository.findAllLeg();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "draftMode");
 		dataset.put("types", choices);
 		dataset.put("leg", choices2.getSelected().getKey());
 		dataset.put("legs", choices2);
