@@ -18,10 +18,4 @@ public interface AdministratorAirlineRepository extends AbstractRepository {
 	@Query("select a from Airline a")
 	Collection<Airline> findAllAirlines();
 
-	@Query("select count(a) from Aircraft a where a.airline.id = :id")
-	int countAircraftByAirlineId(int id);
-
-	@Query("select count(a) from AssistanceAgent a where a.airline.id = :id")
-	int countAssistanceAgentByAirlineId(int id);
-
 }
