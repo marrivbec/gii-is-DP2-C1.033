@@ -1,7 +1,7 @@
 
 package acme.entities.leg;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -13,10 +13,10 @@ import acme.client.repositories.AbstractRepository;
 public interface LegRepository extends AbstractRepository {
 
 	@Query("SELECT l.scheduledDeparture FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledDeparture ASC")
-	List<LocalDateTime> findScheduledDepartureByFlightId(int flightId);
+	List<Date> findScheduledDepartureByFlightId(int flightId);
 
 	@Query("SELECT l.scheduledArrival FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledArrival DESC")
-	List<LocalDateTime> findScheduledArrivalByFlightId(int flightId);
+	List<Date> findScheduledArrivalByFlightId(int flightId);
 
 	@Query("SELECT l.departureAirport.city FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledDeparture ASC")
 	List<String> findOriginCityByFlightId(int flightId);

@@ -41,6 +41,13 @@ master.menu.assistanceAgent.list-claims = List completed claims
 master.menu.assistanceAgent.list-claims-pending = List pending claims
 master.menu.assistanceAgent.list-trackingLog = List Tracking logs
 
+
+# master.menu.airline-manager ########################################################
+
+master.menu.airline-manager = Airline Manager
+master.menu.airline-manager.list-my-flights= List my flights
+
+
 # master.menu.consumer ##########################################################
 
 master.menu.customer.booking = Booking Menu

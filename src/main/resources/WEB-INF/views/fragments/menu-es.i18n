@@ -47,6 +47,12 @@ master.menu.assistanceAgent.list-claims = Listar quejas completadas
 master.menu.assistanceAgent.list-claims-pending = Listar quejas pendientes
 master.menu.assistanceAgent.list-trackingLog = Listar seguimientos
 
+
+# master.menu.airline-manager ########################################################
+
+master.menu.airline-manager = Gerente de Aerolíneas
+master.menu.airline-manager.list-my-flights = Listar mis vuelos
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
