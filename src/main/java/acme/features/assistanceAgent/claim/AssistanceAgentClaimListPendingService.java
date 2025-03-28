@@ -10,25 +10,25 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.airport;
+package acme.features.assistanceAgent.claim;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
-import acme.client.components.principals.Administrator;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.airport.Airport;
+import acme.entities.claim.Claim;
+import acme.realms.employee.AssistanceAgent;
 
 @GuiService
-public class AdministratorAirportListService extends AbstractGuiService<Administrator, Airport> {
+public class AssistanceAgentClaimListPendingService extends AbstractGuiService<AssistanceAgent, Claim> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AdministratorAirportRepository repository;
+	private AssistanceAgentClaimRepository repository;
 
 	// AbstractGuiService interface -------------------------------------------
 
@@ -40,18 +40,24 @@ public class AdministratorAirportListService extends AbstractGuiService<Administ
 
 	@Override
 	public void load() {
-		Collection<Airport> airports;
+		Collection<Claim> claims;
+		int agentId;
 
-		airports = this.repository.findAllAirports();
+		agentId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		claims = this.repository.findAllPendingClaimsByAgentId(agentId);
 
-		super.getBuffer().addData(airports);
+		super.getBuffer().addData(claims);
 	}
 
 	@Override
-	public void unbind(final Airport airport) {
+	public void unbind(final Claim claim) {
 		Dataset dataset;
+		Boolean indicator;
 
-		dataset = super.unbindObject(airport, "name", "city", "emailAddress", "contactPhoneNumber");
+		indicator = claim.indicator();
+		dataset = super.unbindObject(claim, "passengerEmail", "type");
+		dataset.put("indicator", indicator);
+		super.addPayload(dataset, claim, "registrationMoment", "description", "leg.flightNumber");
 
 		super.getResponse().addData(dataset);
 	}

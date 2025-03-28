@@ -27,7 +27,7 @@ bg=green</panel_attributes>
       <x>1434</x>
       <y>150</y>
       <w>360</w>
-      <h>84</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Claim
@@ -36,8 +36,9 @@ Claim
 + passengerEmail: String {Mandatory, ValidEmail, Automapped}
 + description: String {Mandatory, ValidLongText, Automapped}
 + type: ClaimType {Mandatory, Valid, Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
 --
-/+ indicator: boolean
+/+ indicator: Boolean
 
 bg=green</panel_attributes>
     <additional_attributes/>

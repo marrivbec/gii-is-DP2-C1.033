@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.airport;
+package acme.features.assistanceAgent.trackingLog;
 
 import java.util.Collection;
 
@@ -18,15 +18,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.entities.airport.Airport;
+import acme.entities.trackingLog.TrackingLog;
 
 @Repository
-public interface AdministratorAirportRepository extends AbstractRepository {
+public interface AssistanceAgentTrackingLogRepository extends AbstractRepository {
 
-	@Query("select a from Airport a where a.id = :id")
-	Airport findAirportById(int id);
+	@Query("SELECT t FROM TrackingLog t WHERE t.claim.id = :claimId")
+	Collection<TrackingLog> findTrackingLogsByClaimId(int claimId);
 
-	@Query("select a from Airport a")
-	Collection<Airport> findAllAirports();
+	@Query("SELECT t FROM TrackingLog t WHERE t.id = :trackingLogId")
+	TrackingLog findTrackingLogById(int trackingLogId);
 
+	@Query("SELECT t FROM TrackingLog t")
+	Collection<TrackingLog> findAllTrackingLogs();
 }
