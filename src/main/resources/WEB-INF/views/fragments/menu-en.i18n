@@ -34,6 +34,14 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+
+
+# master.menu.airline-manager ########################################################
+
+master.menu.airline-manager = Airline Manager
+master.menu.airline-manager.list-my-flights= List my flights
+
+
 # master.menu.consumer ##########################################################
 
 master.menu.customer.booking = Booking Menu

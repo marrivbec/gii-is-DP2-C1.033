@@ -40,6 +40,12 @@ master.menu.customer.booking = Menú de Booking
 master.menu.customer.passenger = Menú de Passenger
 master.menu.customer = Menú de Customer
 
+
+# master.menu.airline-manager ########################################################
+
+master.menu.airline-manager = Gerente de Aerolíneas
+master.menu.airline-manager.list-my-flights = Listar mis vuelos
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
