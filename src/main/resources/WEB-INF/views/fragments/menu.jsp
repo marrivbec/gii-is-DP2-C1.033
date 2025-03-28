@@ -51,6 +51,10 @@
             <acme:menu-suboption code="master.menu.customer.passenger" action="/customer/passenger/list" />
         </acme:menu-option>
 	</acme:menu-left>
+	
+	<acme:menu-option code="master.menu.airline-manager" access="hasRealm('AirlineManager')">
+			<acme:menu-suboption code="master.menu.airline-manager.list-my-flights" action="/airline-manager/flight/list" />			
+	</acme:menu-option>
 		
 	<acme:menu-right>		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
