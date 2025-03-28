@@ -19,16 +19,18 @@
 <acme:menu-bar>
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="76585025: Ferrer Álvarez, Ángel Manuel" action="https://zoomquilt.org/"/>
-			<acme:menu-suboption code="29584798: Villalba Fernández, Jesús" action="https://orangetv.orange.es/brw"/>
+			<acme:menu-suboption code="76585025: Ferrer ï¿½lvarez, ï¿½ngel Manuel" action="https://zoomquilt.org/"/>
+			<acme:menu-suboption code="29584798: Villalba Fernï¿½ndez, Jesï¿½s" action="https://orangetv.orange.es/brw"/>
 			<acme:menu-suboption code="29550304: Rivas Becerra, Mario" action="http://eelslap.com/"/>
 			<acme:menu-suboption code="49093416: Ramirez Morales, Juan" action="https://www.apple.com/"/>
-			<acme:menu-suboption code="77859734: Baladrón Caballero, Álvaro" action="https://www.realbetisbalompie.es/"/>
+			<acme:menu-suboption code="77859734: Baladrï¿½n Caballero, ï¿½lvaro" action="https://www.realbetisbalompie.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.list-airports" action="/administrator/airport/list"/>
 			<acme:menu-suboption code="master.menu.administrator.list-airlines" action="/administrator/airline/list" />
+			<acme:menu-suboption code="master.menu.administrator.list-aircrafts" action="/administrator/aircraft/list" />
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-initial" action="/administrator/system/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>			
@@ -43,8 +45,13 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
+            <acme:menu-suboption code="master.menu.customer.booking" action="/customer/booking/list" />
+            <acme:menu-separator />
+            <acme:menu-suboption code="master.menu.customer.passenger" action="/customer/passenger/list" />
+        </acme:menu-option>
 	</acme:menu-left>
-
+		
 	<acme:menu-right>		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>

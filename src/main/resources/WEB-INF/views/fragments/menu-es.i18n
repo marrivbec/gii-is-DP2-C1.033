@@ -18,6 +18,8 @@ master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.administrator = Administrador
 master.menu.administrator.list-airlines = ver aerolinias
 master.menu.administrator.list-user-accounts = Ver cuentas de usuario
+master.menu.administrator.list-airports = Ver lista de aeropuertos
+master.menu.administrator.list-aircrafts = Listar aviones
 master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
@@ -31,6 +33,12 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.consumer ##########################################################
+
+master.menu.customer.booking = Menú de Booking
+master.menu.customer.passenger = Menú de Passenger
+master.menu.customer = Menú de Customer
 
 # master.menu.user-account ####################################################
 
