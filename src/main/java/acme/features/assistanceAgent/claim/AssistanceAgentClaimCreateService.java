@@ -1,5 +1,5 @@
 /*
- * AssistanceAgentTrackingLogShowService.java
+ * AssistanceAgentClaimCreateService.java
  *
  * Copyright (C) 2012-2025 Rafael Corchuelo.
  *
@@ -13,11 +13,13 @@
 package acme.features.assistanceAgent.claim;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claim.Claim;
@@ -26,7 +28,7 @@ import acme.entities.leg.Leg;
 import acme.realms.employee.AssistanceAgent;
 
 @GuiService
-public class AssistanceAgentClaimShowService extends AbstractGuiService<AssistanceAgent, Claim> {
+public class AssistanceAgentClaimCreateService extends AbstractGuiService<AssistanceAgent, Claim> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -38,26 +40,44 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int claimId;
-		Claim claim;
-
-		claimId = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(claimId);
-		status = super.getRequest().getPrincipal().hasRealm(claim.getAssistanceAgents());
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
-		int claimId;
 		Claim claim;
+		Date registrationMoment;
+		AssistanceAgent assistanceAgent = (AssistanceAgent) super.getRequest().getPrincipal().getActiveRealm();
 
-		claimId = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(claimId);
+		registrationMoment = MomentHelper.getCurrentMoment();
+
+		claim = new Claim();
+		claim.setRegistrationMoment(registrationMoment);
+		claim.setPassengerEmail("");
+		claim.setDescription("");
+		claim.setAssistanceAgents(assistanceAgent);
+		claim.setType(ClaimType.FLIGHT_ISSUES);
 
 		super.getBuffer().addData(claim);
+	}
+
+	@Override
+	public void bind(final Claim claim) {
+		super.bindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg");
+	}
+
+	@Override
+	public void validate(final Claim claim) {
+		;
+	}
+
+	@Override
+	public void perform(final Claim claim) {
+		Date registrationMoment;
+
+		registrationMoment = MomentHelper.getCurrentMoment();
+		claim.setRegistrationMoment(registrationMoment);
+		this.repository.save(claim);
 	}
 
 	@Override
@@ -66,18 +86,15 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
-		Boolean indicator;
 
-		indicator = claim.indicator();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
 		legs = this.repository.findAllLeg();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg");
+		dataset.put("readonly", false);
 		dataset.put("types", choices);
-		dataset.put("leg", choices2.getSelected().getKey());
 		dataset.put("legs", choices2);
-		dataset.put("indicator", indicator);
 
 		super.getResponse().addData(dataset);
 	}

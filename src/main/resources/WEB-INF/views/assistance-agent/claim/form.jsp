@@ -16,18 +16,17 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form readonly="${readonly}">
-	<acme:input-textbox code="assistanceAgent.claim.form.label.registrationMoment" path="registrationMoment"/>	
+	<acme:input-moment code="assistanceAgent.claim.form.label.registrationMoment" path="registrationMoment"/>	
 	<acme:input-textbox code="assistanceAgent.claim.form.label.passengerEmail" path="passengerEmail"/>	
-	<acme:input-textbox code="assistanceAgent.claim.form.label.description" path="description"/>	
-	<acme:input-textbox code="assistanceAgent.claim.form.label.type" path="type"/>
-	
+	<acme:input-textarea code="assistanceAgent.claim.form.label.description" path="description"/>	
+	<acme:input-select code="assistanceAgent.claim.form.label.type" path="type" choices="${types}"/>
+	<acme:input-select code="assistanceAgent.claim.form.label.leg" path="leg" choices="${legs}"/>
+	<acme:input-textbox code="assistanceAgent.claim.form.label.indicator" path="indicator" readonly="true"/>
 		
-	
-	<acme:input-checkbox code="assistanceAgent.claim.form.label.confirmation" path="confirmation"/>	
-	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|')}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
 			<acme:submit code="assistanceAgent.claim.form.button.update" action="/assistance-agent/claim/update"/>
+			<acme:submit code="assistanceAgent.claim.form.button.delete" action="/assistance-agent/claim/delete" />
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="assistanceAgent.claim.form.button.create" action="/assistance-agent/claim/create"/>

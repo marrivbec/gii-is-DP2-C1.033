@@ -1,5 +1,5 @@
 /*
- * AssistanceAgentTrackingLogShowService.java
+ * AssistanceAgentClaimCreateService.java
  *
  * Copyright (C) 2012-2025 Rafael Corchuelo.
  *
@@ -23,10 +23,11 @@ import acme.client.services.GuiService;
 import acme.entities.claim.Claim;
 import acme.entities.claim.ClaimType;
 import acme.entities.leg.Leg;
+import acme.entities.trackingLog.TrackingLog;
 import acme.realms.employee.AssistanceAgent;
 
 @GuiService
-public class AssistanceAgentClaimShowService extends AbstractGuiService<AssistanceAgent, Claim> {
+public class AssistanceAgentClaimDeleteService extends AbstractGuiService<AssistanceAgent, Claim> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -39,25 +40,44 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 	@Override
 	public void authorise() {
 		boolean status;
-		int claimId;
 		Claim claim;
+		int id;
 
-		claimId = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(claimId);
-		status = super.getRequest().getPrincipal().hasRealm(claim.getAssistanceAgents());
+		id = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(id);
+		status = claim != null && super.getRequest().getPrincipal().hasRealm(claim.getAssistanceAgents());
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int claimId;
 		Claim claim;
+		int id;
 
-		claimId = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(claimId);
+		id = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(id);
 
 		super.getBuffer().addData(claim);
+	}
+
+	@Override
+	public void bind(final Claim claim) {
+		super.bindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg");
+	}
+
+	@Override
+	public void validate(final Claim claim) {
+		;
+	}
+
+	@Override
+	public void perform(final Claim claim) {
+		Collection<TrackingLog> trackingLogs;
+
+		trackingLogs = this.repository.findTrackingLogsByClaimId(claim.getId());
+		this.repository.deleteAll(trackingLogs);
+		this.repository.delete(claim);
 	}
 
 	@Override
@@ -66,9 +86,7 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
-		Boolean indicator;
 
-		indicator = claim.indicator();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
 		legs = this.repository.findAllLeg();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
@@ -77,7 +95,6 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		dataset.put("types", choices);
 		dataset.put("leg", choices2.getSelected().getKey());
 		dataset.put("legs", choices2);
-		dataset.put("indicator", indicator);
 
 		super.getResponse().addData(dataset);
 	}
