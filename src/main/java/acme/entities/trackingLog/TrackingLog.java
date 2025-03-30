@@ -17,6 +17,8 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
+import acme.constraints.ValidTrackingLogResolution;
+import acme.constraints.ValidTrackingLogResolutionPercentage;
 import acme.entities.claim.Claim;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +26,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidTrackingLogResolution
+@ValidTrackingLogResolutionPercentage
 public class TrackingLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -43,7 +47,7 @@ public class TrackingLog extends AbstractEntity {
 	private String				step;
 
 	@Mandatory
-	@ValidNumber(min = 0)
+	@ValidNumber(min = 0, max = 100)
 	@Automapped
 	private Double				resolutionPercentage;
 
