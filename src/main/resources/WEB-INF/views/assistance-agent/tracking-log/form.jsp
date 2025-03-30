@@ -16,15 +16,13 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form readonly="${readonly}">
-	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.lastUpdateMoment" path="lastUpdateMoment"/>	
+	<acme:input-moment code="assistanceAgent.trackingLog.form.label.lastUpdateMoment" path="lastUpdateMoment"/>	
 	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.step" path="step"/>	
-	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.resolutionPercentage" path="resolutionPercentage"/>	
-	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.indicator" path="indicator"/>
+	<acme:input-double code="assistanceAgent.trackingLog.form.label.resolutionPercentage" path="resolutionPercentage"/>	
+	<acme:input-select code="assistanceAgent.trackingLog.form.label.indicator" path="indicator" choices="${indicators}"/>
 	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.resolution" path="resolution"/>
 	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.claim" path="claim"/>	
-	
-	<acme:input-checkbox code="assistanceAgent.trackingLog.form.label.confirmation" path="confirmation"/>	
-	
+		
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|')}">
 			<acme:submit code="assistanceAgent.trackingLog.form.button.update" action="/assistance-agent/trackingLog/update"/>

@@ -17,7 +17,7 @@ user-account-member-04,true,"UserIdentity{name: 'Miguel', surname: 'Fernandez', 
 user-account-member-05,true,"UserIdentity{name: 'Laura', surname: 'Gomez', email: 'laura@acme.com'}",flightCrewMember5,flightCrewMember5
 user-account-customer-01,true,"UserIdentity{name: 'Marta', surname: 'Gago', email: 'martagago@acme.com'}",customer1,customer1
 user-account-customer-02,true,"UserIdentity{name: 'Juan Antonio', surname: 'Peralta', email: 'juanan@acme.com'}",customer2,customer2
-user-account-customer-03,true,"UserIdentity{name: 'Ángel Manuel', surname: 'Ferrerito', email: 'angelferrer@acme.com'}",customer3,customer3
+user-account-customer-03,true,"UserIdentity{name: 'Angel Manuel', surname: 'Ferrerito', email: 'angelferrer@acme.com'}",customer3,customer3
 user-account-technician-01,true,"UserIdentity{name: 'Carlos Cerda', surname: 'Gala', email: 'tata@acme.com'}",technician1,technician1
 user-account-technician-02,true,"UserIdentity{name: 'Pepe Carlos', surname: 'Garcia', email: 'gaga@acme.com'}",technician2,technician2
 user-account-technician-03,true,"UserIdentity{name: 'Tata', surname: 'Martn', email: 'tama@acme.com'}",technician3,technician3
