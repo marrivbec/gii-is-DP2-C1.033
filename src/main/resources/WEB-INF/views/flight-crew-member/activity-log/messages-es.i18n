@@ -1,0 +1,29 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+flight-crew-member.activity-log.form.title = Formulario de registro de actividad
+flight-crew-member.activity-log.list.title = Listado de registros de actividad
+
+flightCrewMember.activityLog.form.label.registrationMoment = Momento de registro:
+flightCrewMember.activityLog.form.label.typeOfIncident = Tipo de incidente:
+flightCrewMember.activityLog.form.label.description = Descripción:
+flightCrewMember.activityLog.form.label.severityLevel = Nivel de severidad:
+flightCrewMember.activityLog.form.label.flightCrewMember = Miembro de la tripulación:
+flightCrewMember.activityLog.form.label.confirmation = ¿Desea confirmar?
+
+flightCrewMember.activityLog.form.button.create = Crear
+flightCrewMember.activityLog.form.button.update = Actualizar
+flightCrewMember.activityLog.form.button.delete = Eliminar
+
+flightCrewMember.activityLog.list.label.registrationMoment = Momento de registro:
+flightCrewMember.activityLog.list.label.typeOfIncident = Tipo de incidente:
+flightCrewMember.activityLog.list.label.severityLevel = Nivel de severidad:
+
+flightCrewMember.activityLog.list.button.create = Crear
