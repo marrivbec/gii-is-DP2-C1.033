@@ -1,6 +1,9 @@
 
 package acme.entities.leg;
 
+import java.beans.Transient;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,7 +17,6 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidFlightNumber;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
@@ -49,37 +51,42 @@ public class Leg extends AbstractEntity {
 	private Date				scheduledArrival;
 
 	@Mandatory
-	@ValidNumber(min = 0)
-	@Automapped
-	private Integer				duration;
-
-	@Mandatory
 	@Valid
 	@Automapped
 	private Status				status;
 
-	// Derived attributes -----------------------------------------------------
 
+	// Derived attributes -----------------------------------------------------
+	@Transient
+	public int getDurationInHours() {
+		Instant departureInstant = this.scheduledDeparture.toInstant();
+		Instant arrivalInstant = this.scheduledDeparture.toInstant();
+
+		Duration duration = Duration.between(departureInstant, arrivalInstant);
+
+		return duration.toHoursPart();
+	}
 	// Relationships ----------------------------------------------------------
 
-	@Mandatory
-	@ManyToOne(optional = false)
-	@Valid
-	private Airport				departureAirport;
 
 	@Mandatory
 	@ManyToOne(optional = false)
 	@Valid
-	private Airport				arrivalAirport;
+	private Airport		departureAirport;
 
 	@Mandatory
 	@ManyToOne(optional = false)
 	@Valid
-	private Aircraft			aircraft;
+	private Airport		arrivalAirport;
 
 	@Mandatory
 	@ManyToOne(optional = false)
 	@Valid
-	private Flight				flight;
+	private Aircraft	aircraft;
+
+	@Mandatory
+	@ManyToOne(optional = false)
+	@Valid
+	private Flight		flight;
 
 }
