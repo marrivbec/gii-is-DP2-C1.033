@@ -1,4 +1,4 @@
-key,identifier,phoneNumber,physicalAddress,city,country,earnedPoints,key:user-account
-customer1,AD126457,987654321,123 Main StreetApartment 4B, New York, USA,135000,user-account-customer-01
-customer2,AD126458,983748321,789 Elm Street Suite 200, Los Angeles, USA,243000,user-account-customer-02
-customer3,AD126459,983734321,789 Elm Street Suite 100, Seville, Spain,33000,user-account-customer-03
+key,employeeCode,phoneNumber,physicalAddress,city,country,earnedPoints,key:user-account
+customer1,MGA126457,987654321,123 Main StreetApartment 4B,New York,USA,135000,user-account-customer-01
+customer2,JPE126458,983748321,789 Elm Street Suite 200,Los Angeles,USA,243000,user-account-customer-02
+customer3,AFE126459,983734321,789 Elm Street Suite 100,Seville,Spain,33000,user-account-customer-03

@@ -22,6 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidEmployeeCode
 public class AirlineManager extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
@@ -32,8 +33,8 @@ public class AirlineManager extends AbstractRole {
 
 	@Mandatory
 	@Column(unique = true)
-	@ValidEmployeeCode
-	private String				numberID;
+	//@ValidEmployeeCode
+	private String				employeeCode;
 
 	@Mandatory
 	@Automapped

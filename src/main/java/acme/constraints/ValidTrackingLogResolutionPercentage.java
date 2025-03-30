@@ -9,17 +9,14 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Constraint(validatedBy = EmployeeCodeValidator.class)
 @Target({
 	ElementType.TYPE
 })
 @Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = TrackingLogResolutionPercentageValidator.class)
+public @interface ValidTrackingLogResolutionPercentage {
 
-public @interface ValidEmployeeCode {
-
-	String message() default "";
-
+	String message() default "acme.validation.trackingLog.resolutionPercentage.message";
 	Class<?>[] groups() default {};
-
 	Class<? extends Payload>[] payload() default {};
 }

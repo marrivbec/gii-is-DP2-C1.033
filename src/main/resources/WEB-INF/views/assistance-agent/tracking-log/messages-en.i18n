@@ -23,7 +23,7 @@ assistanceAgent.trackingLog.form.button.create = Create
 assistanceAgent.trackingLog.form.button.update = Update
 assistanceAgent.trackingLog.form.button.delete = Delete
  
-assistanceAgent.trackingLog.list.label.step = Step
+assistanceAgent.trackingLog.list.label.lastUpdateMoment = Last update moment:
 assistanceAgent.trackingLog.list.label.resolutionPercentage = Resolution percentage:
 assistanceAgent.trackingLog.list.label.indicator = Indicator:
 

@@ -1,3 +1,3 @@
-key,licenseNumber,phoneNumber,specialisation,passedAnnualHealthTest,experienceYears,certifications,key:user-account
-technician-01,AM123456,+34111222333,mechanics,True,4,Ja,user-account-technician-01
-technician-02,AC223456,+34111222444,mechanics,True,23,Ta,user-account-technician-02
+key,employeeCode,phoneNumber,specialisation,passedAnnualHealthTest,experienceYears,certifications,key:user-account
+technician-01,CGA123456,+34111222333,mechanics,True,4,Ja,user-account-technician-01
+technician-02,PGA223456,+34111222444,mechanics,True,23,Ta,user-account-technician-02
