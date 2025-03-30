@@ -70,7 +70,7 @@ bg=pink
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Technician
 --
-+ licenseNumber: String {Mandatory, Column(unique=true), Pattern="^[A-Z]{2-3}\d{6}$", Automapped}
++ employeeCode: String {Mandatory, Column(unique=true), @ValidEmployeeCode}
 + phoneNumber: String {Mandatory, Pattern="^\+?\d{6,15}$", Automapped}
 + specialisation: String {Mandatory, MaxLength(50), Automapped}
 + healthTestPassed: Boolean {Mandatory, Automapped}
