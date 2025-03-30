@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
+      <x>200</x>
       <y>368</y>
       <w>416</w>
       <h>120</h>
@@ -25,7 +25,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>656</x>
+      <x>664</x>
       <y>376</y>
       <w>336</w>
       <h>72</h>
@@ -41,15 +41,15 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>208</x>
+      <x>200</x>
       <y>208</y>
-      <w>384</w>
+      <w>416</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Customer
 --
-+ identifier: String {Mandatory, Column(unique=true), ValidIdentifierNumber}
++ employeeCode: String {Mandatory, Column(unique=true), ValidEmployeeCode}
 + phoneNumber: String {Mandatory, ValidPhone, Automapped}
 + physicalAddress: String {Mandatory, ValidLongText, Automapped}
 + city: String {Mandatory, ValidShortText, Automapped}
@@ -62,7 +62,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
+      <x>200</x>
       <y>504</y>
       <w>536</w>
       <h>120</h>
@@ -84,7 +84,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>752</x>
+      <x>760</x>
       <y>504</y>
       <w>408</w>
       <h>96</h>
@@ -92,7 +92,7 @@ bg=pink
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
 --
-+ numberID: String {Mandatory, ValidIdentifierNumber, Column(unique = true)}
++ employeeCode: String {Mandatory, ValidEmployeeCode, Column(unique = true)}
 + yearsExp: Integer {Mandatory, Automapped}
 + dateBirth: LocalDate {Mandatory}
 + urlImage: String {Optional}
@@ -103,7 +103,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
+      <x>632</x>
       <y>216</y>
       <w>424</w>
       <h>128</h>
