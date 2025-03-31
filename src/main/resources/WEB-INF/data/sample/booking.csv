@@ -1,4 +1,4 @@
-key,locatorCode,purchaseMoment,travelClass,lastNibble,published,key:customer,key:flight
+key,locatorCode,purchaseMoment,travelClass,lastNibble,draftMode,key:customer,key:flight
 booking-01,XYZ123,2015/05/10 14:30,ECONOMY,6789,true,customer1,flight-01
 booking-02,A1B2C3,2015/05/10 14:30,ECONOMY,1234,false,customer2,flight-02
 booking-03,ZXY789,2015/05/10 14:30,BUSINESS,9876,true,customer1,flight-03

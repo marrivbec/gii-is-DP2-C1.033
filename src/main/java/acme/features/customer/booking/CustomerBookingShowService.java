@@ -54,9 +54,13 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 		Dataset dataset;
 		Money price = booking.price();
 		SelectChoices choices = SelectChoices.from(TravelClass.class, booking.getTravelClass());
-		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "lastNibble", "flight.tag", "customer.identifier");
+		SelectChoices choicesFlight = SelectChoices.from(this.repository.allFlight(), "tag", booking.getFlight());
+		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "lastNibble", "draftMode", "flight");
 		dataset.put("price", price);
 		dataset.put("choices", choices);
+		dataset.put("choicesFlight", choicesFlight);
+		dataset.put("readonly", booking.isDraftMode());
+		dataset.put("bookingId", booking.getId());
 		dataset.put("travelClass", choices.getSelected().getKey());
 		super.getResponse().addData(dataset);
 	}

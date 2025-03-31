@@ -2,10 +2,10 @@
 package acme.features.customer.booking;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.client.components.datatypes.Money;
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
@@ -15,7 +15,8 @@ import acme.entities.booking.TravelClass;
 import acme.realms.client.Customer;
 
 @GuiService
-public class CustomerBookingCreateService extends AbstractGuiService<Customer, Booking> {
+public class CustomerBookingUpdateService extends AbstractGuiService<Customer, Booking> {
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
@@ -26,29 +27,36 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		int bookingId = super.getRequest().getData("id", int.class);
+		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		Customer customer = this.repository.findCustomerLogged(customerId);
+		Booking booking = this.repository.findBookingById(bookingId);
+		super.getResponse().setAuthorised(customer.equals(booking.getCustomer()) && booking.isDraftMode());
 	}
 
 	@Override
 	public void load() {
-		Booking booking = new Booking();
-		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		Customer customer = this.repository.findCustomerLogged(customerId);
-		booking.setCustomer(customer);
+		Booking booking;
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		booking = this.repository.findBookingById(id);
 		super.getBuffer().addData(booking);
 	}
 
 	@Override
 	public void unbind(final Booking booking) {
 		Dataset dataset;
+		Money price = booking.price();
 		SelectChoices choices = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 		SelectChoices choicesFlight = SelectChoices.from(this.repository.allFlight(), "tag", booking.getFlight());
 		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "lastNibble");
+		dataset.put("price", price);
 		dataset.put("choices", choices);
 		dataset.put("choicesFlight", choicesFlight);
 		dataset.put("travelClass", choices.getSelected().getKey());
 		dataset.put("flight", choicesFlight.getSelected().getKey());
 		dataset.put("bookingId", booking.getId());
+		dataset.put("readonly", !booking.isDraftMode());
 		super.getResponse().addData(dataset);
 	}
 	@Override
@@ -59,20 +67,14 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 	public void perform(final Booking booking) {
 		this.repository.save(booking);
 	}
+
 	@Override
 	public void validate(final Booking booking) {
 		String cod = booking.getLocatorCode();
-		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod);
-		Date d = booking.getPurchaseMoment() == null ? null : booking.getPurchaseMoment();
+		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod).stream().filter(x -> x.getId() != booking.getId()).toList();
+		if (!booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
+			super.state(false, "purchaseMoment", "customer.booking.error.purchaseMoment");
 		if (!codigo.isEmpty())
 			super.state(false, "locatorCode", "customer.booking.error.repeat-code");
-		if (booking.getFlight() == null)
-			super.state(false, "vuelo", "customer.booking.error.no-flight");
-		else if (d == null)
-			super.state(false, "purchaseMoment", "customer.booking.error.moment");
-		else if (!booking.getFlight().getScheduledDeparture().after(d))
-			super.state(false, "vuelo", "customer.booking.error.cannotChoseFlight");
-
 	}
-
 }
