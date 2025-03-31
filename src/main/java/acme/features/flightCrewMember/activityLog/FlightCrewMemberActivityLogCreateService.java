@@ -42,6 +42,7 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 		activityLog.setDescription("");
 		activityLog.setSeverityLevel(0);
 		activityLog.setFlightCrewMember(flightCrewMember);
+		activityLog.setDraftMode(true);
 
 		super.getBuffer().addData(activityLog);
 	}

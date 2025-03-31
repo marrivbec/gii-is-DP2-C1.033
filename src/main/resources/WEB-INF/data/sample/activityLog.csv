@@ -1,5 +1,5 @@
 key,registrationMoment,typeOfIncident,description,severityLevel,draftMode,key:flightCrewMember
-activity-log-01,2012/07/02 00:00,Route and Navigation Issues,Routine assignment,true,2,flight-crew-member-01
+activity-log-01,2012/07/02 00:00,Route and Navigation Issues,Routine assignment,2,true,flight-crew-member-01
 activity-log-02,2012/07/02 00:00,Crash,Pending review,5,true,flight-crew-member-02
 activity-log-03,2012/07/02 00:00,Weather,Cancelled due to weather,8,true,flight-crew-member-03
 activity-log-04,2012/07/02 00:00,Mechanical and Technical Issues,Engine Failure,3,true,flight-crew-member-04

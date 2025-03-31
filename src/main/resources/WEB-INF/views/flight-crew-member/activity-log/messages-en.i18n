@@ -15,9 +15,9 @@ flightCrewMember.activityLog.form.label.registrationMoment = Registration Moment
 flightCrewMember.activityLog.form.label.typeOfIncident = Type Of Incident:
 flightCrewMember.activityLog.form.label.description = Description:
 flightCrewMember.activityLog.form.label.severityLevel = Severity Level:
-flightCrewMember.activityLog.form.label.flightCrewMember = Flight Crew Member:
 flightCrewMember.activityLog.form.label.confirmation = Do you want to confirm?
 
+flightCrewMember.activityLog.form.button.publish = Publish
 flightCrewMember.activityLog.form.button.create = Create
 flightCrewMember.activityLog.form.button.update = Update
 flightCrewMember.activityLog.form.button.delete = Delete

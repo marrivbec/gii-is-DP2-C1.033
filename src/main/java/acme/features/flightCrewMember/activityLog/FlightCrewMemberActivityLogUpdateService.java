@@ -10,7 +10,7 @@ import acme.entities.activityLog.ActivityLog;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
-public class FlightCrewMemberActivityLogShowService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
+public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -47,11 +47,26 @@ public class FlightCrewMemberActivityLogShowService extends AbstractGuiService<F
 	}
 
 	@Override
-	public void unbind(final ActivityLog activityLog) {
+	public void bind(final ActivityLog activityLog) {
+		super.bindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+	}
 
+	@Override
+	public void validate(final ActivityLog activityLog) {
+		;
+	}
+
+	@Override
+	public void perform(final ActivityLog activityLog) {
+		this.repository.save(activityLog);
+	}
+
+	@Override
+	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
 
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
+		dataset.put("readonly", false);
 
 		super.getResponse().addData(dataset);
 	}
