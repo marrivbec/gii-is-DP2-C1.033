@@ -8,6 +8,10 @@
 	<acme:input-moment code="airline-manager.leg.form.label.scheduledDeparture" path="scheduledDeparture"/>
 	<acme:input-moment code="airline-manager.leg.form.label.scheduledArrival" path="scheduledArrival" />
 	<acme:input-select code="airline-manager.leg.form.label.status" path="status" choices="${status}"/>
+	<acme:input-select code="airline-manager.leg.form.label.aircraft" path="aircraft" choices="${aircrafts}"/>	
+	<acme:input-select code="airline-manager.leg.form.label.departureAirport" path="departureAirport" choices="${departureAirports}"/>	
+	<acme:input-select code="airline-manager.leg.form.label.arrivalAirport" path="arrivalAirport" choices="${arrivalAirports}"/>	
+	
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">

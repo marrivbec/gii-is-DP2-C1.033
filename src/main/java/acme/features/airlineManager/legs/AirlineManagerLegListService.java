@@ -42,15 +42,16 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 
 		masterId = super.getRequest().getData("masterId", int.class);
 		legs = this.repository.findLegsByMasterId(masterId);
-
 		super.getBuffer().addData(legs);
+
 	}
 
 	@Override
 	public void unbind(final Leg leg) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "status", "draftMode");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "status");
+		dataset.put("draftMode", leg.getFlight().isDraftMode());
 		super.addPayload(dataset, leg, "departureAirport.name", "arrivalAirport.name");
 
 		super.getResponse().addData(dataset);
