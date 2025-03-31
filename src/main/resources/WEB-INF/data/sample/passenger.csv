@@ -1,4 +1,4 @@
-key,fullName,email,passportNumber,dateOfBirth,specialNeeds,published,key:customer
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode,key:customer
 passenger-01,John Doe,user1@example.com,B1000001,2001/02/02 00:00,None,true,customer1
 passenger-02,Alice Smith,user2@example.com,C1000002,2001/03/03 00:00,Wheelchair access,false,customer2
 passenger-03,Lorem ipsum dolor sit amea consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,user3@example.com,D1000003,2003/04/04 00:00,None,true,customer1

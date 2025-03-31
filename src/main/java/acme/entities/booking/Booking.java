@@ -59,7 +59,7 @@ public class Booking extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private boolean				published;
+	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
