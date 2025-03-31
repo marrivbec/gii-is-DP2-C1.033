@@ -52,6 +52,11 @@ public class ActivityLog extends AbstractEntity {
 	@Automapped
 	private Integer				severityLevel;
 
+	@Mandatory
+	// HINT: @Valid by default.
+	@Automapped
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
