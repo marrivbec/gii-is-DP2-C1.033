@@ -12,7 +12,7 @@
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Customer
 --
-+ identifier: String {Mandatory, Column(unique=true), ValidIdentifierNumber}
++ employeeCode: String {Mandatory, Column(unique=true), ValidemployeeCode}
 + phoneNumber: String {Mandatory, ValidPhone, Automapped}
 + physicalAddress: String {Mandatory, ValidLongText, Automapped}
 + city: String {Mandatory, ValidShortText, Automapped}

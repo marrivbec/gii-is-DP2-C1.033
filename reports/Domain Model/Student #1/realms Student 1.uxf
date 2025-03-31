@@ -12,7 +12,7 @@
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
 --
-+ numberID: String {Mandatory, ValidIdentifierNumber, Column(unique = true)}
++ employeeCode: String {Mandatory, ValidemployeeCode, Column(unique = true)}
 + yearsExp: Integer {Mandatory, Automapped}
 + dateBirth: LocalDate {Mandatory}
 + urlImage: String {Optional}

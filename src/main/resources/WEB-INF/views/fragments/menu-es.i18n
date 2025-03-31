@@ -19,6 +19,7 @@ master.menu.administrator = Administrador
 master.menu.administrator.list-airlines = ver aerolinias
 master.menu.administrator.list-user-accounts = Ver cuentas de usuario
 master.menu.administrator.list-airports = Ver lista de aeropuertos
+master.menu.administrator.list-aircrafts = Listar aviones
 master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
@@ -38,6 +39,19 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.customer.booking = Menú de Booking
 master.menu.customer.passenger = Menú de Passenger
 master.menu.customer = Menú de Customer
+
+# master.menu.assistanceAgent ##########################################################
+
+master.menu.assistanceAgent = Agente de asistencia
+master.menu.assistanceAgent.list-claims = Listar quejas completadas
+master.menu.assistanceAgent.list-claims-pending = Listar quejas pendientes
+master.menu.assistanceAgent.list-trackingLog = Listar seguimientos
+
+
+# master.menu.airline-manager ########################################################
+
+master.menu.airline-manager = Gerente de Aerolíneas
+master.menu.airline-manager.list-my-flights = Listar mis vuelos
 
 # master.menu.user-account ####################################################
 

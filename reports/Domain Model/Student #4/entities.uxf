@@ -125,27 +125,6 @@ bg=green</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>792</x>
-      <y>264</y>
-      <w>360</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Claim
---
-+ registrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ passengerEmail: String {Mandatory, ValidEmail, Automapped}
-+ description: String {Mandatory, ValidLongText, Automapped}
-+ type: ClaimType {Mandatory, Valid, Automapped}
---
-/+ indicator: boolean
-
-bg=green</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>1086</x>
@@ -166,6 +145,28 @@ bg=green</panel_attributes>
     </coordinates>
     <panel_attributes>+ indicator = indicator of whether the claim is accepted or not.
 bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>264</y>
+      <w>360</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Claim
+--
++ registrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ passengerEmail: String {Mandatory, ValidEmail, Automapped}
++ description: String {Mandatory, ValidLongText, Automapped}
++ type: ClaimType {Mandatory, Valid, Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
+--
+/+ indicator: Boolean
+
+bg=green</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
