@@ -31,3 +31,5 @@ acme.validation.severityLevel.message = Ranging from 0 to 10, where 0 indicates 
 
 acme.validation.lastnibble.message = The last nibble must be exactly 4 digits.
 
+acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution.
+acme.validation.trackingLog.resolutionPercentage.message = resolution percentage must be monotonically increasing
