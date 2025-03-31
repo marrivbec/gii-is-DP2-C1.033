@@ -1,0 +1,25 @@
+# Labels para el formulario de 'leg'
+airline-manager.leg.form.label.flightNumber = Flight number:
+airline-manager.leg.form.label.scheduledDeparture = Scheduled departure:
+airline-manager.leg.form.label.scheduledArrival = Scheduled arrival:
+airline-manager.leg.form.label.status = Status:
+airline-manager.leg.form.label.aircraft = Aircraft:
+airline-manager.leg.form.label.departureAirport = Departure airport:
+airline-manager.leg.form.label.arrivalAirport = Arrival airport:
+
+# Botones del formulario de 'leg'
+airline-manager.leg.form.button.create = Create
+airline-manager.leg.form.button.update = Update
+airline-manager.leg.form.button.delete = Delete
+
+# Etiquetas para la lista de 'leg'
+airline-manager.leg.list.label.flightNumber = Flight number:
+airline-manager.leg.list.label.scheduledDeparture = Scheduled departure:
+airline-manager.leg.list.label.status = Status:
+
+# Botón para crear en la lista de 'leg'
+airline-manager.leg.list.button.create = Create
+
+
+airline-manager.leg.form.title = Details of legs
+airline-manager.leg.list.title = List of legs	
