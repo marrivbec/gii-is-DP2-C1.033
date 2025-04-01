@@ -11,6 +11,8 @@ airline-manager.leg.form.label.arrivalAirport = Aeropuerto de llegada:
 airline-manager.leg.form.button.create = Crear
 airline-manager.leg.form.button.update = Actualizar
 airline-manager.leg.form.button.delete = Eliminar
+airline-manager.leg.form.button.publish = Publicar
+
 
 # Etiquetas para la lista de 'leg'
 airline-manager.leg.list.label.flightNumber = Número de vuelo:
