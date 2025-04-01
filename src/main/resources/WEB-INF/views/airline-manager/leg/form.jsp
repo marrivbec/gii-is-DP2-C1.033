@@ -15,6 +15,7 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
+			<acme:submit code="airline-manager.leg.form.button.publish" action="/airline-manager/leg/publish"/>
 			<acme:submit code="airline-manager.leg.form.button.update" action="/airline-manager/leg/update"/>
 			<acme:submit code="airline-manager.leg.form.button.delete" action="/airline-manager/leg/delete"/>
 		</jstl:when>

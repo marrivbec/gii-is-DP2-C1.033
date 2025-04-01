@@ -30,6 +30,9 @@ public class AirlineManagerLegController extends AbstractGuiController<AirlineMa
 	@Autowired
 	private AirlineManagerLegDeleteService	deleteService;
 
+	@Autowired
+	private AirlineManagerLegPublishService	publishService;
+
 	// Constructors -----------------------------------------------------------
 
 
@@ -40,6 +43,8 @@ public class AirlineManagerLegController extends AbstractGuiController<AirlineMa
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
+
+		super.addCustomCommand("publish", "update", this.publishService);
 	}
 
 }

@@ -1,3 +1,4 @@
 key,employeeCode,yearsExp,dateBirth,urlImage,key:user-account,key:airline
-manager1,PV126457,8,2022/09/01 10:00,https://acortar.link/MhSOQi,user-account-manager-01,airline-01
-manager2,JS126458,12,2023/09/01 10:00,https://acortar.link/i6WUxl,user-account-manager-02,airline-02
+manager1,PV126457,8,2000/09/01 10:00,https://acortar.link/MhSOQi,user-account-manager-01,airline-01
+manager2,JS126458,12,2005/09/01 10:00,https://acortar.link/i6WUxl,user-account-manager-02,airline-02
+manager3,CV125568,30,1997/08/05 10:00,https://acortar.link/i6WUxl,user-account-manager-03,airline-03
