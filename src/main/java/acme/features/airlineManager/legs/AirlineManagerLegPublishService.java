@@ -17,7 +17,7 @@ import acme.entities.leg.Status;
 import acme.realms.employee.AirlineManager;
 
 @GuiService
-public class AirlineManagerLegShowService extends AbstractGuiService<AirlineManager, Leg> {
+public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineManager, Leg> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -49,6 +49,21 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 		leg = this.repository.findLegById(id);
 
 		super.getBuffer().addData(leg);
+	}
+
+	@Override
+	public void bind(final Leg leg) {
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "aircraft", "departureAirport", "arrivalAirport");
+	}
+	@Override
+	public void validate(final Leg leg) {
+		;
+	}
+
+	@Override
+	public void perform(final Leg leg) {
+		leg.setDraftMode(false);
+		this.repository.save(leg);
 	}
 
 	@Override
