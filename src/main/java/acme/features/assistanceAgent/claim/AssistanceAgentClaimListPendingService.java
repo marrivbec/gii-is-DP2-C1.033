@@ -12,6 +12,7 @@
 
 package acme.features.assistanceAgent.claim;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,11 @@ public class AssistanceAgentClaimListPendingService extends AbstractGuiService<A
 		int agentId;
 
 		agentId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		claims = this.repository.findAllPendingClaimsByAgentId(agentId);
+		Collection<Claim> pendingClaims = this.repository.findAllPendingClaimsByAgentId(agentId);
+		Collection<Claim> emptyClaims = this.repository.findAllEmptyClaimsByAgentId(agentId);
+
+		claims = new ArrayList<>(pendingClaims);
+		claims.addAll(emptyClaims);
 
 		super.getBuffer().addData(claims);
 	}
@@ -57,7 +62,7 @@ public class AssistanceAgentClaimListPendingService extends AbstractGuiService<A
 		indicator = claim.indicator();
 		dataset = super.unbindObject(claim, "passengerEmail", "type");
 		dataset.put("indicator", indicator);
-		super.addPayload(dataset, claim, "registrationMoment", "description", "leg.flightNumber");
+		super.addPayload(dataset, claim, "registrationMoment", "description", "leg");
 
 		super.getResponse().addData(dataset);
 	}

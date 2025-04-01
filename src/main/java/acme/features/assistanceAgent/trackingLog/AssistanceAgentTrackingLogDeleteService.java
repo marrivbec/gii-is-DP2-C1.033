@@ -1,5 +1,5 @@
 /*
- * AssistanceAgentTrackingLogShowService.java
+ * AssistanceAgentTrackingLogCreateService.java
  *
  * Copyright (C) 2012-2025 Rafael Corchuelo.
  *
@@ -23,7 +23,7 @@ import acme.entities.trackingLog.TrackingLog;
 import acme.realms.employee.AssistanceAgent;
 
 @GuiService
-public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<AssistanceAgent, TrackingLog> {
+public class AssistanceAgentTrackingLogDeleteService extends AbstractGuiService<AssistanceAgent, TrackingLog> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -36,15 +36,14 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 	@Override
 	public void authorise() {
 		boolean status;
-		int trackingLogId;
 		TrackingLog trackingLog;
+		int id;
 		AssistanceAgent assistanceAgent;
 
-		trackingLogId = super.getRequest().getData("id", int.class);
-		trackingLog = this.repository.findTrackingLogById(trackingLogId);
+		id = super.getRequest().getData("id", int.class);
+		trackingLog = this.repository.findTrackingLogById(id);
 		assistanceAgent = trackingLog == null ? null : trackingLog.getClaim().getAssistanceAgents();
-		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent);
-
+		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (trackingLog == null || trackingLog.isDraftMode());
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -57,6 +56,21 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 		trackingLog = this.repository.findTrackingLogById(id);
 
 		super.getBuffer().addData(trackingLog);
+	}
+
+	@Override
+	public void bind(final TrackingLog trackingLog) {
+		super.bindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution");
+	}
+
+	@Override
+	public void validate(final TrackingLog trackingLog) {
+		;
+	}
+
+	@Override
+	public void perform(final TrackingLog trackingLog) {
+		this.repository.delete(trackingLog);
 	}
 
 	@Override

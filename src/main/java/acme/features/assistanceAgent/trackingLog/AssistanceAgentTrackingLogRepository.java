@@ -18,6 +18,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.claim.Claim;
 import acme.entities.trackingLog.TrackingLog;
 
 @Repository
@@ -29,6 +30,9 @@ public interface AssistanceAgentTrackingLogRepository extends AbstractRepository
 	@Query("SELECT t FROM TrackingLog t WHERE t.id = :trackingLogId")
 	TrackingLog findTrackingLogById(int trackingLogId);
 
-	@Query("SELECT t FROM TrackingLog t WHERE t.claim.assistanceAgents.id = :assistanceAgentId")
-	Collection<TrackingLog> findAllTrackingLogs(int assistanceAgentId);
+	@Query("select c from Claim c where c.id = :id")
+	Claim findClaimById(int id);
+
+	@Query("SELECT t.claim FROM TrackingLog t WHERE t.id = :trackingLogId")
+	Claim findClaimByTrackingLogId(int trackingLogId);
 }
