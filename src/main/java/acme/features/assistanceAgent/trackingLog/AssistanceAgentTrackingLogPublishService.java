@@ -67,9 +67,12 @@ public class AssistanceAgentTrackingLogPublishService extends AbstractGuiService
 
 	@Override
 	public void validate(final TrackingLog trackingLog) {
+		boolean status;
+
 		Claim claim = trackingLog.getClaim();
-		boolean isValid = claim != null && !claim.isDraftMode();
-		super.state(isValid, "*", "acme.validation.currency.message");
+		status = claim != null && !claim.isDraftMode();
+
+		super.state(status, "*", "acme.validation.trackingLog.unpublished.message");
 	}
 
 	@Override

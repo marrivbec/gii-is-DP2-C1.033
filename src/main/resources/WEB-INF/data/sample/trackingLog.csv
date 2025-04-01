@@ -1,11 +1,11 @@
 key,lastUpdateMoment,step,resolutionPercentage,indicator,resolution,draftMode,key:claim
 log-01,2020/03/07 15:30,Initial Review,10.0,PENDING,Not found,true,claim-01
 log-02,2021/03/07 15:30,Documents Requested,30.0,PENDING,"",true,claim-01
-log-03,2022/03/07 15:30,Documents Received,50.0,ACCEPTED,Documents verified moving to next step,true,claim-01
+log-03,2022/03/07 15:30,Documents Received,100.0,ACCEPTED,Documents verified moving to next step,true,claim-01
 log-04,2023/03/07 15:30,Inspection,70.0,PENDING,"",true,claim-02
-log-05,2024/03/07 15:30,Awaiting Airline Response,80.0,ACCEPTED,Airline is reviewing the case,true,claim-02
+log-05,2024/03/07 15:30,Awaiting Airline Response,100.0,ACCEPTED,Airline is reviewing the case,true,claim-02
 log-06,2020/03/07 15:30,Resolution Proposed,90.0,PENDING,"",true,claim-03
 log-07,2021/03/07 15:30,Finalized,100.0,REJECTED,Claim successfully resolved,true,claim-03
 log-08,2023/03/07 15:30,Pending Passenger Confirmation,85.0,PENDING,"",true,claim-04
-log-09,2022/03/07 15:30,Airline Approved Compensation,95.0,ACCEPTED,Compensation approved finalizing details,true,claim-05
+log-09,2022/03/07 15:30,Airline Approved Compensation,100.0,ACCEPTED,Compensation approved finalizing details,true,claim-05
 log-10,2024/03/07 15:30,Closed,100.0,ACCEPTED,Claim fully resolved and case closed,true,claim-06
