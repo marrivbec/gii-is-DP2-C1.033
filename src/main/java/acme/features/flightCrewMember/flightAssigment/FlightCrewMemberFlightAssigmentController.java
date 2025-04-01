@@ -38,12 +38,12 @@ public class FlightCrewMemberFlightAssigmentController extends AbstractGuiContro
 
 	@PostConstruct
 	protected void initialise() {
-		//super.addBasicCommand("list", this.listCompleted);
-		//super.addBasicCommand("show", this.showService);
-		super.addBasicCommand("create", this.createService);
-		//super.addBasicCommand("update", this.updateService);
+		super.addCustomCommand("list-completed", "list", this.listCompleted);
+		super.addCustomCommand("list-planned", "list", this.listPlanned);
 
-		//super.addCustomCommand("planned", "update", this.listPlanned);
-		//super.addCustomCommand("publish", "update", this.publishService);
+		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
+		super.addCustomCommand("publish", "update", this.publishService);
 	}
 }

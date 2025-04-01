@@ -2,7 +2,6 @@
 package acme.features.flightCrewMember.flightAssigment;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,6 +14,7 @@ import acme.entities.flightAssignment.DutyType;
 import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.flightAssignment.Status;
 import acme.entities.leg.Leg;
+import acme.realms.employee.AvailabilityStatus;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -35,59 +35,71 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 
 	@Override
 	public void load() {
-		FlightAssignment flightAssignment;
-		Date moment;
-		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		FlightAssignment flightAssignment = new FlightAssignment();
 
-		moment = MomentHelper.getCurrentMoment();
-
-		flightAssignment = new FlightAssignment();
-		flightAssignment.setDuty(DutyType.LEAD_ATTENDANT);
-		flightAssignment.setMoment(moment);
-		flightAssignment.setCurrentStatus(Status.CONFIRMED);
-		flightAssignment.setRemarks("");
-		flightAssignment.setFlightCrewMember(flightCrewMember);
+		flightAssignment.setMoment(MomentHelper.getCurrentMoment());
+		flightAssignment.setDraftMode(true);
 
 		super.getBuffer().addData(flightAssignment);
 	}
 
 	@Override
 	public void bind(final FlightAssignment flightAssignment) {
-		super.bindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "leg");
+		super.bindObject(flightAssignment, "duty", "currentStatus", "remarks", "flightCrewMember", "leg");
 	}
 
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
-		;
+		super.state(flightAssignment.getFlightCrewMember() != null, "flightCrewMember", "acme.validation.flightAssignment.flightcrewmember");
+		super.state(flightAssignment.getLeg() != null, "leg", "acme.validation.flightAssignment.leg");
+
+		if (flightAssignment.getDuty() != null && flightAssignment.getLeg() != null) {
+			boolean isDutyAssigned = this.repository.hasDutyAssigned(flightAssignment.getLeg().getId(), flightAssignment.getDuty(), flightAssignment.getId());
+			super.state(!isDutyAssigned, "duty", "acme.validation.flightAssignment.duty");
+		}
+
+		if (flightAssignment.getLeg() != null) {
+			boolean isPastLeg = flightAssignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+			super.state(!isPastLeg, "leg", "acme.validation.flightAssignment.leg.moment");
+		}
+
+		if (flightAssignment.getFlightCrewMember() != null) {
+			boolean isAvailable = flightAssignment.getFlightCrewMember().getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
+			super.state(isAvailable, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.available");
+
+			boolean isAlreadyAssigned = this.repository.hasFlightCrewMemberLegAssociated(flightAssignment.getFlightCrewMember().getId(), MomentHelper.getCurrentMoment());
+			super.state(!isAlreadyAssigned, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.multipleLegs");
+		}
+
 	}
 
 	@Override
 	public void perform(final FlightAssignment flightAssignment) {
-		Date moment;
-
-		moment = MomentHelper.getCurrentMoment();
-		flightAssignment.setMoment(moment);
 		this.repository.save(flightAssignment);
 	}
 
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
-		Collection<Leg> legs;
-		SelectChoices legChoice;
-		SelectChoices dutyChoice;
-		Dataset dataset;
+		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "draftMode", "flightCrewMember", "leg");
 
-		dutyChoice = SelectChoices.from(DutyType.class, flightAssignment.getDuty());
-		legs = this.repository.findAllLeg();
-		legChoice = SelectChoices.from(legs, "flightNumber", flightAssignment.getLeg());
+		SelectChoices dutyChoices = SelectChoices.from(DutyType.class, flightAssignment.getDuty());
+		dataset.put("dutyChoices", dutyChoices);
 
-		dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "leg");
-		dataset.put("readonly", false);
-		dataset.put("duty", dutyChoice);
-		dataset.put("legs", legChoice);
+		SelectChoices statusChoices = SelectChoices.from(Status.class, flightAssignment.getCurrentStatus());
+		dataset.put("statusChoices", statusChoices);
+
+		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		Collection<FlightCrewMember> flightCrewMembers = this.repository.findAllflightCrewMemberFromAirline(flightCrewMember.getAirline().getId());
+
+		SelectChoices flightCrewMemberChoices = SelectChoices.from(flightCrewMembers, "identity.fullName", null);
+		dataset.put("flightCrewMemberChoices", flightCrewMemberChoices);
+		dataset.put("readOnlyCrewMember", false);
+
+		Collection<Leg> legs = this.repository.findAllLegsFromAirline(flightCrewMember.getAirline().getId());
+		SelectChoices legChoices = SelectChoices.from(legs, "flightNumber", null);
+		dataset.put("legChoices", legChoices);
 
 		super.getResponse().addData(dataset);
-
 	}
 
 }

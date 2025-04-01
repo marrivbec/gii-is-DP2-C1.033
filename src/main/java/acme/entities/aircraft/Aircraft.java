@@ -59,6 +59,11 @@ public class Aircraft extends AbstractEntity {
 	@Automapped
 	private String				details;
 
+	@Mandatory
+	// HINT: @Valid by default.
+	@Automapped
+	private boolean				able;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
