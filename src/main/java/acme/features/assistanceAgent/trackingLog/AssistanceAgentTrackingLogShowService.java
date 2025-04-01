@@ -12,15 +12,12 @@
 
 package acme.features.assistanceAgent.trackingLog;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.claim.Claim;
 import acme.entities.trackingLog.Indicator;
 import acme.entities.trackingLog.TrackingLog;
 import acme.realms.employee.AssistanceAgent;
@@ -65,18 +62,12 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 	@Override
 	public void unbind(final TrackingLog trackingLog) {
 		SelectChoices choices;
-		AssistanceAgent assistanceAgent = (AssistanceAgent) super.getRequest().getPrincipal().getActiveRealm();
-		Collection<Claim> claims;
-		SelectChoices choices2;
 		Dataset dataset;
 
 		choices = SelectChoices.from(Indicator.class, trackingLog.getIndicator());
-		claims = this.repository.findAllClaim(assistanceAgent.getId());
-		choices2 = SelectChoices.from(claims, "id", trackingLog.getClaim());
 
 		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "draftMode");
-		dataset.put("claim", choices2.getSelected().getKey());
-		dataset.put("claims", choices2);
+		dataset.put("masterId", trackingLog.getClaim().getId());
 		dataset.put("indicators", choices);
 
 		super.getResponse().addData(dataset);

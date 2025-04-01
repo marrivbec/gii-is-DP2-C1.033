@@ -12,15 +12,12 @@
 
 package acme.features.assistanceAgent.trackingLog;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.claim.Claim;
 import acme.entities.trackingLog.Indicator;
 import acme.entities.trackingLog.TrackingLog;
 import acme.realms.employee.AssistanceAgent;
@@ -63,7 +60,7 @@ public class AssistanceAgentTrackingLogDeleteService extends AbstractGuiService<
 
 	@Override
 	public void bind(final TrackingLog trackingLog) {
-		super.bindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "claim");
+		super.bindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution");
 	}
 
 	@Override
@@ -78,19 +75,14 @@ public class AssistanceAgentTrackingLogDeleteService extends AbstractGuiService<
 
 	@Override
 	public void unbind(final TrackingLog trackingLog) {
-		Collection<Claim> claims;
 		SelectChoices choices;
-		SelectChoices choices2;
-		AssistanceAgent assistanceAgent = (AssistanceAgent) super.getRequest().getPrincipal().getActiveRealm();
 		Dataset dataset;
 
 		choices = SelectChoices.from(Indicator.class, trackingLog.getIndicator());
-		claims = this.repository.findAllClaim(assistanceAgent.getId());
-		choices2 = SelectChoices.from(claims, "id", trackingLog.getClaim());
 
-		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "claim", "draftMode");
+		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "draftMode");
+		dataset.put("masterId", trackingLog.getClaim().getId());
 		dataset.put("indicators", choices);
-		dataset.put("claims", choices2);
 
 		super.getResponse().addData(dataset);
 	}
