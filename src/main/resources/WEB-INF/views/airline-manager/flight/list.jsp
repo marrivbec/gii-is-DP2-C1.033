@@ -14,8 +14,9 @@
 	<acme:list-column code="airline-manager.flight.list.label.layovers" path="layovers" width="15%"/>
 	<acme:list-column code="airline-manager.flight.list.label.draftMode" path="draftMode" width="15%"/>
 	
-
-    
-    <acme:list-payload path="payload"/>
+	<acme:list-payload path="payload"/>
 </acme:list>
 
+<jstl:if test="${_command == 'list'}">
+	<acme:button code="airline-manager.flight.list.button.create" action="/airline-manager/flight/create"/>
+</jstl:if>	
