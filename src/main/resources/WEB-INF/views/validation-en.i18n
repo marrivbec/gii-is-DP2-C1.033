@@ -8,28 +8,28 @@ acme.validation.phone.message       = Must match +country-code (area-code) phone
 
 acme.validation.job.ticker.message			  = The ticker must have letters, digits, underscores, and hyphens only
 
-acme.validation.iata.message        = The IATA code must contain exactly 3 uppercase letters.
+acme.validation.iata.message        = The IATA code must contain exactly 3 uppercase letters
 
-acme.validation.cargo.message       = The cargo weight must be between 2,000 and 50,000 kg.
+acme.validation.cargo.message       = The cargo weight must be between 2,000 and 50,000 kg
 
-acme.validation.promo.error.message = The promotion code must contain four uppercase letters, a hyphen, and the last two digits must correspond to the current year (e.g., ABCD-25).
-acme.validation.promo.last-digits.message = The promotion code must end with the last two digits of the current year.
+acme.validation.promo.error.message = The promotion code must contain four uppercase letters, a hyphen, and the last two digits must correspond to the current year (e.g., ABCD-25)
+acme.validation.promo.last-digits.message = The promotion code must end with the last two digits of the current year
 
-acme.validation.score.message = The score must be between 0 and 10, with a maximum of one decimal place.
+acme.validation.score.message = The score must be between 0 and 10, with a maximum of one decimal place
 
-acme.validation.flight.number.message = The flight number must consist of 3 uppercase letters followed by 4 digits (example: ABC1234).
+acme.validation.flight.number.message = The flight number must consist of 3 uppercase letters followed by 4 digits (example: ABC1234)
 
-acme.validation.passport.message = Invalid passport number. It must be 6 to 9 characters long, using only uppercase letters and numbers.
+acme.validation.passport.message = Invalid passport number. It must be 6 to 9 characters long, using only uppercase letters and numbers
 
-acme.validation.locatorCode.message = Invalid locator code. It must be between 6 and 8 characters long, using only uppercase letters and numbers.
+acme.validation.locatorCode.message = Invalid locator code. It must be between 6 and 8 characters long, using only uppercase letters and numbers
 
-acme.validation.earnedPoints.message = Invalid points value. Customers can have up to 500,000 points.
+acme.validation.earnedPoints.message = Invalid points value. Customers can have up to 500,000 points
 
-acme.validation.employeeCode.message = Invalid identifier. Unique, pattern "^[A-Z]{2-3}\d{6}$", where the first two or three letters correspond to their initials.
+acme.validation.employeeCode.message = Invalid identifier. Unique, pattern "^[A-Z]{2-3}\d{6}$", where the first two or three letters correspond to their initials
 
-acme.validation.severityLevel.message = Ranging from 0 to 10, where 0 indicates no issue and 10 represents a highly critical sit-uation.
+acme.validation.severityLevel.message = Ranging from 0 to 10, where 0 indicates no issue and 10 represents a highly critical sit-uation
 
-acme.validation.lastnibble.message = The last nibble must be exactly 4 digits.
+acme.validation.lastnibble.message = The last nibble must be exactly 4 digits
 
-acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution.
+acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage must be monotonically increasing

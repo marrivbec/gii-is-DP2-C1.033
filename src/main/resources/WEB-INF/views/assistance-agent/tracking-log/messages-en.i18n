@@ -22,6 +22,7 @@ assistanceAgent.trackingLog.form.label.confirmation = Do you want to confirm?
 assistanceAgent.trackingLog.form.button.create = Create
 assistanceAgent.trackingLog.form.button.update = Update
 assistanceAgent.trackingLog.form.button.delete = Delete
+assistanceAgent.trackingLog.form.button.publish = Publish
  
 assistanceAgent.trackingLog.list.label.lastUpdateMoment = Last update moment:
 assistanceAgent.trackingLog.list.label.resolutionPercentage = Resolution percentage:

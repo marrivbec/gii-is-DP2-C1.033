@@ -57,6 +57,7 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 		claim.setDescription("");
 		claim.setAssistanceAgents(assistanceAgent);
 		claim.setType(ClaimType.FLIGHT_ISSUES);
+		claim.setDraftMode(true);
 
 		super.getBuffer().addData(claim);
 	}
@@ -89,9 +90,9 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
 		legs = this.repository.findAllLeg();
-		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
+		choices2 = SelectChoices.from(legs, "id", claim.getLeg());
 
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg");
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg", "draftMode");
 		dataset.put("readonly", false);
 		dataset.put("types", choices);
 		dataset.put("legs", choices2);

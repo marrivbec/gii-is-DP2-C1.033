@@ -1,5 +1,5 @@
 /*
- * AssistanceAgentTrackingLogShowService.java
+ * AssistanceAgentTrackingLogCreateService.java
  *
  * Copyright (C) 2012-2025 Rafael Corchuelo.
  *
@@ -26,7 +26,7 @@ import acme.entities.trackingLog.TrackingLog;
 import acme.realms.employee.AssistanceAgent;
 
 @GuiService
-public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<AssistanceAgent, TrackingLog> {
+public class AssistanceAgentTrackingLogPublishService extends AbstractGuiService<AssistanceAgent, TrackingLog> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -46,7 +46,7 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 		trackingLogId = super.getRequest().getData("id", int.class);
 		trackingLog = this.repository.findTrackingLogById(trackingLogId);
 		assistanceAgent = trackingLog == null ? null : trackingLog.getClaim().getAssistanceAgents();
-		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent);
+		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (trackingLog == null || trackingLog.isDraftMode());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -63,21 +63,36 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 	}
 
 	@Override
+	public void bind(final TrackingLog trackingLog) {
+		super.bindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "claim");
+	}
+
+	@Override
+	public void validate(final TrackingLog trackingLog) {
+		;
+	}
+
+	@Override
+	public void perform(final TrackingLog trackingLog) {
+		trackingLog.setDraftMode(false);
+		this.repository.save(trackingLog);
+	}
+
+	@Override
 	public void unbind(final TrackingLog trackingLog) {
-		SelectChoices choices;
-		AssistanceAgent assistanceAgent = (AssistanceAgent) super.getRequest().getPrincipal().getActiveRealm();
 		Collection<Claim> claims;
+		SelectChoices choices;
 		SelectChoices choices2;
+		AssistanceAgent assistanceAgent = (AssistanceAgent) super.getRequest().getPrincipal().getActiveRealm();
 		Dataset dataset;
 
 		choices = SelectChoices.from(Indicator.class, trackingLog.getIndicator());
 		claims = this.repository.findAllClaim(assistanceAgent.getId());
 		choices2 = SelectChoices.from(claims, "id", trackingLog.getClaim());
 
-		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "draftMode");
-		dataset.put("claim", choices2.getSelected().getKey());
-		dataset.put("claims", choices2);
+		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "claim", "draftMode");
 		dataset.put("indicators", choices);
+		dataset.put("claims", choices2);
 
 		super.getResponse().addData(dataset);
 	}
