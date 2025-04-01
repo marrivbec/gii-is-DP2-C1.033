@@ -291,7 +291,7 @@ Booking
 + purchaseMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
 - lastCardNibble: String {Optional, ValidLastNibble, Automapped}
-+ published: booleean {Mandatory, Automapped]
++ draftMode: booleean {Mandatory, Automapped]
 --
 /+ price: Money
 bg=green
@@ -612,7 +612,7 @@ Passenger
 + passportNumber: String {Mandatory, ValidPassportNumber, Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 - specialNeeds: String {Optional, ValidShortText, Automapped}
-+ published: booleean {Mandatory, Automapped]
++ draftMode: booleean {Mandatory, Automapped]
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>

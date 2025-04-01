@@ -4,7 +4,7 @@ airline-manager.flight.form.title = Flight Details
 airline-manager.flight.list.title = Flight List
 
 airline-manager.flight.form.label.tag = Tag:
-airline-manager.flight.form.label.selfTransfer = Self transfer:
+airline-manager.flight.form.label.selfTransfer = Self transfer
 airline-manager.flight.form.label.cost = Cost:
 airline-manager.flight.form.label.description = description:
 airline-manager.flight.form.label.originCity = Origin city:
@@ -16,7 +16,7 @@ airline-manager.flight.form.button.create = Create
 airline-manager.flight.form.button.update = Update
 airline-manager.flight.form.button.delete = Delete
 airline-manager.flight.form.button.publish = Publish
-
+airline-manager.flight.form.button.legs = Legs
 
 airline-manager.flight.list.label.tag = Tag:
 airline-manager.flight.list.label.selfTransfer = Self transfer:
