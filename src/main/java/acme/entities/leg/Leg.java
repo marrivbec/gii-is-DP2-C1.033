@@ -73,7 +73,7 @@ public class Leg extends AbstractEntity {
 	}
 
 	@Transient
-	public String flightNumber() {
+	public String getFlightNumber() {
 		return this.aircraft.getAirline().getIata() + this.flightNumberDigits;
 
 	}

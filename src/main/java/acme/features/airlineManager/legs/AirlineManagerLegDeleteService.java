@@ -80,7 +80,7 @@ public class AirlineManagerLegDeleteService extends AbstractGuiService<AirlineMa
 		choices = SelectChoices.from(Status.class, leg.getStatus());
 
 		dataset = super.unbindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival");
-		dataset.put("flightNumber", leg.flightNumber());
+		dataset.put("flightNumber", leg.getFlightNumber());
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 		dataset.put("draftMode", leg.isDraftMode());
 		dataset.put("status", choices);
