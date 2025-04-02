@@ -1,7 +1,7 @@
 key,flight_number,scheduled_arrival,scheduled_departure,status,key:aircraft,key:departure_airport,key:arrival_airport,key:flight,draft_mode
-leg-01,XYZ9876,2026/05/16 18:30,2022/05/15 16:30,ON_TIME,aircraft-01,airport-00,airport-14,flight-14,False
-leg-02,DEF6543,2026/03/11 14:00,2015/03/10 13:00,CANCELLED,aircraft-02,airport-01,airport-13,flight-13,False
-leg-03,XYZ9877,2026/02/16 06:00,2001/02/15 05:00,CANCELLED,aircraft-03,airport-02,airport-12,flight-12,False
+leg-01,XYZ9876,2026/05/16 18:30,2026/05/15 16:30,ON_TIME,aircraft-01,airport-00,airport-14,flight-14,False
+leg-02,DEF6543,2026/03/11 14:00,2026/03/10 13:00,CANCELLED,aircraft-02,airport-01,airport-13,flight-13,False
+leg-03,XYZ9877,2026/02/16 06:00,2026/02/15 05:00,CANCELLED,aircraft-03,airport-02,airport-12,flight-12,False
 leg-04,XYZ9878,2002/11/02 12:01,2002/11/01 11:01,DELAYED,aircraft-04,airport-03,airport-11,flight-11,False
 leg-05,XYZ9879,2005/07/21 23:45,2005/07/20 22:45,DELAYED,aircraft-05,airport-04,airport-10,flight-10,False
 leg-06,XYZ9880,2024/08/20 21:59,2024/08/19 18:59,LANDED,aircraft-06,airport-05,airport-09,flight-09,False
