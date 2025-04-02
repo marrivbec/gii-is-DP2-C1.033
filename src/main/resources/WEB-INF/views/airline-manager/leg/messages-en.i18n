@@ -1,0 +1,38 @@
+# Labels para el formulario de 'leg'
+airline-manager.leg.form.label.flightNumber = Flight number:
+airline-manager.leg.form.label.scheduledDeparture = Scheduled departure:
+airline-manager.leg.form.label.scheduledArrival = Scheduled arrival:
+airline-manager.leg.form.label.status = Status:
+airline-manager.leg.form.label.aircraft = Aircraft:
+airline-manager.leg.form.label.departureAirport = Departure airport:
+airline-manager.leg.form.label.arrivalAirport = Arrival airport:
+
+
+# Botones del formulario de 'leg'
+airline-manager.leg.form.button.create = Create
+airline-manager.leg.form.button.update = Update
+airline-manager.leg.form.button.delete = Delete
+airline-manager.leg.form.button.publish = Publish
+
+# Etiquetas para la lista de 'leg'
+airline-manager.leg.list.label.flightNumber = Flight number:
+airline-manager.leg.list.label.scheduledDeparture = Scheduled departure:
+airline-manager.leg.list.label.scheduledArrival = Scheduled arrival:
+airline-manager.leg.list.label.draftMode = Draft mode:
+
+airline-manager.leg.list.label.status = Status:
+
+# Botón para crear en la lista de 'leg'
+airline-manager.leg.list.button.create = Create
+
+
+airline-manager.leg.form.title = Details of legs
+airline-manager.leg.list.title = List of legs	
+
+
+
+airlineManager.leg.error.diferenteFlihtNumber.message = There is already a leg of the flight that has that flight number
+airlineManager.leg.error.aircraft-under-maintenance.message = You cannot use an aircraft that is under maintenance
+airlineManager.leg.error.sameAirport.message = The departure airport must be different from the arrival airport
+airlineManager.leg.error.timesOverlap.message = There are segments that overlap in time
+airlineManager.leg.error.times.message = The arrival time cannot be earlier than the departure time

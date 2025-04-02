@@ -1,16 +1,16 @@
-key,duty,moment,currentStatus,remarks,key:flightCrewMember,key:leg
-flight-assignment-01,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-01,leg-01
-flight-assignment-02,COPILOT,2012/07/02 00:00,PENDING,Pending review,flight-crew-member-02,leg-02
-flight-assignment-03,LEAD_ATTENDANT,2012/07/02 00:00,CANCELLED,Cancelled due to weather,flight-crew-member-03,leg-03
-flight-assignment-04,CABIN_ATTENDANT,2012/07/02 00:00,CONFIRMED,Assigned as scheduled,flight-crew-member-04,leg-04
-flight-assignment-05,PILOT,2012/07/02 00:00,CONFIRMED,Routine check-in,flight-crew-member-02,leg-05
-flight-assignment-06,COPILOT,2000/01/01 00:00,CONFIRMED,Early assignment,flight-crew-member-03,leg-06
-flight-assignment-07,COPILOT,2000/01/01 00:01,CONFIRMED,Reassigned duty,flight-crew-member-01,leg-07
-flight-assignment-09,COPILOT,2022/07/30 00:00,CONFIRMED,Routine duty,flight-crew-member-02,leg-08
-flight-assignment-10,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-03,leg-09
-flight-assignment-11,PILOT,2012/07/02 00:00,PENDING,Awaiting final check,flight-crew-member-04,leg-10
-flight-assignment-12,PILOT,2012/07/02 00:00,CANCELLED,Crew unavailability,flight-crew-member-04,leg-11
-flight-assignment-13,PILOT,2012/07/02 00:00,CONFIRMED,Reassigned for extended route,flight-crew-member-04,leg-12
-flight-assignment-14,PILOT,2012/07/02 00:00,CONFIRMED,,flight-crew-member-03,leg-13
-flight-assignment-15,PILOT,2012/07/02 00:00,CONFIRMED,L,flight-crew-member-02,leg-14
-flight-assignment-16,PILOT,2012/07/02 00:00,CONFIRMED,Assigned with alternative schedule,flight-crew-member-01,leg-15
+key,duty,moment,currentStatus,remarks,key:flightCrewMember,draftMode,key:leg
+flight-assignment-01,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-01,true,leg-01
+flight-assignment-02,COPILOT,2012/07/02 00:00,PENDING,Pending review,flight-crew-member-02,true,leg-02
+flight-assignment-03,LEAD_ATTENDANT,2012/07/02 00:00,CANCELLED,Cancelled due to weather,flight-crew-member-03,true,leg-03
+flight-assignment-04,CABIN_ATTENDANT,2012/07/02 00:00,CONFIRMED,Assigned as scheduled,flight-crew-member-04,true,leg-04
+flight-assignment-05,PILOT,2012/07/02 00:00,CONFIRMED,Routine check-in,flight-crew-member-02,true,leg-05
+flight-assignment-06,COPILOT,2000/01/01 00:00,CONFIRMED,Early assignment,flight-crew-member-03,true,leg-06
+flight-assignment-07,COPILOT,2000/01/01 00:01,CONFIRMED,Reassigned duty,flight-crew-member-01,true,leg-07
+flight-assignment-09,COPILOT,2022/07/30 00:00,CONFIRMED,Routine duty,flight-crew-member-02,true,leg-08
+flight-assignment-10,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-03,true,leg-09
+flight-assignment-11,PILOT,2012/07/02 00:00,PENDING,Awaiting final check,flight-crew-member-04,true,leg-10
+flight-assignment-12,PILOT,2012/07/02 00:00,CANCELLED,Crew unavailability,flight-crew-member-04,true,leg-11
+flight-assignment-13,PILOT,2012/07/02 00:00,CONFIRMED,Reassigned for extended route,flight-crew-member-04,true,leg-12
+flight-assignment-14,PILOT,2012/07/02 00:00,CONFIRMED,,flight-crew-member-03,true,leg-13
+flight-assignment-15,PILOT,2012/07/02 00:00,CONFIRMED,L,flight-crew-member-02,true,leg-14
+flight-assignment-16,PILOT,2012/07/02 00:00,CONFIRMED,Assigned with alternative schedule,flight-crew-member-01,true,leg-15

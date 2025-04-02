@@ -21,7 +21,7 @@ public class TrackingLogResolutionValidator extends AbstractValidator<ValidTrack
 		boolean isValid = trackingLog.getResolution() != null && !trackingLog.getResolution().trim().isEmpty();
 
 		if (!isValid)
-			this.state(context, false, "resolutionDetails", "acme.validation.trackingLog.resolution.message");
+			this.state(context, false, "resolution", "acme.validation.trackingLog.resolution.message");
 
 		return isValid;
 	}

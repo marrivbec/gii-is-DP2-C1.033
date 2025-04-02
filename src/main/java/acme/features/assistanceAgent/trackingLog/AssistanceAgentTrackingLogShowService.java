@@ -66,7 +66,8 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 
 		choices = SelectChoices.from(Indicator.class, trackingLog.getIndicator());
 
-		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "claim");
+		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "draftMode");
+		dataset.put("masterId", trackingLog.getClaim().getId());
 		dataset.put("indicators", choices);
 
 		super.getResponse().addData(dataset);

@@ -5,7 +5,7 @@ airline-manager.flight.form.title = Detalles del vuelo
 airline-manager.flight.list.title = Lista de vuelos
 
 airline-manager.flight.form.label.tag = Etiqueta:
-airline-manager.flight.form.label.selfTransfer = Transferencia propia:
+airline-manager.flight.form.label.selfTransfer = Transferencia propia
 airline-manager.flight.form.label.cost = Costo:
 airline-manager.flight.form.label.description = Descripción:
 airline-manager.flight.list.label.originCity = Ciudad origen:
@@ -15,10 +15,12 @@ airline-manager.flight.form.label.scheduledArrival = Llegada programada:
 airline-manager.flight.form.label.layovers = Escalas:
 
 
+
 airline-manager.flight.form.button.create = Crear
 airline-manager.flight.form.button.update = Actualizar
 airline-manager.flight.form.button.delete = Eliminar
 airline-manager.flight.form.button.publish = Publicar
+airline-manager.flight.form.button.legs = Tramos
 
 
 airline-manager.flight.list.label.tag = Etiqueta:
@@ -36,4 +38,6 @@ airline-manager.flight.list.label.draftMode = Modo borrador:
 airline-manager.flight.list.button.create = Crear
 
 airline-manager.flight.form.label.confirmation = Confirmar cambios
+airlineManager.flight.error.destinosNoAlineados.message = Los tramos no estan unidos
+airlineManager.flight.error.unpublishedLegs.message = No todas las legs están publicadas
 

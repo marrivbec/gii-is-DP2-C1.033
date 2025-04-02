@@ -41,6 +41,11 @@ master.menu.assistanceAgent.list-claims = List completed claims
 master.menu.assistanceAgent.list-claims-pending = List pending claims
 master.menu.assistanceAgent.list-trackingLog = List Tracking logs
 
+# master.menu.flightCrewMember ##########################################################
+
+master.menu.flightCrewMember = Flight Crew Member
+master.menu.flightCrewMember.list-flight-assignments-planned = Flight Assignments Planned
+master.menu.flightCrewMember.list-flight-assignments-completed = Flight Assignments Completed
 
 # master.menu.airline-manager ########################################################
 

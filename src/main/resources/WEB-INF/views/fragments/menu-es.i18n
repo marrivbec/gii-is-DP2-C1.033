@@ -53,6 +53,13 @@ master.menu.assistanceAgent.list-trackingLog = Listar seguimientos
 master.menu.airline-manager = Gerente de Aerolíneas
 master.menu.airline-manager.list-my-flights = Listar mis vuelos
 
+# master.menu.flightCrewMember ##########################################################
+
+master.menu.flightCrewMember = Miembo de Tripulación de Vuelo
+master.menu.flightCrewMember.list-flight-assignments-planned = Asignaciones planificadas
+master.menu.flightCrewMember.list-flight-assignments-completed = Asignaciones completadas
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
