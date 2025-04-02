@@ -21,11 +21,12 @@ administrator.aircraft.form.label.confirmation = ¿Desea confirmar?
 
 administrator.aircraft.form.button.create = Create
 administrator.aircraft.form.button.update = Update
-administrator.aircraft.form.button.delete = Delete
+administrator.aircraft.form.button.able = Disable
  
 administrator.aircraft.list.label.model = Model
-administrator.aircraft.list.label.registrationNumber = Registration Number::
+administrator.aircraft.list.label.registrationNumber = Registration Number:
 administrator.aircraft.list.label.capacity = Capacity:
 administrator.aircraft.list.label.status = Status:
+administrator.aircraft.list.label.able= Able:
 
 administrator.aircraft.list.button.create = Create

@@ -18,16 +18,18 @@
 <acme:form readonly="${readonly}">
 	<acme:input-textbox code="administrator.aircraft.form.label.model" path="model"/>	
 	<acme:input-textbox code="administrator.aircraft.form.label.registrationNumber" path="registrationNumber"/>	
-	<acme:input-textbox code="administrator.aircraft.form.label.registrationNumber" path="registrationNumber"/>	
+	<acme:input-textbox code="administrator.aircraft.form.label.capacity" path="capacity"/>	
 	<acme:input-textbox code="administrator.aircraft.form.label.cargoWeight" path="cargoWeight"/>	
 	<acme:input-textbox code="administrator.aircraft.form.label.status" path="status"/>	
 	<acme:input-textbox code="administrator.aircraft.form.label.details" path="details"/>	
 	
+	
 	<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmation"/>	
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|')}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|able')}">
 			<acme:submit code="administrator.aircraft.form.button.update" action="/administrator/aircraft/update"/>
+			<acme:submit code="administrator.aircraft.form.button.able" action="/administrator/aircraft/able"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="administrator.aircraft.form.button.create" action="/administrator/aircraft/create"/>

@@ -4,28 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1332</x>
-      <y>264</y>
-      <w>348</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-TrackingLog
---
-+ lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ step: String {Mandatory, ValidShortText, Automapped}
-+ resolutionPercentage: Double {Mandatory, ValidNumber(min = 0), Automapped}
-+ indicator: Indicator {Mandatory, Valid, Automapped}
-+ resolution: String {Optional, ValidLongText, Automapped}
-
-bg=green</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>510</x>
-      <y>288</y>
+      <y>252</y>
       <w>90</w>
       <h>30</h>
     </coordinates>
@@ -38,7 +18,7 @@ bg=pink</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>402</x>
-      <y>294</y>
+      <y>258</y>
       <w>120</w>
       <h>36</h>
     </coordinates>
@@ -54,7 +34,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>594</x>
-      <y>294</y>
+      <y>258</y>
       <w>210</w>
       <h>36</h>
     </coordinates>
@@ -70,7 +50,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1146</x>
-      <y>294</y>
+      <y>258</y>
       <w>198</w>
       <h>36</h>
     </coordinates>
@@ -86,7 +66,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>294</y>
+      <y>258</y>
       <w>408</w>
       <h>24</h>
     </coordinates>
@@ -99,7 +79,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>318</y>
+      <y>282</y>
       <w>246</w>
       <h>126</h>
     </coordinates>
@@ -115,7 +95,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>180</x>
-      <y>408</y>
+      <y>372</y>
       <w>384</w>
       <h>30</h>
     </coordinates>
@@ -128,7 +108,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1086</x>
-      <y>234</y>
+      <y>198</y>
       <w>150</w>
       <h>42</h>
     </coordinates>
@@ -139,7 +119,7 @@ bg=green</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>1098</x>
-      <y>216</y>
+      <y>180</y>
       <w>270</w>
       <h>24</h>
     </coordinates>
@@ -151,7 +131,7 @@ bg=orange</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>792</x>
-      <y>264</y>
+      <y>228</y>
       <w>360</w>
       <h>90</h>
     </coordinates>
@@ -165,6 +145,27 @@ Claim
 + draftMode: boolean {Mandatory, Valid, Automapped}
 --
 /+ indicator: Boolean
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1332</x>
+      <y>234</y>
+      <w>348</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+TrackingLog
+--
++ lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ step: String {Mandatory, ValidShortText, Automapped}
++ resolutionPercentage: Double {Mandatory, ValidNumber(min = 0), Automapped}
++ indicator: Indicator {Mandatory, Valid, Automapped}
++ resolution: String {Optional, ValidLongText, Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
 
 bg=green</panel_attributes>
     <additional_attributes/>
