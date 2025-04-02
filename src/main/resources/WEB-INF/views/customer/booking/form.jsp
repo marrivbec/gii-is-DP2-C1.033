@@ -17,7 +17,7 @@
 	</jstl:if>
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
-			<acme:button code="customer.booking.form.button.passengers" action="/customer/passenger/passengerBooking?bookingId=${bookingId}"/>
+			<acme:button code="customer.booking.form.button.passengers" action="/customer/booking-record/list?bookingId=${bookingId}"/>
 			<jstl:if test="${!readonly}">
 				<acme:submit code="customer.booking.form.button.update" action="/customer/booking/update"/>
 			<acme:button code="customer.booking.form.button.addPassengers" action="/customer/booking-record/create?bookingId=${bookingId}"/>

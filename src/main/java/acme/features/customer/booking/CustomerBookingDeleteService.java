@@ -16,8 +16,8 @@ import acme.entities.booking.TravelClass;
 import acme.realms.client.Customer;
 
 @GuiService
-public class CustomerBookingPublishService extends AbstractGuiService<Customer, Booking> {
-	//Internal state ---------------------------------------------------------
+public class CustomerBookingDeleteService extends AbstractGuiService<Customer, Booking> {
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private CustomerBookingRepository repository;
@@ -44,6 +44,24 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 	}
 
 	@Override
+	public void bind(final Booking booking) {
+		super.bindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "lastNibble");
+	}
+
+	@Override
+	public void validate(final Booking booking) {
+		boolean notPublished = booking.isDraftMode();
+		super.state(notPublished, "draftMode", "acme.validation.update.draftMode");
+	}
+
+	@Override
+	public void perform(final Booking booking) {
+		Collection<BookingRecord> bookingRecords = this.repository.findBookingRById(booking.getId());
+		bookingRecords.stream().forEach(r -> this.repository.delete(r));
+		this.repository.delete(booking);
+	}
+
+	@Override
 	public void unbind(final Booking booking) {
 		Dataset dataset;
 		Money price = booking.price();
@@ -59,26 +77,5 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		dataset.put("readonly", !booking.isDraftMode());
 		super.getResponse().addData(dataset);
 	}
-	@Override
-	public void bind(final Booking booking) {
-		super.bindObject(booking, "locatorCode", "purchaseMoment", "lastNibble", "flight", "travelClass");
-	}
-	@Override
-	public void perform(final Booking booking) {
-		booking.setDraftMode(false);
-		this.repository.save(booking);
-	}
 
-	@Override
-	public void validate(final Booking booking) {
-		String cod = booking.getLocatorCode();
-		Collection<BookingRecord> bookingRecords = this.repository.findBookingRById(booking.getId());
-		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod).stream().filter(x -> x.getId() != booking.getId()).toList();
-		if (!booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
-			super.state(false, "purchaseMoment", "acme.validation.booking.purchaseMoment.message");
-		if (!codigo.isEmpty())
-			super.state(false, "locatorCode", "acme.validation.booking.repeat-code.message");
-		if (bookingRecords.stream().anyMatch(r -> r.getPassenger().isDraftMode()))
-			super.state(false, "*", "acme.validation.booking.draftMode.message");
-	}
 }

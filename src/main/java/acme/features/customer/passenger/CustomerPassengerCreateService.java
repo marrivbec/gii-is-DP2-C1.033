@@ -46,7 +46,7 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void perform(final Passenger passenger) {
-
+		passenger.setDraftMode(true);
 		this.repository.save(passenger);
 	}
 

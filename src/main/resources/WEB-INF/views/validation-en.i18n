@@ -31,8 +31,16 @@ acme.validation.severityLevel.message = Ranging from 0 to 10, where 0 indicates 
 
 acme.validation.lastnibble.message = The last nibble must be exactly 4 digits
 
+acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution.
+acme.validation.trackingLog.resolutionPercentage.message = resolution percentage must be monotonically increasing
+
+acme.validation.booking.purchaseMoment.message = The booking must be for a future flight.
+acme.validation.booking.draftMode.message = The passengers have to be publish to publish a booking
+acme.validation.booking.repeat-code.message = The locator code must be unique
+
 acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage must be monotonically increasing
 acme.validation.trackingLog.IndicatorPercentage.message = If the resolution percentage is 100 the indicator cannot be pending
 acme.validation.trackingLog.IndicatorPercentagePending.message = If the resolution percentage is not 100 the indicator cannot be accepted or rejected
 acme.validation.trackingLog.unpublished.message = A tracking log cannot be published until its corresponding claim is published
+
