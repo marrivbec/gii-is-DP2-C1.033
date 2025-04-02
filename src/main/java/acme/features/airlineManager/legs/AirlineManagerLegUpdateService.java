@@ -55,14 +55,13 @@ public class AirlineManagerLegUpdateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void bind(final Leg leg) {
-		super.bindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival", "status", "aircraft", "departureAirport", "arrivalAirport");
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "aircraft", "departureAirport", "arrivalAirport");
 	}
 
 	@Override
 	public void validate(final Leg leg) {
 		;
 	}
-
 	@Override
 	public void perform(final Leg leg) {
 		this.repository.save(leg);
@@ -101,8 +100,7 @@ public class AirlineManagerLegUpdateService extends AbstractGuiService<AirlineMa
 		choicesDepartureAirport = SelectChoices.from(airportsD, "name", leg.getDepartureAirport());
 		choicesArrivalAirport = SelectChoices.from(airportsA, "name", leg.getArrivalAirport());
 
-		dataset = super.unbindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival", "draftMode");
-		dataset.put("flightNumber", leg.getFlightNumber());
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 		dataset.put("status", choicesStatus);
 		dataset.put("aircraft", choicesAircraft.getSelected().getKey());

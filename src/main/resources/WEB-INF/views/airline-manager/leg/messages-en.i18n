@@ -1,6 +1,5 @@
 # Labels para el formulario de 'leg'
 airline-manager.leg.form.label.flightNumber = Flight number:
-airline-manager.leg.form.label.flightNumberDigits = Flight number digits:
 airline-manager.leg.form.label.scheduledDeparture = Scheduled departure:
 airline-manager.leg.form.label.scheduledArrival = Scheduled arrival:
 airline-manager.leg.form.label.status = Status:
@@ -32,7 +31,8 @@ airline-manager.leg.list.title = List of legs
 
 
 
-acme.validation.flight.aircraft-under-maintenance.message = You cannot use an aircraft that is under maintenance
+airlineManager.leg.error.diferenteFlihtNumber.message = There is already a leg of the flight that has that flight number
+airlineManager.leg.error.aircraft-under-maintenance.message = You cannot use an aircraft that is under maintenance
 airlineManager.leg.error.sameAirport.message = The departure airport must be different from the arrival airport
 airlineManager.leg.error.timesOverlap.message = There are segments that overlap in time
 airlineManager.leg.error.times.message = The arrival time cannot be earlier than the departure time
