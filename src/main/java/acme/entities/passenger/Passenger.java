@@ -60,7 +60,7 @@ public class Passenger extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private boolean				published;
+	private boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 

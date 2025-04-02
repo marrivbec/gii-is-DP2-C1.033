@@ -54,8 +54,6 @@
 		<acme:menu-option code="master.menu.assistanceAgent" access="hasRealm('AssistanceAgent')">
 			<acme:menu-suboption code="master.menu.assistanceAgent.list-claims" action="/assistance-agent/claim/list"/>			
 			<acme:menu-suboption code="master.menu.assistanceAgent.list-claims-pending" action="/assistance-agent/claim/pending"/>	
-			<acme:menu-separator/>		
-			<acme:menu-suboption code="master.menu.assistanceAgent.list-trackingLog" action="/assistance-agent/tracking-log/list"/>	
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.flightCrewMember" access="hasRealm('FlightCrewMember')">	
