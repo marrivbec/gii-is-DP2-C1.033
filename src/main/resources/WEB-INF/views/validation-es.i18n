@@ -31,6 +31,10 @@ acme.validation.severityLevel.message = Escala inválida. La escala va de 0 a 10
 
 acme.validation.lastnibble.message = El último nibble debe contener exactamente 4 dígitos
 
+acme.validation.booking.purchaseMoment.message = La reserva tiene que ser para un vuelo futuro
+acme.validation.booking.draftMode.message = Para publicar una reserva los pasajeros tienen que estar publicados también
+acme.validation.booking.repeat-code.message = El código de localización tiene que ser único
+
 acme.validation.trackingLog.resolution.message = Cuando un Claim es aceptado o rechazado, el sistema debe almacenar su resolution
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage debe ser monótonamente creciente
 acme.validation.trackingLog.IndicatorPercentage.message = Si el porcentaje de resolución es 100 el indicador no puede ser Pending
