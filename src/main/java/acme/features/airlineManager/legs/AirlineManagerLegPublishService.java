@@ -55,7 +55,7 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 
 	@Override
 	public void bind(final Leg leg) {
-		super.bindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival", "status", "aircraft", "departureAirport", "arrivalAirport");
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "aircraft", "departureAirport", "arrivalAirport");
 	}
 	@Override
 	public void validate(final Leg leg) {
@@ -67,7 +67,7 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		boolean diferenteAirport = true;
 		if (leg.getAircraft() != null) {
 			boolean isAircraftActive = leg.getAircraft().isStatus();
-			super.state(isAircraftActive, "aircraft", "acme.validation.flight.aircraft-under-maintenance.message");
+			super.state(isAircraftActive, "aircraft", "airlineManager.leg.error.aircraft-under-maintenance.message");
 		}
 		if (leg.getArrivalAirport().equals(leg.getDepartureAirport()))
 			diferenteAirport = false;
@@ -113,8 +113,7 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		choicesDepartureAirport = SelectChoices.from(airports, "name", leg.getDepartureAirport());
 		choicesArrivalAirport = SelectChoices.from(airports, "name", leg.getArrivalAirport());
 
-		dataset = super.unbindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival", "draftMode");
-		dataset.put("flightNumber", leg.getFlightNumber());
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
 		dataset.put("masterId", flight.getId());
 		dataset.put("status", choicesStatus);
 		dataset.put("aircraft", choicesAircraft.getSelected().getKey());

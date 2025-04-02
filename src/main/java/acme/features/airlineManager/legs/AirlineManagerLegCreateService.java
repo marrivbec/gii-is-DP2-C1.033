@@ -58,12 +58,20 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void bind(final Leg leg) {
-		super.bindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival", "status", "aircraft", "departureAirport", "arrivalAirport");
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "aircraft", "departureAirport", "arrivalAirport");
 	}
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		boolean diferenteFlightNumber = true;
+		Leg l;
+
+		l = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+		if (l != null)
+			diferenteFlightNumber = false;
+
+		super.state(diferenteFlightNumber, "*", "airlineManager.leg.error.diferenteFlihtNumber.message");// Comprobamos que no hay una leg con ese flightNumber
+
 	}
 
 	@Override
@@ -99,8 +107,7 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 		choicesDepartureAirport = SelectChoices.from(airportsD, "name", leg.getDepartureAirport());
 		choicesArrivalAirport = SelectChoices.from(airportsA, "name", leg.getArrivalAirport());
 
-		dataset = super.unbindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival", "draftMode");
-		dataset.put("flightNumber", null);
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 		dataset.put("status", choicesStatus);
 		dataset.put("aircraft", choicesAircraft.getSelected().getKey());
