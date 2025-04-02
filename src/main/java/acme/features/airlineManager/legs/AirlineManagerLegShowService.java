@@ -55,22 +55,39 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 	public void unbind(final Leg leg) {
 		SelectChoices choicesStatus, choicesAircraft, choicesArrivalAirport, choicesDepartureAirport;
 		Collection<Aircraft> aircrafts;
-		Collection<Airport> airports;
+		Collection<Airport> airportsD, airportsA;
 		Dataset dataset;
 		Flight flight;
+		Collection<Airport> airportsArrival;
+		Collection<Airport> airportsDeparture;
 
-		flight = leg.getFlight();
+		flight = this.repository.findFlightById(leg.getFlight().getId());
 		aircrafts = this.repository.findAircraftsByAirlineId(flight.getAirlineManager().getAirline().getId());
-		airports = this.repository.findAllAirport();
+		airportsD = this.repository.findAllAirport();
+		airportsA = this.repository.findAllAirport();
+		airportsDeparture = this.repository.findDepartureAircraftsByFlightId(leg.getFlight().getId());
+		airportsArrival = this.repository.findArrivalAircraftsByFlightId(leg.getFlight().getId());
+
+		//Quitamos los airports de los que ya has salido y a los que ya has llegado de ambos choices
+
+		if (!airportsArrival.isEmpty())
+			airportsA.removeAll(airportsArrival);
+		if (!airportsDeparture.isEmpty())
+			airportsD.removeAll(airportsDeparture);
+
+		// Añadimos la opcion del airport que ya estaba
+
+		airportsA.add(leg.getArrivalAirport());
+		airportsD.add(leg.getDepartureAirport());
 
 		choicesStatus = SelectChoices.from(Status.class, leg.getStatus());
 		choicesAircraft = SelectChoices.from(aircrafts, "registrationNumber", leg.getAircraft());
-		choicesDepartureAirport = SelectChoices.from(airports, "name", leg.getDepartureAirport());
-		choicesArrivalAirport = SelectChoices.from(airports, "name", leg.getArrivalAirport());
+		choicesDepartureAirport = SelectChoices.from(airportsD, "name", leg.getDepartureAirport());
+		choicesArrivalAirport = SelectChoices.from(airportsA, "name", leg.getArrivalAirport());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival");
-		dataset.put("masterId", flight.getId());
-		dataset.put("draftMode", leg.isDraftMode());
+		dataset = super.unbindObject(leg, "flightNumberDigits", "scheduledDeparture", "scheduledArrival", "draftMode");
+		dataset.put("flightNumber", leg.flightNumber());
+		dataset.put("masterId", leg.getFlight().getId());
 		dataset.put("status", choicesStatus);
 		dataset.put("aircraft", choicesAircraft.getSelected().getKey());
 		dataset.put("aircrafts", choicesAircraft);
