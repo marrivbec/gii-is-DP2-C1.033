@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -53,12 +52,17 @@ public class FlightAssignment extends AbstractEntity {
 	@Automapped
 	private String				remarks;
 
+	@Mandatory
+	// HINT: @Valid by default.
+	@Automapped
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	@Valid
 	private Leg					leg;
 
