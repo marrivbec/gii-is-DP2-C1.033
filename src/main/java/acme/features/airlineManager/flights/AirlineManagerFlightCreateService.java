@@ -33,6 +33,7 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 		airlineManager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
 
 		flight = new Flight();
+		flight.setDraftMode(true);
 		flight.setAirlineManager(airlineManager);
 
 		super.getBuffer().addData(flight);
@@ -57,8 +58,7 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description");
-
+		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "draftMode");
 		super.getResponse().addData(dataset);
 	}
 

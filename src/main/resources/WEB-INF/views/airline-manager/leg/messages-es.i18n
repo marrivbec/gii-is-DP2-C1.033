@@ -1,5 +1,6 @@
 # Etiquetas para el formulario de 'leg'
 airline-manager.leg.form.label.flightNumber = Número de vuelo:
+airline-manager.leg.form.label.flightNumberDigits = Digitos del número de vuelo:
 airline-manager.leg.form.label.scheduledDeparture = Salida programada:
 airline-manager.leg.form.label.scheduledArrival = Llegada programada:
 airline-manager.leg.form.label.status = Estado:
@@ -17,10 +18,18 @@ airline-manager.leg.form.button.publish = Publicar
 # Etiquetas para la lista de 'leg'
 airline-manager.leg.list.label.flightNumber = Número de vuelo:
 airline-manager.leg.list.label.scheduledDeparture = Salida programada:
+airline-manager.leg.list.label.scheduledArrival = Llegada programada:
 airline-manager.leg.list.label.status = Estado:
+airline-manager.leg.list.label.draftMode = Modo borrador:
 
 # Botón para crear en la lista de 'leg'
 airline-manager.leg.list.button.create = Crear
 
 airline-manager.leg.form.title = Detalles de tramos
 airline-manager.leg.list.title = Lista de tramos
+
+
+acme.validation.flight.aircraft-under-maintenance.message = No se puede utilizar una aeronave que esté en mantenimiento.
+airlineManager.leg.error.sameAirport.message = El aeropuerto de salida tiene que ser diferente al de llegada
+airlineManager.leg.error.timesOverlap.message = Hay tramos que se solapan en horario
+airlineManager.leg.error.times.message = La hora de llegada no puede ser antes que la hora de salida

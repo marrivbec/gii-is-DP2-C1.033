@@ -38,7 +38,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@Column(unique = true)
 	@ValidFlightNumber
-	private String				flightNumber;
+	private String				flightNumberDigits;
 
 	@Mandatory
 	@ValidMoment()
@@ -70,6 +70,12 @@ public class Leg extends AbstractEntity {
 		Duration duration = Duration.between(departureInstant, arrivalInstant);
 
 		return duration.toHoursPart();
+	}
+
+	@Transient
+	public String flightNumber() {
+		return this.aircraft.getAirline().getIata() + this.flightNumberDigits;
+
 	}
 	// Relationships ----------------------------------------------------------
 
