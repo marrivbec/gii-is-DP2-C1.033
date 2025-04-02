@@ -2,7 +2,6 @@
 package acme.features.customer.booking;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -57,21 +56,17 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 	}
 	@Override
 	public void perform(final Booking booking) {
+		booking.setDraftMode(true);
 		this.repository.save(booking);
 	}
 	@Override
 	public void validate(final Booking booking) {
 		String cod = booking.getLocatorCode();
 		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod);
-		Date d = booking.getPurchaseMoment() == null ? null : booking.getPurchaseMoment();
 		if (!codigo.isEmpty())
-			super.state(false, "locatorCode", "customer.booking.error.repeat-code");
-		if (booking.getFlight() == null)
-			super.state(false, "vuelo", "customer.booking.error.no-flight");
-		else if (d == null)
-			super.state(false, "purchaseMoment", "customer.booking.error.moment");
-		else if (!booking.getFlight().getScheduledDeparture().after(d))
-			super.state(false, "vuelo", "customer.booking.error.cannotChoseFlight");
+			super.state(false, "locatorCode", "acme.validation.booking.repeat-code.message");
+		if (!booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
+			super.state(false, "purchaseMoment", "acme.validation.booking.purchaseMoment.message");
 
 	}
 

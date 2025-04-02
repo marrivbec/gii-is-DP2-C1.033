@@ -73,8 +73,8 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 		String cod = booking.getLocatorCode();
 		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod).stream().filter(x -> x.getId() != booking.getId()).toList();
 		if (!booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
-			super.state(false, "purchaseMoment", "customer.booking.error.purchaseMoment");
+			super.state(false, "purchaseMoment", "acme.validation.booking.purchaseMoment.message");
 		if (!codigo.isEmpty())
-			super.state(false, "locatorCode", "customer.booking.error.repeat-code");
+			super.state(false, "locatorCode", "acme.validation.booking.repeat-code.message");
 	}
 }

@@ -15,4 +15,6 @@ customer.passenger.form.label.dateOfBirth=Date of birth
 customer.passenger.form.button.create=Create
 customer.passenger.form.button.update= Update
 customer.passenger.form.button.publish= Publish
+customer.passenger.form.button.delete= Delete
 customer.passenger.form.label.confirmation= Confirm
+customer.passenger.list.label.draftMode= DraftMode

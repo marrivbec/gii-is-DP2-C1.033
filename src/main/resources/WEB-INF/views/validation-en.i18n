@@ -33,3 +33,7 @@ acme.validation.lastnibble.message = The last nibble must be exactly 4 digits.
 
 acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution.
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage must be monotonically increasing
+
+acme.validation.booking.purchaseMoment.message = 
+acme.validation.booking.draftMode.message = 
+acme.validation.booking.repeat-code.message
