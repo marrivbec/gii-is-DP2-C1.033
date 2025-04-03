@@ -1,9 +1,9 @@
-key,type,description,priority,estimatedDuration,key:technician
-task01,INSPECTION,Revisar el estado de la maquinaria,5,120,technician-01
-task02,REPAIR,Reparar el motor del generador,8,240,technician-02
-task03,SYSTEM_CHECK,Instalar nuevo software en servidores,6,180,technician-01
-task04,MAINTENANCE,Lubricar engranajes de la línea de producción,4,90,technician-01
-task05,SYSTEM_CHECK,Verificación de sistema eléctrico,7,150,technician-01
-task06,REPAIR,Cambio de piezas desgastadas en la bomba,9,300,technician-02
-task07,SYSTEM_CHECK,Configuración inicial de nuevo router,3,60,technician-01
-task08,MAINTENANCE,Limpieza y calibración de sensores,2,45,technician-02
+key,type,description,priority,estimatedDuration,key:technician,draftMode
+task01,INSPECTION,Revisar el estado de la maquinaria,5,120,technician-01,true
+task02,REPAIR,Reparar el motor del generador,8,240,technician-02,true
+task03,SYSTEM_CHECK,Instalar nuevo software en servidores,6,180,technician-01,true
+task04,MAINTENANCE,Lubricar engranajes de la línea de producción,4,90,technician-01,true
+task05,SYSTEM_CHECK,Verificación de sistema eléctrico,7,150,technician-01,true
+task06,REPAIR,Cambio de piezas desgastadas en la bomba,9,300,technician-02,true
+task07,SYSTEM_CHECK,Configuración inicial de nuevo router,3,60,technician-01,true
+task08,MAINTENANCE,Limpieza y calibración de sensores,2,45,technician-02,true
