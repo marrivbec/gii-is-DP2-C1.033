@@ -17,6 +17,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.constraints.ValidLongText;
+import acme.entities.aircraft.Aircraft;
 import acme.realms.employee.Technician;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,6 +32,10 @@ public class MaintenanceRecord extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 	@Mandatory
 	@ValidMoment
@@ -63,4 +68,9 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Technician			technician;
+
+	@ManyToOne(optional = false)
+	@Mandatory
+	@Valid
+	private Aircraft			aircraft;
 }
