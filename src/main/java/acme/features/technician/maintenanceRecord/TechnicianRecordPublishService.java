@@ -54,7 +54,7 @@ public class TechnicianRecordPublishService extends AbstractGuiService<Technicia
 	@Override
 	public void bind(final MaintenanceRecord record) {
 
-		super.bindObject(record, "maintanenceMoment", "status", "nextMaintanence", "estimatedCost", "notes");
+		super.bindObject(record, "maintenanceMoment", "status", "nextInspectionDue", "estimatedCost", "notes");
 
 	}
 
@@ -87,7 +87,7 @@ public class TechnicianRecordPublishService extends AbstractGuiService<Technicia
 		aircrafts = this.repository.getAllAircraft();
 		aircraftChoices = SelectChoices.from(aircrafts, "registrationNumber", record.getAircraft());
 		choices = SelectChoices.from(MaintenanceStatus.class, record.getStatus());
-		dataset = super.unbindObject(record, "maintanenceMoment", "status", "nextMaintanence", "estimatedCost", "notes", "draftMode");
+		dataset = super.unbindObject(record, "maintenanceMoment", "status", "nextInspectionDue", "estimatedCost", "notes", "draftMode");
 		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
 		dataset.put("aircrafts", aircraftChoices);
 		dataset.put("status", choices);

@@ -4,9 +4,9 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="technician.maintanence-record.form.label.status" path="status" width="5%"/>
-	<acme:list-column code="technician.maintanence-record.form.label.estimatedCost" path="estimatedCost" width="5%"/>
-	<acme:list-column code="technician.maintanence-record.form.label.notes" path="notes" width="20%"/>
+	<acme:list-column code="technician.maintenance-record.form.label.status" path="status" width="5%"/>
+	<acme:list-column code="technician.maintenance-record.form.label.estimatedCost" path="estimatedCost" width="5%"/>
+	<acme:list-column code="technician.maintenance-record.form.label.notes" path="notes" width="20%"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
 

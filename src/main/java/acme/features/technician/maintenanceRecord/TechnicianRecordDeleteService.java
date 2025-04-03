@@ -13,7 +13,7 @@ import acme.entities.aircraft.Aircraft;
 import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.maintenanceRecord.MaintenanceStatus;
 import acme.entities.task.Involves;
-import acme.features.technician.involvedIn.TechnicianInvolvedInRepository;
+import acme.features.technician.involvedIn.TechnicianInvolvesRepository;
 import acme.realms.employee.Technician;
 
 @GuiService
@@ -24,7 +24,7 @@ public class TechnicianRecordDeleteService extends AbstractGuiService<Technician
 	private TechnicianRecordRepository		repository;
 
 	@Autowired
-	private TechnicianInvolvedInRepository	involvedRepository;
+	private TechnicianInvolvesRepository	involvedRepository;
 
 	// AbstractGuiService interface -------------------------------------------
 
@@ -60,7 +60,7 @@ public class TechnicianRecordDeleteService extends AbstractGuiService<Technician
 
 	@Override
 	public void bind(final MaintenanceRecord record) {
-		super.bindObject(record, "MaintenanceMoment", "status", "nextMaintenance", "estimatedCost", "notes");
+		super.bindObject(record, "maintenanceMoment", "status", "nextInspectionDue", "estimatedCost", "notes");
 
 	}
 
@@ -95,7 +95,7 @@ public class TechnicianRecordDeleteService extends AbstractGuiService<Technician
 
 		choices = SelectChoices.from(MaintenanceStatus.class, record.getStatus());
 
-		dataset = super.unbindObject(record, "MaintenanceMoment", "status", "nextMaintenance", "estimatedCost", "notes", "draftMode");
+		dataset = super.unbindObject(record, "maintenanceMoment", "status", "nextInspectionDue", "estimatedCost", "notes", "draftMode");
 		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
 		dataset.put("aircrafts", aircraftChoices);
 		dataset.put("status", choices);

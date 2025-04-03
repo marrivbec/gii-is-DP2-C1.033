@@ -9,62 +9,61 @@ import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
 import acme.entities.task.Task;
 import acme.realms.employee.Technician;
 
 @GuiService
-public class TechnicianInvolvedInServiceShow extends AbstractGuiService<Technician, Involves> {
-	// Internal state ---------------------------------------------------------
+public class TechnicianInvolvesShowService extends AbstractGuiService<Technician, Involves> {
 
 	@Autowired
-	private TechnicianInvolvedInRepository repository;
+	private TechnicianInvolvesRepository repository;
 
 
-	// AbstractService<Manager, ProjectUserStoryLink> ---------------------------
 	@Override
 	public void authorise() {
-		Technician tech;
 		boolean status;
-		tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-		int id = super.getRequest().getData("id", int.class);
-		Involves involved = this.repository.findInvolvedIn(id);
-		status = involved != null && super.getRequest().getPrincipal().hasRealm(tech);
-		super.getResponse().setAuthorised(status);
+		int id;
+		Involves involves;
 
+		id = super.getRequest().getData("id", int.class);
+		involves = this.repository.findInvolvesById(id);
+		status = involves != null && super.getRequest().getPrincipal().hasRealm(involves.getMaintenanceRecord().getTechnician());
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int id = super.getRequest().getData("id", int.class);
-		Involves involved = this.repository.findInvolvedIn(id);
+		Involves involves;
+		int id;
 
-		super.getBuffer().addData(involved);
+		id = super.getRequest().getData("id", int.class);
+		involves = this.repository.findInvolvesById(id);
+
+		super.getBuffer().addData(involves);
 	}
 
 	@Override
-	public void unbind(final Involves involved) {
+	public void unbind(final Involves involves) {
 		Dataset dataset;
-		SelectChoices recordChoices;
 		SelectChoices taskChoices;
+		Collection<Task> tasks;
+		final boolean draftRecord;
 
-		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
+		tasks = this.repository.findAllTasks();
+		taskChoices = SelectChoices.from(tasks, "ticker", involves.getTask());
 
-		Collection<MaintenanceRecord> records = this.repository.findRecordByTechnicianId(technician.getId());
-		Collection<Task> tasks = this.repository.findTaskByTechnicianId(technician.getId());
+		dataset = super.unbindObject(involves, "task");
+		dataset.put("maintenanceRecord", involves.getMaintenanceRecord().getId());
+		dataset.put("task", taskChoices.getSelected().getKey());
+		dataset.put("tasks", taskChoices);
+		dataset.put("taskTechnician", involves.getTask().getTechnician().getEmployeeCode());
 
-		recordChoices = SelectChoices.from(records, "maintanenceMoment", involved.getMaintenanceRecord());
-		taskChoices = SelectChoices.from(tasks, "description", involved.getTask());
-
-		dataset = super.unbindObject(involved, "maintanenceRecord", "task");
-		dataset.put("maintanenceRecord", recordChoices);
-		dataset.put("task", taskChoices);
-
-		dataset.put("draftMode", involved.getMaintenanceRecord().isDraftMode());
+		draftRecord = involves.getMaintenanceRecord().isDraftMode();
+		super.getResponse().addGlobal("draftRecord", draftRecord);
 
 		super.getResponse().addData(dataset);
-
 	}
 
 }

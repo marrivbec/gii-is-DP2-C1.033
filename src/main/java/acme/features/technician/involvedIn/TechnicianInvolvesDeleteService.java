@@ -15,84 +15,81 @@ import acme.entities.task.Task;
 import acme.realms.employee.Technician;
 
 @GuiService
-public class TechnicianInvolvedInDeleteService extends AbstractGuiService<Technician, Involves> {
-	// Internal state ---------------------------------------------------------
+public class TechnicianInvolvesDeleteService extends AbstractGuiService<Technician, Involves> {
 
 	@Autowired
-	private TechnicianInvolvedInRepository repository;
-
-	// AbstractGuiService interface -------------------------------------------
+	private TechnicianInvolvesRepository repository;
 
 
 	@Override
 	public void authorise() {
-
-		Technician tech;
 		boolean status;
-		MaintenanceRecord record;
-		Task task;
-		tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-		int involvedInId = super.getRequest().getData("id", int.class);
-		task = this.repository.findOneTaskByInvolvedIn(involvedInId);
-		record = this.repository.findOneRecordByInvolvedIn(involvedInId);
-		status = record != null && task != null && record.isDraftMode() && super.getRequest().getPrincipal().hasRealm(tech);
-		super.getResponse().setAuthorised(status);
+		int id;
+		Involves involves;
 
+		id = super.getRequest().getData("id", int.class);
+		involves = this.repository.findInvolvesById(id);
+		status = involves != null && super.getRequest().getPrincipal().hasRealm(involves.getMaintenanceRecord().getTechnician());
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Involves involved;
+		Involves involves;
 		int id;
+
 		id = super.getRequest().getData("id", int.class);
-		involved = this.repository.findInvolvedIn(id);
+		involves = this.repository.findInvolvesById(id);
 
-		super.getBuffer().addData(involved);
-
+		super.getBuffer().addData(involves);
 	}
 
 	@Override
-	public void bind(final Involves involved) {
-		super.bindObject(involved, "maintanenceRecord", "task");
+	public void bind(final Involves involves) {
+		Task task;
+		int id;
+		MaintenanceRecord maintenanceRecord;
+
+		id = super.getRequest().getData("id", int.class);
+		maintenanceRecord = this.repository.findMaintenanceRecordByInvolvesId(id);
+		task = super.getRequest().getData("task", Task.class);
+
+		super.bindObject(involves);
+		involves.setTask(task);
+		involves.setMaintenanceRecord(maintenanceRecord);
 	}
 
 	@Override
-	public void validate(final Involves involved) {
-		//Mirar esta validacion...
-		super.state(involved.getMaintenanceRecord().isDraftMode(), "*", "customers.form.error.draft-mode");
-
+	public void validate(final Involves involves) {
+		;
 	}
 
 	@Override
-	public void perform(final Involves involved) {
-
-		this.repository.delete(involved);
-
+	public void perform(final Involves involves) {
+		this.repository.delete(involves);
 	}
 
 	@Override
-	public void unbind(final Involves involved) {
+	public void unbind(final Involves involves) {
 		Dataset dataset;
-		Technician tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-
-		Collection<Task> task = this.repository.findTaskByTechnicianId(tech.getId());
-
-		Collection<MaintenanceRecord> record = this.repository.findNotPublishRecord(tech.getId(), true);
-
 		SelectChoices taskChoices;
-		SelectChoices recordChoices;
+		Collection<Task> tasks;
+		final boolean draftRecord;
 
-		taskChoices = SelectChoices.from(task, "description", involved.getTask());
+		tasks = this.repository.findAllTasks();
+		taskChoices = SelectChoices.from(tasks, "ticker", involves.getTask());
 
-		recordChoices = SelectChoices.from(record, "maintanenceMoment", involved.getMaintenanceRecord());
+		dataset = super.unbindObject(involves, "task");
+		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		dataset.put("maintenanceRecord", involves.getMaintenanceRecord().getId());
+		dataset.put("task", taskChoices.getSelected().getKey());
+		dataset.put("tasks", taskChoices);
+		dataset.put("taskTechnician", involves.getTask().getTechnician().getEmployeeCode());
 
-		dataset = super.unbindObject(involved, "maintanenceRecord", "task");
-		dataset.put("maintanenceRecord", recordChoices);
-		dataset.put("task", taskChoices);
-		//IsDraftMode()
-		dataset.put("draftMode", involved.getMaintenanceRecord().isDraftMode());
+		draftRecord = involves.getMaintenanceRecord().isDraftMode();
+		super.getResponse().addGlobal("draftRecord", draftRecord);
 
 		super.getResponse().addData(dataset);
 	}
-
 }

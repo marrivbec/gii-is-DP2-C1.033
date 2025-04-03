@@ -11,29 +11,25 @@ import acme.entities.task.Involves;
 import acme.realms.employee.Technician;
 
 @GuiController
-public class TechnicianInvolvedInController extends AbstractGuiController<Technician, Involves> {
+public class TechnicianInvolvesController extends AbstractGuiController<Technician, Involves> {
 
 	@Autowired
-	private TechnicianInvolvedInServiceShow		showService;
+	private TechnicianInvolvesListService	listService;
 
 	@Autowired
-	private TechnicianInvolvedInServiceList		listService;
+	private TechnicianInvolvesShowService	showService;
 
 	@Autowired
-	private TechnicianInvolvedInUpdateService	updateService;
+	private TechnicianInvolvesCreateService	createService;
 
 	@Autowired
-	private TechnicianInvolvedInCreateService	createService;
-
-	@Autowired
-	private TechnicianInvolvedInDeleteService	deleteService;
+	private TechnicianInvolvesDeleteService	deleteService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
-		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("delete", this.deleteService);
 	}

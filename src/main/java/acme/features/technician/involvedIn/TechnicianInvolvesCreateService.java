@@ -15,89 +15,81 @@ import acme.entities.task.Task;
 import acme.realms.employee.Technician;
 
 @GuiService
-public class TechnicianInvolvedInCreateService extends AbstractGuiService<Technician, Involves> {
-	// Internal state ---------------------------------------------------------
+public class TechnicianInvolvesCreateService extends AbstractGuiService<Technician, Involves> {
 
 	@Autowired
-	private TechnicianInvolvedInRepository repository;
+	private TechnicianInvolvesRepository repository;
 
 
-	// AbstractService<Manager, ProjectUserStoryLink> ---------------------------
 	@Override
 	public void authorise() {
-		Technician tech;
 		boolean status;
-		tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
+		int id;
+		MaintenanceRecord maintenanceRecord;
 
-		status = super.getRequest().getPrincipal().hasRealm(tech);
+		id = super.getRequest().getData("masterId", int.class);
+		maintenanceRecord = this.repository.findMaintenanceRecordById(id);
+		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician());
+
 		super.getResponse().setAuthorised(status);
-
 	}
 
 	@Override
 	public void load() {
-		Involves involved;
+		Involves object;
+		int masterId;
+		MaintenanceRecord maintenanceRecord;
 
-		involved = new Involves();
+		masterId = super.getRequest().getData("masterId", int.class);
+		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
 
-		super.getBuffer().addData(involved);
+		object = new Involves();
+		object.setTask(null);
+		object.setMaintenanceRecord(maintenanceRecord);
+
+		super.getBuffer().addData(object);
 	}
 
 	@Override
-	public void bind(final Involves involved) {
-
-		super.bindObject(involved, "maintanenceRecord", "task");
-	}
-
-	@Override
-	public void validate(final Involves involved) {
-		MaintenanceRecord maintanenceRecord;
+	public void bind(final Involves involves) {
+		int masterId;
 		Task task;
+		MaintenanceRecord maintenanceRecord;
 
-		maintanenceRecord = involved.getMaintenanceRecord();
-		task = involved.getTask();
+		masterId = super.getRequest().getData("masterId", int.class);
+		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+		task = super.getRequest().getData("task", Task.class);
 
-		Technician tech;
-		tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-
-		super.state(maintanenceRecord != null, "*", "technician.involved-in.create.error.null-record");
-		//Esto habra que crearlo en algun lado?¿?¿?¿
-		super.state(task != null, "*", "technician.involved-in.create.error.null-task");
-
-		boolean exists = this.repository.existsByRecordAndTask(maintanenceRecord, task);
-		super.state(!exists, "*", "technician.involved-in.create.error.duplicate-record-task");
-
+		super.bindObject(involves);
+		involves.setTask(task);
+		involves.setMaintenanceRecord(maintenanceRecord);
 	}
 
 	@Override
-	public void perform(final Involves involved) {
-		this.repository.save(involved);
+	public void validate(final Involves involves) {
+		;
 	}
 
 	@Override
-	public void unbind(final Involves involved) {
-		//Record=booking
+	public void perform(final Involves involves) {
+		this.repository.save(involves);
+	}
+
+	@Override
+	public void unbind(final Involves involves) {
 		Dataset dataset;
-
-		Technician tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-
-		SelectChoices recordChoices;
 		SelectChoices taskChoices;
+		Collection<Task> tasks;
 
-		Collection<Task> tasks = this.repository.findTaskByTechnicianId(tech.getId());
+		tasks = this.repository.findAllTasks();
+		taskChoices = SelectChoices.from(tasks, "ticker", involves.getTask());
 
-		//puedo hacer un error a la hora de mirar si esta ya asociado o no pero pooco mas
-		Collection<MaintenanceRecord> records = this.repository.findNotPublishRecord(tech.getId(), true);
+		dataset = super.unbindObject(involves, "task");
+		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		dataset.put("maintenanceRecord", involves.getMaintenanceRecord().getId());
+		dataset.put("task", taskChoices.getSelected().getKey());
+		dataset.put("tasks", taskChoices);
 
-		taskChoices = SelectChoices.from(tasks, "description", involved.getTask());
-
-		recordChoices = SelectChoices.from(records, "maintanenceMoment", involved.getMaintenanceRecord());
-
-		dataset = super.unbindObject(involved, "maintanenceRecord", "task");
-		dataset.put("maintanenceRecord", recordChoices);
-		dataset.put("task", taskChoices);
-		dataset.put("draftMode", true);
 		super.getResponse().addData(dataset);
-
 	}
 }

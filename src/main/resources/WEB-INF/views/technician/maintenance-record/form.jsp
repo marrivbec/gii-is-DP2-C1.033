@@ -4,19 +4,14 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:hidden-data path="maintenanceRecordId"/>
+	<acme:input-moment code="technician.maintenance-record.form.label.maintenanceMoment" path="maintenanceMoment"/>
+	<acme:input-money code="technician.maintenance-record.form.label.estimatedCost" path="estimatedCost"/>
+	<acme:input-select  code="technician.maintenance-record.form.label.status" path="status" choices="${status}"/>
+	<acme:input-select  code="technician.maintenance-record.form.label.aircraft" path="aircraft" choices="${aircrafts}"/>
+	<acme:input-moment code="technician.maintenance-record.form.label.nextInspectionDue" path="nextInspectionDue"/>
+	<acme:input-textbox code="technician.maintenance-record.form.label.notes" path="notes"/>
 	
-	<acme:input-textbox code="technician.maintenance-record.form.label.ticker" path="ticker"/>
-	<jstl:if test="${_command == 'show'}">
-		<acme:input-moment code="technician.maintenance-record.form.label.moment" path="moment" readonly="true"/>
-		<acme:input-select path="status" code="technician.maintenance-record.form.label.status" choices="${statuses}"/>
-	</jstl:if>	
-	<acme:input-moment code="technician.maintenance-record.form.label.next-inspection" path="nextInspectionDueTime" placeholder="technician.maintenance-record.form.placeholder.next-inspection"/>
-	<acme:input-textbox code="technician.maintenance-record.form.label.aircraft" path="aircraft" placeholder="technician.maintenance-record.form.placeholder.aircraft"/>
-	<acme:input-money code="technician.maintenance-record.form.label.estimated-cost" path="estimatedCost" placeholder="technician.maintenance-record.form.placeholder.estimated-cost"/>
-	<acme:input-textarea code="technician.maintenance-record.form.label.notes" path="notes"/>	
-	
-	<jstl:choose>	 
+<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:button code="technician.maintenance-record.form.button.tasks" action="/technician/involves/list?masterId=${id}"/>
 			<acme:submit code="technician.maintenance-record.form.button.update" action="/technician/maintenance-record/update"/>
@@ -27,4 +22,7 @@
 			<acme:submit code="technician.maintenance-record.form.button.create" action="/technician/maintenance-record/create"/>
 		</jstl:when>
 	</jstl:choose>
+	
+	
+
 </acme:form>

@@ -10,55 +10,55 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
-import acme.entities.task.Task;
 import acme.realms.employee.Technician;
 
 @GuiService
-public class TechnicianInvolvedInServiceList extends AbstractGuiService<Technician, Involves> {
-	// Internal state ---------------------------------------------------------
+public class TechnicianInvolvesListService extends AbstractGuiService<Technician, Involves> {
 
 	@Autowired
-	private TechnicianInvolvedInRepository repository;
+	private TechnicianInvolvesRepository repository;
 
 
-	// AbstractService<Manager, ProjectUserStoryLink> ---------------------------
 	@Override
 	public void authorise() {
-		Technician tech;
-		boolean status;
-		tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-
-		status = super.getRequest().getPrincipal().hasRealm(tech);
-		super.getResponse().setAuthorised(status);
-
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
-		Collection<Involves> involved;
-		int technicianId;
+		int masterId;
+		Collection<Involves> involves;
 
-		technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		involved = this.repository.findAllInvolvedInByTechnicianId(technicianId);
+		masterId = super.getRequest().getData("masterId", int.class);
+		involves = this.repository.findInvolvesByMasterId(masterId);
 
-		super.getBuffer().addData(involved);
+		super.getBuffer().addData(involves);
 	}
 
 	@Override
-	public void unbind(final Involves involved) {
+	public void unbind(final Involves involves) {
 		Dataset dataset;
-		Task task;
-		MaintenanceRecord record;
-		int involvedInId = involved.getId();
-		record = this.repository.findOneRecordByInvolvedIn(involvedInId);
 
-		task = this.repository.findOneTaskByInvolvedIn(involvedInId);
-
-		dataset = super.unbindObject(involved, "maintanenceRecord", "task");
-		dataset.put("maintanenceRecord", record.getMaintenanceMoment());
-		dataset.put("task", task.getDescription());
+		dataset = super.unbindObject(involves);
+		dataset.put("taskType", involves.getTask().getType());
+		dataset.put("taskPriority", involves.getTask().getPriority());
+		dataset.put("taskTechnician", involves.getTask().getTechnician().getEmployeeCode());
+		super.addPayload(dataset, involves);
 
 		super.getResponse().addData(dataset);
+	}
 
+	@Override
+	public void unbind(final Collection<Involves> involves) {
+		int masterId;
+		final boolean draft;
+		MaintenanceRecord maintenanceRecord;
+
+		masterId = super.getRequest().getData("masterId", int.class);
+		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+		draft = maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician());
+
+		super.getResponse().addGlobal("masterId", masterId);
+		super.getResponse().addGlobal("draft", draft);
 	}
 }
