@@ -1,7 +1,7 @@
 key,registrationMoment,passengerEmail,description,type,draftMode,key:assistanceAgents,key:leg
-claim-01,2020/01/01 00:00,john.doe@example.com,Lost luggage during the flight,FLIGHT_ISSUES,true,agent1,leg-01
-claim-02,2020/01/01 00:00,jane.smith@example.com,Flight delay caused a missed connection,LUGGAGE_ISSUES,true,agent2,leg-02
-claim-03,2020/01/01 00:00,michael.johnson@example.com,Seat was broken and uncomfortable,LUGGAGE_ISSUES,true,agent1,leg-03
+claim-01,2020/01/01 00:00,john.doe@example.com,Lost luggage during the flight,FLIGHT_ISSUES,true,agent1,leg-11
+claim-02,2020/01/01 00:00,jane.smith@example.com,Flight delay caused a missed connection,LUGGAGE_ISSUES,true,agent2,leg-12
+claim-03,2020/01/01 00:00,michael.johnson@example.com,Seat was broken and uncomfortable,LUGGAGE_ISSUES,true,agent1,leg-13
 claim-04,2020/01/01 00:00,alice.brown@example.com,Food poisoning from in-flight meal,LUGGAGE_ISSUES,true,agent1,leg-04
 claim-05,2020/01/01 00:00,robert.wilson@example.com,Lost valuable items in checked baggage,SECURITY_INCIDENT,true,agent1,leg-05
 claim-06,2021/01/01 00:00,emily.clark@example.com,Flight cancellation without proper notice,SECURITY_INCIDENT,true,agent2,leg-06
