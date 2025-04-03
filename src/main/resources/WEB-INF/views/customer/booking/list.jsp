@@ -9,6 +9,7 @@
 	<acme:list-column code="customer.booking.list.label.travelClass" path="travelClass" width="15%"/>
 	<acme:list-column code="customer.booking.list.label.price" path="price" width="10%"/>
 	<acme:list-column code="customer.booking.list.label.lastNibble" path="lastNibble" width="15%"/>
+	<acme:list-column code="customer.booking.list.label.draftMode" path="draftMode" width="15%"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
 

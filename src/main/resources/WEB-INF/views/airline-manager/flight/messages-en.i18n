@@ -33,3 +33,8 @@ airline-manager.flight.list.label.draftMode = Draft mode:
 airline-manager.flight.list.button.create = Create
 
 airline-manager.flight.form.label.confirmation = Confirm changes
+
+airlineManager.flight.error.destinosNoAlineados.message = The legs are not connected
+airlineManager.flight.error.unpublishedLegs.message = Not all legs are published
+
+

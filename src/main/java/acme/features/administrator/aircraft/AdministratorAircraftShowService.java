@@ -51,7 +51,7 @@ public class AdministratorAircraftShowService extends AbstractGuiService<Adminis
 	public void unbind(final Aircraft aircraft) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details");
+		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details", "able");
 
 		super.getResponse().addData(dataset);
 	}

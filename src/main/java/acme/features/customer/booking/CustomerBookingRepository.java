@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.booking.Booking;
+import acme.entities.booking.BookingRecord;
 import acme.entities.flight.Flight;
 import acme.entities.passenger.Passenger;
 import acme.realms.client.Customer;
@@ -14,23 +15,26 @@ import acme.realms.client.Customer;
 public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("select b from Booking b where b.id = :id")
-	Booking findBookingById(int id);
+	public Booking findBookingById(int id);
 
 	@Query("select b from Booking b where b.customer.id= :id")
-	Collection<Booking> findAllBookings(int id);
+	public Collection<Booking> findAllBookings(int id);
 
 	@Query("select c from Customer c where c.id= :id")
-	Customer findCustomerLogged(int id);
+	public Customer findCustomerLogged(int id);
 
 	@Query("SELECT r.passenger FROM BookingRecord r WHERE r.booking.id = :bookingId")
-	Collection<Passenger> passengerByBookingId(int bookingId);
+	public Collection<Passenger> passengerByBookingId(int bookingId);
 
 	@Query("select b from Booking b where b.locatorCode =?1")
-	Collection<Booking> findAllBookingLocatorCode(String locatorCode);
+	public Collection<Booking> findAllBookingLocatorCode(String locatorCode);
 
 	@Query("SELECT b.flight FROM Booking b WHERE b.id=:bookingId")
-	Flight findFlightByBookingId(int bookingId);
+	public Flight findFlightByBookingId(int bookingId);
 
 	@Query("SELECT f FROM Flight f where f.draftMode = false")
-	Collection<Flight> allFlight();
+	public Collection<Flight> allFlight();
+
+	@Query("select r from BookingRecord r where r.booking.id=:id")
+	public Collection<BookingRecord> findBookingRById(int id);
 }

@@ -19,6 +19,7 @@
 	<jstl:if test="${acme:anyOf(_command, 'show|update|publish') && !readonly}">
 		<acme:submit code="customer.passenger.form.button.update" action="/customer/passenger/update"/>
 		<acme:submit code="customer.passenger.form.button.publish" action="/customer/passenger/publish"/>
+		<acme:submit code="customer.passenger.form.button.delete" action="/customer/passenger/delete"/>
 	</jstl:if>
 	
 </acme:form>

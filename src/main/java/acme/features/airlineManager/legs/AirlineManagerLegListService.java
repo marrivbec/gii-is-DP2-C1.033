@@ -31,7 +31,7 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 
 		masterId = super.getRequest().getData("masterId", int.class);
 		flight = this.repository.findFlightById(masterId);
-		status = flight != null && (!flight.isDraftMode() || super.getRequest().getPrincipal().hasRealm(flight.getAirlineManager()));
+		status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getAirlineManager());
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -50,8 +50,7 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 	public void unbind(final Leg leg) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "status");
-		dataset.put("draftMode", leg.getFlight().isDraftMode());
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode");
 		super.addPayload(dataset, leg, "departureAirport.name", "arrivalAirport.name");
 
 		super.getResponse().addData(dataset);

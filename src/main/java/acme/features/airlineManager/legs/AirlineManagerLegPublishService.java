@@ -2,6 +2,7 @@
 package acme.features.airlineManager.legs;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,8 +35,9 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		Flight flight;
 
 		legId = super.getRequest().getData("id", int.class);
+		Leg leg = this.repository.findLegById(legId);
 		flight = this.repository.findFlightByLegid(legId);
-		status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getAirlineManager());
+		status = flight != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flight.getAirlineManager());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -57,7 +59,35 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 	}
 	@Override
 	public void validate(final Leg leg) {
-		;
+		Collection<Leg> legs = this.repository.findLegsByMasterId(leg.getFlight().getId());
+		Date departure = leg.getScheduledDeparture();
+		Date arrival = leg.getScheduledArrival();
+		boolean estado = true;
+		boolean estadoTime = true;
+		boolean diferenteAirport = true;
+		if (leg.getAircraft() != null) {
+			boolean isAircraftActive = leg.getAircraft().isStatus();
+			super.state(isAircraftActive, "aircraft", "airlineManager.leg.error.aircraft-under-maintenance.message");
+		}
+		if (leg.getArrivalAirport().equals(leg.getDepartureAirport()))
+			diferenteAirport = false;
+		if (arrival.equals(departure))
+			estadoTime = false;
+		if (leg.getScheduledArrival().before(leg.getScheduledDeparture()))
+			estadoTime = false;
+		if (estadoTime && diferenteAirport)
+			for (Leg otherLeg : legs)
+				if (!otherLeg.equals(leg)) {
+					Date otherDeparture = otherLeg.getScheduledDeparture();
+					Date otherArrival = otherLeg.getScheduledArrival();
+
+					if (departure.before(otherArrival) && arrival.after(otherDeparture) || departure.equals(otherDeparture) || arrival.equals(otherArrival))	// Si las franjas horarias se solapan
+						estado = false;
+				}
+		super.state(diferenteAirport, "*", "airlineManager.leg.error.sameAirport.message");
+		super.state(estado, "*", "airlineManager.leg.error.timesOverlap.message");
+		super.state(estadoTime, "*", "airlineManager.leg.error.times.message");
+
 	}
 
 	@Override
@@ -83,9 +113,8 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		choicesDepartureAirport = SelectChoices.from(airports, "name", leg.getDepartureAirport());
 		choicesArrivalAirport = SelectChoices.from(airports, "name", leg.getArrivalAirport());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
 		dataset.put("masterId", flight.getId());
-		dataset.put("draftMode", leg.isDraftMode());
 		dataset.put("status", choicesStatus);
 		dataset.put("aircraft", choicesAircraft.getSelected().getKey());
 		dataset.put("aircrafts", choicesAircraft);

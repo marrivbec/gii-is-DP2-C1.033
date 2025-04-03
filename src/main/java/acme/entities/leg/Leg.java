@@ -39,7 +39,6 @@ public class Leg extends AbstractEntity {
 	@Column(unique = true)
 	@ValidFlightNumber
 	private String				flightNumber;
-
 	@Mandatory
 	@ValidMoment()
 	@Temporal(TemporalType.TIMESTAMP)
@@ -71,6 +70,7 @@ public class Leg extends AbstractEntity {
 
 		return duration.toHoursPart();
 	}
+
 	// Relationships ----------------------------------------------------------
 
 
