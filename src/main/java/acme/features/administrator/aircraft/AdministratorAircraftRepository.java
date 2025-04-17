@@ -13,12 +13,15 @@
 package acme.features.administrator.aircraft;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.aircraft.Aircraft;
+import acme.entities.airline.Airline;
 
 @Repository
 public interface AdministratorAircraftRepository extends AbstractRepository {
@@ -28,5 +31,14 @@ public interface AdministratorAircraftRepository extends AbstractRepository {
 
 	@Query("select a from Aircraft a")
 	Collection<Aircraft> findAllAircrafts();
+
+	@Query("""
+		SELECT a FROM Airline a
+		WHERE a.id = :airlineId
+		""")
+	public Optional<Airline> findAirlineById(Integer airlineId);
+
+	@Query("SELECT a FROM Airline a")
+	public List<Airline> findAllAirlines();
 
 }
