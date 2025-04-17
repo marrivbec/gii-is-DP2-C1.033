@@ -16,7 +16,7 @@ import javax.validation.Payload;
 @Constraint(validatedBy = TrackingLogResolutionPercentageValidator.class)
 public @interface ValidTrackingLogResolutionPercentage {
 
-	String message() default "acme.validation.trackingLog.resolutionPercentage.message";
+	String message() default "{acme.validation.trackingLog.resolutionPercentage.message}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 }

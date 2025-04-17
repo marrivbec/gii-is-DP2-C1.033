@@ -16,7 +16,7 @@ import javax.validation.Payload;
 @Constraint(validatedBy = TrackingLogResolutionValidator.class)
 public @interface ValidTrackingLogResolution {
 
-	String message() default "acme.validation.trackingLog.resolution.message";
+	String message() default "{acme.validation.trackingLog.resolution.message}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 }

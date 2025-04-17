@@ -16,7 +16,7 @@ import javax.validation.Payload;
 @Constraint(validatedBy = TrackingLogIndicatorPercentageValidator.class)
 public @interface ValidTrackingLogIndicatorPercentage {
 
-	String message() default "acme.validation.trackingLog.IndicatorPercentage.message";
+	String message() default "{acme.validation.trackingLog.IndicatorPercentage.message}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 }
