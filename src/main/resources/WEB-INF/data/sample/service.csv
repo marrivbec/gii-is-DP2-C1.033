@@ -1,22 +1,8 @@
-key,average_dwell_time,discount,name,picture,promotion_code,key:airport
-service-01,"Premium Cleaning","https://example.com/images/cleaning.jpg",2.5,"CLEA-25",EUR 500.00
-service-02,"Express Delivery","https://example.com/images/delivery.jpg",1.0,"FAST-10",EUR 100.00
-service-03,"Home Repair","https://example.com/images/repair.jpg",3.0,"FRRT-25",EUR 100.00
-service-04,"Car Wash","https://example.com/images/car-wash.jpg",1.5,"CARS-25",EUR 75.00
-service-05,"Personal Training","https://example.com/images/training.jpg",2.0,"FIT-25",EUR 200.00
-service-06,"Pet Grooming","https://example.com/images/pet-grooming.jpg",1.2,"PETS-25",EUR 50.00
-service-07,"Gardening Service","https://example.com/images/gardening.jpg",3.5,"PLNT-25",EUR 150.00
-service-08,"Tech Support","https://example.com/images/tech-support.jpg",2.0,"TECH-25",EUR 120.00
-service-09,"House Cleaning","https://example.com/images/house-cleaning.jpg",2.8,"HOMC-25",EUR 90.00
-service-10,"Massage Therapy","https://example.com/images/massage.jpg",1.0,"RELX-25",EUR 80.00
-service-01,10,EUR 0.00,L,https://i.imgur.com/JRnNU2f.jpeg,ABCD-25,airport-01
- service-02,01,EUR 0.01,La,ftp://a.b,WXYZ-25,airport-02
- service-03,12,EUR 999999.99,"Lorem ipsum dolor sit amet, consectetur adipiscin",https://i.imgur.com/Y1je0sY.jpeg,MNTQ-25,airport-03
- service-04,30,EUR 1000000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing",https://i.imgur.com/1stc8pQ.png,JPLK-25,airport-04
- service-05,34,EUR 100.20,<marquee>Hacked</marquee>,http://example.org/a/b?,SETT-25,airport-02
- service-06,11,EUR 111.11,洛伦·伊普森,http://example.org?a=1&b=2,FIZZ-25,airport-03
- service-07,17,EUR 122.12,Big discount,http://example.org?,FNAT-25,airport-06
- service-08,19,USD 1223.15,โลเร็ม อิปซัม,http://example.org?a,WRIT-25,airport-04
- service-09,20,EUR 12202.75,لوريم إيبسوم,https://i.imgur.com/xd9O3kv.png,FHET-25,airport-08
- service-10,28,EUR 99999.83,<script>alert(‘Hacked!’);</script>,http://example.org/a,KORP-25,airport-10
- service-11,04,EUR 24561.40,' or 'A' = 'A,http://example.org/a/b,FLAM-25,airport-11
+key,name,picture,averageDwellTime,promotionCode,money
+service-01,Heathrow Heathrow AirportHeathrowwHeathrow Airport,https://media.istockphoto.com/id/1254973568/photo/empty-airport-terminal-lounge-with-airplane-on-background.jpg?s=612x612&w=0&k=20&c=WoX_hcz_igZ1NNRlwwR9Cc_EjjL4Ncf_hoTMDatg2AU=,30,WIFI-23,EUR 50.00
+service-02,L,https://media.istockphoto.com/id/1329895241/photo/stewardess-take-water-bottle-from-trolley-cart.jpg?s=612x612&w=0&k=20&c=7MIZXi33gjnfCG9E8MeUd_XePTmRBj99uXcxFuKMhLU=,60,LOUN-45,EUR 25.00
+service-03,餐饮服务 (Catering Service),https://media.licdn.com/dms/image/v2/D5612AQFBpvdbQ2nfEA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1700475560272?e=2147483647&v=beta&t=wv3Qws7qaN2J1FknMZSL6ieaeIqc44ymISTG1-jVrmw,45,CATE-12,
+service-04,<marquee>Hacked Service</marquee>,https://www.rhsmith.umd.edu/sites/default/files/social-media/2022/11/airlines-failing-in-customer-service.jpg,90,MARQ-34,EUR 0.00
+service-05,خدمة التوصيل (Delivery Service),https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV5TRDpvZhDUE4f94tamjfCtHorfcOMGjBKw&s,30,DELI-56,
+service-06,<b>Bold Service</b>,https://uploads-ssl.webflow.com/5fd7ec01d9396121ebb743c2/5fe0d677f60f8261d94ffe62_BL_Aviation.jpg,60,BOLD-78,EUR 100.00
+service-07,บริการสปา (Spa Service),https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8EBtq3iso6DpAwaKh-Leu6axtEsRNGr-VyA&s,100,SPAS-90,EUR 50.00
