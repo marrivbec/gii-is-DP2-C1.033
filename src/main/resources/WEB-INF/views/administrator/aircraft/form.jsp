@@ -21,7 +21,9 @@
 	<acme:input-textbox code="administrator.aircraft.form.label.capacity" path="capacity"/>	
 	<acme:input-textbox code="administrator.aircraft.form.label.cargoWeight" path="cargoWeight"/>	
 	<acme:input-textbox code="administrator.aircraft.form.label.status" path="status"/>	
-	<acme:input-textbox code="administrator.aircraft.form.label.details" path="details"/>	
+	<acme:input-textbox code="administrator.aircraft.form.label.details" path="details"/>
+	<acme:input-select code="administrator.aircraft.form.label.airline" path="airline" choices="${airlineChoices}"/>
+		
 	
 	
 	<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmation"/>	
