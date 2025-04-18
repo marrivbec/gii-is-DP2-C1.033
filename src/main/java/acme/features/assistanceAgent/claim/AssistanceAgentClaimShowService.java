@@ -68,7 +68,7 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
-		Boolean indicator;
+		String indicator;
 
 		indicator = claim.indicator();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());

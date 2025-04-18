@@ -15,8 +15,8 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
-import acme.constraints.ValidLongText;
 import acme.entities.leg.Leg;
 import acme.entities.trackingLog.Indicator;
 import acme.entities.trackingLog.TrackingLog;
@@ -45,7 +45,7 @@ public class Claim extends AbstractEntity {
 	private String				passengerEmail;
 
 	@Mandatory
-	@ValidLongText
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				description;
 
@@ -63,8 +63,8 @@ public class Claim extends AbstractEntity {
 
 
 	@Transient
-	public Boolean indicator() {
-		Boolean result;
+	public String indicator() {
+		String result;
 		ClaimRepository repository;
 		TrackingLog trackingLog;
 
@@ -75,11 +75,11 @@ public class Claim extends AbstractEntity {
 		else {
 			Indicator indicator = trackingLog.getIndicator();
 			if (indicator.equals(Indicator.ACCEPTED))
-				result = true;
+				result = "ACCEPTED";
 			else if (indicator.equals(Indicator.REJECTED))
-				result = false;
+				result = "REJECTED";
 			else
-				result = null;
+				result = "PENDING";
 		}
 		return result;
 	}

@@ -140,7 +140,7 @@ Claim
 --
 + registrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + passengerEmail: String {Mandatory, ValidEmail, Automapped}
-+ description: String {Mandatory, ValidLongText, Automapped}
++ description: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
 + type: ClaimType {Mandatory, Valid, Automapped}
 + draftMode: boolean {Mandatory, Valid, Automapped}
 --
@@ -161,10 +161,10 @@ bg=green</panel_attributes>
 TrackingLog
 --
 + lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ step: String {Mandatory, ValidShortText, Automapped}
++ step: String {Mandatory, ValidString(min = 1, max = 50), Automapped}
 + resolutionPercentage: Double {Mandatory, ValidNumber(min = 0), Automapped}
 + indicator: Indicator {Mandatory, Valid, Automapped}
-+ resolution: String {Optional, ValidLongText, Automapped}
++ resolution: String {Optional, ValidString(max = 255), Automapped}
 + draftMode: boolean {Mandatory, Valid, Automapped}
 
 bg=green</panel_attributes>
