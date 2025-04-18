@@ -57,7 +57,7 @@ public class AssistanceAgentClaimListPendingService extends AbstractGuiService<A
 	@Override
 	public void unbind(final Claim claim) {
 		Dataset dataset;
-		Boolean indicator;
+		String indicator;
 
 		indicator = claim.indicator();
 		dataset = super.unbindObject(claim, "passengerEmail", "type");

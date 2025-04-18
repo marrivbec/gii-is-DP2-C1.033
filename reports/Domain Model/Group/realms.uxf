@@ -4,27 +4,6 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>368</y>
-      <w>416</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-AssistanceAgent
---
-+ employeeCode: String {Mandatory, ValidEmployeeCode, Column(unique=true)}
-+ spokenLanguages: String {Mandatory, ValidLongText, Automapped}
-+ moment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ briefBio: String {Optional, ValidLongText, Automapped}
-+ salary: Money {Mandatory, ValidMoney, Automapped}
-+ photo: String {Mandatory, ValidUrl, Automapped}
-
-bg=pink</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>664</x>
       <y>376</y>
       <w>336</w>
@@ -117,6 +96,27 @@ FlightCrewMembers
 + availabilityStatus: AvailabilityStatus {Mandatory, Valid, Automapped}
 + salary: Money {Mandatory, Valid, Automapped}
 + yearsOfExperience: Integer {Mandaroy, Valid, Automapped}
+
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>360</y>
+      <w>448</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AssistanceAgent
+--
++ employeeCode: String {Mandatory, ValidEmployeeCode, Column(unique=true)}
++ spokenLanguages: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
++ moment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ briefBio: String {Optional, ValidString(max = 255), Automapped}
++ salary: Money {Mandatory, ValidMoney, Automapped}
++ photo: String {Mandatory, ValidUrl, Automapped}
 
 bg=pink</panel_attributes>
     <additional_attributes/>

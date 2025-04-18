@@ -15,8 +15,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
-import acme.constraints.ValidLongText;
-import acme.constraints.ValidShortText;
+import acme.client.components.validation.ValidString;
 import acme.constraints.ValidTrackingLogIndicatorPercentage;
 import acme.constraints.ValidTrackingLogResolution;
 import acme.constraints.ValidTrackingLogResolutionPercentage;
@@ -44,7 +43,7 @@ public class TrackingLog extends AbstractEntity {
 	private Date				lastUpdateMoment;
 
 	@Mandatory
-	@ValidShortText
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				step;
 
@@ -59,7 +58,7 @@ public class TrackingLog extends AbstractEntity {
 	private Indicator			indicator;
 
 	@Optional
-	@ValidLongText
+	@ValidString(max = 255)
 	@Automapped
 	private String				resolution;
 

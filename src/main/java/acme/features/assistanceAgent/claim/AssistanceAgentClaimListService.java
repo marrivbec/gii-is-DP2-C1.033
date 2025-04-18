@@ -52,7 +52,7 @@ public class AssistanceAgentClaimListService extends AbstractGuiService<Assistan
 	@Override
 	public void unbind(final Claim claim) {
 		Dataset dataset;
-		Boolean indicator = claim.indicator();
+		String indicator = claim.indicator();
 
 		dataset = super.unbindObject(claim, "passengerEmail", "type");
 		dataset.put("indicator", indicator);
