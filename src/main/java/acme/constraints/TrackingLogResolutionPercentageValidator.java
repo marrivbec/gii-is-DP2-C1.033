@@ -55,11 +55,10 @@ public class TrackingLogResolutionPercentageValidator extends AbstractValidator<
 		Double previousPercentage = previousLog.getResolutionPercentage();
 		Double newPercentage = newLog.getResolutionPercentage();
 
-		if (newPercentage < previousPercentage) {
-			context.disableDefaultConstraintViolation();
-			context.buildConstraintViolationWithTemplate(String.format("El porcentaje (%.1f%%) no puede ser menor que el del registro anterior (%.1f%%)", newPercentage, previousPercentage)).addPropertyNode("resolutionPercentage").addConstraintViolation();
-			return false;
-		}
-		return true;
+		boolean isValid = newPercentage >= previousPercentage;
+
+		super.state(context, isValid, "resolutionPercentage", "acme.validation.trackingLog.resolutionPercentage.message");
+
+		return isValid;
 	}
 }

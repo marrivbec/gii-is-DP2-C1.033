@@ -1,5 +1,3 @@
-
-
 acme.validation.header.message  	= Debe tener entre 1 y 75 caracteres
 
 acme.validation.text.message   		= Debe tener entre 1 y 255 caracteres 
@@ -39,4 +37,4 @@ acme.validation.trackingLog.resolution.message = Cuando un Claim es aceptado o r
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage debe ser monótonamente creciente
 acme.validation.trackingLog.IndicatorPercentage.message = Si el porcentaje de resolución es 100 el indicador no puede ser Pending
 acme.validation.trackingLog.IndicatorPercentagePending.message = Si el porcentaje de resolución no es 100 el indicador no puede ser Accepted o Rejected
-acme.validation.trackingLog.unpublished.message = Un registro de seguimiento no se puede publicar hasta que se publique su queja correspondiente.
+acme.validation.trackingLog.unpublished.message = Un registro de seguimiento no se puede publicar hasta que se publique su queja correspondiente
