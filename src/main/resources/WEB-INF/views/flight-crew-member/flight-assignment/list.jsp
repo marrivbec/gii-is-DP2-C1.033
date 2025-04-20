@@ -21,10 +21,7 @@
 	<acme:list-column code="flight-crew-member.flight-assignment.list.label.moment" path="moment" width="10%"/>
 	<acme:list-column code="flight-crew-member.flight-assignment.list.label.currentStatus"  path="currentStatus" width="10%"/>
 	<acme:list-column code="flight-crew-member.flight-assignment.list.label.remarks"  path="remarks" width="10%"/>
-	
 	<acme:list-payload path="payload"/>
 </acme:list>
 	
-<jstl:if test="${showCreate}">
 	<acme:button code="flight-crew-member.flight-assignment.list.button.create" action="/flight-crew-member/flight-assignment/create"/>
-</jstl:if>
