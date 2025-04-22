@@ -19,25 +19,25 @@ public interface FlightCrewMemberFlightAssigmentRepository extends AbstractRepos
 	@Query("SELECT l FROM Leg l")
 	Collection<Leg> findAllLegs();
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.id = :id")
+	@Query("SELECT flightAssig FROM FlightAssignment flightAssig WHERE flightAssig.id = :id")
 	FlightAssignment findFlightAssignmentById(int id);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.scheduledDeparture >= :moment")
-	Collection<FlightAssignment> findAllPlannedFlightAssignments(Date moment);
+	@Query("SELECT flightAssig FROM FlightAssignment flightAssig WHERE flightAssig.flightCrewMember.id = :flightCrewMemberId AND flightAssig.leg.scheduledDeparture >= :moment")
+	Collection<FlightAssignment> findAllPlannedFlightAssignments(Date moment, int flightCrewMemberId);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.scheduledArrival < :moment")
-	Collection<FlightAssignment> findAllCompletedFlightAssignments(Date moment);
+	@Query("SELECT flightAssig FROM FlightAssignment flightAssig WHERE flightAssig.flightCrewMember.id = :flightCrewMemberId AND flightAssig.leg.scheduledArrival < :moment")
+	Collection<FlightAssignment> findAllCompletedFlightAssignments(Date moment, int flightCrewMemberId);
 
-	@Query("SELECT fcm FROM FlightCrewMember fcm WHERE fcm.airline.id = :airlineId")
+	@Query("SELECT flightCrewMem FROM FlightCrewMember flightCrewMem WHERE flightCrewMem.airline.id = :airlineId")
 	Collection<FlightCrewMember> findAllflightCrewMemberFromAirline(int airlineId);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.id = :legId AND fa.duty = :duty")
+	@Query("SELECT flightAssig FROM FlightAssignment flightAssig WHERE flightAssig.leg.id = :legId AND flightAssig.duty = :duty")
 	FlightAssignment findFlightAssignmentByLegAndDuty(int legId, DutyType duty);
 
-	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.leg.id = :legId AND fa.duty IN ('PILOT', 'COPILOT') AND fa.duty = :duty AND fa.id != :id")
+	@Query("SELECT COUNT(flightAssig) > 0 FROM FlightAssignment flightAssig WHERE flightAssig.leg.id = :legId AND flightAssig.duty IN ('PILOT', 'COPILOT') AND flightAssig.duty = :duty AND flightAssig.id != :id")
 	Boolean hasDutyAssigned(int legId, DutyType duty, int id);
 
-	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.flightCrewMember.id = :flightCrewMemberId AND fa.moment = :moment")
+	@Query("SELECT COUNT(flightAssig) > 0 FROM FlightAssignment flightAssig WHERE flightAssig.flightCrewMember.id = :flightCrewMemberId AND flightAssig.moment = :moment")
 	Boolean hasFlightCrewMemberLegAssociated(int flightCrewMemberId, Date moment);
 
 	@Query("SELECT l FROM Leg l WHERE l.aircraft.airline.id = :airlineId")

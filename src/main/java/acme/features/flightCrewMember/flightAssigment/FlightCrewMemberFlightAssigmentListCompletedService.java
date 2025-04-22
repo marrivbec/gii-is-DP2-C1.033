@@ -25,24 +25,29 @@ public class FlightCrewMemberFlightAssigmentListCompletedService extends Abstrac
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		super.getResponse().setAuthorised(super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class));
+
 	}
 
 	@Override
 	public void load() {
-		Collection<FlightAssignment> completedFlightAssignments = this.repository.findAllCompletedFlightAssignments(MomentHelper.getCurrentMoment());
+
+		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+
+		Collection<FlightAssignment> completedFlightAssignments = this.repository.findAllCompletedFlightAssignments(MomentHelper.getCurrentMoment(), flightCrewMember.getId());
 
 		super.getBuffer().addData(completedFlightAssignments);
 	}
 
 	@Override
 	public void unbind(final FlightAssignment completedFlightAssignments) {
-		Dataset dataset = super.unbindObject(completedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "draftMode", "leg");
+
+		Dataset dataset = super.unbindObject(completedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "leg");
 		dataset.put("leg", completedFlightAssignments.getLeg().getFlightNumber());
 
-		super.addPayload(dataset, completedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "draftMode", "leg");
+		super.addPayload(dataset, completedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "leg");
 		super.getResponse().addData(dataset);
-		super.getResponse().addGlobal("showCreate", true);
 
 	}
 
