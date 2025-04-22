@@ -15,6 +15,10 @@ acme.validation.promo.last-digits.message = El código de promoción debe termin
 
 acme.validation.score.message = La puntuación debe estar entre 0 y 10, con un máximo de un decimal
 
+acme.validation.leg.airport.sameAirport = mismo aeropuerto de llegada y salida
+acme.validation.leg.flightnumber.duplicated.message = número de vuelo duplicado
+acme.validation.leg.flightnumber.message = IATA del número de vuelo invalido
+acme.validation.leg.arrival.message = La salida no puede ser antes que la llegada
 acme.validation.flight.number.message = El número de vuelo debe estar compuesto por 3 letras mayúsculas seguidas de 4 dígitos (ejemplo: ABC1234)
 
 acme.validation.passport.message = Número de pasaporte inválido. Debe tener entre 6 y 9 caracteres y contener solo letras mayúsculas y números

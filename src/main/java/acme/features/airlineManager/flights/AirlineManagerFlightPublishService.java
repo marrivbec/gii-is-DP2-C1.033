@@ -60,7 +60,8 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 	@Override
 	public void validate(final Flight flight) {
 		Collection<Leg> legs;
-		boolean confirmation;
+		boolean confirmation = true;
+		boolean confirmation2 = true;
 		boolean validLayovers;
 		int escalas = 0;
 
@@ -68,7 +69,9 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 		if (!legs.isEmpty())
 			confirmation = !legs.stream().anyMatch(leg -> leg.isDraftMode());
 		else
-			confirmation = false;
+			confirmation2 = false;
+
+		super.state(confirmation2, "*", "airlineManager.flight.error.NoLegs.message");// Comprobamos las legs no esten vacias
 		super.state(confirmation, "*", "airlineManager.flight.error.unpublishedLegs.message");// Comprobamos que todas las legs esten publicadas
 
 		List<Leg> legsList = new ArrayList<Leg>(legs);
