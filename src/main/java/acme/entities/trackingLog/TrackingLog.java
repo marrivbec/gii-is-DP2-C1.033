@@ -19,6 +19,7 @@ import acme.client.components.validation.ValidString;
 import acme.constraints.ValidTrackingLogIndicatorPercentage;
 import acme.constraints.ValidTrackingLogResolution;
 import acme.constraints.ValidTrackingLogResolutionPercentage;
+import acme.constraints.ValidTrackingLogUpdateMoment;
 import acme.entities.claim.Claim;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,6 +30,7 @@ import lombok.Setter;
 @ValidTrackingLogResolution
 @ValidTrackingLogResolutionPercentage
 @ValidTrackingLogIndicatorPercentage
+@ValidTrackingLogUpdateMoment
 public class TrackingLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------

@@ -74,10 +74,6 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void perform(final Claim claim) {
-		Date registrationMoment;
-
-		registrationMoment = MomentHelper.getCurrentMoment();
-		claim.setRegistrationMoment(registrationMoment);
 		this.repository.save(claim);
 	}
 
