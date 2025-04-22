@@ -22,6 +22,7 @@
 				<acme:submit code="customer.booking.form.button.update" action="/customer/booking/update"/>
 			<acme:button code="customer.booking.form.button.addPassengers" action="/customer/booking-record/create?bookingId=${bookingId}"/>
 			<acme:submit code="customer.booking.form.button.draftMode" action="/customer/booking/publish"/>
+			<acme:submit code="customer.booking.form.button.delete" action="/customer/booking/delete"/>
 			</jstl:if>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
