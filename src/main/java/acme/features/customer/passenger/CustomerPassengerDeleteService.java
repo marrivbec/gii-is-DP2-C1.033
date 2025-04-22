@@ -39,6 +39,9 @@ public class CustomerPassengerDeleteService extends AbstractGuiService<Customer,
 
 	@Override
 	public void validate(final Passenger passenger) {
+		boolean confirmation;
+		confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 		boolean notPublished = passenger.isDraftMode();
 		super.state(notPublished, "draftMode", "acme.validation.update.draftMode");
 	}
