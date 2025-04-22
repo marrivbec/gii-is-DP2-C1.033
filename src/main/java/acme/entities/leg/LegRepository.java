@@ -26,4 +26,8 @@ public interface LegRepository extends AbstractRepository {
 
 	@Query("SELECT COUNT(l) - 1 FROM Leg l WHERE l.flight.id = :flightId")
 	Integer findLayoversByFlightId(int flightId);
+
+	@Query("SELECT COUNT(l) FROM Leg l WHERE l.flightNumber = :flightNumber")
+	int countByFlightNumber(String flightNumber);
+
 }

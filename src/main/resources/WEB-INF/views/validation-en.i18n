@@ -17,6 +17,10 @@ acme.validation.promo.last-digits.message = The promotion code must end with the
 
 acme.validation.score.message = The score must be between 0 and 10, with a maximum of one decimal place
 
+acme.validation.leg.airport.sameAirport = Same arrival and departure airport
+acme.validation.leg.flightnumber.duplicated.message = Duplicated flight number
+acme.validation.leg.flightnumber.message = Invalid flight number IATA
+acme.validation.leg.arrival.message = The departure cannot be before the arrival.
 acme.validation.flight.number.message = The flight number must consist of 3 uppercase letters followed by 4 digits (example: ABC1234)
 
 acme.validation.passport.message = Invalid passport number. It must be 6 to 9 characters long, using only uppercase letters and numbers

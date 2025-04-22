@@ -63,15 +63,7 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void validate(final Leg leg) {
-		boolean diferenteFlightNumber = true;
-		Leg l;
-
-		l = this.repository.findLegByFlightNumber(leg.getFlightNumber());
-		if (l != null)
-			diferenteFlightNumber = false;
-
-		super.state(diferenteFlightNumber, "*", "airlineManager.leg.error.diferenteFlihtNumber.message");// Comprobamos que no hay una leg con ese flightNumber
-
+		;
 	}
 
 	@Override
