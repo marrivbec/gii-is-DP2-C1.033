@@ -44,7 +44,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				Date minMoment = MomentHelper.deltaFromMoment(leg.getScheduledDeparture(), 1, ChronoUnit.MINUTES);
 
 				arrivalIsAfterDeparture = MomentHelper.isAfterOrEqual(leg.getScheduledArrival(), minMoment);
-				super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
+				super.state(context, arrivalIsAfterDeparture, "scheduledArrival", "acme.validation.leg.arrival.message");
 			}
 
 			if (leg.getFlightNumber() != null) {
@@ -57,10 +57,10 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				}
 
 				boolean uniqueFlightNumber;
-				int duplicatesLeg;
+				Leg duplicatesLeg;
 
-				duplicatesLeg = this.repository.countByFlightNumber(leg.getFlightNumber());
-				uniqueFlightNumber = duplicatesLeg == 0;
+				duplicatesLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+				uniqueFlightNumber = duplicatesLeg == null || duplicatesLeg.equals(leg);
 				super.state(context, uniqueFlightNumber, "flightNumber", "acme.validation.leg.flightnumber.duplicated.message");
 			}
 
