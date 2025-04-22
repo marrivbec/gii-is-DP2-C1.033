@@ -27,5 +27,6 @@ assistanceAgent.trackingLog.form.button.publish = Publish
 assistanceAgent.trackingLog.list.label.lastUpdateMoment = Last update moment:
 assistanceAgent.trackingLog.list.label.resolutionPercentage = Resolution percentage:
 assistanceAgent.trackingLog.list.label.indicator = Indicator:
+assistanceAgent.trackingLog.list.label.draftMode = Draft mode:
 
 assistanceAgent.trackingLog.list.button.create = Create

@@ -27,5 +27,6 @@ assistanceAgent.claim.form.button.trackingLogs = Tracking Logs
 assistanceAgent.claim.list.label.passengerEmail = Email de pasajero:
 assistanceAgent.claim.list.label.type = Tipo:
 assistanceAgent.claim.list.label.indicator = Indicador:
+assistanceAgent.claim.list.label.draftMode = Modo borrador:
 
 assistanceAgent.claim.list.button.create = Crear
