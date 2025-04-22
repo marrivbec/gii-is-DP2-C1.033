@@ -19,6 +19,7 @@
 	<acme:list-column code="assistanceAgent.claim.list.label.passengerEmail" path="passengerEmail" width="25%"/>
 	<acme:list-column code="assistanceAgent.claim.list.label.type" path="type" width="25%"/>
 	<acme:list-column code="assistanceAgent.claim.list.label.indicator" path="indicator" width="25%"/>
+	<acme:list-column code="assistanceAgent.claim.list.label.draftMode" path="draftMode" width="25%"/>
 	
 	<acme:list-payload path="payload"/>
 </acme:list>

@@ -41,6 +41,7 @@ public class Leg extends AbstractEntity {
 	@Column(unique = true)
 	@ValidFlightNumber
 	private String				flightNumber;
+
 	@Mandatory
 	@ValidMoment()
 	@Temporal(TemporalType.TIMESTAMP)
