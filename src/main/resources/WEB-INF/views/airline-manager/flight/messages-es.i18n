@@ -37,7 +37,10 @@ airline-manager.flight.list.label.draftMode = Modo borrador:
 
 airline-manager.flight.list.button.create = Crear
 
+
+airlineManager.flight.error.NoLegs.message = No hay tramos
+airlineManager.flight.error.deleteLegsPublish.message = Hay un tramo ya publicado
 airline-manager.flight.form.label.confirmation = Confirmar cambios
 airlineManager.flight.error.destinosNoAlineados.message = Los tramos no estan unidos
-airlineManager.flight.error.unpublishedLegs.message = No todas las legs están publicadas
+airlineManager.flight.error.unpublishedLegs.message = No todos los tramos están publicadas
 
