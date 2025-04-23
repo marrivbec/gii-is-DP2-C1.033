@@ -24,6 +24,8 @@ flight-crew-member.flight-assignment.form.button.visa-requirements = Show visa r
 flight-crew-member.flight-assignment.form.button.create = Create
 flight-crew-member.flight-assignment.form.button.update = Update
 flight-crew-member.flight-assignment.form.button.publish = Publish
+flight-crew-member.flight-assignment.form.button.delete = Delete
+
 
 flight-crew-member.flight-assignment.list.label.duty = Duty: 
 flight-crew-member.flight-assignment.list.label.moment = Moment:
