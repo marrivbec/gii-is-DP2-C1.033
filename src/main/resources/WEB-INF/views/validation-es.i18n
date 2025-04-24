@@ -44,3 +44,5 @@ acme.validation.trackingLog.resolutionPercentage.message = resolution percentage
 acme.validation.trackingLog.IndicatorPercentage.message = Si el porcentaje de resolución es 100 el indicador no puede ser Pending
 acme.validation.trackingLog.IndicatorPercentagePending.message = Si el porcentaje de resolución no es 100 el indicador no puede ser Accepted o Rejected
 acme.validation.trackingLog.unpublished.message = Un registro de seguimiento no se puede publicar hasta que se publique su queja correspondiente.
+
+acme.validation.error.repeat-code= El código tiene que ser único
