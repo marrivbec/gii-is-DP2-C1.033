@@ -20,6 +20,7 @@
 	<acme:input-textbox code="flightCrewMember.activityLog.form.label.typeOfIncident" path="typeOfIncident"/>	
 	<acme:input-textbox code="flightCrewMember.activityLog.form.label.description" path="description"/>	
 	<acme:input-integer code="flightCrewMember.activityLog.form.label.severityLevel" path="severityLevel"/>
+	
 		
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
@@ -29,7 +30,7 @@
 			
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="flightCrewMember.activityLog.form.button.create" action="/flight-crew-member/activity-log/create"/>
+			<acme:submit code="flightCrewMember.activityLog.form.button.create" action="/flight-crew-member/activity-log/create?masterId=${masterId}"/>
 		</jstl:when>		
 	</jstl:choose>
 </acme:form>

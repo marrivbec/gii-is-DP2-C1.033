@@ -31,13 +31,12 @@
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.update" action="/flight-crew-member/flight-assignment/update"/>
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.publish" action="/flight-crew-member/flight-assignment/publish"/>
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.delete" action="/flight-crew-member/flight-assignment/delete"/>
-			<acme:button code="flight-crew-member.flight-assignment.form.button.activity-log" action="/flight-crew-member/activity-log/list"/>
-			
+			<acme:button code="flight-crew-member.flight-assignment.form.button.activityLogs" action="/flight-crew-member/activity-log/list?masterId=${id}"/>			
 			
 		</jstl:when>
 		
-		<jstl:when test="${acme:anyOf(_command, 'show|publish') && !draftMode  }">
-			<acme:button code="flight-crew-member.flight-assignment.form.button.activity-log" action="/flight-crew-member/activity-log/list"/>
+		<jstl:when test="${acme:anyOf(_command, 'show') && draftMode == false  }">
+			<acme:button code="flight-crew-member.flight-assignment.form.button.activityLogs" action="/flight-crew-member/activity-log/list?masterId=${id}"/>			
 		</jstl:when>
 		
 		
