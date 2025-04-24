@@ -47,5 +47,9 @@ acme.validation.trackingLog.resolutionPercentage.message = resolution percentage
 acme.validation.trackingLog.IndicatorPercentage.message = If the resolution percentage is 100 the indicator cannot be pending
 acme.validation.trackingLog.IndicatorPercentagePending.message = If the resolution percentage is not 100 the indicator cannot be accepted or rejected
 acme.validation.trackingLog.unpublished.message = A tracking log cannot be published until its corresponding claim is published
+
+acme.validation.error.repeat-code= The code must be unique
+
 acme.validation.trackingLog.updateMoment.message = The date of a tracking log must be older than that of a claim
 acme.validation.trackingLog.publish.message = A new tracking log may be created even after the last one has been published (the one with a 100% resolution percentage)
+
