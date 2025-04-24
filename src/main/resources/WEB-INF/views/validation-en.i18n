@@ -1,5 +1,3 @@
-
-
 acme.validation.header.message  	= Must have from 1 to 75 characters
 
 acme.validation.text.message   		= Must have from 1 to 255 characters
@@ -35,12 +33,14 @@ acme.validation.severityLevel.message = Ranging from 0 to 10, where 0 indicates 
 
 acme.validation.lastnibble.message = The last nibble must be exactly 4 digits
 
-acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution.
+acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage must be monotonically increasing
 
-acme.validation.booking.purchaseMoment.message = The booking must be for a future flight.
+acme.validation.booking.purchaseMoment.message = The booking must be for a future flight
 acme.validation.booking.draftMode.message = The passengers have to be publish to publish a booking
 acme.validation.booking.repeat-code.message = The locator code must be unique
+
+acme.validation.claim.registrationMoment.message = The date of a claim must be older than that of a leg
 
 acme.validation.trackingLog.resolution.message = When a claim is accepted or rejected, the system must store its resolution
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage must be monotonically increasing
@@ -49,3 +49,7 @@ acme.validation.trackingLog.IndicatorPercentagePending.message = If the resoluti
 acme.validation.trackingLog.unpublished.message = A tracking log cannot be published until its corresponding claim is published
 
 acme.validation.error.repeat-code= The code must be unique
+
+acme.validation.trackingLog.updateMoment.message = The date of a tracking log must be older than that of a claim
+acme.validation.trackingLog.publish.message = A new tracking log may be created even after the last one has been published (the one with a 100% resolution percentage)
+

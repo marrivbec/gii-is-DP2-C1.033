@@ -60,7 +60,7 @@ public class AssistanceAgentClaimListPendingService extends AbstractGuiService<A
 		String indicator;
 
 		indicator = claim.indicator();
-		dataset = super.unbindObject(claim, "passengerEmail", "type");
+		dataset = super.unbindObject(claim, "passengerEmail", "type", "draftMode");
 		dataset.put("indicator", indicator);
 		super.addPayload(dataset, claim, "registrationMoment", "description", "leg");
 
