@@ -20,6 +20,7 @@ master.menu.administrator.list-user-accounts = List user accounts
 master.menu.administrator.list-airports = List airports
 master.menu.administrator.list-airlines = List airlines
 master.menu.administrator.list-aircrafts = List aircrafts
+master.menu.administrator.list-claims = List claims
 master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
 master.menu.administrator.shut-system-down = Shut system down
@@ -69,6 +70,8 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
 master.menu.user-account.become-customer = Become a customer
 master.menu.user-account.customer-profile = Customer profile
+master.menu.user-account.become-assistanceAgent = Become an assistance agent
+master.menu.user-account.assistanceAgent-profile = Assistance agent profile
 
 # master.menu.technicians ##########################################################
 master.menu.technicians = Technician
