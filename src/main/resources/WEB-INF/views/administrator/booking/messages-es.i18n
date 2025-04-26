@@ -1,0 +1,17 @@
+administrator.booking.form.title = Detalles de la reserva
+administrator.booking.list.title = Lista de reserva
+
+administrator.booking.form.label.locatorCode = Codigo localizador: 
+administrator.booking.form.label.purchaseMoment = Momento de compra:
+administrator.booking.form.label.travelClass = Clase de viaje:
+administrator.booking.form.label.lastNibble = Ultimos numero de la tarjeta:
+administrator.booking.form.label.price = Precio:
+administrator.booking.form.label.flight = Vuelo:
+
+administrator.booking.list.label.locatorCode = Codigo localizador: 
+administrator.booking.list.label.purchaseMoment = Momento de compra:
+administrator.booking.list.label.travelClass = Clase de viaje:
+administrator.booking.list.label.lastNibble = Ultimos dígitos de la tarjeta:
+administrator.booking.list.label.price = Precio:
+
+administrator.bookingPassenger.list.button.passenger = Lista de pasajeros
