@@ -1,6 +1,7 @@
 
 package acme.entities.trackingLog;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -11,6 +12,7 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface TrackingLogRepository extends AbstractRepository {
 
-	@Query("SELECT t FROM TrackingLog t WHERE t.claim.id = :claimId ORDER BY t.lastUpdateMoment ASC")
-	List<TrackingLog> findTrackingLogsByClaimIdOrderedByDateAsc(int claimId);
+	@Query("SELECT t FROM TrackingLog t WHERE t.claim.id = :claimId AND t.lastUpdateMoment < :trackingLogDate ORDER BY t.lastUpdateMoment ASC")
+	List<TrackingLog> findTrackingLogsByClaimIdBeforeDateOrderedByDateAsc(int claimId, Date trackingLogDate);
+
 }
