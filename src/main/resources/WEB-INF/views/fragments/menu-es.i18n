@@ -40,6 +40,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.customer.booking = Menú de Booking
 master.menu.customer.passenger = Menú de Passenger
 master.menu.customer = Menú de Customer
+master.menu.customer.show-dashboard = Dashboard
 
 # master.menu.assistanceAgent ##########################################################
 

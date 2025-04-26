@@ -59,6 +59,7 @@ master.menu.airline-manager.list-my-flights= List my flights
 master.menu.customer.booking = Booking Menu
 master.menu.customer.passenger = Passenger Menu
 master.menu.customer = Customer Menu
+master.menu.customer.show-dashboard = Dashboard
 
 # master.menu.user-account ####################################################
 
