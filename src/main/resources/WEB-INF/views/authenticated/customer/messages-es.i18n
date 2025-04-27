@@ -1,0 +1,11 @@
+authenticated.customer.form.title = Detalles del cliente
+
+authenticated.customer.form.label.employeeCode = Codigo:
+authenticated.customer.form.label.phoneNumber = Teléfono:
+authenticated.customer.form.label.physicalAddress = Dirección física:
+authenticated.customer.form.label.city = Cuidad:
+authenticated.customer.form.label.country = País:
+authenticated.customer.form.label.earnedPoints = Puntos ganados:
+
+authenticated.customer.form.button.create= Crear
+authenticated.customer.form.button.update= Actualizar

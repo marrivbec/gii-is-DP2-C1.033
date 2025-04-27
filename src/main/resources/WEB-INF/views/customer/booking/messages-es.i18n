@@ -19,5 +19,6 @@ customer.booking.form.label.confirmation= Confirmar
 customer.booking.form.button.passengers = Pasajeros
 customer.booking.form.button.addPassengers = Añadir Pasajeros
 customer.booking.form.button.draftMode = Publicar
+customer.booking.form.button.delete = Borrar
 customer.booking.form.label.flight = Vuelo
 customer.booking.list.label.draftMode = Modo Borrador

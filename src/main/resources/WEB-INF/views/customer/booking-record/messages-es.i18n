@@ -2,3 +2,4 @@ customer.booking-record.list.title= Booking Records
 customer.booking-record.form.title = Pasajero
 customer.booking-record.form.label.passenger = Elegir Pasajero
 customer.booking-record.form.button.create = Añadir Pasajero
+customer.booking-record.form.button.delete = Eliminar Pasajero

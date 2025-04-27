@@ -32,22 +32,25 @@ public class EmployeeCodeValidator extends AbstractValidator<ValidEmployeeCode, 
 
 		if (codigo != null && !codigo.isEmpty()) {
 			boolean cod = codigo.matches("^([A-Z]{2,3})(\\d{6})$");
+			if (!cod)
+				super.state(context, cod, "employeeCode", "acme.validation.employeeCode.message");
+			else {
+				String letras = codigo.substring(0, codigo.length() - 6); // Extrae las letras
+				String expectedInitials;
 
-			String letras = codigo.substring(0, codigo.length() - 6); // Extrae las letras
-			String expectedInitials;
+				if (letras.length() == 2)
+					expectedInitials = this.getInitials(identity.getName(), identity.getSurname(), realm);
+				else if (letras.length() == 3)
+					expectedInitials = this.getInitials1(identity.getName(), identity.getSurname(), realm);
+				else
+					expectedInitials = ""; // no válido si tiene más o menos de 2 o 3 letras
 
-			if (letras.length() == 2)
-				expectedInitials = this.getInitials(identity.getName(), identity.getSurname(), realm);
-			else if (letras.length() == 3)
-				expectedInitials = this.getInitials1(identity.getName(), identity.getSurname(), realm);
-			else
-				expectedInitials = ""; // no válido si tiene más o menos de 2 o 3 letras
+				boolean cod1 = letras.equals(expectedInitials);
 
-			boolean cod1 = letras.equals(expectedInitials);
-
-			super.state(context, cod1 && cod, "codigo", "acme.validation.employeeCode.message");
+				super.state(context, cod1, "employeeCode", "acme.validation.employeeCode.message");
+			}
 		} else
-			super.state(context, false, "codigo", "acme.validation.employeeCode.message");
+			super.state(context, false, "employeeCode", "acme.validation.employeeCode.message");
 		result = !super.hasErrors(context);
 
 		return result;

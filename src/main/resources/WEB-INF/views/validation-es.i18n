@@ -1,5 +1,3 @@
-
-
 acme.validation.header.message  	= Debe tener entre 1 y 75 caracteres
 
 acme.validation.text.message   		= Debe tener entre 1 y 255 caracteres 
@@ -17,6 +15,10 @@ acme.validation.promo.last-digits.message = El código de promoción debe termin
 
 acme.validation.score.message = La puntuación debe estar entre 0 y 10, con un máximo de un decimal
 
+acme.validation.leg.airport.sameAirport = mismo aeropuerto de llegada y salida
+acme.validation.leg.flightnumber.duplicated.message = número de vuelo duplicado
+acme.validation.leg.flightnumber.message = IATA del número de vuelo invalido
+acme.validation.leg.arrival.message = La salida no puede ser antes que la llegada
 acme.validation.flight.number.message = El número de vuelo debe estar compuesto por 3 letras mayúsculas seguidas de 4 dígitos (ejemplo: ABC1234)
 
 acme.validation.passport.message = Número de pasaporte inválido. Debe tener entre 6 y 9 caracteres y contener solo letras mayúsculas y números
@@ -35,8 +37,18 @@ acme.validation.booking.purchaseMoment.message = La reserva tiene que ser para u
 acme.validation.booking.draftMode.message = Para publicar una reserva los pasajeros tienen que estar publicados también
 acme.validation.booking.repeat-code.message = El código de localización tiene que ser único
 
+acme.validation.claim.registrationMoment.message = La fecha de una queja debe ser mayor que la de un tramo de vuelo
+
 acme.validation.trackingLog.resolution.message = Cuando un Claim es aceptado o rechazado, el sistema debe almacenar su resolution
 acme.validation.trackingLog.resolutionPercentage.message = resolution percentage debe ser monótonamente creciente
 acme.validation.trackingLog.IndicatorPercentage.message = Si el porcentaje de resolución es 100 el indicador no puede ser Pending
 acme.validation.trackingLog.IndicatorPercentagePending.message = Si el porcentaje de resolución no es 100 el indicador no puede ser Accepted o Rejected
+
 acme.validation.trackingLog.unpublished.message = Un registro de seguimiento no se puede publicar hasta que se publique su queja correspondiente.
+
+acme.validation.error.repeat-code= El código tiene que ser único
+
+acme.validation.trackingLog.unpublished.message = Un registro de seguimiento no se puede publicar hasta que se publique su queja correspondiente
+acme.validation.trackingLog.updateMoment.message = La fecha de un registro de seguimiento debe ser mayor que la de una queja
+acme.validation.trackingLog.publish.message = Se puede crear un nuevo registro de seguimiento incluso después de que se haya publicado el último (el que tiene un porcentaje de resolución del 100%)
+
