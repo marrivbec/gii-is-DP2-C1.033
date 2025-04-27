@@ -18,12 +18,12 @@ flight-crew-member.flight-assignment.form.label.remarks = Remarks:
 flight-crew-member.flight-assignment.form.label.flightCrewMember = Flight Crew Member:
 flight-crew-member.flight-assignment.form.label.leg = Leg code:
 
-flight-crew-member.flight-assignment.form.button.activity-log = Show activity logs
-flight-crew-member.flight-assignment.form.button.visa-requirements = Show visa requirements
-
+flight-crew-member.flight-assignment.form.button.activityLogs = Show activity logs
 flight-crew-member.flight-assignment.form.button.create = Create
 flight-crew-member.flight-assignment.form.button.update = Update
 flight-crew-member.flight-assignment.form.button.publish = Publish
+flight-crew-member.flight-assignment.form.button.delete = Delete
+
 
 flight-crew-member.flight-assignment.list.label.duty = Duty: 
 flight-crew-member.flight-assignment.list.label.moment = Moment:

@@ -33,6 +33,9 @@ public class FlightCrewMemberFlightAssigmentController extends AbstractGuiContro
 	@Autowired
 	private FlightCrewMemberFlightAssigmentPublishService		publishService;
 
+	@Autowired
+	private FlightCrewMemberFlightAssigmentDeleteService		deleteService;
+
 	// Constructors -----------------------------------------------------------
 
 
@@ -44,6 +47,8 @@ public class FlightCrewMemberFlightAssigmentController extends AbstractGuiContro
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
+
 		super.addCustomCommand("publish", "update", this.publishService);
+		super.addBasicCommand("delete", this.deleteService);
 	}
 }

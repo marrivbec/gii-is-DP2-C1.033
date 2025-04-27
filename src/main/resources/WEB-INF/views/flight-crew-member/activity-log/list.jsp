@@ -19,7 +19,6 @@
 	<acme:list-column code="flightCrewMember.activityLog.list.label.registrationMoment" path="registrationMoment" width="20%"/>
 	<acme:list-column code="flightCrewMember.activityLog.list.label.typeOfIncident" path="typeOfIncident" width="20%"/>
 	<acme:list-column code="flightCrewMember.activityLog.list.label.severityLevel" path="severityLevel" width="20%"/>
-	<acme:list-payload path="payload"/>
 </acme:list>
 
-<acme:button code="flightCrewMember.activityLog.list.button.create" action="/flight-crew-member/activity-log/create"/>
+<acme:button code="flightCrewMember.activityLog.list.button.create" action="/flight-crew-member/activity-log/create?masterId=${masterId}"/>

@@ -42,3 +42,4 @@ leg-23,ABX1111,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,
 leg-24,ABX4411,2011/04/22 12:01,2011/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-25,false
 leg-25,ABX6611,2011/04/22 12:01,2011/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-25,false
 leg-26,ABX6711,2000/01/01 0:01,2000/01/01 0:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-25,false
+
