@@ -47,6 +47,7 @@ master.menu.assistanceAgent.list-trackingLog = List Tracking logs
 master.menu.flightCrewMember = Flight Crew Member
 master.menu.flightCrewMember.list-flight-assignments-planned = Flight Assignments Planned
 master.menu.flightCrewMember.list-flight-assignments-completed = Flight Assignments Completed
+master.menu.flightCrewMember.show-dashboard = Flight Crew Member Dashboard
 
 # master.menu.airline-manager ########################################################
 
