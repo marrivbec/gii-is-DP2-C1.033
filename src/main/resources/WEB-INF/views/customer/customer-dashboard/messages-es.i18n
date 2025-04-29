@@ -1,0 +1,25 @@
+customer.customer-dashboards.form.title=Dashboard
+
+customer.customer-dashboard.booking-statistics=Estadísticas de reservas en los ultimos 5 años
+customer.customer-dashboard.label.count-booking=Total de reservas 
+customer.customer-dashboard.label.average-booking=Promedio de coste de las reservas
+customer.customer-dashboard.label.min-booking=Coste mínimo de las reservas
+customer.customer-dashboard.label.max-booking=Coste máximo de las reservas
+customer.customer-dashboard.label.devv-booking=Desviación estándar del coste de las reservas
+
+customer.customer-dashboard.passenger-statistics=Estadísticas de pasajeros
+customer.customer-dashboard.label.count-passenger=Total de pasajeros
+customer.customer-dashboard.label.average-passenger=Promedio de pasajeros por reserva
+customer.customer-dashboard.label.min-passenger=Mínimo número de pasajeros por reserva
+customer.customer-dashboard.label.max-passenger=Máximo número de pasajeros por reserva
+customer.customer-dashboard.label.devv-passenger=Desviación estándar del número de pasajeros
+
+customer.customer-dashboard.last-five-destinations= Últimos cinco destinos
+customer.customer-dashboard.label.last-five-destinations=Los últimos 5 destinos son:
+
+customer.customer-dashboard.money-spent-last-year=Dinero gastado en el último año
+customer.customer-dashboard.label.money-spent=El dinero gastado 
+
+customer.customer-dashboard.numBYTravelClass=Número de reservas por clase de viaje
+customer.customer-dashboard.label.totalNumTravelClassEconomy=Número total de reservas en clase económica
+customer.customer-dashboard.label.totalNumTravelClassBusiness=Número total de reservas en clase business

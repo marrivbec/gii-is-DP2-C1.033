@@ -22,23 +22,23 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int activityLogId;
-		ActivityLog activityLog;
-		FlightCrewMember flightCrewMember;
+		//		boolean status;
+		//		int activityLogId;
+		//		ActivityLog activityLog;
+		//		FlightCrewMember flightCrewMember;
+		//
+		//		activityLogId = super.getRequest().getData("id", int.class);
+		//		activityLog = this.repository.findActivityLogById(activityLogId);
+		//		flightCrewMember = activityLog == null ? null : activityLog.getFlightCrewMember();
+		//		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember);
 
-		activityLogId = super.getRequest().getData("id", int.class);
-		activityLog = this.repository.findActivityLogById(activityLogId);
-		flightCrewMember = activityLog == null ? null : activityLog.getFlightCrewMember();
-		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember);
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
-		ActivityLog activityLog;
 		int id;
+		ActivityLog activityLog;
 
 		id = super.getRequest().getData("id", int.class);
 		activityLog = this.repository.findActivityLogById(id);
@@ -48,7 +48,9 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 	@Override
 	public void bind(final ActivityLog activityLog) {
+
 		super.bindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+
 	}
 
 	@Override
@@ -64,9 +66,8 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 	@Override
 	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
-
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
-		dataset.put("readonly", false);
+		dataset.put("masterId", activityLog.getFlightAssignment().getId());
 
 		super.getResponse().addData(dataset);
 	}

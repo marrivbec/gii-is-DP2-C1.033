@@ -1,0 +1,25 @@
+customer.customer-dashboard.form.title=My Dashboard
+
+customer.customer-dashboard.booking-statistics=Booking statistics in the last 5 years
+customer.customer-dashboard.label.count-booking=Total bookings
+customer.customer-dashboard.label.average-booking=Average booking cost
+customer.customer-dashboard.label.minimum-booking=Minimum booking cost
+customer.customer-dashboard.label.maximum-booking=Maximum booking cost
+customer.customer-dashboard.label.devv-booking=Standard deviation of booking cost
+
+customer.customer-dashboard.passenger-statistics=Passenger statistics
+customer.customer-dashboard.label.count-passenger=Total passengers
+customer.customer-dashboard.label.average-passenger=Average of passengers of a booking
+customer.customer-dashboard.label.minimum-passenger=Minimum number of passengers of a booking
+customer.customer-dashboard.label.maximum-passenger=Maximum number of passengers of a booking
+customer.customer-dashboard.label.devv-passenger=Standard deviation of number of passengers
+
+customer.customer-dashboard.last-five-destinations=Last five destinations
+customer.customer-dashboard.label.last-five-destinations=The last 5 destinations are:
+
+customer.customer-dashboard.money-spent-last-year=Money spent in the last year
+customer.customer-dashboard.label.money-spent=Money spent
+
+customer.customer-dashboard.numBYTravelClass=Number of bookings by travel class
+customer.customer-dashboard.label.totalNumTravelClassEconomy=Total number of bookings in economy travel class
+customer.customer-dashboard.label.totalNumTravelClassBusiness=Total number of bookings in business travel class

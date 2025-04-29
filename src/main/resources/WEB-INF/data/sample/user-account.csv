@@ -11,11 +11,11 @@ user-account-agent-03,true,"UserIdentity{name: 'Mary', surname: 'Moore', email: 
 user-account-manager-03,true,"UserIdentity{name: 'Mario', surname: 'Rivas', email: 'mario@acme.com'}",manager3,manager3
 user-account-manager-01,true,"UserIdentity{name: 'Pepe', surname: 'Villa', email: 'pepe@acme.com'}",manager1,manager1
 user-account-manager-02,true,"UserIdentity{name: 'Juanma', surname: 'Salazar', email: 'juanma@acme.com'}",manager2,manager2
-user-account-member-01,true,"UserIdentity{name: 'Ana', surname: 'Lopez', email: 'ana@acme.com'}",flightCrewMember1,flightCrewMember1
-user-account-member-02,true,"UserIdentity{name: 'Carlos', surname: 'Ramirez', email: 'carlos@acme.com'}",flightCrewMember2,flightCrewMember2
-user-account-member-03,true,"UserIdentity{name: 'Sofia', surname: 'Martinez', email: 'sofia@acme.com'}",flightCrewMember3,flightCrewMember3
-user-account-member-04,true,"UserIdentity{name: 'Miguel', surname: 'Fernandez', email: 'miguel@acme.com'}",flightCrewMember4,flightCrewMember4
-user-account-member-05,true,"UserIdentity{name: 'Laura', surname: 'Gomez', email: 'laura@acme.com'}",flightCrewMember5,flightCrewMember5
+user-account-member-01,true,"UserIdentity{name: 'Ana', surname: 'Lopez', email: 'ana@acme.com'}",member1,member1
+user-account-member-02,true,"UserIdentity{name: 'Carlos', surname: 'Ramirez', email: 'carlos@acme.com'}",member2,member2
+user-account-member-03,true,"UserIdentity{name: 'Sofia', surname: 'Martinez', email: 'sofia@acme.com'}",member3,member3
+user-account-member-04,true,"UserIdentity{name: 'Miguel', surname: 'Fernandez', email: 'miguel@acme.com'}",member4,member4
+user-account-member-05,true,"UserIdentity{name: 'Laura', surname: 'Gomez', email: 'laura@acme.com'}",member5,member5
 user-account-customer-01,true,"UserIdentity{name: 'Marta', surname: 'Gago', email: 'martagago@acme.com'}",customer1,customer1
 user-account-customer-02,true,"UserIdentity{name: 'Juan Antonio', surname: 'Peralta', email: 'juanan@acme.com'}",customer2,customer2
 user-account-customer-03,true,"UserIdentity{name: 'Angel Manuel', surname: 'Ferrerito', email: 'angelferrer@acme.com'}",customer3,customer3

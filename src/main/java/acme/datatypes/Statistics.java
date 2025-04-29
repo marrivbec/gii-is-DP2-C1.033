@@ -34,12 +34,14 @@ public class Statistics extends AbstractDatatype {
 
 	private Double				deviation;
 
+	private Integer				count;
+
 	// Object interface -------------------------------------------------------
 
 
 	@Override
 	public String toString() {
-		return String.format("Statistics [average=%.2f, minimum=%.2f, maximum=%.2f, deviation=%.2f]", this.average, this.minimum, this.maximum, this.deviation);
+		return String.format("Statistics [average=%.2f, minimum=%.2f, maximum=%.2f, deviation=%.2f, count=%s]", this.average, this.minimum, this.maximum, this.deviation, this.count);
 	}
 
 }

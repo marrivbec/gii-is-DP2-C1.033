@@ -1,22 +1,70 @@
-key,mail,dateFundation,iata,name,phone,type,web
-airline-01,airline1@gmail.com,2002/02/01 10:00,ABX,Ry4n4ir,34123456789,LUJO,https://www.fakeweb1.com
-airline-02,acme@lorem-ipsum.org,2002/02/01 10:00,ACX,Nombre1,34123456789,ESTÁNDAR,https://www.fakeweb2.com
-airline-03,a@b.e,2002/02/01 10:00,AEX,Nombre3,34123456789,LUJO,https://www.fakeweb4.com
-airline-04,a@b.es,2002/02/01 10:00,AFX,Nombre4,34123456789,ESTÁNDAR,https://www.fakeweb5.com
-airline-05,a@b.esx,2002/02/01 10:00,AGX,Nombre5,34123456789,ESTÁNDAR,https://www.fakeweb6.com
-airline-06,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,2002/02/01 10:00,AHX,Nombre6,34123456789,LUJO,https://www.fakeweb7.com
-airline-07,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,2002/02/01 10:00,AIX,Nombre3,34123456789,LUJO,https://www.fakeweb4.com
-airline-08,airline@gmail.com,2012/08/05 0:00,AJX,Ejemplo1,34123456789,BAJO_COSTO,https://www.fakeweb1.com
-airline-09,airline@gmail.com,2000/01/01 0:00,AKX,Ejemplo2,34123456789,BAJO_COSTO,https://www.fakeweb1.com
-airline-10,airline@gmail.com,2000/01/01 0:01,ALX,Ejemplo3,34123456789,LUJO,https://www.fakeweb1.com
-airline-11,airline@gmail.com,2000/01/01 0:01,AMX,Lorem ipsum dolor sit ame,34123456789,ESTÁNDAR,https://www.fakeweb.com
-airline-12,airline@gmail.com,2000/01/01 0:01,ANX,L,34123456789,BAJO_COSTO,https://www.fakeweb.com
-airline-13,airline@gmail.com,2000/01/01 0:01,AOX,Lo,34123456789,BAJO_COSTO,https://www.fakeweb.com
-airline-14,airline@gmail.com,2000/01/01 0:01,APX,"Lorem ipsum dolor sit amet, consectetur adipiscin",34123456789,ESTÁNDAR,https://www.fakeweb.com
-airline-15,airline@gmail.com,2000/01/01 0:01,AQX,"Lorem ipsum dolor sit amet, consectetur adipiscing",34123456789,LUJO,https://www.fakeweb.com
-airline-16,airline@gmail.com,2000/01/01 0:01,ASX,โลเร็ม อิปซัม,34123456789,ESTÁNDAR,https://www.fakeweb.com
-airline-17,airline@gmail.com,2000/01/01 0:01,ATX,洛伦·伊普森,34123456789,LUJO,https://www.fakeweb.com
-airline-18,airline@gmail.com,2000/01/01 0:01,AUX,<marquee>Hacked</marquee>,34123456789,ESTÁNDAR,https://www.fakeweb.com
-airline-19,airline@gmail.com,2000/01/01 0:01,AVX,<script>alert(‘Hacked!’);</script>,34123456789,LUJO,https://www.fakeweb.com
-airline-20,airline@gmail.com,2000/01/01 0:01,AWX,' or 'A' = 'A,34123456789,BAJO_COSTO,https://www.fakeweb.com
-airline-21,acme@lorem-ipsum.org,2002/02/01 10:00,BAX,Airline1,34123456789,ESTÁNDAR,http://lorem.com/ipsum
+key,name,iata,web,type,dateFundation,mail,phone
+# base entity
+airline-01,"Lorem ipsum","ABX","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+
+# name - standard variations
+airline-02,"Lorem ipsum dolor sit ame","ABD","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-03,"L","ABE","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-04,"Lo","ABF","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-05,"Lorem ipsum dolor sit amet; consectetur adipiscin","ABG","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-06,"Lorem ipsum dolor sit amet; consectetur adipiscing","ABH","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+# name - no singular values
+airline-07,"โลเร็ม อิปซัม","ABI","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-08,"لوريم إيبسوم","ABJ","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-09,"洛伦·伊普森","ABK","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-10,"<marquee>Hacked</marquee>","ABL","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-11,"<script>alert(‘Hacked!’);</script>","ABM","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-12,"'' or 'A' = 'A","ABN","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+
+# iata - standard variations
+airline-13,"Lorem ipsum","AAA","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-14,"Lorem ipsum","ZZZ","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-15,"Lorem ipsum","NXY","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+
+# web - standard variations
+airline-16,"Lorem ipsum","ABO","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+# singular
+airline-17,"Lorem ipsum","ABP","ftp://a",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-18,"Lorem ipsum","ABQ","ftp://a.b",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-19,"Lorem ipsum","ABR","http://www.lorem-ipsum.org/dolor/sit/amet;/consectetur/adipiscing/elit;/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-20,"Lorem ipsum","ABS","http://www.lorem-ipsum.org/dolor/sit/amet;/consectetur/adipiscing/elit;/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-21,"Lorem ipsum","ABT","https://www.lorem-ipsum.org",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-22,"Lorem ipsum","ABU","ftp://www.lorem-ipsum.org",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-23,"Lorem ipsum","ABV","http://www.lorem-ipsum.org/dolor/sit.html",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-24,"Lorem ipsum","ABW","http://www.lorem-ipsum.org/dolor/sit.html#dolor",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-25,"Lorem ipsum","ABA","http://example.org?a=1&b=2",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-26,"Lorem ipsum","ABY","http://example.org?",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-27,"Lorem ipsum","ABZ","http://example.org?a",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-28,"Lorem ipsum","ACB","http://example.org?a&b",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-29,"Lorem ipsum","ACC","http://example.org/",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-30,"Lorem ipsum","ACD","http://example.org/a",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-31,"Lorem ipsum","ACE","http://example.org/a/b",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-32,"Lorem ipsum","ACF","http://example.org/a/b?",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-33,"Lorem ipsum","ACG","http://example.org/a/b?a&b",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+
+# type - standard variations
+airline-34,"Lorem ipsum","ACH","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-35,"Lorem ipsum","ACI","http://lorem.com/ipsum",ESTÁNDAR,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-36,"Lorem ipsum","ACJ","http://lorem.com/ipsum",BAJO_COSTO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+
+# fundationMoment - standard variations
+airline-37,"Lorem ipsum","ACK","http://lorem.com/ipsum",LUJO,2012/07/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-38,"Lorem ipsum","ACL","http://lorem.com/ipsum",LUJO,2000/01/01 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-39,"Lorem ipsum","ACM","http://lorem.com/ipsum",LUJO,2000/01/01 00:01,"acme@lorem-ipsum.org","+34987654321"
+#airline-40,"Lorem ipsum","ACN","http://lorem.com/ipsum",LUJO,2024/12/31 23:59,"acme@lorem-ipsum.org","+34987654321"
+#airline-41,"Lorem ipsum","ACO","http://lorem.com/ipsum",LUJO,2025/01/01 00:00,"acme@lorem-ipsum.org","+34987654321"
+
+# mail - standard variations
+airline-42,"Lorem ipsum","ACP","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-43,"Lorem ipsum","ACQ","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acmepassword@lorem-ipsum.org","+34987654321"
+airline-44,"Lorem ipsum","ACR","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"a@b.e","+34987654321"
+airline-45,"Lorem ipsum","ACS","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"a@b.es","+34987654321"
+airline-46,"Lorem ipsum","ACT","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"a@b.esx","+34987654321"
+airline-47,"Lorem ipsum","ACU","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org","+34987654321"
+
+# phone - standard variations
+airline-48,"Lorem ipsum","ACV","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+3498765432"
+airline-49,"Lorem ipsum","ACW","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+349876"
+airline-50,"Lorem ipsum","ACX","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+3498765"
+airline-51,"Lorem ipsum","ACY","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321234"
+airline-52,"Lorem ipsum","ACZ","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+349876543212345"

@@ -10,6 +10,7 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLog.ActivityLog;
+import acme.entities.flightAssignment.FlightAssignment;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -30,10 +31,14 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 	@Override
 	public void load() {
+
 		ActivityLog activityLog;
 		Date registrationMoment;
-		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		int masterId;
+		FlightAssignment flightAssignment;
 
+		masterId = super.getRequest().getData("masterId", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(masterId);
 		registrationMoment = MomentHelper.getCurrentMoment();
 
 		activityLog = new ActivityLog();
@@ -41,15 +46,18 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 		activityLog.setTypeOfIncident("");
 		activityLog.setDescription("");
 		activityLog.setSeverityLevel(0);
-		activityLog.setFlightCrewMember(flightCrewMember);
 		activityLog.setDraftMode(true);
+		activityLog.setFlightAssignment(flightAssignment);
 
 		super.getBuffer().addData(activityLog);
+
 	}
 
 	@Override
 	public void bind(final ActivityLog activityLog) {
+
 		super.bindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+
 	}
 
 	@Override
@@ -59,21 +67,25 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 	@Override
 	public void perform(final ActivityLog activityLog) {
+
 		Date registrationMoment;
 
 		registrationMoment = MomentHelper.getCurrentMoment();
 		activityLog.setRegistrationMoment(registrationMoment);
+
 		this.repository.save(activityLog);
 	}
 
 	@Override
 	public void unbind(final ActivityLog activityLog) {
-		Dataset dataset;
 
-		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+		Dataset dataset;
+		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
 		dataset.put("readonly", false);
+		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);
+
 	}
 
 }

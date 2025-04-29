@@ -1,0 +1,14 @@
+administrator.passenger.list.label.fullName=Nombre completo
+administrator.passenger.list.label.email=Correo electrónico
+administrator.passenger.list.label.passportNumber=Número de pasaporte
+administrator.passenger.list.label.specialNeeds=Necesidades especiales
+administrator.passenger.list.label.dateOfBirth=Fecha de nacimiento
+administrator.passenger.list.label.draftMode=Modo borrador
+administrator.passenger.list.title=Pasajeros
+administrator.passenger.list.button.create=Crear pasajero
+administrator.passenger.form.title=Detalles de pasajero
+administrator.passenger.form.label.fullName=Nombre completo
+administrator.passenger.form.label.email=Correo electrónico
+administrator.passenger.form.label.passportNumber=Número de pasaporte
+administrator.passenger.form.label.specialNeeds=Necesidades especiales
+administrator.passenger.form.label.dateOfBirth=Fecha de nacimiento

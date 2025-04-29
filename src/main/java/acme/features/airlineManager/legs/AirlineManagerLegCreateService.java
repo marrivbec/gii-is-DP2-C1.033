@@ -81,13 +81,12 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 		Collection<Airport> airportsArrival;
 		Collection<Airport> airportsDeparture;
 
-		int masterId = super.getRequest().getData("masterId", int.class);
-		flight = this.repository.findFlightById(masterId);
+		flight = this.repository.findFlightById(leg.getFlight().getId());
 		aircrafts = this.repository.findAircraftsByAirlineId(flight.getAirlineManager().getAirline().getId());
 		airportsD = this.repository.findAllAirport();
 		airportsA = this.repository.findAllAirport();
-		airportsDeparture = this.repository.findDepartureAircraftsByFlightId(masterId);
-		airportsArrival = this.repository.findArrivalAircraftsByFlightId(masterId);
+		airportsDeparture = this.repository.findDepartureAircraftsByFlightId(flight.getId());
+		airportsArrival = this.repository.findArrivalAircraftsByFlightId(flight.getId());
 
 		//Quitamos los airports de los que ya has salido y a los que ya has llegado de ambos choices
 
@@ -100,7 +99,7 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 		choicesArrivalAirport = SelectChoices.from(airportsA, "name", leg.getArrivalAirport());
 
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
-		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		dataset.put("masterId", flight.getId());
 		dataset.put("status", choicesStatus);
 		dataset.put("aircraft", choicesAircraft.getSelected().getKey());
 		dataset.put("aircrafts", choicesAircraft);

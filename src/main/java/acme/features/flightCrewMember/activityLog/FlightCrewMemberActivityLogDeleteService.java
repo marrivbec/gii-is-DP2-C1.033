@@ -47,7 +47,9 @@ public class FlightCrewMemberActivityLogDeleteService extends AbstractGuiService
 
 	@Override
 	public void bind(final ActivityLog activityLog) {
+
 		super.bindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+
 	}
 
 	@Override
@@ -64,11 +66,32 @@ public class FlightCrewMemberActivityLogDeleteService extends AbstractGuiService
 	@Override
 	public void unbind(final ActivityLog activityLog) {
 
+		//		Dataset dataset;
+		//		int flightCrewMemberId;
+		//		Date currentMoment;
+		//
+		//		currentMoment = MomentHelper.getCurrentMoment();
+		//		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		//		List<FlightAssignment> assignments;
+		//		assignments = this.repository.findAssignmentsByMemberIdCompletedLegs(currentMoment, flightCrewMemberId);
+		//
+		//		SelectChoices assignmentChoices;
+		//
+		//		assignmentChoices = SelectChoices.from(assignments, "leg.flightNumber", activityLog.getFlightAssignment());
+		//
+		//		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+		//		dataset.put("assignment", assignmentChoices.getSelected().getKey());
+		//		dataset.put("assignmentChoices", assignmentChoices);
+		//		//		dataset.put("faId", activityLog.getFlightAssignment().getId());
+		//		//		dataset.put("fadraftMode", activityLog.getFlightAssignment().isDraftMode());
+		//
+		//		super.getResponse().addData(dataset);
 		Dataset dataset;
-
-		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
+		dataset.put("masterId", activityLog.getFlightAssignment().getId());
 
 		super.getResponse().addData(dataset);
+
 	}
 
 }
