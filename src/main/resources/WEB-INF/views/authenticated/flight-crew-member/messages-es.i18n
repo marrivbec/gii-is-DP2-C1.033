@@ -1,0 +1,12 @@
+authenticated.flight-crew-member.form.title = Formulario de Miembro de Tripulación de Vuelo
+
+authenticated.flight-crew-member.form.label.airline = Aerolínea
+authenticated.flight-crew-member.form.label.employeeCode = Identificador:
+authenticated.flight-crew-member.form.label.phoneNumber = Teléfono:
+authenticated.flight-crew-member.form.label.languageSkills = Lenguajes:
+authenticated.flight-crew-member.form.label.availabilityStatus = Disponibilidad:
+authenticated.flight-crew-member.form.label.salary = Salario:
+authenticated.flight-crew-member.form.label.yearsOfExperience = Años de Experiencia:
+
+authenticated.flight-crew-member.form.button.create= Crear
+authenticated.flight-crew-member.form.button.update= Actualizar

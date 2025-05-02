@@ -1,0 +1,11 @@
+authenticated.flight-crew-member.form.title = Flight Crew Member form
+
+authenticated.flight-crew-member.form.label.employeeCode = Identifier:
+authenticated.flight-crew-member.form.label.phoneNumber = Phone:
+authenticated.flight-crew-member.form.label.languageSkills = Physical Language Skills:
+authenticated.flight-crew-member.form.label.availabilityStatus = Availability Status:
+authenticated.flight-crew-member.form.label.salary = Salary:
+authenticated.flight-crew-member.form.label.yearsOfExperience = Years of experience:
+
+authenticated.flight-crew-member.form.button.create= Create
+authenticated.flight-crew-member.form.button.update= Update

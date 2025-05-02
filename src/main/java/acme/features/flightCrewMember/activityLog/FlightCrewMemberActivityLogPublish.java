@@ -23,17 +23,17 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 
 	@Override
 	public void authorise() {
-		//		boolean status;
-		//		int activityLogId;
-		//		ActivityLog activityLog;
-		//		FlightCrewMember flightCrewMember;
-		//
-		//		activityLogId = super.getRequest().getData("id", int.class);
-		//		activityLog = this.repository.findActivityLogById(activityLogId);
-		//		flightCrewMember = activityLog == null ? null : activityLog.getFlightCrewMember();
-		//		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember);
+		boolean status;
+		int activityLogId;
+		ActivityLog activityLog;
+		FlightCrewMember flightCrewMember;
 
-		super.getResponse().setAuthorised(true);
+		activityLogId = super.getRequest().getData("id", int.class);
+		activityLog = this.repository.findActivityLogById(activityLogId);
+		flightCrewMember = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
+		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember) && (activityLog == null || activityLog.isDraftMode());
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 		FlightAssignment flightAssignment = activityLog.getFlightAssignment();
 		status = flightAssignment != null && !flightAssignment.isDraftMode();
 
-		super.state(status, "*", "acme.validation.trackingLog.unpublished.message");
+		super.state(status, "*", "acme.validation.activity.unpublished.message");
 	}
 
 	@Override

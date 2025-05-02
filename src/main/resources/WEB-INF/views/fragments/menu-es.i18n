@@ -13,6 +13,11 @@
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 
+# master.menu.any #######################################################
+
+master.menu.any = Cualquiera
+master.menu.any.list-flight-assignments-published = Asignaciones de Vuelo Publicadas
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -61,6 +66,7 @@ master.menu.airline-manager.list-my-flights = Listar mis vuelos
 master.menu.flightCrewMember = Miembo de Tripulación de Vuelo
 master.menu.flightCrewMember.list-flight-assignments-planned = Asignaciones planificadas
 master.menu.flightCrewMember.list-flight-assignments-completed = Asignaciones completadas
+master.menu.flightCrewMember.show-dashboard = Dashboard
 
 
 # master.menu.user-account ####################################################
@@ -75,6 +81,7 @@ master.menu.user-account.become-customer = Hazte cliente
 master.menu.user-account.customer-profile = Perfil de cliente
 master.menu.user-account.become-assistanceAgent = Hazte un agente de asistencia
 master.menu.user-account.assistanceAgent-profile = Perfil de agente de asistencia
+master.menu.user-account.become-flight-crew-member = Hacerse Miembo de Tripulación de Vuelo
 
 # master.menu.technicians ##########################################################
 master.menu.technicians = Technician

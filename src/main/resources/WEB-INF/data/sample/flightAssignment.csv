@@ -1,16 +1,48 @@
 key,duty,moment,currentStatus,remarks,key:flightCrewMember,draftMode,key:leg
+
+#base entity
+
 flight-assignment-01,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-01,true,leg-01
-flight-assignment-02,COPILOT,2012/07/02 00:00,PENDING,Pending review,flight-crew-member-02,true,leg-01
-flight-assignment-03,LEAD_ATTENDANT,2012/07/02 00:00,CANCELLED,Cancelled due to weather,flight-crew-member-03,true,leg-01
-flight-assignment-04,CABIN_ATTENDANT,2012/07/02 00:00,CONFIRMED,Assigned as scheduled,flight-crew-member-04,true,leg-11
-flight-assignment-05,PILOT,2012/07/02 00:00,CONFIRMED,Routine check-in,flight-crew-member-02,true,leg-02
-flight-assignment-06,COPILOT,2000/01/01 00:00,CONFIRMED,Early assignment,flight-crew-member-03,true,leg-02
-flight-assignment-07,COPILOT,2000/01/01 00:01,CONFIRMED,Reassigned duty,flight-crew-member-01,true,leg-03
-flight-assignment-09,COPILOT,2022/07/30 00:00,CONFIRMED,Routine duty,flight-crew-member-02,true,leg-04
-flight-assignment-10,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-03,true,leg-09
-flight-assignment-11,PILOT,2012/07/02 00:00,PENDING,Awaiting final check,flight-crew-member-04,true,leg-12
-flight-assignment-12,PILOT,2012/07/02 00:00,CANCELLED,Crew unavailability,flight-crew-member-04,true,leg-18
-flight-assignment-13,PILOT,2012/07/02 00:00,CONFIRMED,Reassigned for extended route,flight-crew-member-04,true,leg-17
-flight-assignment-14,PILOT,2012/07/02 00:00,CONFIRMED,,flight-crew-member-03,true,leg-19
-flight-assignment-15,PILOT,2012/07/02 00:00,CONFIRMED,L,flight-crew-member-03,true,leg-07
-flight-assignment-16,PILOT,2012/07/02 00:00,CONFIRMED,Assigned with alternative schedule,flight-crew-member-01,true,leg-09
+
+#duty - standard variations
+
+flight-assignment-02,COPILOT,2010/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-02,true,leg-02
+flight-assignment-03,LEAD_ATTENDANT,2010/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-03,true,leg-03
+flight-assignment-04,CABIN_ATTENDANT,2010/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-01,true,leg-04
+
+#moment - standard variations
+
+flight-assignment-05,PILOT,2011/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-01,true,leg-05
+flight-assignment-06,PILOT,2010/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-02,true,leg-06
+flight-assignment-07,PILOT,2009/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-03,true,leg-07
+
+#currentStatus - standard variations
+
+flight-assignment-08,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-03,true,leg-08
+flight-assignment-09,PILOT,2012/07/02 00:00,PENDING,Routine assignment,flight-crew-member-01,true,leg-09
+flight-assignment-10,PILOT,2012/07/02 00:00,CANCELLED,Routine assignment,flight-crew-member-02,true,leg-10
+
+#remarks - standard variations
+
+flight-assignment-11,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-03,true,leg-11
+flight-assignment-12,PILOT,2012/07/02 00:00,CONFIRMED,Cancelled due to weather,flight-crew-member-02,true,leg-12
+flight-assignment-13,PILOT,2012/07/02 00:00,CONFIRMED,Assigned as scheduled,flight-crew-member-01,true,leg-13
+flight-assignment-14,PILOT,2012/07/02 00:00,CONFIRMED,Routine check-in,flight-crew-member-02,true,leg-14
+
+#completed flightAssigments 
+
+flight-assignment-15,PILOT,2012/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-01,true,leg-24
+flight-assignment-16,PILOT,2023/07/02 00:00,PENDING,Routine assignment,flight-crew-member-02,true,leg-25
+flight-assignment-17,PILOT,2002/07/02 00:00,CANCELLED,Routine assignment,flight-crew-member-03,true,leg-26
+flight-assignment-18,PILOT,2001/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-01,true,leg-27
+
+#airlane2FlightAssignments
+
+flight-assignment-19,PILOT,2001/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-04,true,leg-28
+flight-assignment-20,COPILOT,2001/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-04,true,leg-29
+flight-assignment-21,LEAD_ATTENDANT,2001/07/02 00:00,CONFIRMED,Routine assignment,flight-crew-member-04,true,leg-30
+
+
+
+
+
