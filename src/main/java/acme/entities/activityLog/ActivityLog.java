@@ -61,11 +61,6 @@ public class ActivityLog extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	//	@Mandatory
-	//	@ManyToOne(optional = false)
-	//	@Valid
-	//	private FlightCrewMember	flightCrewMember;
-
 	@Mandatory
 	@ManyToOne(optional = false)
 	@Valid

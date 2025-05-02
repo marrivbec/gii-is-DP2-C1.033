@@ -41,6 +41,7 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 
 	@Override
 	public void load() {
+
 		FlightCrewMemberDashboard dashboard = new FlightCrewMemberDashboard();
 
 		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
@@ -49,48 +50,66 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 
 		List<String> lastFiveDestinations = this.repository.findLastFiveDestinations(flightCrewMemberId, PageRequest.of(0, 5));
 
-		Integer legsWithIncidentSeverity3 = this.repository.countLegsWithSeverity(0, 3);
+		Integer legsWithIncidentSeverity3 = this.repository.legsWithSeverity(0, 3);
 
-		Integer legsWithIncidentSeverity7 = this.repository.countLegsWithSeverity(4, 7);
+		Integer legsWithIncidentSeverity7 = this.repository.legsWithSeverity(4, 7);
 
-		Integer legsWithIncidentSeverity10 = this.repository.countLegsWithSeverity(8, 10);
+		Integer legsWithIncidentSeverity10 = this.repository.legsWithSeverity(8, 10);
 
-		List<FlightAssignment> assigmentsRelated = this.repository.findFlightAssignment(flightCrewMemberId);
+		List<FlightAssignment> assigments = this.repository.findFlightAssignment(flightCrewMemberId);
+
 		List<String> lastLegMembers = new ArrayList<>();
-		if (!assigmentsRelated.isEmpty()) {
-			int legId = assigmentsRelated.get(0).getLeg().getId();
+
+		if (!assigments.isEmpty()) {
+
+			int legId = assigments.get(0).getLeg().getId();
 			List<FlightCrewMember> flightCrewMembers = this.repository.findCrewMembersInLastLeg(legId);
+
 			lastLegMembers = flightCrewMembers.stream().map(x -> x.getIdentity().getFullName()).toList();
 		}
 
-		List<Object[]> flightAssigmentsResult = this.repository.countFlightAssignmentsGroupedByStatus(flightCrewMemberId);
+		List<Object[]> faStats = this.repository.flightAssignmentsGroupedByStatus(flightCrewMemberId);
+
 		Map<Status, Integer> flightAssignmentsGroupedByStatus = new HashMap<>();
 
-		for (Object[] result : flightAssigmentsResult) {
+		for (Object[] result : faStats) {
+
 			Status statusType = (Status) result[0];
+
 			Integer count = ((Long) result[1]).intValue();
+
 			flightAssignmentsGroupedByStatus.put(statusType, count);
 		}
 
 		Statistics flightAssignmentsStatsLastMonth = new Statistics();
+
 		Date dateMinus1Year = MomentHelper.deltaFromCurrentMoment(-1, ChronoUnit.YEARS);
 
 		Integer count = this.repository.countFlightAssignmentsLastYear(MomentHelper.deltaFromCurrentMoment(-1, ChronoUnit.YEARS), flightCrewMemberId);
+
 		Double average = (double) count / 12;
 
 		Calendar calendar = Calendar.getInstance();
+
 		calendar.setTime(dateMinus1Year);
+
 		int year = calendar.get(Calendar.YEAR);
 
 		Integer countPerMonth = 0;
+
 		List<Integer> assignmentsPerMonth = new ArrayList<>();
+
 		for (int month = 1; month <= 12; month++) {
+
 			countPerMonth = this.repository.countFlightAssignmentsPerMonthAndYear(flightCrewMemberId, year, month);
+
 			assignmentsPerMonth.add(countPerMonth != null ? countPerMonth : 0);
 		}
 
 		Optional<Integer> min = assignmentsPerMonth.stream().min(Integer::compareTo);
+
 		Optional<Integer> max = assignmentsPerMonth.stream().max(Integer::compareTo);
+
 		double standardDeviation = Math.sqrt(assignmentsPerMonth.stream().mapToDouble(n -> Math.pow(n - average, 2)).average().orElse(0.0));
 
 		flightAssignmentsStatsLastMonth.setCount(count);

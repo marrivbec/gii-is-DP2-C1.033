@@ -22,16 +22,16 @@ public class FlightCrewMemberActivityLogDeleteService extends AbstractGuiService
 
 	@Override
 	public void authorise() {
-		//		boolean status;
-		//		ActivityLog activityLog;
-		//		int id;
-		//		FlightCrewMember flightCrewMember;
-		//
-		//		id = super.getRequest().getData("id", int.class);
-		//		activityLog = this.repository.findActivityLogById(id);
-		//		flightCrewMember = activityLog == null ? null : activityLog.getFlightCrewMember();
-		//		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember) && (activityLog == null || activityLog.isDraftMode());
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		ActivityLog activityLog;
+		int id;
+		FlightCrewMember flightCrewMember;
+
+		id = super.getRequest().getData("id", int.class);
+		activityLog = this.repository.findActivityLogById(id);
+		flightCrewMember = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
+		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember) && (activityLog == null || activityLog.isDraftMode());
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
