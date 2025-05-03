@@ -54,7 +54,7 @@ master.menu.assistanceAgent = Agente de asistencia
 master.menu.assistanceAgent.list-claims = Listar quejas completadas
 master.menu.assistanceAgent.list-claims-pending = Listar quejas pendientes
 master.menu.assistanceAgent.list-trackingLog = Listar seguimientos
-
+master.menu.assistanceAgent.show-dashboard = Tablero de agente de asistencia
 
 # master.menu.airline-manager ########################################################
 

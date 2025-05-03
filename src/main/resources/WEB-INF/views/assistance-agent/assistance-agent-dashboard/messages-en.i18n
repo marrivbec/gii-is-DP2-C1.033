@@ -1,0 +1,24 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+assistance-agent.assistance-agent-dashboard.form.title = Assistance agent dashboard
+
+assistanceAgent.dashboard.form.title.general-indicators = General indicators
+assistanceAgent.dashboard.form.title.log-statistics-indicators = Total tracking logs statistics indicators
+assistanceAgent.dashboard.form.title.log-statistics-month-indicators = Tracking logs statistics indicators during the last month
+
+assistanceAgent.dashboard.form.label.resolved-claims-ratio =  Ratio of claims that have been resolved successfully
+assistanceAgent.dashboard.form.label.rejected-claims-ratio =  Ratio of claims that have been rejected
+assistanceAgent.dashboard.form.label.top-three-months-with-highest-claims = Top three months with the highest number of claims
+
+assistanceAgent.dashboard.form.label.claim-logs-statistics-average = Average
+assistanceAgent.dashboard.form.label.claim-logs-statistics-minimum = Minimum
+assistanceAgent.dashboard.form.label.claim-logs-statistics-maximum = Maximum
+assistanceAgent.dashboard.form.label.claim-logs-statistics-deviation = Deviation

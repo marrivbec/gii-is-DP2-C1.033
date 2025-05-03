@@ -31,7 +31,7 @@ public class AssistanceAgentDashboard extends AbstractForm {
 
 	Double						resolvedClaimsRatio;
 	Double						rejectedClaimsRatio;
-	List<Object[]>				topThreeMonthsWithHighestClaims;
+	List<String>				topThreeMonthsWithHighestClaims;
 	Statistics					claimLogsStatistics;
 	Statistics					claimsAssistedLastMonthStatistics;
 

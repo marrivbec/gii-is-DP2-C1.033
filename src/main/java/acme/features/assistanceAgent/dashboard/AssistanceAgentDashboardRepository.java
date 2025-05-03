@@ -12,6 +12,7 @@
 
 package acme.features.assistanceAgent.dashboard;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -23,25 +24,55 @@ import acme.realms.employee.AssistanceAgent;
 @Repository
 public interface AssistanceAgentDashboardRepository extends AbstractRepository {
 
-	@Query("SELECT (COUNT(c) * 100.0 / (SELECT COUNT(c2) FROM Claim c2 WHERE c2.assistanceAgents = :assistanceAgent)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent AND EXISTS (SELECT 1 FROM TrackingLog t WHERE t.claim = c AND t.indicator = ACCEPTED)")
-	Double resolvedClaimsRatio(AssistanceAgent assistanceAgent);
+	@Query("SELECT COUNT(c) FROM Claim c " + "WHERE c.assistanceAgents = :assistanceAgent " + "AND EXISTS (" + "    SELECT 1 FROM TrackingLog t " + "    WHERE t.claim = c " + "    AND t.indicator = 'ACCEPTED' " + "    AND t.lastUpdateMoment = ("
+		+ "        SELECT MAX(t2.lastUpdateMoment) FROM TrackingLog t2 WHERE t2.claim = c" + ")" + ")")
+	int countResolvedClaims(AssistanceAgent assistanceAgent);
 
-	@Query("SELECT (COUNT(c) * 100.0 / (SELECT COUNT(c2) FROM Claim c2 WHERE c2.assistanceAgents = :assistanceAgent)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent AND EXISTS (SELECT 1 FROM TrackingLog t WHERE t.claim = c AND t.indicator = REJECTED)")
-	Double rejectedClaimsRatio(AssistanceAgent assistanceAgent);
+	@Query("SELECT COUNT(c) FROM Claim c " + "WHERE c.assistanceAgents = :assistanceAgent " + "AND EXISTS (" + "    SELECT 1 FROM TrackingLog t " + "    WHERE t.claim = c " + "    AND t.indicator = 'REJECTED' " + "    AND t.lastUpdateMoment = ("
+		+ "        SELECT MAX(t2.lastUpdateMoment) FROM TrackingLog t2 WHERE t2.claim = c" + ")" + ")")
+	int countRejectedClaims(AssistanceAgent assistanceAgent);
 
-	@Query("SELECT FUNCTION('DATE_FORMAT', c.registrationMoment, '%Y-%m') AS month, COUNT(c) AS claimCount FROM Claim c WHERE c.assistanceAgents = :assistanceAgent GROUP BY FUNCTION('DATE_FORMAT', c.registrationMoment, '%Y-%m') ORDER BY claimCount DESC")
-	List<Object[]> topThreeMonthsWithHighestClaims(AssistanceAgent assistanceAgent);
+	@Query("SELECT COUNT(c) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent")
+	int countTotalClaims(AssistanceAgent assistanceAgent);
 
-	@Query("SELECT AVG((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgents")
+	default Double resolvedClaimsRatio(final AssistanceAgent assistanceAgent) {
+		int total = this.countTotalClaims(assistanceAgent);
+		int res = this.countResolvedClaims(assistanceAgent);
+		return total > 0 ? res / total * 100.0 : 0.0;
+	}
+
+	default Double rejectedClaimsRatio(final AssistanceAgent assistanceAgent) {
+		int total = this.countTotalClaims(assistanceAgent);
+		int res = this.countRejectedClaims(assistanceAgent);
+		return total > 0 ? res / total * 100.0 : 0.0;
+	}
+
+	@Query("SELECT FUNCTION('MONTHNAME', c.registrationMoment) as month, COUNT(c) as count " + "FROM Claim c WHERE c.assistanceAgents = :assistanceAgent " + "GROUP BY FUNCTION('MONTH', c.registrationMoment), month " + "ORDER BY COUNT(c) DESC")
+	List<Object[]> findMonthsWithMostClaims(AssistanceAgent assistanceAgent);
+
+	default List<String> topThreeMonthsWithHighestClaims(final AssistanceAgent assistanceAgent) {
+		return this.findMonthsWithMostClaims(assistanceAgent).stream().limit(3).map(arr -> (String) arr[0]).toList();
+	}
+
+	@Query("SELECT AVG((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent")
 	Double averageNumberOfLogsPerClaim(AssistanceAgent assistanceAgent);
 
-	@Query("SELECT MIN((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgents")
+	@Query("SELECT MIN((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent")
 	Double minimumNumberOfLogsPerClaim(AssistanceAgent assistanceAgent);
 
-	@Query("SELECT MAX((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgents")
+	@Query("SELECT MAX((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent")
 	Double maximumNumberOfLogsPerClaim(AssistanceAgent assistanceAgent);
 
-	@Query("SELECT STDDEV((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgents")
+	@Query("SELECT STDDEV((SELECT COUNT(t) FROM TrackingLog t WHERE t.claim = c)) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent")
 	Double deviationNumberOfLogsPerClaim(AssistanceAgent assistanceAgent);
+
+	//
+	@Query("SELECT COUNT(c) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent AND YEAR(c.registrationMoment) = :year AND MONTH(c.registrationMoment) = :month")
+	Integer countClaimsByMonth(AssistanceAgent assistanceAgent, int year, int month);
+
+	//
+	@Query("SELECT YEAR(c.registrationMoment) as year, MONTH(c.registrationMoment) as month, COUNT(c) as count " + "FROM Claim c WHERE c.assistanceAgents = :assistanceAgent AND c.registrationMoment BETWEEN :startDate AND :endDate "
+		+ "GROUP BY YEAR(c.registrationMoment), MONTH(c.registrationMoment)")
+	List<Object[]> getMonthlyClaimsCounts(AssistanceAgent assistanceAgent, Date startDate, Date endDate);
 
 }
