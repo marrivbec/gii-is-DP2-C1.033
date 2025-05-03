@@ -1,0 +1,32 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.tracking-log.form.title = Detalles de los seguimientos de los registros
+administrator.tracking-log.list.title = Listar seguimientos de los registro
+
+administrator.trackingLog.form.label.lastUpdateMoment = Última fecha de cambio:
+administrator.trackingLog.form.label.step = Paso:
+administrator.trackingLog.form.label.resolutionPercentage = Porcentaje de resolución:
+administrator.trackingLog.form.label.indicator = Indicador:
+administrator.trackingLog.form.label.resolution = Resolucion:
+administrator.trackingLog.form.label.claim = Queja:
+administrator.trackingLog.form.label.confirmation = ¿Desea confirmar?
+
+administrator.trackingLog.form.button.create = Crear
+administrator.trackingLog.form.button.update = Actualizar
+administrator.trackingLog.form.button.delete = Borrar
+administrator.trackingLog.form.button.publish = Publicar
+ 
+administrator.trackingLog.list.label.lastUpdateMoment = Última fecha de cambio:
+administrator.trackingLog.list.label.resolutionPercentage = Porcentaje de resolución:
+administrator.trackingLog.list.label.indicator = Indicador:
+administrator.trackingLog.list.label.draftMode = Modo borrador:
+
+administrator.trackingLog.list.button.create = Crear

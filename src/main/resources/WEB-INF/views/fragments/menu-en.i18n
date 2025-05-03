@@ -25,6 +25,7 @@ master.menu.administrator.list-user-accounts = List user accounts
 master.menu.administrator.list-airports = List airports
 master.menu.administrator.list-airlines = List airlines
 master.menu.administrator.list-aircrafts = List aircrafts
+master.menu.administrator.list-claims = List claims
 master.menu.administrator.list-booking = List bookings
 master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
@@ -42,10 +43,11 @@ master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.assistanceAgent ##########################################################
 
-master.menu.assistanceAgent = Assistance Agent
+master.menu.assistanceAgent = Assistance agent
 master.menu.assistanceAgent.list-claims = List completed claims
 master.menu.assistanceAgent.list-claims-pending = List pending claims
-master.menu.assistanceAgent.list-trackingLog = List Tracking logs
+master.menu.assistanceAgent.list-trackingLog = List tracking logs
+master.menu.assistanceAgent.show-dashboard = Assistance agent dashboard
 
 # master.menu.flightCrewMember ##########################################################
 
@@ -77,6 +79,8 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
 master.menu.user-account.become-customer = Become a customer
 master.menu.user-account.customer-profile = Customer profile
+master.menu.user-account.become-assistanceAgent = Become an assistance agent
+master.menu.user-account.assistanceAgent-profile = Assistance agent profile
 master.menu.user-account.become-flight-crew-member = Become a flight crew member
 
 # master.menu.technicians ##########################################################
