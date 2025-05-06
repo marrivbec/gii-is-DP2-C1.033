@@ -39,16 +39,30 @@ public class AssistanceAgentClaimUpdateService extends AbstractGuiService<Assist
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean status2;
 		Claim claim;
 		int id;
 		AssistanceAgent assistanceAgent;
+		String method;
+		Leg leg;
+		int legId;
 
 		id = super.getRequest().getData("id", int.class);
 		claim = this.repository.findClaimById(id);
 		assistanceAgent = claim == null ? null : claim.getAssistanceAgents();
 		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.isDraftMode());
 
-		super.getResponse().setAuthorised(status);
+		method = super.getRequest().getMethod();
+
+		if (method.equals("GET"))
+			status2 = status;
+		else {
+			legId = super.getRequest().getData("leg", int.class);
+			leg = this.repository.findLegById(legId);
+			status2 = (legId == 0 || leg != null) && status;
+		}
+
+		super.getResponse().setAuthorised(status2);
 	}
 
 	@Override
