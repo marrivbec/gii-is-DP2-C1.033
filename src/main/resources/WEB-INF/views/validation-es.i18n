@@ -51,4 +51,4 @@ acme.validation.error.repeat-code= El código tiene que ser único
 acme.validation.trackingLog.unpublished.message = Un registro de seguimiento no se puede publicar hasta que se publique su queja correspondiente
 acme.validation.trackingLog.updateMoment.message = La fecha de un registro de seguimiento debe ser mayor que la de una queja
 acme.validation.trackingLog.publish.message = Se puede crear un nuevo registro de seguimiento incluso después de que se haya publicado el último (el que tiene un porcentaje de resolución del 100%)
-
+acme.validation.trackingLog.publish.message.completed = Ya hay más de dos registros de seguimiento con un porcentaje del 100% publicadas, no puede crear más
