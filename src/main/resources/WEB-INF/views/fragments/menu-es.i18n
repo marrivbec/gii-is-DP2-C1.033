@@ -60,6 +60,7 @@ master.menu.assistanceAgent.show-dashboard = Tablero de agente de asistencia
 
 master.menu.airline-manager = Gerente de Aerolíneas
 master.menu.airline-manager.list-my-flights = Listar mis vuelos
+master.menu.airline-manager.show-dashboard =Panel de control
 
 # master.menu.flightCrewMember ##########################################################
 
