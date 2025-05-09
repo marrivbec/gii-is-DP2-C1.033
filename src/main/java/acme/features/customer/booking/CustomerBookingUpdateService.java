@@ -12,6 +12,7 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.booking.Booking;
 import acme.entities.booking.TravelClass;
+import acme.entities.flight.Flight;
 import acme.realms.client.Customer;
 
 @GuiService
@@ -31,7 +32,16 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		Customer customer = this.repository.findCustomerLogged(customerId);
 		Booking booking = this.repository.findBookingById(bookingId);
-		super.getResponse().setAuthorised(customer.equals(booking.getCustomer()) && booking.isDraftMode());
+		boolean validFlight = true;
+		if (super.getRequest().getMethod().equals("POST")) {
+			int flightId = super.getRequest().getData("flight", int.class);
+			if (flightId != 0) {
+				Flight flight = this.repository.findFlightById(flightId);
+				validFlight = flight != null && !flight.isDraftMode();
+			}
+
+		}
+		super.getResponse().setAuthorised(booking != null && customer.equals(booking.getCustomer()) && booking.isDraftMode() && validFlight);
 	}
 
 	@Override
@@ -75,7 +85,7 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 		String cod = booking.getLocatorCode();
 		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod).stream().filter(x -> x.getId() != booking.getId()).toList();
-		if (!booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
+		if (booking.getFlight() != null && !booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
 			super.state(false, "purchaseMoment", "acme.validation.booking.purchaseMoment.message");
 		if (!codigo.isEmpty())
 			super.state(false, "locatorCode", "acme.validation.booking.repeat-code.message");

@@ -49,7 +49,7 @@ public class AdministratorAircraftController extends AbstractGuiController<Admin
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
-		super.addCustomCommand("able", "update", this.disableService);
+		super.addCustomCommand("status", "update", this.disableService);
 	}
 
 }

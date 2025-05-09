@@ -22,7 +22,7 @@ public class CustomerPassengerShowService extends AbstractGuiService<Customer, P
 		Customer customer = this.passengerRepository.findCustomerById(customerId);
 		int passengerId = super.getRequest().getData("id", int.class);
 		Passenger passenger = this.passengerRepository.findPassengerById(passengerId);
-		super.getResponse().setAuthorised(customer.equals(passenger.getCustomer()));
+		super.getResponse().setAuthorised(passenger != null && customer.equals(passenger.getCustomer()));
 	}
 	@Override
 	public void load() {
