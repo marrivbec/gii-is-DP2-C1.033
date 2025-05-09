@@ -1,0 +1,28 @@
+airline-manager.airline-manager-dashboard.form.title=Dashboard
+
+
+airline-manager.airline-manager-dashboard.experienceRank=Experience Rank
+airline-manager.airline-manager-dashboard.label.experienceRank=Your current experience rank
+
+airline-manager.airline-manager-dashboard.yearsUntilRetirement=Years Until Retirement
+airline-manager.airline-manager-dashboard.label.yearsUntilRetirement=Remaining years until retirement
+
+airline-manager.airline-manager-dashboard.flightTimelinessRatio=Flight Timeliness Ratio
+airline-manager.airline-manager-dashboard.label.flightTimelinessRatio=Ratio of flights that were on time
+
+airline-manager.airline-manager-dashboard.mostPopularAirport=Most and Least Popular Airports
+airline-manager.airline-manager-dashboard.label.mostPopularAirport=Most visited airport
+airline-manager.airline-manager-dashboard.label.leastPopularAirport=Least visited airport
+
+airline-manager.airline-manager-dashboard.costStatistics=Cost Statistics
+airline-manager.airline-manager-dashboard.label.count-costStatistics=Total number of cost records
+airline-manager.airline-manager-dashboard.label.average-costStatistics=Average cost
+airline-manager.airline-manager-dashboard.label.minimum-costStatistics=Minimum cost
+airline-manager.airline-manager-dashboard.label.maximum-costStatistics=Maximum cost
+airline-manager.airline-manager-dashboard.label.devv-costStatistics=Standard deviation of costs
+
+airline-manager.airline-manager-dashboard.legsStatus=Legs Status Summary
+airline-manager.airline-manager-dashboard.label.legsOnTime=Number of legs on time
+airline-manager.airline-manager-dashboard.legsDelayed=Number of delayed legs
+airline-manager.airline-manager-dashboard.legsCancelled=Number of cancelled legs
+airline-manager.airline-manager-dashboard.legsLanded=Number of landed legs

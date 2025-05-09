@@ -1,0 +1,27 @@
+airline-manager.airline-manager-dashboard.form.title=Panel de Control
+
+airline-manager.airline-manager-dashboard.experienceRank=Rango de experiencia
+airline-manager.airline-manager-dashboard.label.experienceRank=Tu rango de experiencia actual
+
+airline-manager.airline-manager-dashboard.yearsUntilRetirement=Años hasta la jubilación
+airline-manager.airline-manager-dashboard.label.yearsUntilRetirement=Años restantes hasta la jubilación
+
+airline-manager.airline-manager-dashboard.flightTimelinessRatio=Ratio de puntualidad de vuelos
+airline-manager.airline-manager-dashboard.label.flightTimelinessRatio=Proporción de vuelos que llegaron a tiempo
+
+airline-manager.airline-manager-dashboard.mostPopularAirport=Aeropuertos más y menos populares
+airline-manager.airline-manager-dashboard.label.mostPopularAirport=Aeropuerto más visitado
+airline-manager.airline-manager-dashboard.label.leastPopularAirport=Aeropuerto menos visitado
+
+airline-manager.airline-manager-dashboard.costStatistics=Estadísticas de costes
+airline-manager.airline-manager-dashboard.label.count-costStatistics=Número total de registros de costes
+airline-manager.airline-manager-dashboard.label.average-costStatistics=Coste promedio
+airline-manager.airline-manager-dashboard.label.minimum-costStatistics=Coste mínimo
+airline-manager.airline-manager-dashboard.label.maximum-costStatistics=Coste máximo
+airline-manager.airline-manager-dashboard.label.devv-costStatistics=Desviación estándar de los costes
+
+airline-manager.airline-manager-dashboard.legsStatus=Resumen del estado de los tramos
+airline-manager.airline-manager-dashboard.label.legsOnTime=Tramos a tiempo
+airline-manager.airline-manager-dashboard.legsDelayed=Tramos con retraso
+airline-manager.airline-manager-dashboard.legsCancelled=Tramos cancelados
+airline-manager.airline-manager-dashboard.legsLanded=Tramos aterrizados

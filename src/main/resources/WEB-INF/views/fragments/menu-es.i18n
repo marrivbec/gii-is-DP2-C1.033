@@ -54,6 +54,7 @@ master.menu.assistanceAgent.list-trackingLog = Listar seguimientos
 
 master.menu.airline-manager = Gerente de Aerolíneas
 master.menu.airline-manager.list-my-flights = Listar mis vuelos
+master.menu.airline-manager.show-dashboard =Panel de control
 
 # master.menu.flightCrewMember ##########################################################
 
