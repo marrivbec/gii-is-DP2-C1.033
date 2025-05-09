@@ -92,7 +92,7 @@ public class AssistanceAgentTrackingLogCreateService extends AbstractGuiService<
 			if (lastLog.getResolutionPercentage() != null && trackingLog.getResolutionPercentage() != null)
 				if (lastLog.getResolutionPercentage() == 100.00 && trackingLog.getResolutionPercentage() == 100.00)
 					// solo puede repetirse el 100% si está publicada
-					if (lastLog.isDraftMode() && previousLogs.stream().filter(x -> !x.isDraftMode() && x.getResolutionPercentage() == 100.0).toList().size() >= 1)
+					if (lastLog.isDraftMode())
 						super.state(false, "resolutionPercentage", "acme.validation.trackingLog.publish.message");
 
 		}
