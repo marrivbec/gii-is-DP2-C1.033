@@ -12,7 +12,9 @@
 
 package acme.features.assistanceAgent.trackingLog;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -80,7 +82,23 @@ public class AssistanceAgentTrackingLogCreateService extends AbstractGuiService<
 
 	@Override
 	public void validate(final TrackingLog trackingLog) {
-		;
+		int claimId;
+		claimId = super.getRequest().getData("masterId", int.class);
+		List<TrackingLog> previousLogs = this.repository.findTrackingLogsByClaimIdOrderedByPercentage(claimId);
+		Collection<TrackingLog> logsWith100 = this.repository.findLogsWith100(claimId);
+
+		if (!previousLogs.isEmpty()) {
+			TrackingLog lastLog = previousLogs.get(0);
+			if (lastLog.getResolutionPercentage() != null && trackingLog.getResolutionPercentage() != null)
+				if (lastLog.getResolutionPercentage() == 100.00 && trackingLog.getResolutionPercentage() == 100.00)
+					// solo puede repetirse el 100% si está publicada
+					if (lastLog.isDraftMode() && previousLogs.stream().filter(x -> !x.isDraftMode() && x.getResolutionPercentage() == 100.0).toList().size() >= 1)
+						super.state(false, "resolutionPercentage", "acme.validation.trackingLog.publish.message");
+
+		}
+		if (logsWith100.size() + 1 > 2)
+			super.state(false, "resolutionPercentage", "acme.validation.trackingLog.publish.message.completed");
+
 	}
 
 	@Override

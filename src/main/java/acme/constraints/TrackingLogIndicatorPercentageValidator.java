@@ -17,12 +17,12 @@ public class TrackingLogIndicatorPercentageValidator extends AbstractValidator<V
 		Double percentage = trackingLog.getResolutionPercentage();
 		Indicator indicator = trackingLog.getIndicator();
 
-		if (percentage == 100.0) {
+		if (percentage != null && percentage == 100.0) {
 			if (indicator != Indicator.ACCEPTED && indicator != Indicator.REJECTED) {
 				this.state(context, false, "indicator", "acme.validation.trackingLog.IndicatorPercentage.message");
 				return false;
 			}
-		} else if (indicator != Indicator.PENDING) {
+		} else if (indicator == Indicator.ACCEPTED || indicator == Indicator.REJECTED) {
 			this.state(context, false, "indicator", "acme.validation.trackingLog.IndicatorPercentagePending.message");
 			return false;
 		}
