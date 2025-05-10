@@ -35,6 +35,9 @@ public interface CustomerBookingRepository extends AbstractRepository {
 	@Query("SELECT f FROM Flight f where f.draftMode = false")
 	public Collection<Flight> allFlight();
 
+	@Query("select f from Flight f where f.id=:id")
+	public Flight findFlightById(int id);
+
 	@Query("select r from BookingRecord r where r.booking.id=:id")
 	public Collection<BookingRecord> findBookingRById(int id);
 }

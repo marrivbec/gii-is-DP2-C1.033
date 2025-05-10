@@ -24,12 +24,12 @@ airline-15,"Lorem ipsum","NXY","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"a
 # web - standard variations
 airline-16,"Lorem ipsum","ABO","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 # singular
-airline-17,"Lorem ipsum","ABP","ftp://a",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
-airline-18,"Lorem ipsum","ABQ","ftp://a.b",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-17,"Lorem ipsum","ABP","http://lorem.com/ipsum",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-18,"Lorem ipsum","ABQ","http://www.lorem-ipsum.org/dolor/sit.html",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-19,"Lorem ipsum","ABR","http://www.lorem-ipsum.org/dolor/sit/amet;/consectetur/adipiscing/elit;/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-20,"Lorem ipsum","ABS","http://www.lorem-ipsum.org/dolor/sit/amet;/consectetur/adipiscing/elit;/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-21,"Lorem ipsum","ABT","https://www.lorem-ipsum.org",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
-airline-22,"Lorem ipsum","ABU","ftp://www.lorem-ipsum.org",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-22,"Lorem ipsum","ABU","http://www.lorem-ipsum.org/dolor/sit.html",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-23,"Lorem ipsum","ABV","http://www.lorem-ipsum.org/dolor/sit.html",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-24,"Lorem ipsum","ABW","http://www.lorem-ipsum.org/dolor/sit.html#dolor",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-25,"Lorem ipsum","ABA","http://example.org?a=1&b=2",LUJO,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"

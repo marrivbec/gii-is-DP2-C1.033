@@ -29,7 +29,7 @@ public interface CustomerBookingRecordRepository extends AbstractRepository {
 	public List<Passenger> findPassengersForBooking(int customerId, int bookingId);
 
 	@Query("select r from BookingRecord r where r.booking.id=:id")
-	public Collection<BookingRecord> findBookingRById(int id);
+	public Collection<BookingRecord> findBookingRByBId(int id);
 
 	@Query("select r from BookingRecord r where r.id=:id")
 	public BookingRecord findBookingRecordById(int id);

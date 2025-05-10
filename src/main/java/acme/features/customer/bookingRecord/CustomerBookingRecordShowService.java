@@ -22,8 +22,7 @@ public class CustomerBookingRecordShowService extends AbstractGuiService<Custome
 		Customer customer = this.repository.findCustomerById(customerId);
 		int bookingRecordId = super.getRequest().getData("id", int.class);
 		BookingRecord bookingRecord = this.repository.findBookingRecordById(bookingRecordId);
-		super.getResponse().setAuthorised(customer.equals(bookingRecord.getBooking().getCustomer()));
-		super.getResponse().setAuthorised(true);
+		super.getResponse().setAuthorised(bookingRecord != null && customer.equals(bookingRecord.getBooking().getCustomer()));
 	}
 	@Override
 	public void load() {

@@ -20,7 +20,7 @@
 	<acme:list-column code="administrator.aircraft.list.label.registrationNumber" path="registrationNumber" width="25%"/>
 	<acme:list-column code="administrator.aircraft.list.label.capacity" path="capacity" width="25%"/>
 	<acme:list-column code="administrator.aircraft.list.label.details" path="details" width="25%"/>
-	<acme:list-column code="administrator.aircraft.list.label.able" path="able" width="25%"/>
+	<acme:list-column code="administrator.aircraft.list.label.status" path="status" width="25%"/>
 	
 	<acme:list-payload path="payload"/>
 </acme:list>
