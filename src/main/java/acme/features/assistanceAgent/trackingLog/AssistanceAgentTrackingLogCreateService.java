@@ -103,6 +103,10 @@ public class AssistanceAgentTrackingLogCreateService extends AbstractGuiService<
 
 	@Override
 	public void perform(final TrackingLog trackingLog) {
+		Date moment;
+
+		moment = MomentHelper.getCurrentMoment();
+		trackingLog.setLastUpdateMoment(moment);
 		this.repository.save(trackingLog);
 	}
 

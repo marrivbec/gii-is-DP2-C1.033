@@ -24,7 +24,7 @@ public class TrackingLogResolutionPercentageValidator extends AbstractValidator<
 		if (newTrackingLog == null || newTrackingLog.getClaim() == null || newTrackingLog.getResolutionPercentage() == null)
 			return true;
 
-		List<TrackingLog> existingLogs = this.trackingLogRepository.findTrackingLogsByClaimIdBeforeDateOrderedByDateAsc(newTrackingLog.getClaim().getId(), newTrackingLog.getLastUpdateMoment());
+		List<TrackingLog> existingLogs = this.trackingLogRepository.findLastTrackingLogByClaimId(newTrackingLog.getClaim().getId());
 
 		if (existingLogs.isEmpty())
 			return true;
