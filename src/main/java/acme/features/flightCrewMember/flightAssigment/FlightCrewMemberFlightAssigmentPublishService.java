@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightAssignment.DutyType;
@@ -61,7 +62,7 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 			super.state(!isDutyAssigned, "duty", "acme.validation.flightAssignment.duty");
 		}
 
-		if (flightAssignment.getFlightCrewMember() != null) {
+		if (flightAssignment.getFlightCrewMember() != null && flightAssignment.getLeg() != null) {
 			boolean isAvailable = flightAssignment.getFlightCrewMember().getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
 			super.state(isAvailable, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.available");
 			boolean isAssigned = this.repository.hasFlightCrewMemberLegAssociated(flightAssignment.getFlightCrewMember().getId(), flightAssignment.getLeg().getScheduledArrival(), flightAssignment.getLeg().getScheduledDeparture(), flightAssignment.getId());
@@ -84,6 +85,9 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "draftMode", "flightCrewMember", "leg");
+
+		boolean isPastLeg = MomentHelper.getCurrentMoment().after(flightAssignment.getLeg().getScheduledArrival());
+		dataset.put("pastLeg", isPastLeg);
 
 		dataset.put("flightCrewMember", flightAssignment.getFlightCrewMember().getIdentity().getFullName());
 

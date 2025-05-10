@@ -88,6 +88,9 @@ public class FlightCrewMemberFlightAssigmentUpdateService extends AbstractGuiSer
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "draftMode", "flightCrewMember", "leg");
 
+		boolean isPastLeg = MomentHelper.getCurrentMoment().after(flightAssignment.getLeg().getScheduledArrival());
+		dataset.put("pastLeg", isPastLeg);
+
 		dataset.put("flightCrewMember", flightAssignment.getFlightCrewMember().getIdentity().getFullName());
 
 		SelectChoices dutyChoices = SelectChoices.from(DutyType.class, flightAssignment.getDuty());
