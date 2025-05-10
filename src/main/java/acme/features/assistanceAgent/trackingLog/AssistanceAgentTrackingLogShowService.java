@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.trackingLog.Indicator;
@@ -67,6 +68,7 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 		choices = SelectChoices.from(Indicator.class, trackingLog.getIndicator());
 
 		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "draftMode");
+		dataset.put("lastUpdateMoment", MomentHelper.getCurrentMoment());
 		dataset.put("masterId", trackingLog.getClaim().getId());
 		dataset.put("indicators", choices);
 
