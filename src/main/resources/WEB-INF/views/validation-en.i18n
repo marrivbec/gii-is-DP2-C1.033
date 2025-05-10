@@ -54,3 +54,12 @@ acme.validation.trackingLog.updateMoment.message = The date of a tracking log mu
 acme.validation.trackingLog.publish.message = A new tracking log may be created even after the last one has been published (the one with a 100% resolution percentage)
 acme.validation.trackingLog.publish.message.completed = There are already more than two tracking logs with a percentage of 100%, can't create more
 
+
+acme.validation.activity.unpublished.message = The Flight Assignment must be published
+acme.validation.flightAssignment.flightCrewMember.multipleLegs = Cannot be assigned to multiple legs simultaneously
+acme.validation.flightAssignment.leg.moment = The Flight Assignment cannot be linked to legs that have already occurred
+acme.validation.flightAssignment.flightCrewMember.available = Only flight crew members with an "AVAILABLE" status can be assigned to a leg
+acme.validation.flightAssignment.duty = Each leg can only have one pilot and one co-pilot
+
+
+

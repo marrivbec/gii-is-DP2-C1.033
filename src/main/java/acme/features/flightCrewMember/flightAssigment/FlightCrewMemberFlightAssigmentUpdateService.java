@@ -11,6 +11,7 @@ import acme.client.services.GuiService;
 import acme.entities.flightAssignment.DutyType;
 import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.flightAssignment.Status;
+import acme.entities.leg.Leg;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -26,11 +27,32 @@ public class FlightCrewMemberFlightAssigmentUpdateService extends AbstractGuiSer
 
 	@Override
 	public void authorise() {
-		int flightAssignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
-		boolean status = flightAssignment != null && flightAssignment.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flightAssignment.getFlightCrewMember());
 
-		super.getResponse().setAuthorised(status);
+		boolean status;
+		boolean status2;
+		FlightAssignment flightAssignment;
+		int id;
+		FlightCrewMember flightCrewMember;
+		String method;
+		Leg leg;
+		int legId;
+
+		id = super.getRequest().getData("id", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(id);
+		flightCrewMember = flightAssignment == null ? null : flightAssignment.getFlightCrewMember();
+		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember) && (flightAssignment == null || flightAssignment.isDraftMode());
+
+		method = super.getRequest().getMethod();
+
+		if (method.equals("GET"))
+			status2 = status;
+		else {
+			legId = super.getRequest().getData("leg", int.class);
+			leg = this.repository.findLegById(legId);
+			status2 = legId == 0 || leg != null;
+		}
+
+		super.getResponse().setAuthorised(status2);
 	}
 
 	@Override
