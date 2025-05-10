@@ -14,6 +14,7 @@ import acme.entities.activityLog.ActivityLog;
 import acme.entities.flightAssignment.DutyType;
 import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.flightAssignment.Status;
+import acme.entities.leg.Leg;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -30,9 +31,23 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 	@Override
 	public void authorise() {
 
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
+		boolean status;
+		String method;
+		Leg leg;
+		int legId;
+
+		method = super.getRequest().getMethod();
+
+		if (method.equals("GET"))
+			status = true;
+		else {
+			legId = super.getRequest().getData("leg", int.class);
+			leg = this.repository.findLegById(legId);
+			status = legId == 0 || leg != null;
+		}
 
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
