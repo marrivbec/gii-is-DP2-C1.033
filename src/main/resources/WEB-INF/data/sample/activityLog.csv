@@ -1,26 +1,18 @@
 key,registrationMoment,typeOfIncident,description,severityLevel,draftMode,key:flightAssignment
-
 #base - entity
-
-activity-log-01,2012/07/02 00:00,Route and Navigation Issues,Routine assignment,2,true,flight-assignment-01
-
+activity-log-01,2012/07/02 00:00,Route and Navigation Issues,Routine assignment,2,true,flight-assignment-15
 #registrationMoment - standard variations
-
-activity-log-02,2012/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-02
-activity-log-03,2010/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-03
-activity-log-04,2009/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-04
-activity-log-05,2008/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-05
-activity-log-06,2007/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-06
-
+activity-log-02,2012/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-19
+activity-log-03,2010/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-15
+activity-log-04,2009/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-18
+activity-log-05,2008/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-23
+activity-log-06,2007/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-22
 #typeOfIncident/description - standard variations
-
-activity-log-07,2011/07/02 00:00,Weather,Cancelled due to weather,8,true,flight-assignment-07
-activity-log-08,2010/07/02 00:00,Mechanical and Technical Issues,Engine Failure,3,true,flight-assignment-08
-activity-log-09,2009/07/02 00:00,Passenger,Unruly Passenger,1,true,flight-assignment-09
-
+activity-log-07,2011/07/02 00:00,Weather,Cancelled due to weather,8,true,flight-assignment-21
+activity-log-08,2010/07/02 00:00,Mechanical and Technical Issues,Engine Failure,3,true,flight-assignment-20
+activity-log-09,2009/07/02 00:00,Passenger,Unruly Passenger,1,true,flight-assignment-17
 #severityLevel - standard variations
-
 activity-log-10,2012/07/02 00:00,Route and Navigation,Routine assignment,5,true,flight-assignment-15
-activity-log-11,2011/07/02 00:00,Weather,Cancelled due to weather,8,true,flight-assignment-16
-activity-log-12,2010/07/02 00:00,Mechanical and Technical Issues,Engine Failure,3,true,flight-assignment-17
+activity-log-11,2011/07/02 00:00,Weather,Cancelled due to weather,8,true,flight-assignment-19
+activity-log-12,2010/07/02 00:00,Mechanical and Technical Issues,Engine Failure,3,true,flight-assignment-16
 activity-log-13,2009/07/02 00:00,Passenger,Unruly Passenger,1,true,flight-assignment-18
