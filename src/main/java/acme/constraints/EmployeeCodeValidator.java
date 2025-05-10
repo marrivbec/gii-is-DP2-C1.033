@@ -47,7 +47,7 @@ public class EmployeeCodeValidator extends AbstractValidator<ValidEmployeeCode, 
 
 				boolean cod1 = letras.equals(expectedInitials);
 
-				super.state(context, cod1, "employeeCode", "acme.validation.employeeCode.message");
+				//				super.state(context, cod1, "employeeCode", "acme.validation.employeeCode.message");
 			}
 		} else
 			super.state(context, false, "employeeCode", "acme.validation.employeeCode.message");
