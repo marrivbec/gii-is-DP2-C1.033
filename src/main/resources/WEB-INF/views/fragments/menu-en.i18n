@@ -60,7 +60,7 @@ master.menu.flightCrewMember.show-dashboard = Flight Crew Member Dashboard
 
 master.menu.airline-manager = Airline Manager
 master.menu.airline-manager.list-my-flights= List my flights
-
+master.menu.airline-manager.show-dashboard =Dashboard
 
 # master.menu.consumer ##########################################################
 

@@ -52,8 +52,12 @@ acme.validation.trackingLog.unpublished.message = Un registro de seguimiento no 
 acme.validation.trackingLog.updateMoment.message = La fecha de un registro de seguimiento debe ser mayor que la de una queja
 acme.validation.trackingLog.publish.message = Se puede crear un nuevo registro de seguimiento incluso después de que se haya publicado el último (el que tiene un porcentaje de resolución del 100%)
 
+
 acme.validation.activity.unpublished.message = La Asignación de Vuelo debe de estar publicada
 acme.validation.flightAssignment.flightCrewMember.multipleLegs = No se puede asignar a varias escalas simultáneamente
 acme.validation.flightAssignment.leg.moment = La Asignación de Vuelo no puede estar asociadas a escalas que hayan tenido lugar 
 acme.validation.flightAssignment.flightCrewMember.available = Solo los Miembros de la Tripulación de Vuelo con el estado "AVAILABLE" pueden ser asignados a una escala
 acme.validation.flightAssignment.duty = Cada escala solo puede tener un piloto y un copiloto
+
+acme.validation.trackingLog.publish.message.completed = Ya hay más de dos registros de seguimiento con un porcentaje del 100%, no puede crear más
+
