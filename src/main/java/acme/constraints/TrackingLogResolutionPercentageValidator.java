@@ -54,8 +54,12 @@ public class TrackingLogResolutionPercentageValidator extends AbstractValidator<
 	private boolean validatePercentage(final TrackingLog newLog, final TrackingLog previousLog, final ConstraintValidatorContext context) {
 		Double previousPercentage = previousLog.getResolutionPercentage();
 		Double newPercentage = newLog.getResolutionPercentage();
+		boolean isValid;
 
-		boolean isValid = newPercentage >= previousPercentage;
+		if (previousPercentage != 100)
+			isValid = newPercentage > previousPercentage;
+		else
+			isValid = newPercentage >= previousPercentage;
 
 		super.state(context, isValid, "resolutionPercentage", "acme.validation.trackingLog.resolutionPercentage.message");
 

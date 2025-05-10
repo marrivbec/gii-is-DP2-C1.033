@@ -40,7 +40,21 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		String method;
+		Leg leg;
+		int legId;
+
+		method = super.getRequest().getMethod();
+
+		if (method.equals("GET"))
+			status = true;
+		else {
+			legId = super.getRequest().getData("leg", int.class);
+			leg = this.repository.findLegById(legId);
+			status = legId == 0 || leg != null;
+		}
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
