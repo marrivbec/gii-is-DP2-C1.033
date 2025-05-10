@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.principals.Principal;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
@@ -35,7 +36,13 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
+		boolean status;
+		FlightCrewMember flightCrewMember;
+
+		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		Principal principal = super.getRequest().getPrincipal();
+		status = principal.hasRealm(flightCrewMember);
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -50,11 +57,11 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 
 		List<String> lastFiveDestinations = this.repository.findLastFiveDestinations(flightCrewMemberId, PageRequest.of(0, 5));
 
-		Integer legsWithIncidentSeverity3 = this.repository.legsWithSeverity(0, 3);
+		Integer legsWithIncidentSeverity3 = this.repository.legsWithSeverityByCrewMember(0, 3, flightCrewMemberId);
 
-		Integer legsWithIncidentSeverity7 = this.repository.legsWithSeverity(4, 7);
+		Integer legsWithIncidentSeverity7 = this.repository.legsWithSeverityByCrewMember(4, 7, flightCrewMemberId);
 
-		Integer legsWithIncidentSeverity10 = this.repository.legsWithSeverity(8, 10);
+		Integer legsWithIncidentSeverity10 = this.repository.legsWithSeverityByCrewMember(8, 10, flightCrewMemberId);
 
 		List<FlightAssignment> assigments = this.repository.findFlightAssignment(flightCrewMemberId);
 
@@ -107,7 +114,6 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 		}
 
 		Optional<Integer> min = assignmentsPerMonth.stream().min(Integer::compareTo);
-
 		Optional<Integer> max = assignmentsPerMonth.stream().max(Integer::compareTo);
 
 		double standardDeviation = Math.sqrt(assignmentsPerMonth.stream().mapToDouble(n -> Math.pow(n - average, 2)).average().orElse(0.0));
