@@ -47,3 +47,5 @@ leg-27,ABX6811,2024/04/01 0:01,2004/01/01 0:00,ON_TIME,aircraft-01,airport-00,ai
 leg-28,ABX7010,2024/03/01 0:01,2024/03/01 0:00,ON_TIME,aircraft-10,airport-00,airport-01,flight-27,false
 leg-29,ABX7011,2024/02/01 0:01,2024/02/01 0:00,ON_TIME,aircraft-11,airport-00,airport-01,flight-28,false
 leg-30,ABX7211,2024/03/01 0:01,2024/03/01 0:00,ON_TIME,aircraft-12,airport-00,airport-01,flight-29,false
+leg-31,ABX7842,2024/03/01 0:01,2024/03/01 0:00,ON_TIME,aircraft-10,airport-00,airport-01,flight-24,false
+
