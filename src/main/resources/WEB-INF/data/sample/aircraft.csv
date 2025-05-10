@@ -1,28 +1,28 @@
-key,capacity,cargoWeight,details,status,model,able,registrationNumber,key:airline
-aircraft-01,50,23000.0,very good details,True,aircraft-pro,true,123456,airline-01
-aircraft-02,100,30000.0,very good details,True,airbus100,true,789012,airline-01
-aircraft-03,1,2000.0,,True,aircraft-pro,true,12,airline-01
-aircraft-04,24,2000.01,very good details,True,aircraft-pro,true,123,airline-01
-aircraft-05,50,49000.99,very good details,True,aircraft-pro,true,1234,airline-01
-aircraft-06,100,50000.0,Yes,True,aircraft-pro,true,12345,airline-01
-aircraft-07,50,20000.3,Recently updated specifications,True,aircraft-pro,true,654,airline-01
-aircraft-08,50,20000.3,Basic,True,aircraft-pro,true,65,airline-01
-aircraft-09,50,20000.3,Standard,True,aircraft-pro,true,6543,airline-01
-aircraft-10,50,20000.3,High performance specifications included,True,aircraft-pro,true,65432,airline-02
-aircraft-11,50,20000.3,Comprehensive details available,True,aircraft-pro,true,6556,airline-02
-aircraft-12,50,20000.3,Detailed maintenance logs available,True,aircraft-pro,true,656,airline-02
-aircraft-13,50,20000.3,Latest operational updates,True,aircraft-pro,true,678,airline-02
-aircraft-14,50,20000.3,General operational notes,True,aircraft-pro,true,88,airline-02
-aircraft-15,50,20000.3,System integrity verified,True,aircraft-pro,true,15,airline-02
-aircraft-16,50,20000.3,Security checks completed,True,aircraft-pro,true,9897,airline-02
-aircraft-17,50,20000.3,Routine inspection records,True,aircraft-pro,true,99,airline-02
-aircraft-18,50,20000.3,very good details,True,Boeing X-200,true,1234567,airline-02
-aircraft-19,50,20000.3,very good details,True,Boeing Y,true,1234578,airline-01
-aircraft-20,50,20000.3,very good details,True,Boeing Z,true,456,airline-03
-aircraft-21,50,20000.3,very good details,True,Airbus A320,true,5689,airline-16
-aircraft-22,50,20000.3,very good details,True,Airbus A350,true,569,airline-17
-aircraft-23,50,20000.3,very good details,True,Fokker 100,true,1234561,airline-18
-aircraft-24,50,20000.3,very good details,True,Embraer E190,true,1234562,airline-19
-aircraft-25,50,20000.3,very good details,True,Bombardier CRJ,true,1234563,airline-20
-aircraft-26,50,20000.3,very good details,True,Cessna Citation X,true,12345632,airline-20
-aircraft-27,50,20000.3,very good details,True,Gulfstream G650,true,12345631,airline-21
+key,capacity,cargoWeight,details,status,model,registrationNumber,key:airline
+aircraft-01,50,2000,L,True,L,L,airline-01
+aircraft-02,100,2001,Lo,True,Lo,Lo,airline-01
+aircraft-03,1,49999,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,True,Lorem ipsum dolor sit amet a consectetur adipiscin,Lorem ipsum dolor sit amet a consectetur adipiscin,airline-01
+aircraft-04,24,50000,Lorem ipsum dolor sit ameta consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,True,Lorem ipsum dolor sit ameta consectetur adipiscing,Lorem ipsum dolor sit ameta consectetur adipiscing,airline-01
+aircraft-05,50,49999,โลเร็ม อิปซัม,True,โลเร็ม อิปซัม,โลเร็ม อิปซัม,airline-01
+aircraft-06,100,50000,洛伦·伊普森,True,洛伦·伊普森,洛伦·伊普森,airline-01
+aircraft-07,50,20000,لوريم إيبسوم,True,<marquee>Hacked</marquee>,<marquee>Hacked</marquee>,airline-01
+aircraft-08,50,20000,<marquee>Hacked</marquee>,True,<script>alert(‘Hacked!’);</script>,<script>alert(‘Hacked!’);</script>,airline-01
+aircraft-09,50,20000,<script>alert(‘Hacked!’);</script>,True,' or 'A' = 'A,' or 'A' = 'A,airline-01
+aircraft-10,50,20000,' or 'A' = 'A,True,aircraft-pro,65432,airline-02
+aircraft-11,50,20000,Comprehensive details available,True,aircraft-pro,6556,airline-02
+aircraft-12,50,20000,Detailed maintenance logs available,True,aircraft-pro,656,airline-02
+aircraft-13,50,20000,Latest operational updates,True,aircraft-pro,678,airline-02
+aircraft-14,50,20000,General operational notes,True,aircraft-pro,88,airline-02
+aircraft-15,50,20000,System integrity verified,True,aircraft-pro,15,airline-02
+aircraft-16,50,20000,Security checks completed,True,aircraft-pro,9897,airline-02
+aircraft-17,50,20000,Routine inspection records,True,aircraft-pro,99,airline-02
+aircraft-18,50,20000,very good details,True,Boeing X-200,1234567,airline-02
+aircraft-19,50,20000,very good details,True,Boeing Y,1234578,airline-01
+aircraft-20,50,20000,very good details,True,Boeing Z,456,airline-03
+aircraft-21,50,20000,very good details,True,Airbus A320,5689,airline-16
+aircraft-22,50,20000,very good details,True,Airbus A350,569,airline-17
+aircraft-23,50,20000,very good details,True,Fokker 100,1234561,airline-18
+aircraft-24,50,20000,very good details,True,Embraer E190,1234562,airline-19
+aircraft-25,50,20000,very good details,True,Bombardier CRJ,1234563,airline-20
+aircraft-26,50,20000,very good details,True,Cessna Citation X,12345632,airline-20
+aircraft-27,50,20000,very good details,True,Gulfstream G650,12345631,airline-21

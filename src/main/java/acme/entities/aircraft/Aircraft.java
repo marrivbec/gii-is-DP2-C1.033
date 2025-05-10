@@ -47,7 +47,7 @@ public class Aircraft extends AbstractEntity {
 	@Mandatory
 	@ValidCargoWeight
 	@Automapped
-	private Double				cargoWeight;
+	private int					cargoWeight;
 
 	@Mandatory
 	// HINT: @Valid by default.
@@ -58,11 +58,6 @@ public class Aircraft extends AbstractEntity {
 	@ValidLongText
 	@Automapped
 	private String				details;
-
-	@Mandatory
-	// HINT: @Valid by default.
-	@Automapped
-	private boolean				able;
 
 	// Derived attributes -----------------------------------------------------
 

@@ -25,12 +25,12 @@ public class CustomerBookingRecordListService extends AbstractGuiService<Custome
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		Customer customer = this.repository.findCustomerById(customerId);
 		Booking booking = this.repository.findBookingById(bookingId);
-		super.getResponse().setAuthorised(booking.getCustomer().equals(customer));
+		super.getResponse().setAuthorised(booking != null && booking.getCustomer().equals(customer));
 	}
 	@Override
 	public void load() {
 		int bookingId = super.getRequest().getData("bookingId", int.class);
-		Collection<BookingRecord> passengers = this.repository.findBookingRById(bookingId);
+		Collection<BookingRecord> passengers = this.repository.findBookingRByBId(bookingId);
 		super.getBuffer().addData(passengers);
 		super.getResponse().addGlobal("bookingId", bookingId);
 		super.getResponse().addGlobal("draftMode", this.repository.findBookingById(bookingId).isDraftMode());

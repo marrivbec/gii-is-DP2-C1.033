@@ -53,7 +53,7 @@ public class AdministratorAircraftListService extends AbstractGuiService<Adminis
 	public void unbind(final Aircraft aircraft) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details", "able");
+		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details");
 
 		Collection<Airline> airlines = this.repository.findAllAirlines();
 		SelectChoices airlineChoices = SelectChoices.from(airlines, "name", aircraft.getAirline());

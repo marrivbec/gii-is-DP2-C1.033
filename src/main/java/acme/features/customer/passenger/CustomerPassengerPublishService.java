@@ -22,7 +22,7 @@ public class CustomerPassengerPublishService extends AbstractGuiService<Customer
 		Customer customer = this.repository.findCustomerById(customerId);
 		int passengerId = super.getRequest().getData("id", int.class);
 		Passenger passenger = this.repository.findPassengerById(passengerId);
-		super.getResponse().setAuthorised(passenger.isDraftMode() && passenger.getCustomer().equals(customer));
+		super.getResponse().setAuthorised(passenger != null && passenger.isDraftMode() && passenger.getCustomer().equals(customer));
 	}
 
 	@Override
