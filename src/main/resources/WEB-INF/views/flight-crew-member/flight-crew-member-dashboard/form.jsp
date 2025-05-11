@@ -53,7 +53,10 @@
     <table class="table table-bordered mx-auto">
         <tr>
             <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.statistics" /></th>
-            <td><acme:print value="${flightAssignmentsStatistics}" /></td>
+            <td><acme:print value="${flightAssignmentsStatistics.average}" /></td>
+            <td><acme:print value="${flightAssignmentsStatistics.minimum}" /></td>
+            <td><acme:print value="${flightAssignmentsStatistics.maximum}" /></td>
+            <td><acme:print value="${flightAssignmentsStatistics.deviation}" /></td>
         </tr>
     </table>
     
