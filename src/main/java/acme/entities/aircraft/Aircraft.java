@@ -49,10 +49,10 @@ public class Aircraft extends AbstractEntity {
 	@Automapped
 	private int					cargoWeight;
 
-	@Mandatory
-	// HINT: @Valid by default.
 	@Automapped
-	private boolean				status;
+	@Mandatory
+	@Valid
+	private AircraftStatus		status;
 
 	@Optional
 	@ValidLongText
