@@ -11,6 +11,7 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
+import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airline.Airline;
 
 @GuiService
@@ -55,7 +56,7 @@ public class AdministratorAircraftDisableService extends AbstractGuiService<Admi
 
 	@Override
 	public void perform(final Aircraft aircraft) {
-		aircraft.setStatus(false);
+		aircraft.setStatus(AircraftStatus.UNDER_MAINTENANCE);
 		this.repository.save(aircraft);
 	}
 
