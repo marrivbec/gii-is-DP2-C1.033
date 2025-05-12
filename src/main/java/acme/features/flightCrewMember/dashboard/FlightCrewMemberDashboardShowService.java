@@ -62,13 +62,13 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		Integer legsWithIncidentSeverity3 = this.repository.legsWithSeverityByCrewMember(0, 3, flightCrewMemberId);
-		Integer legsWithIncidentSeverity7 = this.repository.legsWithSeverityByCrewMember(4, 7, flightCrewMemberId);
-		Integer legsWithIncidentSeverity10 = this.repository.legsWithSeverityByCrewMember(8, 10, flightCrewMemberId);
+		Integer legsWithSeverity3 = this.repository.legsWithSeverity(0, 3, flightCrewMemberId);
+		Integer legsWithSeverity7 = this.repository.legsWithSeverity(4, 7, flightCrewMemberId);
+		Integer legsWithSeverity10 = this.repository.legsWithSeverity(8, 10, flightCrewMemberId);
 
-		dashboard.setLegsWithIncidentSeverity03(legsWithIncidentSeverity3);
-		dashboard.setLegsWithIncidentSeverity47(legsWithIncidentSeverity7);
-		dashboard.setLegsWithIncidentSeverity810(legsWithIncidentSeverity10);
+		dashboard.setLegsWithIncidentSeverity03(legsWithSeverity3);
+		dashboard.setLegsWithIncidentSeverity47(legsWithSeverity7);
+		dashboard.setLegsWithIncidentSeverity810(legsWithSeverity10);
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -130,42 +130,6 @@ public class FlightCrewMemberDashboardShowService extends AbstractGuiService<Fli
 		dashboard.setFlightAssignmentsStatistics(statsLastYear);
 
 		super.getBuffer().addData(dashboard);
-
-		//		Date dateMinus1Year = MomentHelper.deltaFromCurrentMoment(-1, ChronoUnit.YEARS);
-		//
-		//		Integer count = this.repository.countFlightAssignmentsLastYear(MomentHelper.deltaFromCurrentMoment(-1, ChronoUnit.YEARS), flightCrewMemberId);
-		//
-		//		Double average = (double) count / 12;
-		//
-		//		Calendar calendar = Calendar.getInstance();
-		//
-		//		calendar.setTime(dateMinus1Year);
-		//
-		//		int year = calendar.get(Calendar.YEAR);
-		//
-		//		Integer countPerMonth = 0;
-		//
-		//		List<Integer> assignmentsPerMonth = new ArrayList<>();
-		//
-		//		for (int month = 1; month <= 12; month++) {
-		//
-		//			countPerMonth = this.repository.countFlightAssignmentsPerMonthAndYear(flightCrewMemberId, year, month);
-		//
-		//			assignmentsPerMonth.add(countPerMonth != null ? countPerMonth : 0);
-		//		}
-		//
-		//		Optional<Integer> min = assignmentsPerMonth.stream().min(Integer::compareTo);
-		//		Optional<Integer> max = assignmentsPerMonth.stream().max(Integer::compareTo);
-		//
-		//		double standardDeviation = Math.sqrt(assignmentsPerMonth.stream().mapToDouble(n -> Math.pow(n - average, 2)).average().orElse(0.0));
-		//
-		//		flightAssignmentsStatsLastMonth.setCount(count);
-		//		flightAssignmentsStatsLastMonth.setAverage(average);
-		//		flightAssignmentsStatsLastMonth.setMinimum(min.orElse(0).doubleValue());
-		//		flightAssignmentsStatsLastMonth.setMaximum(max.orElse(0).doubleValue());
-		//		flightAssignmentsStatsLastMonth.setDeviation(standardDeviation);
-		//
-		//		dashboard.setFlightAssignmentsStatistics(flightAssignmentsStatsLastMonth);
 
 	}
 

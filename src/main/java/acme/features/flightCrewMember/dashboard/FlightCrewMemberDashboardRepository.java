@@ -19,12 +19,12 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 	List<String> findLastFiveDestinations(int flightCrewMemberId, Pageable pageable);
 
 	@Query("""
-		SELECT COUNT(a.flightAssignment.leg)
+		SELECT COUNT(DISTINCT a.flightAssignment.leg)
 		FROM ActivityLog a
 		WHERE a.severityLevel BETWEEN :inValue AND :outValue
 		AND a.flightAssignment.flightCrewMember.id = :flightCrewMemberId
 		""")
-	Integer legsWithSeverityByCrewMember(int inValue, int outValue, int flightCrewMemberId);
+	Integer legsWithSeverity(int inValue, int outValue, int flightCrewMemberId);
 
 	@Query("SELECT f FROM FlightAssignment f JOIN f.leg l WHERE f.flightCrewMember.id = :flightCrewMemberId ORDER BY l.scheduledArrival ASC")
 	List<FlightAssignment> findFlightAssignment(int flightCrewMemberId);

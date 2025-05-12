@@ -89,9 +89,6 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "draftMode", "remarks", "flightCrewMember", "leg");
 
-		boolean isPastLeg = MomentHelper.getCurrentMoment().after(flightAssignment.getLeg().getScheduledArrival());
-		dataset.put("pastLeg", isPastLeg);
-
 		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
 		dataset.put("flightCrewMember", flightCrewMember.getIdentity().getFullName());
 
