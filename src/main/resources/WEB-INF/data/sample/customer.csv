@@ -1,4 +1,4 @@
 key,employeeCode,phoneNumber,physicalAddress,city,country,earnedPoints,key:user-account
-customer1,MGA126457,987654321,L,L,L,0,user-account-customer-01
-customer2,JPE126458,983748321,Lo,Lo,Lo,1,user-account-customer-02
-customer3,AFE126459,983734321,Lorem ipsum dolor sit ameta consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,' or 'A' = 'A,' or 'A' = 'A,50000,user-account-customer-03
+customer-01,MGA126457,987654321,L,L,L,0,user-account-customer-01
+customer-02,JPE126458,983748321,Lo,Lo,Lo,1,user-account-customer-02
+customer-03,AFE126459,983734321,Lorem ipsum dolor sit ameta consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,' or 'A' = 'A,' or 'A' = 'A,50000,user-account-customer-03
