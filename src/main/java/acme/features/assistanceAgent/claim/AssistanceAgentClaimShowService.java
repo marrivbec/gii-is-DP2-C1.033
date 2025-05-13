@@ -69,10 +69,12 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		SelectChoices choices2;
 		Dataset dataset;
 		String indicator;
+		AssistanceAgent agent;
 
+		agent = (AssistanceAgent) super.getRequest().getPrincipal().getActiveRealm();
 		indicator = claim.indicator();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		legs = this.repository.findAllLeg();
+		legs = this.repository.findAllLeg(agent.getAirline());
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "draftMode");
