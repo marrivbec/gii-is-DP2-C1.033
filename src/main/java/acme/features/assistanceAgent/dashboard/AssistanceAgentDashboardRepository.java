@@ -19,32 +19,35 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.claim.Claim;
 import acme.realms.employee.AssistanceAgent;
 
 @Repository
 public interface AssistanceAgentDashboardRepository extends AbstractRepository {
 
-	@Query("SELECT COUNT(c) FROM Claim c " + "WHERE c.assistanceAgents = :assistanceAgent " + "AND EXISTS (" + "    SELECT 1 FROM TrackingLog t " + "    WHERE t.claim = c " + "    AND t.indicator = 'ACCEPTED' " + "    AND t.lastUpdateMoment = ("
-		+ "        SELECT MAX(t2.lastUpdateMoment) FROM TrackingLog t2 WHERE t2.claim = c" + ")" + ")")
-	int countResolvedClaims(AssistanceAgent assistanceAgent);
+	@Query("SELECT c FROM Claim c WHERE c.assistanceAgents = :assistanceAgent AND c.id IN (" + "SELECT t.claim.id FROM TrackingLog t " + "WHERE t.lastUpdateMoment = (" + "SELECT MAX(t2.lastUpdateMoment) FROM TrackingLog t2 WHERE t2.claim = t.claim" + ") "
+		+ "AND t.indicator = acme.entities.trackingLog.Indicator.ACCEPTED " + "AND t.resolutionPercentage = 100 " + "AND t.resolution IS NOT NULL)")
+	List<Claim> countResolvedClaims(AssistanceAgent assistanceAgent);
 
-	@Query("SELECT COUNT(c) FROM Claim c " + "WHERE c.assistanceAgents = :assistanceAgent " + "AND EXISTS (" + "    SELECT 1 FROM TrackingLog t " + "    WHERE t.claim = c " + "    AND t.indicator = 'REJECTED' " + "    AND t.lastUpdateMoment = ("
-		+ "        SELECT MAX(t2.lastUpdateMoment) FROM TrackingLog t2 WHERE t2.claim = c" + ")" + ")")
-	int countRejectedClaims(AssistanceAgent assistanceAgent);
+	@Query("SELECT c FROM Claim c WHERE c.assistanceAgents = :assistanceAgent AND c.id IN (" + "SELECT t.claim.id FROM TrackingLog t " + "WHERE t.lastUpdateMoment = (" + "SELECT MAX(t2.lastUpdateMoment) FROM TrackingLog t2 WHERE t2.claim = t.claim" + ") "
+		+ "AND t.indicator = acme.entities.trackingLog.Indicator.REJECTED " + "AND t.resolutionPercentage = 100 " + "AND t.resolution IS NOT NULL)")
+	List<Claim> countRejectedClaims(AssistanceAgent assistanceAgent);
 
 	@Query("SELECT COUNT(c) FROM Claim c WHERE c.assistanceAgents = :assistanceAgent")
 	int countTotalClaims(AssistanceAgent assistanceAgent);
 
 	default Double resolvedClaimsRatio(final AssistanceAgent assistanceAgent) {
-		int total = this.countTotalClaims(assistanceAgent);
-		int res = this.countResolvedClaims(assistanceAgent);
-		return total > 0 ? res / total * 100.0 : 0.0;
+		double total = this.countTotalClaims(assistanceAgent);
+		double res = this.countResolvedClaims(assistanceAgent).size();
+		double resolutado = 100.0 * (res / total);
+		return total > 0 ? resolutado : 0.0;
 	}
 
 	default Double rejectedClaimsRatio(final AssistanceAgent assistanceAgent) {
-		int total = this.countTotalClaims(assistanceAgent);
-		int res = this.countRejectedClaims(assistanceAgent);
-		return total > 0 ? res / total * 100.0 : 0.0;
+		double total = this.countTotalClaims(assistanceAgent);
+		double res = this.countRejectedClaims(assistanceAgent).size();
+		double resolutado = 100.0 * (res / total);
+		return total > 0 ? resolutado : 0.0;
 	}
 
 	@Query("SELECT FUNCTION('MONTHNAME', c.registrationMoment) as month, COUNT(c) as count " + "FROM Claim c WHERE c.assistanceAgents = :assistanceAgent " + "GROUP BY FUNCTION('MONTH', c.registrationMoment), month " + "ORDER BY COUNT(c) DESC")
