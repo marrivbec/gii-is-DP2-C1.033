@@ -87,9 +87,11 @@ public class AssistanceAgentClaimDeleteService extends AbstractGuiService<Assist
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
+		AssistanceAgent agent;
 
+		agent = (AssistanceAgent) super.getRequest().getPrincipal().getActiveRealm();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		legs = this.repository.findAllLeg();
+		legs = this.repository.findAllLeg(agent.getAirline());
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "draftMode");
