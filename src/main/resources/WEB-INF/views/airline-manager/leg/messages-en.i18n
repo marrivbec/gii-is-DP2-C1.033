@@ -30,7 +30,8 @@ airline-manager.leg.form.title = Details of legs
 airline-manager.leg.list.title = List of legs	
 
 
-
+airlineManager.leg.error.aircraftSolaped.message = The selected aircraft already has a leg associated with this time
+airlineManager.leg.error.timePast.message = The departure and arrival times must be in the future
 airlineManager.leg.error.diferenteFlihtNumber.message = There is already a leg of the flight that has that flight number
 airlineManager.leg.error.aircraft-under-maintenance.message = You cannot use an aircraft that is under maintenance
 airlineManager.leg.error.sameAirport.message = The departure airport must be different from the arrival airport

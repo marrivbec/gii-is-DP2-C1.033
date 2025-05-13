@@ -1,0 +1,30 @@
+# messages-en.i18n
+
+any.flight.form.title = Flight Details
+any.flight.list.title = Flight List
+
+airline-manager.flight.form.label.tag = Tag:
+airline-manager.flight.form.label.selfTransfer = Self transfer
+airline-manager.flight.form.label.cost = Cost:
+airline-manager.flight.form.label.description = description:
+airline-manager.flight.form.label.originCity = Origin city:
+airline-manager.flight.form.label.destinationCity = Destination city:
+airline-manager.flight.form.label.scheduledDeparture = Scheduled departure:
+airline-manager.flight.form.label.scheduledArrival = Scheduled arrival:
+airline-manager.flight.form.label.layovers = Layovers:
+airline-manager.flight.form.button.legs = Legs
+
+airline-manager.flight.list.label.tag = Tag:
+airline-manager.flight.list.label.selfTransfer = Self transfer:
+airline-manager.flight.list.label.cost = Cost:
+airline-manager.flight.list.label.description = description:
+airline-manager.flight.list.label.originCity = Origin city:
+airline-manager.flight.list.label.destinationCity = Destination city:
+airline-manager.flight.list.label.scheduledDeparture = Scheduled departure:
+airline-manager.flight.list.label.scheduledArrival = Scheduled arrival:
+airline-manager.flight.list.label.layovers = Layovers:
+airline-manager.flight.list.label.draftMode = Draft mode:
+
+
+
+airline-manager.flight.form.label.confirmation = Confirm changes

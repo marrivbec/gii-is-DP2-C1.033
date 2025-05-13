@@ -61,8 +61,8 @@ public class AdministratorAirlineUpdateService extends AbstractGuiService<Admini
 		Dataset dataset;
 
 		choices = SelectChoices.from(AirlineType.class, airline.getType());
-		dataset = super.unbindObject(airline, "name", "iata", "web", "type", "dateFundation", "mail", "phone");
-		dataset.put("types", choices);
+		dataset = super.unbindObject(airline, "name", "iata", "web", "dateFundation", "mail", "phone");
+		dataset.put("type", choices);
 
 		super.getResponse().addData(dataset);
 	}

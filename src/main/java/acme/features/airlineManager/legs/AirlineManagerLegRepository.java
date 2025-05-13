@@ -2,6 +2,7 @@
 package acme.features.airlineManager.legs;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
 import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.leg.Leg;
+import acme.entities.leg.Status;
 
 @Repository
 public interface AirlineManagerLegRepository extends AbstractRepository {
@@ -37,6 +39,9 @@ public interface AirlineManagerLegRepository extends AbstractRepository {
 	@Query("select a from Airport a")
 	Collection<Airport> findAllAirport();
 
+	@Query("select count(l.aircraft) from Leg l where l.aircraft.id = :aircraftId and l.draftMode = false and l.status != :status and ((l.scheduledArrival >= :scheduledDeparture and l.scheduledDeparture <= :scheduledArrival) or (l.scheduledArrival >= :scheduledDeparture and l.scheduledArrival <= :scheduledArrival))")
+	Integer findNumberOfLegsSolapedAircraft(Date scheduledDeparture, Date scheduledArrival, Status status, Integer aircraftId);
+
 	@Query("select l.departureAirport from Leg l where l.flight.id = :id")
 	Collection<Airport> findDepartureAircraftsByFlightId(int id);
 
@@ -45,5 +50,11 @@ public interface AirlineManagerLegRepository extends AbstractRepository {
 
 	@Query("select l from Leg l where l.flightNumber = :flightNumber")
 	Leg findLegByFlightNumber(String flightNumber);
+
+	@Query("select a from Aircraft a where a.id = :id")
+	Aircraft findAircraftById(int id);
+
+	@Query("select a from Airport a where a.id = :id")
+	Airport findAirportById(int id);
 
 }

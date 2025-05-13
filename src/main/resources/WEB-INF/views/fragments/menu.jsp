@@ -29,6 +29,8 @@
 		
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.list-flight-assignments-published" action="/any/flight-assignment/list" />
+			<acme:menu-suboption code="master.menu.any.list-flight-published" action="/any/flight/list" />
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
@@ -96,6 +98,8 @@
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.become-assistanceAgent" action="/authenticated/assistance-agent/create" access="!hasRealm('AssistanceAgent')"/>
 			<acme:menu-suboption code="master.menu.user-account.assistanceAgent-profile" action="/authenticated/assistance-agent/update" access="hasRealm('AssistanceAgent')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-airlineManager" action="/authenticated/airline-manager/create" access="!hasRealm('AirlineManager')"/>
+			<acme:menu-suboption code="master.menu.user-account.airlineManager-profile" action="/authenticated/airline-manager/update" access="hasRealm('AirlineManager')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-customer" action="/authenticated/customer/create" access="!hasRealm('Customer')"/>
 			<acme:menu-suboption code="master.menu.user-account.customer-profile" action="/authenticated/customer/update" access="hasRealm('Customer')"/>
 			<acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>

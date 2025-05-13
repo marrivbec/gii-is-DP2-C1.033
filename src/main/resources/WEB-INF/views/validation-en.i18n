@@ -1,4 +1,4 @@
-acme.validation.header.message  	= Must have from 1 to 75 characters
+acme.validation.header.message  	= Must have from 1 to 50 characters
 
 acme.validation.text.message   		= Must have from 1 to 255 characters
 

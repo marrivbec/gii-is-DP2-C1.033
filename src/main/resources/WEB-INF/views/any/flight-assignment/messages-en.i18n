@@ -8,5 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.flight-assignment.form.title = Published Flight Assignments
+any.flight-assignment.list.title = Published Flight Assignments
+any.flight-assignment.form.title = Published Filght Assignments
 

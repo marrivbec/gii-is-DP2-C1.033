@@ -29,15 +29,36 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status, status2;
 		int masterId;
+		int aircraftId, airportDepartureId, airportArrivalId;
+		Collection<Aircraft> myAircrafts;
+		Aircraft aircraft;
+		Airport airportArrival;
+		Airport airportDeparture;
 		Flight flight;
+		String method;
+		method = super.getRequest().getMethod();
 
 		masterId = super.getRequest().getData("masterId", int.class);
 		flight = this.repository.findFlightById(masterId);
 		status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flight.getAirlineManager());
 
-		super.getResponse().setAuthorised(status);
+		if (method.equals("GET"))
+			status2 = status;
+		else {
+			airportDepartureId = super.getRequest().getData("departureAirport", int.class);
+			airportArrivalId = super.getRequest().getData("arrivalAirport", int.class);
+			aircraftId = super.getRequest().getData("aircraft", int.class);
+
+			myAircrafts = this.repository.findAircraftsByAirlineId(flight.getAirlineManager().getAirline().getId());
+			airportArrival = this.repository.findAirportById(airportArrivalId);
+			airportDeparture = this.repository.findAirportById(airportDepartureId);
+			aircraft = this.repository.findAircraftById(aircraftId);
+			status2 = (aircraftId == 0 || aircraft != null && myAircrafts.contains(aircraft)) && (airportDepartureId == 0 || airportDeparture != null) && (airportArrivalId == 0 || airportArrival != null);
+		}
+
+		super.getResponse().setAuthorised(status && status2);
 	}
 
 	@Override
@@ -91,11 +112,8 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
 		dataset.put("masterId", flight.getId());
 		dataset.put("status", choicesStatus);
-		dataset.put("aircraft", choicesAircraft.getSelected().getKey());
 		dataset.put("aircrafts", choicesAircraft);
-		dataset.put("departureAirport", choicesDepartureAirport.getSelected().getKey());
 		dataset.put("departureAirports", choicesDepartureAirport);
-		dataset.put("arrivalAirport", choicesArrivalAirport.getSelected().getKey());
 		dataset.put("arrivalAirports", choicesArrivalAirport);
 		super.getResponse().addData(dataset);
 	}

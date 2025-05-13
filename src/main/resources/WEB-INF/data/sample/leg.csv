@@ -1,42 +1,42 @@
 key,flight_number,scheduled_arrival,scheduled_departure,status,key:aircraft,key:departure_airport,key:arrival_airport,key:flight,draft_mode
 # base entity
-leg-01,ABX0001,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-01,false
+leg-01,ABX0001,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-01,true
 # flightNumber - standard variations
-leg-02,ABX2341,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-02,false
-leg-03,ABX6431,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-03,false
-leg-04,ABX7652,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-04,false
-leg-05,ABX1123,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-05,false
+leg-02,ABX2341,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-02,true
+leg-03,ABX6431,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-03,true
+leg-04,ABX7652,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-04,true
+leg-05,ABX1123,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-05,true
 # flightNumber - no singular values
 # scheduled_departure - standard variations
-leg-06,ABX4433,2025/04/22 12:00,2025/01/06 0:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-06,false
-leg-07,ABX5533,2025/04/22 12:00,2025/01/06 0:01,ON_TIME,aircraft-01,airport-00,airport-01,flight-07,false
-leg-08,ABX5633,2200/12/31 23:58,2200/12/31 23:57,ON_TIME,aircraft-01,airport-00,airport-01,flight-08,false
-leg-09,ABX4333,2200/12/31 23:59,2200/12/31 23:58,ON_TIME,aircraft-01,airport-00,airport-01,flight-09,false
+leg-06,ABX4433,2025/04/22 12:00,2025/01/06 0:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-06,true
+leg-07,ABX5533,2025/04/22 12:00,2025/01/06 0:01,ON_TIME,aircraft-01,airport-00,airport-01,flight-07,true
+leg-08,ABX5633,2200/12/31 23:58,2200/12/31 23:57,ON_TIME,aircraft-01,airport-00,airport-01,flight-08,true
+leg-09,ABX4333,2200/12/31 23:59,2200/12/31 23:58,ON_TIME,aircraft-01,airport-00,airport-01,flight-09,true
 # singular values scheduled_departure
-leg-10,ABX4353,2026/06/29 00:01,2026/06/29 00:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-10,false
+leg-10,ABX4353,2026/06/29 00:01,2026/06/29 00:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-10,true
 # scheduled_arrival - standard variations
-leg-11,ABX2233,2025/04/06 00:01,2025/01/06 0:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-11,false
-leg-12,ABX2263,2025/04/22 00:02,2025/01/06 0:01,ON_TIME,aircraft-01,airport-00,airport-01,flight-12,false
-leg-13,ABX2133,2200/12/31 23:59,2200/12/31 23:58,ON_TIME,aircraft-01,airport-00,airport-01,flight-13,false
-leg-14,ABX2333,2200/12/31 23:59,2200/12/31 23:58,ON_TIME,aircraft-01,airport-00,airport-01,flight-14,false
+leg-11,ABX2233,2025/04/06 00:01,2025/01/06 0:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-11,true
+leg-12,ABX2263,2025/04/22 00:02,2025/01/06 0:01,ON_TIME,aircraft-01,airport-00,airport-01,flight-12,true
+leg-13,ABX2133,2200/12/31 23:59,2200/12/31 23:58,ON_TIME,aircraft-01,airport-00,airport-01,flight-13,true
+leg-14,ABX2333,2200/12/31 23:59,2200/12/31 23:58,ON_TIME,aircraft-01,airport-00,airport-01,flight-14,true
 # singular values scheduled_arrival
-leg-15,ABX1133,2026/06/29 00:01,2026/06/29 00:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-15,false
+leg-15,ABX1133,2026/06/29 00:01,2026/06/29 00:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-15,true
 # status - standard variations
-leg-16,ABX0011,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-16,false
-leg-17,ABX0012,2025/04/22 12:01,2025/04/22 12:00,DELAYED,aircraft-01,airport-00,airport-01,flight-17,false
-leg-18,ABX0013,2025/04/22 12:01,2025/04/22 12:00,LANDED,aircraft-01,airport-00,airport-01,flight-18,false
-leg-19,ABX0014,2025/04/22 12:01,2025/04/22 12:00,CANCELLED,aircraft-01,airport-00,airport-01,flight-19,false
+leg-16,ABX0011,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-16,true
+leg-17,ABX0012,2025/04/22 12:01,2025/04/22 12:00,DELAYED,aircraft-01,airport-00,airport-01,flight-17,true
+leg-18,ABX0013,2025/04/22 12:01,2025/04/22 12:00,LANDED,aircraft-01,airport-00,airport-01,flight-18,true
+leg-19,ABX0014,2025/04/22 12:01,2025/04/22 12:00,CANCELLED,aircraft-01,airport-00,airport-01,flight-19,true
 # status - no singular values
 # aircraft - standard variations
-leg-20,ABX0022,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-04,airport-00,airport-01,flight-20,false
+leg-20,ABX0022,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-04,airport-00,airport-01,flight-20,true
 # departureAirport - standard variations
-leg-21,ABX0023,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-02,airport-01,flight-21,false
+leg-21,ABX0023,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-02,airport-01,flight-21,true
 # departureAirport - no singular values
 # arrivalAirport - standard variations
-leg-22,ABX0024,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-02,flight-22,false
+leg-22,ABX0024,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-02,flight-22,true
 # arrivalAirport - no singular values
 # draftMode - standard variations
-leg-23,ABX1111,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-23,true
+leg-23,ABX1111,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-23,false
 # draftMode - no singular values
 # legs pasadas
 leg-24,ABX4411,2011/04/22 12:01,2011/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-25,false

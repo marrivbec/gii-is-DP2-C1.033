@@ -17,6 +17,8 @@ master.menu.anonymous.favourite-link = Favourite link
 
 master.menu.any = Any
 master.menu.any.list-flight-assignments-published = Published Flight Assignments
+master.menu.any.list-flight-published = Published Flight
+
 
 # master.menu.administrator ###################################################
 
@@ -82,6 +84,9 @@ master.menu.user-account.customer-profile = Customer profile
 master.menu.user-account.become-assistanceAgent = Become an assistance agent
 master.menu.user-account.assistanceAgent-profile = Assistance agent profile
 master.menu.user-account.become-flight-crew-member = Become a flight crew member
+master.menu.user-account.become-airlineManager = Become an airline manager
+master.menu.user-account.airlineManager-profile = Airline manager profile
+
 
 # master.menu.technicians ##########################################################
 master.menu.technicians = Technician
