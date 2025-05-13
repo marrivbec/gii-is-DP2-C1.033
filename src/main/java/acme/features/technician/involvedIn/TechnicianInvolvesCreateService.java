@@ -82,7 +82,7 @@ public class TechnicianInvolvesCreateService extends AbstractGuiService<Technici
 		Collection<Task> tasks;
 
 		tasks = this.repository.findAllTasks();
-		taskChoices = SelectChoices.from(tasks, "ticker", involves.getTask());
+		taskChoices = SelectChoices.from(tasks, "description", involves.getTask());
 
 		dataset = super.unbindObject(involves, "task");
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
