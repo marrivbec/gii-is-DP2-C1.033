@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.assistanceAgent.form.title = Datos de Agente de Asistencia
+authenticated.assistance-agent.form.title = Datos de Agente de Asistencia
 
 authenticated.assistanceAgent.form.label.employeeCode = Código de empleado: 
 authenticated.assistanceAgent.form.label.spokenLanguages = Idiomas:

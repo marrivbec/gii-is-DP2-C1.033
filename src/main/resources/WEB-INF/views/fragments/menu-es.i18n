@@ -83,6 +83,9 @@ master.menu.user-account.customer-profile = Perfil de cliente
 master.menu.user-account.become-assistanceAgent = Hazte un agente de asistencia
 master.menu.user-account.assistanceAgent-profile = Perfil de agente de asistencia
 master.menu.user-account.become-flight-crew-member = Hacerse Miembo de Tripulación de Vuelo
+master.menu.user-account.become-airlineManager = Hazte un gerente de aerolinia
+master.menu.user-account.airlineManager-profile = Perfil de gerente de aerolinia
+
 
 # master.menu.technicians ##########################################################
 master.menu.technicians = Technician

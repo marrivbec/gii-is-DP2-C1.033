@@ -85,9 +85,15 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 					if (departure.before(otherArrival) && arrival.after(otherDeparture) || departure.equals(otherDeparture) || arrival.equals(otherArrival))	// Si las franjas horarias se solapan
 						estado = false;
 				}
+		Integer numberOfLegsDeployingAircraft = this.repository.findNumberOfLegsSolapedAircraft(leg.getScheduledDeparture(), leg.getScheduledArrival(), Status.CANCELLED, leg.getAircraft().getId());
+		boolean aircraftNotUsed = leg.getStatus() == Status.CANCELLED || numberOfLegsDeployingAircraft == 0;
+		Date horaActual = new Date();
+		boolean timePast = leg.getScheduledDeparture().after(horaActual) && leg.getScheduledArrival().after(horaActual);
 		super.state(diferenteAirport, "*", "airlineManager.leg.error.sameAirport.message");
 		super.state(estado, "*", "airlineManager.leg.error.timesOverlap.message");
 		super.state(estadoTime, "*", "airlineManager.leg.error.times.message");
+		super.state(aircraftNotUsed, "*", "airlineManager.leg.error.aircraftSolaped.message");
+		super.state(timePast, "*", "airlineManager.leg.error.timePast.message");
 
 	}
 
