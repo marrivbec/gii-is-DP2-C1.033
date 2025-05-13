@@ -1,39 +1,30 @@
 
-package acme.features.airlineManager.legs;
+package acme.features.any.leg;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.principals.Any;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
 import acme.entities.leg.Leg;
-import acme.realms.employee.AirlineManager;
 
 @GuiService
-public class AirlineManagerLegListService extends AbstractGuiService<AirlineManager, Leg> {
-
+public class AnyLegListService extends AbstractGuiService<Any, Leg> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AirlineManagerLegRepository repository;
+	private AnyLegRepository repository;
 
 	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId, managerId;
-		Flight flight;
-
-		masterId = super.getRequest().getData("masterId", int.class);
-		flight = this.repository.findFlightById(masterId);
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		status = flight != null && flight.getAirlineManager().getId() == managerId;
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override

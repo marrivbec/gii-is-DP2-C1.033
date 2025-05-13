@@ -28,10 +28,24 @@ public class AuthenticatedAirlineManagerUpdateService extends AbstractGuiService
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean status2;
+		String method;
+		Airline airline;
+		int airlineId;
+		method = super.getRequest().getMethod();
 
 		status = super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class);
 
-		super.getResponse().setAuthorised(status);
+		if (method.equals("GET"))
+			status2 = status;
+		else {
+			airlineId = super.getRequest().getData("airline", int.class);
+			airline = this.repository.findAirlineById(airlineId);
+
+			status2 = airlineId == 0 || airline != null;
+		}
+
+		super.getResponse().setAuthorised(status && status2);
 	}
 
 	@Override

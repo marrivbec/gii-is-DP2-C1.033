@@ -1,0 +1,22 @@
+# Etiquetas para el formulario de 'leg'
+airline-manager.leg.form.label.flightNumber = Número de vuelo:
+airline-manager.leg.form.label.scheduledDeparture = Salida programada:
+airline-manager.leg.form.label.scheduledArrival = Llegada programada:
+airline-manager.leg.form.label.status = Estado:
+airline-manager.leg.form.label.aircraft = Aeronave:
+airline-manager.leg.form.label.departureAirport = Aeropuerto de salida:
+airline-manager.leg.form.label.arrivalAirport = Aeropuerto de llegada:
+
+
+
+# Etiquetas para la lista de 'leg'
+airline-manager.leg.list.label.flightNumber = Número de vuelo:
+airline-manager.leg.list.label.scheduledDeparture = Salida programada:
+airline-manager.leg.list.label.scheduledArrival = Llegada programada:
+airline-manager.leg.list.label.status = Estado:
+airline-manager.leg.list.label.draftMode = Modo borrador:
+
+
+any.leg.form.title = Detalles de tramos
+any-manager.leg.list.title = Lista de tramos
+
