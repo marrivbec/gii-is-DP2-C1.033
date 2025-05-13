@@ -75,27 +75,17 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 	public void unbind(final Leg leg) {
 		SelectChoices choicesStatus, choicesAircraft, choicesArrivalAirport, choicesDepartureAirport;
 		Collection<Aircraft> aircrafts;
-		Collection<Airport> airportsD, airportsA;
+		Collection<Airport> airportsA;
 		Dataset dataset;
 		Flight flight;
-		Collection<Airport> airportsArrival;
-		Collection<Airport> airportsDeparture;
 
 		flight = this.repository.findFlightById(leg.getFlight().getId());
 		aircrafts = this.repository.findAircraftsByAirlineId(flight.getAirlineManager().getAirline().getId());
-		airportsD = this.repository.findAllAirport();
 		airportsA = this.repository.findAllAirport();
-		airportsDeparture = this.repository.findDepartureAircraftsByFlightId(flight.getId());
-		airportsArrival = this.repository.findArrivalAircraftsByFlightId(flight.getId());
-
-		//Quitamos los airports de los que ya has salido y a los que ya has llegado de ambos choices
-
-		airportsA.removeAll(airportsArrival);
-		airportsD.removeAll(airportsDeparture);
 
 		choicesStatus = SelectChoices.from(Status.class, leg.getStatus());
 		choicesAircraft = SelectChoices.from(aircrafts, "registrationNumber", leg.getAircraft());
-		choicesDepartureAirport = SelectChoices.from(airportsD, "name", leg.getDepartureAirport());
+		choicesDepartureAirport = SelectChoices.from(airportsA, "name", leg.getDepartureAirport());
 		choicesArrivalAirport = SelectChoices.from(airportsA, "name", leg.getArrivalAirport());
 
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");

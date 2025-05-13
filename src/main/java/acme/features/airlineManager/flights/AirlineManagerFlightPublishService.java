@@ -1,9 +1,7 @@
 
 package acme.features.airlineManager.flights;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -62,8 +60,6 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 		Collection<Leg> legs;
 		boolean confirmation = true;
 		boolean confirmation2 = true;
-		boolean validLayovers;
-		int escalas = 0;
 
 		legs = this.repository.findAllLegByFlightId(flight.getId());
 		if (!legs.isEmpty())
@@ -74,22 +70,6 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 		super.state(confirmation2, "*", "airlineManager.flight.error.NoLegs.message");// Comprobamos las legs no esten vacias
 		super.state(confirmation, "*", "airlineManager.flight.error.unpublishedLegs.message");// Comprobamos que todas las legs esten publicadas
 
-		List<Leg> legsList = new ArrayList<Leg>(legs);
-		if (!flight.getSelfTransfer()) {// si es self-transfer no sales del mismo aeropuerto desde el que has llegado
-			for (int i = 0; i < legsList.size(); i++) {
-				Leg currentLeg = legsList.get(i);
-				for (int j = 0; j < legsList.size(); j++) {
-					Leg nextLeg = legsList.get(j);
-
-					if (currentLeg.getArrivalAirport().equals(nextLeg.getDepartureAirport())) {
-						escalas++;
-						break;
-					}
-				}
-			}
-			validLayovers = escalas == flight.getLayovers();
-			super.state(validLayovers, "*", "airlineManager.flight.error.destinosNoAlineados.message");// Comprobamos que si es una escalas llegues y salgas
-		}
 	}
 
 	@Override

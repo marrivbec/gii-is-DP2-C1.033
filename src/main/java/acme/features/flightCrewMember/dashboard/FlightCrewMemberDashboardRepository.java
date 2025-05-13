@@ -24,7 +24,7 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 		WHERE a.severityLevel BETWEEN :inValue AND :outValue
 		AND a.flightAssignment.flightCrewMember.id = :flightCrewMemberId
 		""")
-	Integer legsWithSeverityByCrewMember(int inValue, int outValue, int flightCrewMemberId);
+	Integer legsWithSeverity(int inValue, int outValue, int flightCrewMemberId);
 
 	@Query("SELECT f FROM FlightAssignment f JOIN f.leg l WHERE f.flightCrewMember.id = :flightCrewMemberId ORDER BY l.scheduledArrival ASC")
 	List<FlightAssignment> findFlightAssignment(int flightCrewMemberId);
@@ -35,10 +35,8 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 	@Query("SELECT f.currentStatus, COUNT(f) FROM FlightAssignment f WHERE f.flightCrewMember.id = :flightCrewMemberId GROUP BY f.currentStatus")
 	List<Object[]> flightAssignmentsGroupedByStatus(int flightCrewMemberId);
 
-	@Query("SELECT COUNT(f) FROM FlightAssignment f WHERE f.leg.scheduledArrival >= :moment AND f.flightCrewMember.id = :crewMemberId")
-	Integer countFlightAssignmentsLastYear(Date moment, int crewMemberId);
-
-	@Query("SELECT COUNT(fa) FROM FlightAssignment fa WHERE fa.flightCrewMember.id = :crewMemberId AND EXTRACT(YEAR FROM fa.leg.scheduledArrival) = :year AND EXTRACT(MONTH FROM fa.leg.scheduledArrival) = :month")
-	Integer countFlightAssignmentsPerMonthAndYear(int crewMemberId, int year, int month);
+	@Query("SELECT YEAR(fa.leg.scheduledArrival) as year, MONTH(fa.leg.scheduledArrival) as month, COUNT(fa) as count " + "FROM FlightAssignment fa WHERE fa.flightCrewMember = :flightCrewMember AND fa.leg.scheduledArrival BETWEEN :startDate AND :endDate "
+		+ "GROUP BY YEAR(fa.leg.scheduledArrival), MONTH(fa.leg.scheduledArrival)")
+	List<Object[]> countFlightAssignmentsPerMonth(FlightCrewMember flightCrewMember, Date startDate, Date endDate);
 
 }

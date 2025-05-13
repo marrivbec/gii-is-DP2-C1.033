@@ -88,6 +88,7 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 	public void unbind(final FlightAssignment flightAssignment) {
 
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "draftMode", "remarks", "flightCrewMember", "leg");
+
 		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
 		dataset.put("flightCrewMember", flightCrewMember.getIdentity().getFullName());
 

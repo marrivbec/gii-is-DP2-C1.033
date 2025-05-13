@@ -4,6 +4,6 @@ flight-crew-member.flight-crew-member-dashboard.label.last-five-destinations = L
 flight-crew-member.flight-crew-member-dashboard.label.fcm-assigned = Flight Crew Members in Last Leg
 flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status = Flight Assignments Grouped By Status (CONFIRMED, PENDING, CANCELLED)
 flight-crew-member.flight-crew-member-dashboard.label.legs-with-status = Number of Legs that have and Activity Log With 0-3, 4-7, 8-10 of Severity
-flight-crew-member.flight-crew-member-dashboard.label.statistics = Statistics
+flight-crew-member.flight-crew-member-dashboard.label.statistics = Statistics (AVERAGE, MINIMUM, MAXIMUM, DEVIATION)
 
 

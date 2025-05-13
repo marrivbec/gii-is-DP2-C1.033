@@ -11,6 +11,7 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
+import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
 import acme.entities.leg.Leg;
@@ -66,7 +67,7 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		boolean estadoTime = true;
 		boolean diferenteAirport = true;
 		if (leg.getAircraft() != null) {
-			boolean isAircraftActive = leg.getAircraft().isStatus();
+			boolean isAircraftActive = leg.getAircraft().getStatus().equals(AircraftStatus.ACTIVE);
 			super.state(isAircraftActive, "aircraft", "airlineManager.leg.error.aircraft-under-maintenance.message");
 		}
 		if (leg.getArrivalAirport().equals(leg.getDepartureAirport()))
@@ -77,7 +78,7 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 			estadoTime = false;
 		if (estadoTime && diferenteAirport)
 			for (Leg otherLeg : legs)
-				if (!otherLeg.equals(leg)) {
+				if (!otherLeg.equals(leg) && !otherLeg.isDraftMode()) {
 					Date otherDeparture = otherLeg.getScheduledDeparture();
 					Date otherArrival = otherLeg.getScheduledArrival();
 

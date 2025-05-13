@@ -4,4 +4,4 @@ flight-crew-member.flight-crew-member-dashboard.label.last-five-destinations = �
 flight-crew-member.flight-crew-member-dashboard.label.fcm-assigned = Miembros de Tripulación de Vuelo en la última Escala
 flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status = Asignaciones de Vuelo agrupados por Estatus (CONFIRMED, PENDING, CANCELLED)
 flight-crew-member.flight-crew-member-dashboard.label.legs-with-status = Número de Escalas que tienen un Registro de Actividad con 0-3, 4-7, 8-10 de Severidad
-flight-crew-member.flight-crew-member-dashboard.label.statistics = Estadísticas
+flight-crew-member.flight-crew-member-dashboard.label.statistics = Estadísticas (PROMEDIO, MÍNIMO, MÁXIMO, DESVIACIÓN)
