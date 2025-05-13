@@ -1,28 +1,62 @@
 key,capacity,cargoWeight,details,status,model,registrationNumber,key:airline
-aircraft-01,50,2000,L,ACTIVE,L,L,airline-01
-aircraft-02,100,2001,Lo,ACTIVE,Lo,Lo,airline-01
-aircraft-03,1,49999,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,ACTIVE,Lorem ipsum dolor sit amet a consectetur adipiscin,Lorem ipsum dolor sit amet a consectetur adipiscin,airline-01
-aircraft-04,24,50000,Lorem ipsum dolor sit ameta consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,ACTIVE,Lorem ipsum dolor sit ameta consectetur adipiscing,Lorem ipsum dolor sit ameta consectetur adipiscing,airline-01
-aircraft-05,50,49999,โลเร็ม อิปซัม,ACTIVE,โลเร็ม อิปซัม,โลเร็ม อิปซัม,airline-01
-aircraft-06,100,50000,洛伦·伊普森,ACTIVE,洛伦·伊普森,洛伦·伊普森,airline-01
-aircraft-07,50,20000,لوريم إيبسوم,ACTIVE,<marquee>Hacked</marquee>,<marquee>Hacked</marquee>,airline-01
-aircraft-08,50,20000,<marquee>Hacked</marquee>,ACTIVE,<script>alert(‘Hacked!’);</script>,<script>alert(‘Hacked!’);</script>,airline-01
-aircraft-09,50,20000,<script>alert(‘Hacked!’);</script>,ACTIVE,' or 'A' = 'A,' or 'A' = 'A,airline-01
-aircraft-10,50,20000,' or 'A' = 'A,ACTIVE,aircraft-pro,65432,airline-02
-aircraft-11,50,20000,Comprehensive details available,ACTIVE,aircraft-pro,6556,airline-02
-aircraft-12,50,20000,Detailed maintenance logs available,ACTIVE,aircraft-pro,656,airline-02
-aircraft-13,50,20000,Latest operational updates,ACTIVE,aircraft-pro,678,airline-02
-aircraft-14,50,20000,General operational notes,ACTIVE,aircraft-pro,88,airline-02
-aircraft-15,50,20000,System integrity verified,ACTIVE,aircraft-pro,15,airline-02
-aircraft-16,50,20000,Security checks completed,ACTIVE,aircraft-pro,9897,airline-02
-aircraft-17,50,20000,Routine inspection records,ACTIVE,aircraft-pro,99,airline-02
-aircraft-18,50,20000,very good details,ACTIVE,Boeing X-200,1234567,airline-02
-aircraft-19,50,20000,very good details,ACTIVE,Boeing Y,1234578,airline-01
-aircraft-20,50,20000,very good details,ACTIVE,Boeing Z,456,airline-03
-aircraft-21,50,20000,very good details,ACTIVE,Airbus A320,5689,airline-16
-aircraft-22,50,20000,very good details,ACTIVE,Airbus A350,569,airline-17
-aircraft-23,50,20000,very good details,ACTIVE,Fokker 100,1234561,airline-18
-aircraft-24,50,20000,very good details,ACTIVE,Embraer E190,1234562,airline-19
-aircraft-25,50,20000,very good details,ACTIVE,Bombardier CRJ,1234563,airline-20
-aircraft-26,50,20000,very good details,ACTIVE,Cessna Citation X,12345632,airline-20
-aircraft-27,50,20000,very good details,ACTIVE,Gulfstream G650,12345631,airline-21
+# base entity
+aircraft-01,50,20000,very good details,ACTIVE,Boeing X-200,AAAAA,airline-01
+
+#capacity
+aircraft-02,1,20000,very good details,ACTIVE,Boeing X-200,BAAAA,airline-01
+aircraft-03,2,20000,very good details,ACTIVE,Boeing X-200,CAAAA,airline-01
+aircraft-04,254,20000,very good details,ACTIVE,Boeing X-200,DAAAA,airline-01
+aircraft-05,255,20000,very good details,ACTIVE,Boeing X-200,EAAAAA,airline-01
+
+#cargoWeight
+aircraft-06,50,2000,very good details,ACTIVE,Boeing X-200,FAAAAA,airline-01
+aircraft-07,50,2001,very good details,ACTIVE,Boeing X-200,GAAAAA,airline-01
+aircraft-08,50,49999,very good details,ACTIVE,Boeing X-200,HAAAAA,airline-01
+aircraft-09,50,50000,very good details,ACTIVE,Boeing X-200,IAAAAA,airline-01
+
+#details
+aircraft-10,50,20000,L,ACTIVE,Boeing X-200,JAAAA,airline-01
+aircraft-11,50,20000,Lo,ACTIVE,Boeing X-200,KAAAA,airline-01
+aircraft-12,50,20000,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,ACTIVE,Boeing X-200,MAAAAA,airline-01
+aircraft-13,50,20000,Lorem ipsum dolor sit ameta consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,ACTIVE,Boeing X-200,NAAAAA,airline-01
+aircraft-14,50,20000,โลเร็ม อิปซัม,ACTIVE,Boeing X-200,SAAAAA,airline-01
+aircraft-15,50,20000,洛伦·伊普森,ACTIVE,Boeing X-200,ABAAA,airline-01
+aircraft-16,50,20000,وريم إيبسوم,ACTIVE,Boeing X-200,CBAAA,airline-01
+aircraft-17,50,20000,<marquee>Hacked</marquee>,ACTIVE,Boeing X-200,DBAAAA,airline-01
+aircraft-18,50,20000,<script>alert(‘Hacked!’);</script>,ACTIVE,Boeing X-200,EBAAAAA,airline-01
+aircraft-19,50,20000,' or 'A' = 'A,ACTIVE,Boeing X-200,FBAAAA,airline-01
+
+#status
+aircraft-20,50,20000,very good details,ACTIVE,Boeing X-200,GBAAA,airline-01
+aircraft-21,50,20000,very good details,ACTIVE,Boeing X-200,IBAAA,airline-01
+aircraft-22,50,20000,very good details,UNDER_MAINTENANCE,Boeing X-200,JBAAA,airline-01
+aircraft-23,50,20000,very good details,UNDER_MAINTENANCE,Boeing X-200,HBAAA,airline-01
+
+#model
+aircraft-24,50,20000,very good details,ACTIVE,L,SBAAA,airline-01
+aircraft-25,50,20000,very good details,ACTIVE,Lo,HKNAAA,airline-01
+aircraft-26,50,20000,very good details,ACTIVE,Lorem ipsum dolor sit ameta consectetur adipiscin,MKGAA,airline-01
+aircraft-27,50,20000,very good details,ACTIVE,Lorem ipsum dolor sit ameta consectetur adipiscing,IUYAA,airline-01
+aircraft-28,50,20000,very good details,ACTIVE,โลเร็ม อิปซัม,ABCDA,airline-01
+aircraft-29,50,20000,very good details,ACTIVE,洛伦·伊普森,AHTAA,airline-01
+aircraft-30,50,20000,very good details,ACTIVE,وريم إيبسوم,NNAAA,airline-01
+aircraft-31,50,20000,very good details,ACTIVE,<marquee>Hacked</marquee>,MMAAA,airline-01
+aircraft-32,50,20000,very good details,ACTIVE,<script>alert(‘Hacked!’);</script>,AMMAA,airline-01
+aircraft-33,50,20000,very good details,ACTIVE,' or 'A' = 'A,ANNAA,airline-01
+
+#registrationNumber
+aircraft-34,50,20000,very good details,ACTIVE,Boeing X-200,L,airline-01
+aircraft-35,50,20000,very good details,ACTIVE,Boeing X-200,Lo,airline-01
+aircraft-36,50,20000,very good details,ACTIVE,Boeing X-200,Lorem ipsum dolor sit ameta consectetur adipiscin,airline-01
+aircraft-37,50,20000,very good details,ACTIVE,Boeing X-200,Lorem ipsum dolor sit ameta consectetur adipiscing,airline-01
+aircraft-38,50,20000,very good details,ACTIVE,Boeing X-200,โลเร็ม อิปซัม,airline-01
+aircraft-39,50,20000,very good details,ACTIVE,Boeing X-200,洛伦·伊普森,airline-01
+aircraft-40,50,20000,very good details,ACTIVE,Boeing X-200,وريم إيبسوم,airline-01
+aircraft-41,50,20000,very good details,ACTIVE,Boeing X-200,<marquee>Hacked</marquee>,airline-01
+aircraft-42,50,20000,very good details,ACTIVE,Boeing X-200,<script>alert(‘Hacked!’);</script>,airline-01
+aircraft-43,50,20000,very good details,ACTIVE,Boeing X-200,' or 'A' = 'A,airline-01
+
+
+#airline variation
+aircraft-44,50,20000,Routine inspection records,ACTIVE,aircraft-pro,ASWSA,airline-02
+

@@ -1,26 +1,64 @@
 key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode,key:customer
-passenger-01,L,acme@lorem-ipsum.org,B1000001,2001/02/02 00:00,L,true,customer1
-passenger-02,Lo,a@b.e,C1000002,2001/03/03 00:00,Lo,false,customer2
-passenger-03,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,a@b.es,D1000003,2003/04/04 00:00,Lorem ipsum dolor sit ameta consectetur adipiscin,true,customer1
-passenger-04,โลเร็ม อิปซัม,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,E1000004,2004/05/05 00:00,โลเร็ม อิปซัม,true,customer2
-passenger-05,洛伦·伊普森,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,F1000005,2005/06/06 00:00,洛伦·伊普森,true,customer1
-passenger-06,لوريم إيبسوم,user6@example.com,G1000006,2003/07/07 00:00,لوريم إيبسوم,false,customer2
-passenger-07,Lorem ipsum dolor sit ameta consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,user7@example.com,H1000007,2004/08/08 00:00,Lorem ipsum dolor sit ameta consectetur adipiscing,false,customer1
-passenger-08,<marquee>Hacked</marquee>,user8@example.com,I1000008,2002/09/09 00:00,<marquee>Hacked</marquee>,true,customer2
-passenger-09,<script>alert(‘Hacked!’);</script>,user9@example.com,J1000009,2002/10/10 00:00,a,true,customer1
-passenger-10,' or 'A' = 'A,user10@example.com,K1000010,2000/11/11 00:00,<script>alert(‘Hacked!’);</script>,false,customer2
-passenger-11,Tony Stark,user11@example.com,L1000011,2001/12/12 00:00,' or 'A' = 'A,true,customer1
-passenger-12,Peter Parker,user12@example.com,M1000012,2002/01/13 00:00,None,true,customer2
-passenger-13,Natasha Romanoff,user13@example.com,N1000013,2003/02/14 00:00,None,false,customer1
-passenger-14,Steve Rogers,user14@example.com,O1000014,2004/03/15 00:00,Extra legroom,false,customer2
-passenger-15,Thor Odinson,user15@example.com,P1000015,2005/04/16 00:00,None,true,customer1
-passenger-16,Loki Laufeyson,user16@example.com,Q1000016,2006/05/17 00:00,None,true,customer2
-passenger-17,Wanda Maximoff,user17@example.com,R1000017,2007/06/18 00:00,Wheelchair access,false,customer1
-passenger-18,Vision,user18@example.com,S1000018,2008/07/19 00:00,None,true,customer2
-passenger-19,T'Challa,user19@example.com,T1000019,2003/08/20 00:00,None,false,customer1
-passenger-20,Stephen Strange,user20@example.com,U1000020,2000/09/21 00:00,b,true,customer2
-passenger-21,Nick Fury,user21@example.com,V1000021,2001/10/22 00:00,None,false,customer1
-passenger-22,Hank Pym,user22@example.com,W1000022,2002/11/23 00:00,None,true,customer2
-passenger-23,Scott Lang,user23@example.com,X1000023,2003/12/24 00:00,None,true,customer1
-passenger-24,Hope van Dyne,user24@example.com,Y1000024,2004/01/25 00:00,None,false,customer2
-passenger-25,Jean Grey,user25@example.com,Z1000025,2005/02/26 00:00,None,true,customer1
+
+#base entity
+passenger-01,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+
+#fullName
+passenger-02,L,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-03,Lo,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-04,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-05,Lorem ipsum dolor sit ameta consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-06,โลเร็ม อิปซัม,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-07,洛伦·伊普森,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-08,لوريم إيبسوم,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-09,<marquee>Hacked</marquee>,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-10,<script>alert(‘Hacked!’);</script>,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-11,' or 'A' = 'A',user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+
+#email
+passenger-12,Peter Parker,acme@lorem-ipsum.org,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-13,Peter Parker,a@b.e,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-14,Peter Parker,a@b.es,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-15,Peter Parker,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-16,Peter Parker,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,B1000001,2012/01/01 00:00,None,true,customer-01
+
+#passportNumber
+passenger-17,Peter Parker,user1@example.com,ABCDEF,2012/01/01 00:00,None,true,customer-01
+passenger-18,Peter Parker,user1@example.com,ABCDEFGHI,2012/01/01 00:00,None,true,customer-01
+passenger-19,Peter Parker,user1@example.com,123456,2012/01/01 00:00,None,true,customer-01
+passenger-20,Peter Parker,user1@example.com,123456789,2012/01/01 00:00,None,true,customer-01
+passenger-21,Peter Parker,user1@example.com,ABC123,2012/01/01 00:00,None,true,customer-01
+passenger-22,Peter Parker,user1@example.com,123ABC,2012/01/01 00:00,None,true,customer-01
+passenger-23,Peter Parker,user1@example.com,ABCD12345,2012/01/01 00:00,None,true,customer-01
+passenger-24,Peter Parker,user1@example.com,1234ABCDE,2012/01/01 00:00,None,true,customer-01
+
+#dateOfBirth
+passenger-25,Peter Parker,user1@example.com,B1000001,2000/01/01 00:00,None,true,customer-01
+passenger-26,Peter Parker,user1@example.com,B1000001,2000/01/01 00:01,None,true,customer-01
+passenger-27,Peter Parker,user1@example.com,B1000001,2024/12/31 23:59,None,true,customer-01
+passenger-28,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,None,true,customer-01
+
+#specialNeeds
+passenger-29,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,L,true,customer-01
+passenger-30,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,Lo,true,customer-01
+passenger-31,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,Lorem ipsum dolor sit ameta consectetur adipiscin,true,customer-01
+passenger-32,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,Lorem ipsum dolor sit ameta consectetur adipiscing,true,customer-01
+passenger-33,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,โลเร็ม อิปซัม,true,customer-01
+passenger-34,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,洛伦·伊普森,true,customer-01
+passenger-35,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,لوريم إيبسوم,true,customer-01
+passenger-36,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,<marquee>Hacked</marquee>,true,customer-01
+passenger-37,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,<script>alert(‘Hacked!’);</script>,true,customer-01
+passenger-38,Peter Parker,user1@example.com,B1000001,2025/01/01 00:00,' or 'A' = 'A',true,customer-01
+
+#draftMode
+passenger-39,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-01
+passenger-40,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,false,customer-01
+
+
+#customer-02
+passenger-41,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-02
+passenger-42,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-02
+passenger-43,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-02
+passenger-44,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,true,customer-02
+passenger-45,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,false,customer-02
+passenger-46,Peter Parker,user1@example.com,B1000001,2012/01/01 00:00,None,false,customer-02
