@@ -1,26 +1,43 @@
 key,locatorCode,purchaseMoment,travelClass,lastNibble,draftMode,key:customer,key:flight
-booking-01,XYZ123,2000/01/01 00:00,ECONOMY,6789,true,customer1,flight-23
-booking-02,A1B2C3,2000/01/01 00:01,ECONOMY,1234,false,customer2,flight-23
-booking-03,ZXY789,2024/12/31 23:59,BUSINESS,9876,true,customer1,flight-23
-booking-04,MNB456,2025/01/01 00:00,ECONOMY,6543,true,customer2,flight-23
-booking-05,PLM789,2008/12/24 10:15,BUSINESS,2222,false,customer1,flight-23
-booking-06,TGB987,2012/07/02 08:45,ECONOMY,3333,false,customer2,flight-23
-booking-07,YHN654,2024/11/30 22:59,BUSINESS,4444,false,customer1,flight-23
-booking-08,QAZ123,2002/01/01 00:00,ECONOMY,5555,true,customer2,flight-23
-booking-09,WSX987,2000/02/29 23:59,BUSINESS,6666,false,customer1,flight-23
-booking-10,EDC654,2010/06/20 15:45,ECONOMY,7777,true,customer2,flight-23
-booking-11,RFV321,2015/05/10 14:30,ECONOMY,8888,true,customer1,flight-23
-booking-12,TGB852,2015/05/10 14:30,BUSINESS,9999,true,customer2,flight-23
-booking-13,OKM741,2015/05/10 14:30,ECONOMY,1010,true,customer1,flight-23
-booking-14,UJN369,2015/05/10 14:30,ECONOMY,1111,false,customer2,flight-23
-booking-15,YHG258,2015/05/10 14:30,BUSINESS,1212,true,customer1,flight-23
-booking-16,VFT159,2015/05/10 14:30,ECONOMY,1313,false,customer2,flight-23
-booking-17,XDR753,2015/05/10 14:30,BUSINESS,1414,false,customer1,flight-23
-booking-18,CDE369,2015/05/10 14:30,ECONOMY,1515,false,customer2,flight-23
-booking-19,BGT258,2015/05/10 14:30,ECONOMY,1616,true,customer1,flight-23
-booking-20,MKI741,2015/05/10 14:30,BUSINESS,1717,false,customer2,flight-23
-booking-21,ZXC147,2015/05/10 14:30,ECONOMY,1818,true,customer1,flight-23
-booking-22,LPO369,2015/05/10 14:30,BUSINESS,1919,false,customer2,flight-23
-booking-23,EDV852,2015/05/10 14:30,ECONOMY,2020,true,customer1,flight-23
-booking-24,WSX963,2015/05/10 14:30,BUSINESS,2121,false,customer2,flight-23
-booking-25,RFV159,2015/05/10 14:30,ECONOMY,2222,false,customer1,flight-23
+
+# base entity
+booking-01,ABCD123,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+
+# locatorCode 
+booking-02,123456,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-03,12345678,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-04,ABCDEF,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-05,ABCDEFGH,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-06,123ABC,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-07,AZZ321,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-08,1234ABCD,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-09,AZZB3211,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+
+# purchaseMoment 
+booking-10,AAAA123,2012/01/02 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-11,DDDD123,2000/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-12,EEEE123,2000/01/01 00:01,ECONOMY,1234,true,customer-01,flight-23
+booking-13,FFFF123,2024/12/31 23:59,ECONOMY,1234,true,customer-01,flight-23
+booking-14,GGGG123,2025/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+
+# travelClass 
+booking-15,IIII123,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-16,JJJJ123,2012/01/01 00:00,BUSINESS,1234,true,customer-01,flight-23
+
+# lastNibble 
+booking-17,RRRR123,2012/01/01 00:00,ECONOMY,1234,true,customer-01,flight-23
+booking-18,SSSS123,2012/01/01 00:00,ECONOMY,9998,true,customer-01,flight-23
+booking-19,TTTT123,2012/01/01 00:00,ECONOMY,0000,true,customer-01,flight-23
+booking-20,VVVV123,2012/01/01 00:00,ECONOMY,0001,true,customer-01,flight-23
+booking-21,ZZZZ123,2012/01/01 00:00,ECONOMY,9999,true,customer-01,flight-23
+
+# draftMode 
+booking-22,WWWW123,2012/01/01 00:00,ECONOMY,"1234",true,customer-01,flight-23
+booking-23,XXXX123,2012/01/01 00:00,ECONOMY,"1234",false,customer-01,flight-23
+
+#customer-02
+booking-24,ABAB123,2012/01/01 00:00,ECONOMY,1234,true,customer-02,flight-23
+booking-25,ACAC123,2012/01/01 00:00,ECONOMY,1234,true,customer-02,flight-23
+booking-26,ADAD123,2012/01/01 00:00,ECONOMY,1234,true,customer-02,flight-23
+booking-27,AFAF123,2012/01/01 00:00,ECONOMY,1234,true,customer-02,flight-23
+booking-28,AEAE123,2012/01/01 00:00,ECONOMY,1234,false,customer-02,flight-23
