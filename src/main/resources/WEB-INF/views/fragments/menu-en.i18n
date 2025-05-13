@@ -17,6 +17,8 @@ master.menu.anonymous.favourite-link = Favourite link
 
 master.menu.any = Any
 master.menu.any.list-flight-assignments-published = Published Flight Assignments
+master.menu.any.list-flight-published = Published Flight
+
 
 # master.menu.administrator ###################################################
 

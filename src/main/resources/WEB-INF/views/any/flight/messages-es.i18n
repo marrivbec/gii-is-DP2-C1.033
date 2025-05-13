@@ -1,0 +1,32 @@
+# messages-es.i18n
+
+
+any.flight.form.title = Detalles del vuelo
+any.flight.list.title = Lista de vuelos
+
+airline-manager.flight.form.label.tag = Etiqueta:
+airline-manager.flight.form.label.selfTransfer = Transferencia propia
+airline-manager.flight.form.label.cost = Costo:
+airline-manager.flight.form.label.description = Descripción:
+airline-manager.flight.list.label.originCity = Ciudad origen:
+airline-manager.flight.form.label.destinationCity = Ciudad destino:
+airline-manager.flight.form.label.scheduledDeparture = Salida programada:
+airline-manager.flight.form.label.scheduledArrival = Llegada programada:
+airline-manager.flight.form.label.layovers = Escalas:
+
+airline-manager.flight.form.button.legs = Tramos
+
+
+airline-manager.flight.list.label.tag = Etiqueta:
+airline-manager.flight.list.label.selfTransfer = Transferencia propia:
+airline-manager.flight.list.label.cost = Costo:
+airline-manager.flight.list.label.description = Descripción:
+airline-manager.flight.list.label.originCity = Ciudad origen:
+airline-manager.flight.list.label.destinationCity = Ciudad destino:
+airline-manager.flight.list.label.scheduledDeparture = Salida programada:
+airline-manager.flight.list.label.scheduledArrival = Llegada programada:
+airline-manager.flight.list.label.layovers = Escalas:
+airline-manager.flight.list.label.draftMode = Modo borrador:
+
+
+

@@ -1,36 +1,27 @@
 
-package acme.features.airlineManager.flights;
+package acme.features.any.flight;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.principals.Any;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
-import acme.realms.employee.AirlineManager;
 
 @GuiService
-public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineManager, Flight> {
-
+public class AnyFlightShowService extends AbstractGuiService<Any, Flight> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AirlineManagerFlightRepository repository;
+	private AnyFlightRepository repository;
 
 	// AbstractGuiService interface -------------------------------------------
 
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId, managerId;
-		Flight flight;
-
-		masterId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findFlightById(masterId);
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		status = flight != null && flight.getAirlineManager().getId() == managerId;
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -56,5 +47,4 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 
 		super.getResponse().addData(dataset);
 	}
-
 }
