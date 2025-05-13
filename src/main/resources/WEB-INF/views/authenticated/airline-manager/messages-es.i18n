@@ -1,0 +1,19 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.airline-manager.form.title = Datos de gerente de aerolínia
+authenticated.airlineManager.form.label.employeeCode = Código de empleado: 
+authenticated.airlineManager.form.label.yearsExp = Años de experiencia:
+authenticated.airlineManager.form.label.dateBirth = Cumpleaños:
+authenticated.airlineManager.form.label.urlImage = Enlace a foto:
+authenticated.airlineManager.form.label.airline = Aerolínea:
+
+authenticated.airlineManager.form.button.create = Registrar
+authenticated.airlineManager.form.button.update = Actualizar

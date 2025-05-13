@@ -55,44 +55,23 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 	public void unbind(final Leg leg) {
 		SelectChoices choicesStatus, choicesAircraft, choicesArrivalAirport, choicesDepartureAirport;
 		Collection<Aircraft> aircrafts;
-		Collection<Airport> airportsD, airportsA;
+		Collection<Airport> airportsA;
 		Dataset dataset;
 		Flight flight;
-		Collection<Airport> airportsArrival;
-		Collection<Airport> airportsDeparture;
-
-		flight = this.repository.findFlightById(leg.getFlight().getId());
+		flight = this.repository.findFlightByLegid(leg.getId());
 		aircrafts = this.repository.findAircraftsByAirlineId(flight.getAirlineManager().getAirline().getId());
-		airportsD = this.repository.findAllAirport();
 		airportsA = this.repository.findAllAirport();
-		airportsDeparture = this.repository.findDepartureAircraftsByFlightId(leg.getFlight().getId());
-		airportsArrival = this.repository.findArrivalAircraftsByFlightId(leg.getFlight().getId());
-
-		//Quitamos los airports de los que ya has salido y a los que ya has llegado de ambos choices
-
-		if (!airportsArrival.isEmpty())
-			airportsA.removeAll(airportsArrival);
-		if (!airportsDeparture.isEmpty())
-			airportsD.removeAll(airportsDeparture);
-
-		// Añadimos la opcion del airport que ya estaba
-
-		airportsA.add(leg.getArrivalAirport());
-		airportsD.add(leg.getDepartureAirport());
 
 		choicesStatus = SelectChoices.from(Status.class, leg.getStatus());
 		choicesAircraft = SelectChoices.from(aircrafts, "registrationNumber", leg.getAircraft());
-		choicesDepartureAirport = SelectChoices.from(airportsD, "name", leg.getDepartureAirport());
+		choicesDepartureAirport = SelectChoices.from(airportsA, "name", leg.getDepartureAirport());
 		choicesArrivalAirport = SelectChoices.from(airportsA, "name", leg.getArrivalAirport());
 
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
-		dataset.put("masterId", leg.getFlight().getId());
+		dataset.put("masterId", flight.getId());
 		dataset.put("status", choicesStatus);
-		dataset.put("aircraft", choicesAircraft.getSelected().getKey());
 		dataset.put("aircrafts", choicesAircraft);
-		dataset.put("departureAirport", choicesDepartureAirport.getSelected().getKey());
 		dataset.put("departureAirports", choicesDepartureAirport);
-		dataset.put("arrivalAirport", choicesArrivalAirport.getSelected().getKey());
 		dataset.put("arrivalAirports", choicesArrivalAirport);
 		super.getResponse().addData(dataset);
 	}

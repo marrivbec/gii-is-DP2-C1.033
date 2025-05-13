@@ -28,6 +28,8 @@ airline-manager.leg.form.title = Detalles de tramos
 airline-manager.leg.list.title = Lista de tramos
 
 
+airlineManager.leg.error.timePast.message = La hora de salida y la de llegada tienen que ser futuras
+airlineManager.leg.error.aircraftSolaped.message = El avión seleccionado ya tiene un tramo asociado a esta hora
 airlineManager.leg.error.diferenteFlihtNumber.message = Ya hay un tramo del vuelo que tiene ese numero de vuelo
 airlineManager.leg.error.aircraft-under-maintenance.message = No se puede utilizar una aeronave que esté en mantenimiento
 airlineManager.leg.error.sameAirport.message = El aeropuerto de salida tiene que ser diferente al de llegada

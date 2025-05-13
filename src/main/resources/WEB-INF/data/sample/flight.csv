@@ -1,42 +1,42 @@
 key,tag,self_transfer,cost,description,draft_mode,key:airline_manager
 # base
-flight-01,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
+flight-01,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
 # tag - standard variations
-flight-02,L,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-03,Lo,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-04,Lorem ipsum dolor sit amet consectetur adipiscing,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-05,Lorem ipsum dolor sit amet consectetur adipiscinge,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-06,โลเร็ม อิปซัม,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-07,при,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-08,洛伦·伊普森,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-09,<marquee>Hacked</marquee>,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-10,<script>alert(‘Hacked!’);</script>,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-11,' or 'A' = 'A,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
+flight-02,L,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-03,Lo,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-04,Lorem ipsum dolor sit amet consectetur adipiscing,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-05,Lorem ipsum dolor sit amet consectetur adipiscinge,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-06,โลเร็ม อิปซัม,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-07,при,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-08,洛伦·伊普森,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-09,<marquee>Hacked</marquee>,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-10,<script>alert(‘Hacked!’);</script>,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-11,' or 'A' = 'A,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
 # tag - no singular values
 # SelfTransfer - standard variations
-flight-12,Lorem ipsum dolor sit ame,true,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
+flight-12,Lorem ipsum dolor sit ame,true,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
 # selfTransfer - no singular values
 # cost - standard variations
-flight-13,Lorem ipsum dolor sit ame,false,EUR 0.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-14,Lorem ipsum dolor sit ame,false,EUR 0.01,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-15,Lorem ipsum dolor sit ame,false,EUR 999999.99,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-16,Lorem ipsum dolor sit ame,false,EUR 1000000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
-flight-17,Lorem ipsum dolor sit ame,false,USD 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
+flight-13,Lorem ipsum dolor sit ame,false,EUR 0.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-14,Lorem ipsum dolor sit ame,false,EUR 0.01,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-15,Lorem ipsum dolor sit ame,false,EUR 999999.99,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-16,Lorem ipsum dolor sit ame,false,EUR 1000000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-17,Lorem ipsum dolor sit ame,false,USD 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
 # cost - no singular values
 # description - standard variations
-flight-18,Lorem ipsum dolor sit ame,false,EUR 500000.00,"",false,manager1
-flight-19,Lorem ipsum dolor sit ame,false,EUR 500000.00,L,false,manager1
-flight-20,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,false,manager1
-flight-21,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,false,manager1
-flight-22,Lorem ipsum dolor sit ame,false,EUR 500000.00,โลเร็ม อิปซัม,false,manager1
-flight-28,Lorem ipsum dolor sit ame,false,EUR 500000.00,при,false,manager1
-flight-24,Lorem ipsum dolor sit ame,false,EUR 500000.00,洛伦·伊普森,false,manager1
+flight-18,Lorem ipsum dolor sit ame,false,EUR 500000.00,"",true,manager1
+flight-19,Lorem ipsum dolor sit ame,false,EUR 500000.00,L,true,manager1
+flight-20,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,true,manager1
+flight-21,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,true,manager1
+flight-22,Lorem ipsum dolor sit ame,false,EUR 500000.00,โลเร็ม อิปซัม,true,manager1
+flight-28,Lorem ipsum dolor sit ame,false,EUR 500000.00,при,true,manager1
+flight-24,Lorem ipsum dolor sit ame,false,EUR 500000.00,洛伦·伊普森,true,manager1
 flight-25,Lorem ipsum dolor sit ame,false,EUR 500000.00,<marquee>Hacked</marquee>,false,manager1
-flight-26,Lorem ipsum dolor sit ame,false,EUR 500000.00,<script>alert(‘Hacked!’);</script>,false,manager1
-flight-27,Lorem ipsum dolor sit ame,false,EUR 500000.00,' or 'A' = 'A,false,manager1
-# description - no singular values
+flight-26,Lorem ipsum dolor sit ame,false,EUR 500000.00,<script>alert(‘Hacked!’);</script>,true,manager1
+flight-27,Lorem ipsum dolor sit ame,false,EUR 500000.00,' or 'A' = 'A,true,manager1
+# description - no singular values,"","","","","",""
 # draftMode - standard variations
-flight-23,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,manager1
+flight-23,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager1
 # draftMode - no singular values
 # manager - standard variations
 flight-29,Lorem ipsum dolor sit ame,false,EUR 500000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,manager2

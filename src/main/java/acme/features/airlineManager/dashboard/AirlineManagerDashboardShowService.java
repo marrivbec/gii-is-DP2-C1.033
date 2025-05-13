@@ -11,7 +11,6 @@ import java.util.Map.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.datatypes.Statistics;
@@ -42,10 +41,8 @@ public class AirlineManagerDashboardShowService extends AbstractGuiService<Airli
 	@Override
 	public void load() {
 		AirlineManagerDashboard dashboard;
-		int ranking = 0;
 		int id;
 		int higherExperienceCount;
-		Date moment;
 		Date birthDate;
 		int yearsUntilRetirement = 0;
 		int onTimeLegs;
@@ -66,10 +63,8 @@ public class AirlineManagerDashboardShowService extends AbstractGuiService<Airli
 
 		id = manager.getId();
 		higherExperienceCount = this.repository.countManagersWithMoreExperience(manager.getYearsExp());
-		ranking = higherExperienceCount + 1;
 
 		birthDate = manager.getDateBirth();
-		moment = MomentHelper.getCurrentMoment();
 
 		Calendar currentCalendar = Calendar.getInstance();
 		Calendar birthCalendar = Calendar.getInstance();
