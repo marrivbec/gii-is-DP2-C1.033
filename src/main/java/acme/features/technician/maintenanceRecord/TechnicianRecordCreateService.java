@@ -26,12 +26,21 @@ public class TechnicianRecordCreateService extends AbstractGuiService<Technician
 
 	@Override
 	public void authorise() {
-		boolean status;
-		Technician tech;
+		String method = super.getRequest().getMethod();
+		boolean authorised = true;
 
-		tech = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-		status = super.getRequest().getPrincipal().hasRealm(tech);
-		super.getResponse().setAuthorised(status);
+		if (method.equals("POST")) {
+			int aircraftId = super.getRequest().getData("aircraft", int.class);
+			Aircraft aircraft = this.repository.findAircraftById(aircraftId);
+			Collection<Aircraft> available = this.repository.getAllAircraft();
+
+			if (aircraft == null && aircraftId != 0)
+				authorised = false;
+			else if (aircraft != null && !available.contains(aircraft))
+				authorised = false;
+		}
+
+		super.getResponse().setAuthorised(authorised);
 
 	}
 
@@ -53,7 +62,6 @@ public class TechnicianRecordCreateService extends AbstractGuiService<Technician
 
 	@Override
 	public void bind(final MaintenanceRecord record) {
-		//necesito el aircraft
 		int aircraftId = super.getRequest().getData("aircraft", int.class);
 
 		Aircraft aircraft = this.repository.findAircraftById(aircraftId);
@@ -66,8 +74,6 @@ public class TechnicianRecordCreateService extends AbstractGuiService<Technician
 
 	@Override
 	public void validate(final MaintenanceRecord record) {
-		//aqui seran todos los errores que tienen que saltar en la pantalla 
-		//para que no se cague encima...
 		if (record.getAircraft() == null)
 			super.state(false, "aircraft", "technician.maintanence-record.error.no-aircraft");
 	}

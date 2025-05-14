@@ -31,19 +31,29 @@ public class TechnicianRecordDeleteService extends AbstractGuiService<Technician
 
 	@Override
 	public void authorise() {
-
 		boolean status;
-		int recordId;
-		MaintenanceRecord record;
-		Technician tech;
+		int mrId;
+		MaintenanceRecord mr;
+		Technician technician;
 
-		recordId = super.getRequest().getData("id", int.class);
-		record = this.repository.findRecordById(recordId);
-		tech = record.getTechnician() != null ? record.getTechnician() : null;
-		status = record != null && record.isDraftMode() && super.getRequest().getPrincipal().hasRealm(tech);
+		mrId = super.getRequest().getData("id", int.class);
+		mr = this.repository.findRecordById(mrId);
+
+		technician = mr == null ? null : mr.getTechnician();
+		status = mr != null && mr.isDraftMode() && this.getRequest().getPrincipal().hasRealm(technician);
+
+		if (super.getRequest().hasData("aircraft")) {
+			int aircraftId = super.getRequest().getData("aircraft", int.class);
+			Aircraft aircraft = this.repository.findAircraftById(aircraftId);
+			Collection<Aircraft> available = this.repository.getAllAircraft();
+
+			if (aircraft == null && aircraftId != 0)
+				status = false;
+			else if (aircraft != null && !available.contains(aircraft))
+				status = false;
+		}
 
 		super.getResponse().setAuthorised(status);
-
 	}
 
 	@Override
