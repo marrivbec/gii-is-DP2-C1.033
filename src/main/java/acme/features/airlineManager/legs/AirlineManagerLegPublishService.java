@@ -31,16 +31,37 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status, status2;
 		int legId;
+		Aircraft aircraft;
+		Airport airportArrival;
+		Airport airportDeparture;
 		Flight flight;
+		String method;
+		int aircraftId, airportDepartureId, airportArrivalId;
+		method = super.getRequest().getMethod();
+		Collection<Aircraft> myAircrafts;
 
 		legId = super.getRequest().getData("id", int.class);
 		Leg leg = this.repository.findLegById(legId);
 		flight = this.repository.findFlightByLegid(legId);
 		status = flight != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flight.getAirlineManager());
 
-		super.getResponse().setAuthorised(status);
+		if (method.equals("GET"))
+			status2 = status;
+		else {
+			airportDepartureId = super.getRequest().getData("departureAirport", int.class);
+			airportArrivalId = super.getRequest().getData("arrivalAirport", int.class);
+			aircraftId = super.getRequest().getData("aircraft", int.class);
+
+			myAircrafts = this.repository.findAircraftsByAirlineId(flight.getAirlineManager().getAirline().getId());
+			airportArrival = this.repository.findAirportById(airportArrivalId);
+			airportDeparture = this.repository.findAirportById(airportDepartureId);
+			aircraft = this.repository.findAircraftById(aircraftId);
+			status2 = (aircraftId == 0 || aircraft != null && myAircrafts.contains(aircraft)) && (airportDepartureId == 0 || airportDeparture != null) && (airportArrivalId == 0 || airportArrival != null);
+		}
+
+		super.getResponse().setAuthorised(status && status2);
 	}
 
 	@Override
