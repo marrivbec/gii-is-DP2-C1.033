@@ -42,10 +42,24 @@ public class AuthenticatedAssistanceAgentCreateService extends AbstractGuiServic
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean status2;
+		String method;
+		Airline airline;
+		int airlineId;
 
 		status = !super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgent.class);
 
-		super.getResponse().setAuthorised(status);
+		method = super.getRequest().getMethod();
+
+		if (method.equals("GET"))
+			status2 = status;
+		else {
+			airlineId = super.getRequest().getData("airline", int.class);
+			airline = this.repository.findAirlineById(airlineId);
+			status2 = (airlineId == 0 || airline != null) && status;
+		}
+
+		super.getResponse().setAuthorised(status2);
 	}
 
 	@Override
