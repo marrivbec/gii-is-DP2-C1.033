@@ -57,9 +57,8 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 
 	@Override
 	public void load() {
-		int flightAssignmentId = super.getRequest().getData("id", int.class);
-
-		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(id);
 
 		super.getBuffer().addData(flightAssignment);
 	}

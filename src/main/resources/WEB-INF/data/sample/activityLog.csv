@@ -1,18 +1,18 @@
 key,registrationMoment,typeOfIncident,description,severityLevel,draftMode,key:flightAssignment
 #base - entity
-activity-log-01,2025/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-15
+activity-log-01,2024/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-15
 #registrationMoment - standard variations,"",""
-activity-log-02,2025/04/22 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-19
-activity-log-03,2025/05/17 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-15
-activity-log-04,2025/04/18 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-18
-activity-log-05,2025/06/19 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-23
-activity-log-06,2025/04/20 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-22
+activity-log-02,2024/04/22 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-19
+activity-log-03,2024/05/17 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-15
+activity-log-04,2024/04/18 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-18
+activity-log-05,2024/06/19 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-23
+activity-log-06,2024/04/20 12:01,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,2,true,flight-assignment-22
 #typeOfIncident/description - standard variations
-activity-log-07,2025/07/02 00:00,لوريم إيبسوم,<script>alert(‘Hacked!’);</script>,2,true,flight-assignment-21
-activity-log-08,2025/07/02 00:00,洛伦·伊普森,<marquee>Hacked</marquee>,2,true,flight-assignment-20
-activity-log-09,2025/07/02 00:00,<marquee>Hacked</marquee>,โลเร็ม อิปซัม,2,true,flight-assignment-17
+activity-log-07,2024/07/02 00:00,لوريم إيبسوم,<script>alert(‘Hacked!’);</script>,2,true,flight-assignment-21
+activity-log-08,2024/07/02 00:00,洛伦·伊普森,<marquee>Hacked</marquee>,2,true,flight-assignment-20
+activity-log-09,2024/07/02 00:00,<marquee>Hacked</marquee>,โลเร็ม อิปซัม,2,true,flight-assignment-17
 #severityLevel - standard variations
-activity-log-10,2025/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,9,true,flight-assignment-15
-activity-log-11,2025/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,8,true,flight-assignment-19
-activity-log-12,2025/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,5,true,flight-assignment-16
-activity-log-13,2025/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,5,true,flight-assignment-18
+activity-log-10,2024/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,9,true,flight-assignment-15
+activity-log-11,2024/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,8,true,flight-assignment-19
+activity-log-12,2024/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,5,true,flight-assignment-16
+activity-log-13,2024/07/02 00:00,Lorem ipsum dolor sit amet,<marquee>Hacked</marquee>,5,true,flight-assignment-18
