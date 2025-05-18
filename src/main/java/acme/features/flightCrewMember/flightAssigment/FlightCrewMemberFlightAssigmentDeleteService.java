@@ -43,7 +43,7 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 		else {
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
-			status = legId == 0 || leg != null;
+			status = legId == 0 || leg != null && !leg.isDraftMode();
 		}
 
 		super.getResponse().setAuthorised(status);
