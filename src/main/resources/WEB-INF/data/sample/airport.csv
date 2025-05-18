@@ -1,18 +1,18 @@
 key,name,IATACode,operationalScope,city,country,website,emailAddress,contactPhoneNumber
 # base
-airport-00,"Santa Cruz Airport","SCA",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-00,"Santa Cruz Airport","SCA",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
 # name - variations
-airport-01,"Sevilla","SCB",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-02,"S","SCC",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-04,"Sa","SCD",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-05,"Santa Cruz Airport, Tenerife","SCE",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-06,"Lorem Ipsum Terminal","SCF",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-07,"Aeropuerto Internacional de Santa Cruz","SCG",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-08,"<marquee>Hacked</marquee>","SCH",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-09,"<script>alert(‘Hacked!’);</script>","SCI",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-10,"洛伦·伊普森","SCJ",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-11,"لوريم إيبسوم","SCK",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
-airport-12,"โลเร็ม อิปซัม","SCL",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-01,"Sevilla","SCB",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-02,"S","SCC",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-04,"Sa","SCD",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-05,"Santa Cruz Airport, Valladolid","SCE",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-06,"Lorem Ipsum Terminal","SCF",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-07,"Aeropuerto Internacional de Santa Cruz","SCG",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-08,"<marquee>Hacked</marquee>","SCH",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-09,"<script>alert(‘Hacked!’);</script>","SCI",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-10,"洛伦·伊普森","SCJ",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-11,"لوريم إيبسوم","SCK",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
+airport-12,"โลเร็ม อิปซัม","SCL",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,santacruzair@gamil.com,+34999999999
 
 # iataCode - variations
 
@@ -33,34 +33,34 @@ airport-26,"Example Airport","EXI",DOMESTIC,"لوريم إيبسوم","España",
 airport-27,"Example Airport","EXJ",DOMESTIC,"<marquee>Hacked</marquee>","España",https://example.acme.com,example@acme.com,+34886666666
 airport-28,"Example Airport","EXK",DOMESTIC,"<script>alert('Hacked!')</script>","España",https://example.acme.com,example@acme.com,+34885555555
 # country - variations
-airport-29,"Example Airport","EXN",DOMESTIC,"Tenerife","Prueba",https://example.acme.com,example29@acme.com,+34990000029
-airport-30,"Example Airport","EXO",DOMESTIC,"Tenerife","E",https://example.acme.com,example30@acme.com,+34990000030
-airport-31,"Example Airport","EXP",DOMESTIC,"Tenerife","Es",https://example.acme.com,example31@acme.com,+34990000031
-airport-32,"Example Airport","EXQ",DOMESTIC,"Tenerife","España",https://example.acme.com,example32@acme.com,+34990000032
-airport-33,"Example Airport","EXR",DOMESTIC,"Tenerife","Estados Unidos de América",https://example.acme.com,example33@acme.com,+34990000033
-airport-34,"Example Airport","EXS",DOMESTIC,"Tenerife","Reino Unido",https://example.acme.com,example34@acme.com,+34990000034
-airport-35,"Example Airport","EXT",DOMESTIC,"Tenerife","Alemania",https://example.acme.com,example35@acme.com,+34990000035
-airport-36,"Example Airport","EXU",DOMESTIC,"Tenerife","Suiza",https://example.acme.com,example36@acme.com,+34990000036
-airport-37,"Example Airport","EXV",DOMESTIC,"Tenerife","Francia",https://example.acme.com,example37@acme.com,+34990000037
-airport-38,"Example Airport","EXW",DOMESTIC,"Tenerife","Canadá",https://example.acme.com,example38@acme.com,+34990000038
+airport-29,"Example Airport","EXN",DOMESTIC,"Valladolid","Prueba",https://example.acme.com,example29@acme.com,+34990000029
+airport-30,"Example Airport","EXO",DOMESTIC,"Valladolid","E",https://example.acme.com,example30@acme.com,+34990000030
+airport-31,"Example Airport","EXP",DOMESTIC,"Valladolid","Es",https://example.acme.com,example31@acme.com,+34990000031
+airport-32,"Example Airport","EXQ",DOMESTIC,"Valladolid","España",https://example.acme.com,example32@acme.com,+34990000032
+airport-33,"Example Airport","EXR",DOMESTIC,"Valladolid","Estados Unidos de América",https://example.acme.com,example33@acme.com,+34990000033
+airport-34,"Example Airport","EXS",DOMESTIC,"Valladolid","Reino Unido",https://example.acme.com,example34@acme.com,+34990000034
+airport-35,"Example Airport","EXT",DOMESTIC,"Valladolid","Alemania",https://example.acme.com,example35@acme.com,+34990000035
+airport-36,"Example Airport","EXU",DOMESTIC,"Valladolid","Suiza",https://example.acme.com,example36@acme.com,+34990000036
+airport-37,"Example Airport","EXV",DOMESTIC,"Valladolid","Francia",https://example.acme.com,example37@acme.com,+34990000037
+airport-38,"Example Airport","EXW",DOMESTIC,"Valladolid","Canadá",https://example.acme.com,example38@acme.com,+34990000038
 
 # website - variations
-airport-40,"Example Airport","EXY",DOMESTIC,"Tenerife","España",https://santacruzairport.acme.com,example40@acme.com,+34990000040
-airport-41,"Example Airport","EXZ",DOMESTIC,"Tenerife","España",http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZ,example41@acme.com,+34990000041
+airport-40,"Example Airport","EXY",DOMESTIC,"Valladolid","España",https://santacruzairport.acme.com,example40@acme.com,+34990000040
+airport-41,"Example Airport","EXZ",DOMESTIC,"Valladolid","España",http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZ,example41@acme.com,+34990000041
 # phoneNumber - variations
 
-airport-43,"Example Airport","DEF",DOMESTIC,"Tenerife","España",https://example.acme.com,example43@acme.com,634428478836
-airport-44,"Example Airport","GHI",DOMESTIC,"Tenerife","España",https://example.acme.com,example44@acme.com,+349448114
-airport-45,"Example Airport","JKL",DOMESTIC,"Tenerife","España",https://example.acme.com,example45@acme.com,692555867
-airport-46,"Example Airport","MNO",DOMESTIC,"Tenerife","España",https://example.acme.com,example46@acme.com,+806493
-airport-47,"Example Airport","PQR",DOMESTIC,"Tenerife","España",https://example.acme.com,example47@acme.com,91474220
-airport-48,"Example Airport","STU",DOMESTIC,"Tenerife","España",https://example.acme.com,example48@acme.com,+91511646340
-airport-49,"Example Airport","VWX",DOMESTIC,"Tenerife","España",https://example.acme.com,example49@acme.com,+72926097
-airport-50,"Example Airport","YZA",DOMESTIC,"Tenerife","España",https://example.acme.com,example50@acme.com,+972750999284
-airport-51,"Example Airport","BCD",DOMESTIC,"Tenerife","España",https://example.acme.com,example51@acme.com,6279243516
+airport-43,"Example Airport","DEF",DOMESTIC,"Valladolid","España",https://example.acme.com,example43@acme.com,634428478836
+airport-44,"Example Airport","GHI",DOMESTIC,"Valladolid","España",https://example.acme.com,example44@acme.com,+349448114
+airport-45,"Example Airport","JKL",DOMESTIC,"Valladolid","España",https://example.acme.com,example45@acme.com,692555867
+airport-46,"Example Airport","MNO",DOMESTIC,"Valladolid","España",https://example.acme.com,example46@acme.com,+806493
+airport-47,"Example Airport","PQR",DOMESTIC,"Valladolid","España",https://example.acme.com,example47@acme.com,91474220
+airport-48,"Example Airport","STU",DOMESTIC,"Valladolid","España",https://example.acme.com,example48@acme.com,+91511646340
+airport-49,"Example Airport","VWX",DOMESTIC,"Valladolid","España",https://example.acme.com,example49@acme.com,+72926097
+airport-50,"Example Airport","YZA",DOMESTIC,"Valladolid","España",https://example.acme.com,example50@acme.com,+972750999284
+airport-51,"Example Airport","BCD",DOMESTIC,"Valladolid","España",https://example.acme.com,example51@acme.com,6279243516
 # email - variations
-airport-52,"Example Airport","EFG",DOMESTIC,"Tenerife","España",https://example.acme.com,acme@lorem-ipsum.org,+34990000052
-airport-53,"Example Airport","HIJ",DOMESTIC,"Tenerife","España",https://example.acme.com,a@b.e,+34990000053
-airport-54,"Example Airport","KLM",DOMESTIC,"Tenerife","España",https://example.acme.com,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,+34990000054
+airport-52,"Example Airport","EFG",DOMESTIC,"Valladolid","España",https://example.acme.com,acme@lorem-ipsum.org,+34990000052
+airport-53,"Example Airport","HIJ",DOMESTIC,"Valladolid","España",https://example.acme.com,a@b.e,+34990000053
+airport-54,"Example Airport","KLM",DOMESTIC,"Valladolid","España",https://example.acme.com,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,+34990000054
 
-airport-56,"Example Airport","NOO",DOMESTIC,"Tenerife","España",https://example.acme.com,,+34990000055
+airport-56,"Example Airport","NOO",DOMESTIC,"Valladolid","España",https://example.acme.com,,+34990000055
