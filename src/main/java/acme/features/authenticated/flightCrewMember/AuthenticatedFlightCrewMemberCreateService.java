@@ -12,6 +12,7 @@ import acme.client.components.views.SelectChoices;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.airline.Airline;
 import acme.features.authenticated.customer.GenerateCode;
 import acme.realms.employee.AvailabilityStatus;
 import acme.realms.employee.FlightCrewMember;
@@ -29,11 +30,30 @@ public class AuthenticatedFlightCrewMemberCreateService extends AbstractGuiServi
 
 	@Override
 	public void authorise() {
+		//		boolean status;
+		//
+		//		status = !super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
+
 		boolean status;
+		boolean status2;
+		String method;
+		Airline airline;
+		int airlineId;
 
 		status = !super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
 
-		super.getResponse().setAuthorised(status);
+		method = super.getRequest().getMethod();
+
+		if (method.equals("GET"))
+			status2 = status;
+		else {
+			airlineId = super.getRequest().getData("airline", int.class);
+			airline = this.repository.findAirlineById(airlineId);
+			status2 = (airlineId == 0 || airline != null) && status;
+		}
+
+		super.getResponse().setAuthorised(status2);
+
 	}
 
 	@Override

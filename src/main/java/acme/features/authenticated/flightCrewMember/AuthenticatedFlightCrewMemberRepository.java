@@ -26,4 +26,7 @@ public interface AuthenticatedFlightCrewMemberRepository extends AbstractReposit
 	@Query("SELECT a FROM Airline a")
 	Collection<Airline> findAllAirlines();
 
+	@Query("select a from Airline a where a.id = :id")
+	Airline findAirlineById(int id);
+
 }

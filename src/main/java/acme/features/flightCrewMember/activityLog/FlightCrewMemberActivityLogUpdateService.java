@@ -7,6 +7,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLog.ActivityLog;
+import acme.entities.flightAssignment.FlightAssignment;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -55,7 +56,12 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 	@Override
 	public void validate(final ActivityLog activityLog) {
-		;
+
+		FlightAssignment f = activityLog.getFlightAssignment();
+
+		boolean canbe = f != null && activityLog.getRegistrationMoment().after(f.getLeg().getScheduledArrival());
+		super.state(canbe, "registrationMoment", "acme.validation.activity.registrationMoment");
+
 	}
 
 	@Override
