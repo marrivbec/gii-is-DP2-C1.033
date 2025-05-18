@@ -61,3 +61,5 @@ acme.validation.flightAssignment.duty = Cada escala solo puede tener un piloto y
 
 acme.validation.trackingLog.publish.message.completed = Ya hay más de dos registros de seguimiento con un porcentaje del 100%, no puede crear más
 
+acme.validation.activity.registrationMoment = La fecha de registro no puede ser menor que la llegada programada
+
