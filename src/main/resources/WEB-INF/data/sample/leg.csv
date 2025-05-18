@@ -8,8 +8,8 @@ leg-04,ABX7652,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,
 leg-05,ABX1123,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-05,true
 # flightNumber - no singular values
 # scheduled_departure - standard variations
-leg-06,ABX4433,2025/01/08 12:00,2025/01/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-06,true
-leg-07,ABX5533,2025/02/08 12:00,2025/02/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-07,true
+leg-06,ABX4433,2025/04/22 12:00,2025/01/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-06,true
+leg-07,ABX5533,2025/04/22 12:00,2025/02/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-07,true
 leg-08,ABX5633,2200/12/31 23:58,2200/12/31 23:57,ON_TIME,aircraft-01,airport-00,airport-01,flight-08,true
 leg-09,ABX4333,2200/12/31 23:59,2200/12/31 23:58,ON_TIME,aircraft-01,airport-00,airport-01,flight-09,true
 # singular values scheduled_departure

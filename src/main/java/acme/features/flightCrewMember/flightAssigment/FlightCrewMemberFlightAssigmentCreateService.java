@@ -40,7 +40,8 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 		else {
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
-			status = legId == 0 || leg != null;
+			FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+			status = legId == 0 || leg != null || leg.getAircraft().getAirline().equals(flightCrewMember.getAirline());
 		}
 
 		super.getResponse().setAuthorised(status);

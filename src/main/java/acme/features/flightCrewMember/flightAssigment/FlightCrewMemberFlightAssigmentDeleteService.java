@@ -43,25 +43,21 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 		else {
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
-			status = legId == 0 || leg != null && !leg.isDraftMode();
+			status = legId == 0 || leg != null;
 		}
 
-		super.getResponse().setAuthorised(status);
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(id);
+
+		super.getResponse().setAuthorised(status && flightAssignment.isDraftMode());
 
 	}
 
 	@Override
 	public void load() {
 
-		FlightAssignment flightAssignment = new FlightAssignment();
-
-		flightAssignment.setMoment(MomentHelper.getCurrentMoment());
-
-		flightAssignment.setDraftMode(true);
-
-		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
-
-		flightAssignment.setFlightCrewMember(flightCrewMember);
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(id);
 
 		super.getBuffer().addData(flightAssignment);
 	}
@@ -75,7 +71,10 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
 
-		;
+		if (flightAssignment.getLeg() != null) {
+			boolean isPastLeg = flightAssignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+			super.state(!isPastLeg, "leg", "acme.validation.flightAssignment.leg.moment");
+		}
 
 	}
 
