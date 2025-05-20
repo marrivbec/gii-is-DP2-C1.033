@@ -71,10 +71,7 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
 
-		if (flightAssignment.getLeg() != null) {
-			boolean isPastLeg = flightAssignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
-			super.state(!isPastLeg, "leg", "acme.validation.flightAssignment.leg.moment");
-		}
+		;
 
 	}
 

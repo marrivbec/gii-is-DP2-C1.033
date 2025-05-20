@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightAssignment.DutyType;
@@ -80,6 +81,11 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 			super.state(isAvailable, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.available");
 			boolean isAssigned = this.repository.hasFlightCrewMemberLegAssociated(flightAssignment.getFlightCrewMember().getId(), flightAssignment.getLeg().getScheduledArrival(), flightAssignment.getLeg().getScheduledDeparture(), flightAssignment.getId());
 			super.state(!isAssigned, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.multipleLegs");
+		}
+
+		if (flightAssignment.getLeg() != null) {
+			boolean isPastLeg = flightAssignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+			super.state(!isPastLeg, "leg", "acme.validation.flightAssignment.leg.moment");
 		}
 
 	}
