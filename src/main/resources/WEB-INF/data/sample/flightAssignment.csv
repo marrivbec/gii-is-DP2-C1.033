@@ -23,10 +23,10 @@ flight-assignment-14,PILOT,2024/07/02 00:00,CONFIRMED,' or 'A' = 'A,flight-crew-
 flight-assignment-15,PILOT,2024/07/02 00:00,CONFIRMED,L,flight-crew-member-01,true,leg-24
 flight-assignment-16,COPILOT,2024/07/02 00:00,PENDING,Lo,flight-crew-member-02,true,leg-25
 flight-assignment-17,LEAD_ATTENDANT,2024/07/02 00:00,CANCELLED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",flight-crew-member-03,true,leg-26
-flight-assignment-18,CABIN_ATTENDANT,2024/07/02 00:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",flight-crew-member-01,true,leg-27
-flight-assignment-19,PILOT,2024/07/02 00:00,PENDING,لوريم إيبسوم,flight-crew-member-01,true,leg-28
+flight-assignment-18,CABIN_ATTENDANT,2024/07/02 00:00,CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",flight-crew-member-01,false,leg-27
+flight-assignment-19,PILOT,2024/07/02 00:00,PENDING,لوريم إيبسوم,flight-crew-member-01,false,leg-28
 #airlane2FlightAssignments
-flight-assignment-20,COPILOT,2024/07/02 00:00,CANCELLED,<script>alert(‘Hacked!’);</script>,flight-crew-member-04,true,leg-29
+flight-assignment-20,COPILOT,2024/07/02 00:00,CANCELLED,<script>alert(‘Hacked!’);</script>,flight-crew-member-04,false,leg-29
 flight-assignment-21,LEAD_ATTENDANT,2024/07/02 00:00,CONFIRMED,洛伦·伊普森,flight-crew-member-04,true,leg-30
-flight-assignment-22,CABIN_ATTENDANT,2024/07/02 00:00,PENDING,' or 'A' = 'A,flight-crew-member-04,true,leg-31
+flight-assignment-22,CABIN_ATTENDANT,2024/07/02 00:00,PENDING,' or 'A' = 'A,flight-crew-member-04,false,leg-31
 flight-assignment-23,PILOT,2024/07/02 00:00,CANCELLED,โลเร็ม อิปซัม,flight-crew-member-04,true,leg-32

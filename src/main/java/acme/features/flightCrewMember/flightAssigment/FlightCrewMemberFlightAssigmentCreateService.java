@@ -12,6 +12,7 @@ import acme.entities.flightAssignment.DutyType;
 import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.flightAssignment.Status;
 import acme.entities.leg.Leg;
+import acme.realms.employee.AvailabilityStatus;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -72,9 +73,16 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
 
-		if (flightAssignment.getLeg() != null) {
-			boolean isPastLeg = flightAssignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
-			super.state(!isPastLeg, "leg", "acme.validation.flightAssignment.leg.moment");
+		if (flightAssignment.getDuty() != null && flightAssignment.getLeg() != null) {
+			boolean isDutyAssigned = this.repository.hasDutyAssigned(flightAssignment.getLeg().getId(), flightAssignment.getDuty(), flightAssignment.getId());
+			super.state(!isDutyAssigned, "duty", "acme.validation.flightAssignment.duty");
+		}
+
+		if (flightAssignment.getFlightCrewMember() != null && flightAssignment.getLeg() != null) {
+			boolean isAvailable = flightAssignment.getFlightCrewMember().getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
+			super.state(isAvailable, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.available");
+			boolean isAssigned = this.repository.hasFlightCrewMemberLegAssociated(flightAssignment.getFlightCrewMember().getId(), flightAssignment.getLeg().getScheduledArrival(), flightAssignment.getLeg().getScheduledDeparture(), flightAssignment.getId());
+			super.state(!isAssigned, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.multipleLegs");
 		}
 
 	}
