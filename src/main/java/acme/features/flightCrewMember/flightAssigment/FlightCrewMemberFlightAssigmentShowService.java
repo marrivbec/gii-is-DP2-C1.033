@@ -65,10 +65,6 @@ public class FlightCrewMemberFlightAssigmentShowService extends AbstractGuiServi
 		SelectChoices statusChoices = SelectChoices.from(Status.class, flightAssignment.getCurrentStatus());
 		dataset.put("statusChoices", statusChoices);
 
-		//		this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId()).stream().forEach(x -> System.out.println(x.getFlightNumber()));
-		//
-		//		System.out.println(this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId()).contains(flightAssignment.getLeg()));
-
 		SelectChoices legChoices = SelectChoices.from(this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId()), "flightNumber", flightAssignment.getLeg());
 		dataset.put("legChoices", legChoices);
 
