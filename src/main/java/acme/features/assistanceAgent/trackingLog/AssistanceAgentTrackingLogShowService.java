@@ -68,7 +68,11 @@ public class AssistanceAgentTrackingLogShowService extends AbstractGuiService<As
 		choices = SelectChoices.from(Indicator.class, trackingLog.getIndicator());
 
 		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution", "draftMode");
-		dataset.put("lastUpdateMoment", MomentHelper.getCurrentMoment());
+		if (!trackingLog.isDraftMode())
+			dataset.put("lastUpdateMoment", trackingLog.getLastUpdateMoment());
+		else
+			dataset.put("lastUpdateMoment", MomentHelper.getCurrentMoment());
+
 		dataset.put("masterId", trackingLog.getClaim().getId());
 		dataset.put("indicators", choices);
 
