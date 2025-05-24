@@ -27,15 +27,18 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 	@Override
 	public void authorise() {
 		boolean validFlight = true;
+		boolean validId = true;
 		if (super.getRequest().getMethod().equals("POST")) {
 			int flightId = super.getRequest().getData("flight", int.class);
 			if (flightId != 0) {
 				Flight flight = this.repository.findFlightById(flightId);
 				validFlight = flight != null && !flight.isDraftMode();
 			}
+			int id = super.getRequest().getData("id", int.class, 0);
+			validId = id == 0;
 
 		}
-		super.getResponse().setAuthorised(validFlight);
+		super.getResponse().setAuthorised(validFlight && validId);
 	}
 
 	@Override
@@ -78,7 +81,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod);
 		if (!codigo.isEmpty())
 			super.state(false, "locatorCode", "acme.validation.booking.repeat-code.message");
-		if (booking.getFlight() != null && !booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
+		if (booking.getFlight() != null && (booking.getPurchaseMoment() == null || booking.getFlight() == null || booking.getFlight().getScheduledDeparture() == null || !booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment())))
 			super.state(false, "purchaseMoment", "acme.validation.booking.purchaseMoment.message");
 
 	}
