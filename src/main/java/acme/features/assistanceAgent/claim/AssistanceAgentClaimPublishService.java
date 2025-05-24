@@ -58,7 +58,7 @@ public class AssistanceAgentClaimPublishService extends AbstractGuiService<Assis
 			status2 = status;
 		else {
 			legId = super.getRequest().getData("leg", int.class);
-			leg = this.repository.findLegById(legId);
+			leg = this.repository.findLegById(assistanceAgent.getAirline(), legId);
 			status2 = (legId == 0 || leg != null && !leg.isDraftMode()) && status;
 		}
 

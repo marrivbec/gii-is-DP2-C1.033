@@ -76,7 +76,7 @@ public class AssistanceAgentTrackingLogUpdateService extends AbstractGuiService<
 
 		if (!previousLogs.isEmpty()) {
 			TrackingLog lastLog = previousLogs.get(0);
-			if (lastLog.getResolutionPercentage() != null && trackingLog.getResolutionPercentage() != null)
+			if (lastLog.getResolutionPercentage() != null && trackingLog.getResolutionPercentage() != null && trackingLog.getId() != lastLog.getId())
 				if (lastLog.getResolutionPercentage() == 100.00 && trackingLog.getResolutionPercentage() == 100.00)
 					// solo puede repetirse el 100% si está publicada
 					if (lastLog.isDraftMode())
