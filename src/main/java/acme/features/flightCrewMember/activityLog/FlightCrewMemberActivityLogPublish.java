@@ -34,8 +34,11 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
 		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode();
 
-		super.getResponse().setAuthorised(status);
+		boolean status2;
 
+		status2 = activityLog != null && !activityLog.getFlightAssignment().isDraftMode();
+
+		super.getResponse().setAuthorised(status && status2);
 	}
 
 	@Override

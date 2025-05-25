@@ -41,6 +41,8 @@ public class FlightCrewMemberFlightAssigmentUpdateService extends AbstractGuiSer
 		Leg leg;
 		int legId;
 
+		Date moment = MomentHelper.getCurrentMoment();
+
 		id = super.getRequest().getData("id", int.class);
 		flightAssignment = this.repository.findFlightAssignmentById(id);
 		FlightCrewMember fcm = flightAssignment == null ? null : flightAssignment.getFlightCrewMember();
@@ -54,7 +56,10 @@ public class FlightCrewMemberFlightAssigmentUpdateService extends AbstractGuiSer
 		else {
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
-			status2 = (legId == 0 || leg != null && leg.getAircraft().getAirline().equals(flightCrewMember.getAirline())) && status;
+
+			Collection<Leg> l = this.repository.findAllLegsFromAirline(flightCrewMember.getAirline().getId(), moment);
+
+			status2 = legId == 0 || leg != null && leg.getAircraft().getAirline().equals(flightCrewMember.getAirline()) && status && (l.contains(leg) || flightAssignment.getLeg().equals(leg));
 		}
 
 		super.getResponse().setAuthorised(status && status2);
