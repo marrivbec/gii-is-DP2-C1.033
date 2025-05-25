@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -108,7 +109,7 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 				}
 		Integer numberOfLegsDeployingAircraft = this.repository.findNumberOfLegsSolapedAircraft(leg.getScheduledDeparture(), leg.getScheduledArrival(), Status.CANCELLED, leg.getAircraft().getId());
 		boolean aircraftNotUsed = leg.getStatus() == Status.CANCELLED || numberOfLegsDeployingAircraft == 0;
-		Date horaActual = new Date();
+		Date horaActual = MomentHelper.getCurrentMoment();
 		boolean timePast = leg.getScheduledDeparture().after(horaActual) && leg.getScheduledArrival().after(horaActual);
 		super.state(diferenteAirport, "*", "airlineManager.leg.error.sameAirport.message");
 		super.state(estado, "*", "airlineManager.leg.error.timesOverlap.message");
