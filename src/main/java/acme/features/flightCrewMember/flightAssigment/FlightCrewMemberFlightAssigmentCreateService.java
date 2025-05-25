@@ -1,6 +1,8 @@
 
 package acme.features.flightCrewMember.flightAssigment;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -42,7 +44,9 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
 			FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
-			status = legId == 0 || leg != null || leg.getAircraft().getAirline().equals(flightCrewMember.getAirline());
+			int id = super.getRequest().getData("id", int.class, 0);
+			status = (legId == 0 || leg != null && leg.getAircraft().getAirline().equals(flightCrewMember.getAirline())) && id == 0;
+
 		}
 
 		super.getResponse().setAuthorised(status);
@@ -96,6 +100,8 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
 
+		Date moment = MomentHelper.getCurrentMoment();
+
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "draftMode", "remarks", "flightCrewMember", "leg");
 
 		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
@@ -109,7 +115,7 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 		dataset.put("statusChoices", statusChoices);
 		dataset.put("status", statusChoices.getSelected().getKey());
 
-		SelectChoices legChoices = SelectChoices.from(this.repository.findAllLegsFromAirline(flightCrewMember.getAirline().getId()), "flightNumber", flightAssignment.getLeg());
+		SelectChoices legChoices = SelectChoices.from(this.repository.findAllLegsFromAirline(flightCrewMember.getAirline().getId(), moment), "flightNumber", flightAssignment.getLeg());
 		dataset.put("legChoices", legChoices);
 		dataset.put("leg", legChoices.getSelected().getKey());
 

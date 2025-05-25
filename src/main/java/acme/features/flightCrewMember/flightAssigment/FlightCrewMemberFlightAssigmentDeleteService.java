@@ -2,6 +2,7 @@
 package acme.features.flightCrewMember.flightAssigment;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -32,25 +33,31 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 	public void authorise() {
 
 		boolean status;
+		boolean status2;
+		FlightAssignment flightAssignment;
+		int id;
+		FlightCrewMember flightCrewMember;
 		String method;
 		Leg leg;
 		int legId;
 
+		id = super.getRequest().getData("id", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(id);
+		FlightCrewMember fcm = flightAssignment == null ? null : flightAssignment.getFlightCrewMember();
+		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		status = flightCrewMember.equals(fcm) && flightAssignment != null && flightAssignment.isDraftMode();
+
 		method = super.getRequest().getMethod();
 
 		if (method.equals("GET"))
-			status = true;
+			status2 = true;
 		else {
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
-			status = legId == 0 || leg != null;
+			status2 = (legId == 0 || leg != null && leg.getAircraft().getAirline().equals(flightCrewMember.getAirline())) && status;
 		}
 
-		int id = super.getRequest().getData("id", int.class);
-		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(id);
-
-		super.getResponse().setAuthorised(status && flightAssignment.isDraftMode());
-
+		super.getResponse().setAuthorised(status && status2);
 	}
 
 	@Override
@@ -87,6 +94,8 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
 
+		Date moment = MomentHelper.getCurrentMoment();
+
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "draftMode", "remarks", "flightCrewMember", "leg");
 
 		boolean isPastLeg = MomentHelper.getCurrentMoment().after(flightAssignment.getLeg().getScheduledArrival());
@@ -103,7 +112,7 @@ public class FlightCrewMemberFlightAssigmentDeleteService extends AbstractGuiSer
 		dataset.put("statusChoices", statusChoices);
 		dataset.put("status", statusChoices.getSelected().getKey());
 
-		SelectChoices legChoices = SelectChoices.from(this.repository.findAllLegsFromAirline(flightCrewMember.getAirline().getId()), "flightNumber", flightAssignment.getLeg());
+		SelectChoices legChoices = SelectChoices.from(this.repository.findAllLegsFromAirline(flightCrewMember.getAirline().getId(), moment), "flightNumber", flightAssignment.getLeg());
 		dataset.put("legChoices", legChoices);
 		dataset.put("leg", legChoices.getSelected().getKey());
 

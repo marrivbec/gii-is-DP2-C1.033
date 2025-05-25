@@ -24,16 +24,18 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 	@Override
 	public void authorise() {
 		boolean status;
-		int activityLogId;
 		ActivityLog activityLog;
+		int id;
 		FlightCrewMember flightCrewMember;
 
-		activityLogId = super.getRequest().getData("id", int.class);
-		activityLog = this.repository.findActivityLogById(activityLogId);
-		flightCrewMember = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
-		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember) && (activityLog == null || activityLog.isDraftMode());
+		id = super.getRequest().getData("id", int.class);
+		activityLog = this.repository.findActivityLogById(id);
+		FlightCrewMember fcm = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
+		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -78,6 +80,7 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
+		dataset.put("fadf", activityLog.getFlightAssignment().isDraftMode());
 		dataset.put("masterId", activityLog.getFlightAssignment().getId());
 
 		super.getResponse().addData(dataset);
