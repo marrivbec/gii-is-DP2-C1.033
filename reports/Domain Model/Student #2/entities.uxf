@@ -30,7 +30,7 @@ Booking
 + locatorCode: String {Mandatory, Colum(unique=true), ValidLocatorCode}
 + purchaseMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + travelClass: TravelClass {Mandatory, Valid, Automapped}
-- lastCardNibble: String {Optional, ValidLastNibble, Automapped}
+- lastNibble: String {Optional, ValidLastNibble, Automapped}
 + draftMode: booleean {Mandatory, Automapped]
 --
 /+ price: Money
