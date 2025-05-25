@@ -1,6 +1,7 @@
 
 package acme.features.flightCrewMember.flightAssigment;
 
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,8 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 		Leg leg;
 		int legId;
 
+		Date moment = MomentHelper.getCurrentMoment();
+
 		method = super.getRequest().getMethod();
 
 		if (method.equals("GET"))
@@ -43,13 +46,17 @@ public class FlightCrewMemberFlightAssigmentCreateService extends AbstractGuiSer
 		else {
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
+
+			Collection<Leg> l = this.repository.findAllLegsFromAirline(legId, moment);
+
 			FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
 			int id = super.getRequest().getData("id", int.class, 0);
-			status = (legId == 0 || leg != null && leg.getAircraft().getAirline().equals(flightCrewMember.getAirline())) && id == 0;
+			status = (legId == 0 || leg != null && leg.getAircraft().getAirline().equals(flightCrewMember.getAirline())) && id == 0 && l.contains(leg);
 
 		}
 
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override

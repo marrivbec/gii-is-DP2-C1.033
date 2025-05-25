@@ -40,23 +40,28 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 		Leg leg;
 		int legId;
 
+		Date moment = MomentHelper.getCurrentMoment();
+
 		id = super.getRequest().getData("id", int.class);
 		flightAssignment = this.repository.findFlightAssignmentById(id);
-		flightCrewMember = flightAssignment == null ? null : flightAssignment.getFlightCrewMember();
-		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember) && (flightAssignment == null || flightAssignment.isDraftMode());
+		FlightCrewMember fcm = flightAssignment == null ? null : flightAssignment.getFlightCrewMember();
+		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		status = flightCrewMember.equals(fcm) && flightAssignment != null && flightAssignment.isDraftMode();
 
 		method = super.getRequest().getMethod();
 
 		if (method.equals("GET"))
-			status2 = status;
+			status2 = true;
 		else {
 			legId = super.getRequest().getData("leg", int.class);
 			leg = this.repository.findLegById(legId);
-			status2 = (legId == 0 || leg != null) && status;
+
+			Collection<Leg> l = this.repository.findAllLegsFromAirline(legId, moment);
+
+			status2 = (legId == 0 || leg != null && leg.getAircraft().getAirline().equals(flightCrewMember.getAirline())) && status && (l.contains(leg) || flightAssignment.getLeg().equals(l));
 		}
 
-		super.getResponse().setAuthorised(status2);
-
+		super.getResponse().setAuthorised(status && status2);
 	}
 
 	@Override
