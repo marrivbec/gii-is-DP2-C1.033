@@ -1,19 +1,16 @@
 request-id,request-method,request-path,request-query,request-payload,response-status,response-content-type,response-payload,response-oops,pre-handle-timestamp,post-handle-timestamp,"after-completion-timestamp"
-"93f10f9e-5c77-4c62-9984-4c515b9e9e8f",GET,"/airline-manager/flight/create",,,500,text/html;charset=utf-8,service=520,"Access is not authorised",294554117886600,294554310929500,294563031814700
-"245ffa68-5a6d-4bce-8079-cd312afd8cbe",GET,"/libraries/fontawesome/5.2.0/css/all.min.css",,,200,text/css,,,294563264301600,294563275827600,294563277325300
-"e8f08703-7de0-41d3-ab29-9c8f748d9c97",GET,"/libraries/bootstrap/4.1.3/css/bootstrap.min.css",,,200,text/css,,,294563288409000,294563292718200,294563294094200
-"7f739db5-4d55-47f7-822f-8f6bae94ebd8",GET,"/libraries/datatables/1.10.18/css/datatables.min.css",,,200,text/css,,,294563305146400,294563310129400,294563312008200
-"8229ba0f-a02b-42ca-8134-2245ef13b14a",GET,"/libraries/jquery/3.3.1/js/jquery.min.js",,,200,application/javascript,,,294563321371200,294563325055700,294563326590000
-"4af22981-39e6-402b-9fd4-8b2a8551b898",GET,"/libraries/datatables/1.10.18/js/datatables.min.js",,,200,application/javascript,,,294563340843400,294563345020400,294563347624200
-"357ce5e7-6481-452a-84e5-be51ac89f729",GET,"/libraries/popper.js/1.14.4/js/popper.min.js",,,200,application/javascript,,,294563366248600,294563369516400,294563371219200
-"4af175a3-1b23-4c24-adfe-33355e025a92",GET,"/libraries/bootstrap/4.1.3/js/bootstrap.min.js",,,200,application/javascript,,,294563383645000,294563388213200,294563390273400
-"c89b5070-6174-4547-b415-bcaf01321f10",GET,"/libraries/chart.js/2.7.2/js/chart.bundle.min.js",,,200,application/javascript,,,294563402609100,294563408070200,294563410659200
-"032272d9-9e5c-4c4b-bff2-cfc3ed0de1db",GET,"/libraries/areyousure/1.9.0/js/areyousure.min.js",,,200,application/javascript,,,294563419307200,294563423136000,294563424578600
-"397ebafc-9d88-4ccc-889d-c6b4b2840ce4",GET,"/libraries/datatables/1.10.18/js/jquery.datatables.min.js",,,200,application/javascript,,,294563431839000,294563435095400,294563436814500
-"fe714964-a496-4448-9341-b7581269902f",GET,"/libraries/acme/css/acme.css",,,200,text/css,,,294563447424600,294563451704400,294563453947300
-"1aaadf7c-9763-49e6-902c-b9656f2f8002",GET,"/libraries/acme/js/acme.js",,,200,application/javascript,,,294563464318300,294563468636600,294563470234400
-"a80afcb1-15d7-409b-bde6-4a838272737d",GET,/images/banner.png,,,200,image/png,,,294563481519500,294563486213000,294563488039400
-"47f7c338-1988-408c-a277-925a73c4889d",GET,/images/logo.png,,,200,image/png,,,294563506969600,294563512120500,294563513486900
-"63161271-20d1-4148-a68e-13e8f8cb8c8b",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-solid-900.woff2",,,200,application/font-woff2,,,294563521028500,294563526361300,294563528301200
-"104c08f1-bd46-4bd7-b862-3041ddcad9af",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-brands-400.woff2",,,200,application/font-woff2,,,294563546601800,294563553604000,294563556015200
-"6575e13d-616b-4404-8018-19bcd5cb602c",GET,/images/favicon.ico,,,200,image/x-icon,,,294563570895000,294563593810100,294563595101600
+"fd319f97-0b27-43f1-9056-d06d02634eb8",GET,"/airline-manager/flight/create",,,500,text/html;charset=utf-8,service=520,"Access is not authorised",2729547196900,2729724005400,2738363127900
+"f58b97be-0b62-472b-88ad-94679a26b27b",GET,"/libraries/fontawesome/5.2.0/css/all.min.css",,,200,text/css,,,2738611612800,2738624532200,2738628366100
+"b83d2252-3fb6-47d0-8fd5-5373a4b71e54",GET,"/libraries/bootstrap/4.1.3/css/bootstrap.min.css",,,200,text/css,,,2738641715000,2738646048200,2738648414400
+"49c614ae-0376-4931-ad6c-e39cf144dd7c",GET,"/libraries/datatables/1.10.18/css/datatables.min.css",,,200,text/css,,,2738663206000,2738666795600,2738668615400
+"7e386a11-dc2a-42d8-ab32-02ab1aace6f1",GET,"/libraries/jquery/3.3.1/js/jquery.min.js",,,200,application/javascript,,,2738679452700,2738684268500,2738686431400
+"85fbae05-9202-4911-9c9a-2ca7d7b53e79",GET,"/libraries/popper.js/1.14.4/js/popper.min.js",,,200,application/javascript,,,2738697320500,2738701194500,2738702650800
+"5723f162-3e00-4941-8dde-58d070d19c9b",GET,"/libraries/bootstrap/4.1.3/js/bootstrap.min.js",,,200,application/javascript,,,2738713914600,2738719812400,2738722770500
+"10f8cbd1-8932-48d5-b41c-cebf26eb221f",GET,"/libraries/chart.js/2.7.2/js/chart.bundle.min.js",,,200,application/javascript,,,2738734480500,2738737942700,2738739233000
+"6ae1efd5-c166-45d6-af48-62ec09dc08ba",GET,"/libraries/areyousure/1.9.0/js/areyousure.min.js",,,200,application/javascript,,,2738751064300,2738754154000,2738755502600
+"9c0c02a4-7bf7-4aa0-aa57-4f80fb83eb47",GET,"/libraries/datatables/1.10.18/js/jquery.datatables.min.js",,,200,application/javascript,,,2738765486200,2738770873700,2738772310100
+"28e072d1-67cb-4243-b520-a9653d64c9d7",GET,"/libraries/datatables/1.10.18/js/datatables.min.js",,,200,application/javascript,,,2738786007500,2738790691700,2738792793600
+"44562f65-dc6e-4b70-a3af-e2e8c4d93144",GET,"/libraries/acme/css/acme.css",,,200,text/css,,,2738812143400,2738817302500,2738819852100
+"4a903ab3-0415-4b6c-a15d-9775fdc43b4c",GET,"/libraries/acme/js/acme.js",,,200,application/javascript,,,2738832173300,2738835749400,2738838052400
+"72b42183-69ab-4f22-9a9b-fa7d0e97e7c7",GET,/images/banner.png,,,200,image/png,,,2738857899900,2738863255100,2738865024000
+"8b957838-7fb5-4c76-9cb2-cabc5463f565",GET,/images/logo.png,,,200,image/png,,,2738878354700,2738881887700,2738883127200

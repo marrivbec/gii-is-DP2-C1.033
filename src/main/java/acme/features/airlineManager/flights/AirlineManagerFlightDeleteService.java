@@ -72,10 +72,7 @@ public class AirlineManagerFlightDeleteService extends AbstractGuiService<Airlin
 		Collection<FlightAssignment> flightAssignments;
 		Collection<Leg> legs;
 
-		flightAssignments = this.repository.findAllFlightAssignmentByFlightId(flight.getId());
 		legs = this.repository.findAllLegByFlightId(flight.getId());
-		if (!flightAssignments.isEmpty())
-			this.repository.deleteAll(flightAssignments);
 		if (!legs.isEmpty())
 			this.repository.deleteAll(legs);
 
