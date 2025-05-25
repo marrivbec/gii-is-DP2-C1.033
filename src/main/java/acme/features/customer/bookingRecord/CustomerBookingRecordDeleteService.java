@@ -33,7 +33,7 @@ public class CustomerBookingRecordDeleteService extends AbstractGuiService<Custo
 	@Override
 	public void unbind(final BookingRecord bookingRecord) {
 		Dataset dataset = super.unbindObject(bookingRecord, "passenger.fullName", "passenger.email", "passenger.passportNumber", "passenger.dateOfBirth", "passenger.specialNeeds");
-		dataset.put("published", bookingRecord.getBooking().isDraftMode());
+		dataset.put("draftMode", bookingRecord.getBooking().isDraftMode());
 		super.getResponse().addData(dataset);
 	}
 	@Override

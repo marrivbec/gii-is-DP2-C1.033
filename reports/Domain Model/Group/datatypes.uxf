@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
+      <x>276</x>
       <y>456</y>
       <w>204</w>
       <h>144</h>
@@ -22,7 +22,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
+      <x>252</x>
       <y>312</y>
       <w>120</w>
       <h>120</h>
@@ -40,7 +40,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
+      <x>492</x>
       <y>456</y>
       <w>168</w>
       <h>132</h>
@@ -58,7 +58,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
+      <x>672</x>
       <y>456</y>
       <w>144</w>
       <h>132</h>
@@ -77,7 +77,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>876</x>
+      <x>828</x>
       <y>456</y>
       <w>192</w>
       <h>144</h>
@@ -96,7 +96,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
+      <x>120</x>
       <y>456</y>
       <w>144</w>
       <h>132</h>
@@ -115,7 +115,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
+      <x>576</x>
       <y>312</y>
       <w>168</w>
       <h>132</h>
@@ -133,7 +133,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>444</x>
+      <x>396</x>
       <y>312</y>
       <w>168</w>
       <h>120</h>
@@ -150,7 +150,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>828</x>
+      <x>780</x>
       <y>324</y>
       <w>132</w>
       <h>120</h>
@@ -161,6 +161,24 @@ Indicator
 + PENDING
 + ACCEPTED
 + REJECTED
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>108</x>
+      <y>300</y>
+      <w>120</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+AircraftStatus
+--
++ ACTIVE
++ UNDER_MAINTENANCE
+
+
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
