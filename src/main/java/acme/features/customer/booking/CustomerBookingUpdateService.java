@@ -27,6 +27,7 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 
 
 	@Override
+
 	public void authorise() {
 		int bookingId = super.getRequest().getData("id", int.class);
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
@@ -85,7 +86,7 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 		String cod = booking.getLocatorCode();
 		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod).stream().filter(x -> x.getId() != booking.getId()).toList();
-		if (booking.getFlight() != null && !booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
+		if (booking.getFlight() != null && (booking.getPurchaseMoment() == null || booking.getFlight() == null || booking.getFlight().getScheduledDeparture() == null || !booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment())))
 			super.state(false, "purchaseMoment", "acme.validation.booking.purchaseMoment.message");
 		if (!codigo.isEmpty())
 			super.state(false, "locatorCode", "acme.validation.booking.repeat-code.message");
