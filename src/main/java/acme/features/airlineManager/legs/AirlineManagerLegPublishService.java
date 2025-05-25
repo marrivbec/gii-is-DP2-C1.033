@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -87,15 +88,17 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		boolean estado = true;
 		boolean estadoTime = true;
 		boolean diferenteAirport = true;
+		boolean aircraftNotUsed = true;
+		boolean timePast = true;
 		if (leg.getAircraft() != null) {
 			boolean isAircraftActive = leg.getAircraft().getStatus().equals(AircraftStatus.ACTIVE);
 			super.state(isAircraftActive, "aircraft", "airlineManager.leg.error.aircraft-under-maintenance.message");
 		}
-		if (leg.getArrivalAirport().equals(leg.getDepartureAirport()))
+		if (leg.getArrivalAirport() != null && leg.getDepartureAirport() != null && leg.getArrivalAirport().equals(leg.getDepartureAirport()))
 			diferenteAirport = false;
-		if (arrival.equals(departure))
+		if (arrival != null && departure != null && arrival.equals(departure))
 			estadoTime = false;
-		if (leg.getScheduledArrival().before(leg.getScheduledDeparture()))
+		if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null && leg.getScheduledArrival().before(leg.getScheduledDeparture()))
 			estadoTime = false;
 		if (estadoTime && diferenteAirport)
 			for (Leg otherLeg : legs)
@@ -106,10 +109,15 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 					if (departure.before(otherArrival) && arrival.after(otherDeparture) || departure.equals(otherDeparture) || arrival.equals(otherArrival))	// Si las franjas horarias se solapan
 						estado = false;
 				}
-		Integer numberOfLegsDeployingAircraft = this.repository.findNumberOfLegsSolapedAircraft(leg.getScheduledDeparture(), leg.getScheduledArrival(), Status.CANCELLED, leg.getAircraft().getId());
-		boolean aircraftNotUsed = leg.getStatus() == Status.CANCELLED || numberOfLegsDeployingAircraft == 0;
-		Date horaActual = new Date();
-		boolean timePast = leg.getScheduledDeparture().after(horaActual) && leg.getScheduledArrival().after(horaActual);
+		if (leg.getScheduledDeparture() != null && leg.getScheduledArrival() != null) {
+			Date horaActual = MomentHelper.getCurrentMoment();
+			timePast = leg.getScheduledDeparture().after(horaActual) && leg.getScheduledArrival().after(horaActual);
+			if (leg.getAircraft() != null) {
+				Integer numberOfLegsDeployingAircraft = this.repository.findNumberOfLegsSolapedAircraft(leg.getScheduledDeparture(), leg.getScheduledArrival(), Status.CANCELLED, leg.getAircraft().getId());
+				aircraftNotUsed = leg.getStatus() == Status.CANCELLED || numberOfLegsDeployingAircraft == 0;
+			}
+		}
+
 		super.state(diferenteAirport, "*", "airlineManager.leg.error.sameAirport.message");
 		super.state(estado, "*", "airlineManager.leg.error.timesOverlap.message");
 		super.state(estadoTime, "*", "airlineManager.leg.error.times.message");
