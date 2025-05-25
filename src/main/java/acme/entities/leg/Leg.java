@@ -28,6 +28,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 @ValidLeg
 public class Leg extends AbstractEntity {
 

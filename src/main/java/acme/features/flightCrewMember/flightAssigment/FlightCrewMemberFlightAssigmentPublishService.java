@@ -1,6 +1,9 @@
 
 package acme.features.flightCrewMember.flightAssigment;
 
+import java.util.Collection;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -98,6 +101,14 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
+
+		Date moment = MomentHelper.getCurrentMoment();
+
+		Collection<Leg> l = this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId(), moment);
+
+		if (!l.contains(flightAssignment.getLeg()) && flightAssignment.getLeg() != null)
+			l.add(flightAssignment.getLeg());
+
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "draftMode", "flightCrewMember", "leg");
 
 		dataset.put("flightCrewMember", flightAssignment.getFlightCrewMember().getIdentity().getFullName());
@@ -108,7 +119,7 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 		SelectChoices statusChoices = SelectChoices.from(Status.class, flightAssignment.getCurrentStatus());
 		dataset.put("statusChoices", statusChoices);
 
-		SelectChoices legChoices = SelectChoices.from(this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId()), "flightNumber", flightAssignment.getLeg());
+		SelectChoices legChoices = SelectChoices.from(l, "flightNumber", flightAssignment.getLeg());
 		dataset.put("legChoices", legChoices);
 
 		super.getResponse().addData(dataset);
