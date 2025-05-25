@@ -83,7 +83,7 @@ public class AssistanceAgentTrackingLogUpdateService extends AbstractGuiService<
 						super.state(false, "resolutionPercentage", "acme.validation.trackingLog.publish.message");
 
 		}
-		if (logsWith100.size() + 1 > 2)
+		if (logsWith100.size() + 1 > 2 && trackingLog.getResolutionPercentage() == 100)
 			super.state(false, "resolutionPercentage", "acme.validation.trackingLog.publish.message.completed");
 	}
 
