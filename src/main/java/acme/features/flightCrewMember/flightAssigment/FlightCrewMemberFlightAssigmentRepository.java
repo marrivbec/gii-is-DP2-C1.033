@@ -12,13 +12,9 @@ import acme.entities.activityLog.ActivityLog;
 import acme.entities.flightAssignment.DutyType;
 import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.leg.Leg;
-import acme.realms.employee.FlightCrewMember;
 
 @Repository
 public interface FlightCrewMemberFlightAssigmentRepository extends AbstractRepository {
-
-	@Query("SELECT l FROM Leg l WHERE l.draftMode = false")
-	Collection<Leg> findAllLegs();
 
 	@Query("SELECT l FROM Leg l WHERE l.id = :id")
 	Leg findLegById(int id);
@@ -31,9 +27,6 @@ public interface FlightCrewMemberFlightAssigmentRepository extends AbstractRepos
 
 	@Query("SELECT flightAssig FROM FlightAssignment flightAssig WHERE flightAssig.flightCrewMember.id = :flightCrewMemberId AND flightAssig.leg.scheduledArrival < :moment")
 	Collection<FlightAssignment> findAllCompletedFlightAssignments(Date moment, int flightCrewMemberId);
-
-	@Query("SELECT flightCrewMem FROM FlightCrewMember flightCrewMem WHERE flightCrewMem.airline.id = :airlineId")
-	Collection<FlightCrewMember> findAllflightCrewMemberFromAirline(int airlineId);
 
 	@Query("SELECT flightAssig FROM FlightAssignment flightAssig WHERE flightAssig.leg.id = :legId AND flightAssig.duty = :duty")
 	FlightAssignment findFlightAssignmentByLegAndDuty(int legId, DutyType duty);
