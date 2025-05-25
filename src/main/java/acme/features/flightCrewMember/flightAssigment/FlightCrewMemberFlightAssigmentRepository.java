@@ -17,7 +17,7 @@ import acme.realms.employee.FlightCrewMember;
 @Repository
 public interface FlightCrewMemberFlightAssigmentRepository extends AbstractRepository {
 
-	@Query("SELECT l FROM Leg l")
+	@Query("SELECT l FROM Leg l WHERE l.draftMode = false")
 	Collection<Leg> findAllLegs();
 
 	@Query("SELECT l FROM Leg l WHERE l.id = :id")
@@ -41,13 +41,22 @@ public interface FlightCrewMemberFlightAssigmentRepository extends AbstractRepos
 	@Query("SELECT COUNT(flightAssig) > 0 FROM FlightAssignment flightAssig WHERE flightAssig.leg.id = :legId AND flightAssig.duty IN ('PILOT', 'COPILOT') AND flightAssig.duty = :duty AND flightAssig.id != :id")
 	Boolean hasDutyAssigned(int legId, DutyType duty, int id);
 
-	@Query("SELECT COUNT(flightAssig) > 0 " + "FROM FlightAssignment flightAssig " + "WHERE flightAssig.flightCrewMember.id = :flightCrewMemberId " + "AND flightAssig.id != :id " + "AND ( "
-		+ "   (flightAssig.leg.scheduledDeparture < :arrivalTime AND flightAssig.leg.scheduledArrival > :departureTime) OR " + "   (flightAssig.leg.scheduledDeparture < :departureTime AND flightAssig.leg.scheduledArrival > :arrivalTime) OR "
-		+ "   (flightAssig.leg.scheduledDeparture >= :departureTime AND flightAssig.leg.scheduledDeparture <= :arrivalTime) OR " + "   (flightAssig.leg.scheduledArrival >= :departureTime AND flightAssig.leg.scheduledArrival <= :arrivalTime) " + ")")
+	@Query("""
+		    SELECT COUNT(flightAssig) > 0
+		    FROM FlightAssignment flightAssig
+		    WHERE flightAssig.flightCrewMember.id = :flightCrewMemberId
+		      AND flightAssig.id != :id
+		      AND (
+		           (flightAssig.leg.scheduledDeparture < :arrivalTime AND flightAssig.leg.scheduledArrival > :departureTime) OR
+		           (flightAssig.leg.scheduledDeparture < :departureTime AND flightAssig.leg.scheduledArrival > :arrivalTime) OR
+		           (flightAssig.leg.scheduledDeparture >= :departureTime AND flightAssig.leg.scheduledDeparture <= :arrivalTime) OR
+		           (flightAssig.leg.scheduledArrival >= :departureTime AND flightAssig.leg.scheduledArrival <= :arrivalTime)
+		          )
+		""")
 	Boolean hasFlightCrewMemberLegAssociated(int flightCrewMemberId, Date arrivalTime, Date departureTime, int id);
 
-	@Query("SELECT l FROM Leg l WHERE l.aircraft.airline.id = :airlineId")
-	Collection<Leg> findAllLegsFromAirline(int airlineId);
+	@Query("SELECT l FROM Leg l WHERE l.aircraft.airline.id = :airlineId AND l.draftMode = false AND l.scheduledDeparture >= :moment")
+	Collection<Leg> findAllLegsFromAirline(int airlineId, Date moment);
 
 	@Query("select al FROM ActivityLog al where al.flightAssignment.id = :flightAssignmentId")
 	Collection<ActivityLog> findActivityLogsByFlightAssignmentId(int flightAssignmentId);

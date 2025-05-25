@@ -33,7 +33,7 @@ leg-20,ABX0022,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-04,airport-00,
 leg-21,ABX0023,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-02,airport-01,flight-21,true
 # departureAirport - no singular values
 # arrivalAirport - standard variations
-leg-22,ABX0024,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-02,flight-22,true
+leg-22,ABX0024,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-02,flight-22,false
 # arrivalAirport - no singular values
 # draftMode - standard variations
 leg-23,ABX1111,2025/04/22 12:01,2025/04/22 12:00,ON_TIME,aircraft-01,airport-00,airport-01,flight-23,false
