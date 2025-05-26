@@ -81,9 +81,9 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
+      <x>336</x>
       <y>72</y>
-      <w>264</w>
+      <w>312</w>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
