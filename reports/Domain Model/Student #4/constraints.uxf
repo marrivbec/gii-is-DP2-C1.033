@@ -17,4 +17,80 @@ ValidEmployeeCode
 bg=RED</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>180</y>
+      <w>504</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidTrackingLogResolution
+--
++ If the resolution percentage is 100, the resolution is mandatory.
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>444</y>
+      <w>504</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidTrackingLogResolutionPercentage
+--
++ The resolution percentage must be monotonically increasing.
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>564</y>
+      <w>624</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidTrackingLogIndicatorPercentage
+--
++ resolution percentage != 100, the indicator == "PENDING".
++ resolution percentage == 100, the indicator == ("ACCEPTED" || "REJECTED").
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>72</y>
+      <w>264</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidClaimRegistrationMoment
+--
++ Claims must occur after a leg.
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>72</y>
+      <w>312</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidTrackingLogUpdateMoment
+--
++ Tracking logs must occur after a claim.
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
