@@ -67,7 +67,7 @@ public class TechnicianInvolvesCreateService extends AbstractGuiService<Technici
 
 	@Override
 	public void validate(final Involves involves) {
-		;
+
 	}
 
 	@Override
