@@ -79,8 +79,8 @@ public class AirlineManagerDashboardShowService extends AbstractGuiService<Airli
 		delayedLegs = this.repository.countDelayedLegs(id);
 		if (delayedLegs == 0)
 			flightTimelinessRatio = Double.POSITIVE_INFINITY;
-		flightTimelinessRatio = onTimeLegs / delayedLegs;
-
+		else
+			flightTimelinessRatio = onTimeLegs / delayedLegs;
 		List<Object[]> originLegs = this.repository.countLegsByOrigin(id);
 		List<Object[]> destinationLegs = this.repository.countLegsByDestination(id);
 
