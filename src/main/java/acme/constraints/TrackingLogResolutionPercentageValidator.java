@@ -41,9 +41,18 @@ public class TrackingLogResolutionPercentageValidator extends AbstractValidator<
 				}
 			if (currentIndex > 0)
 				previousLog = existingLogs.get(currentIndex - 1);
-			else if (currentIndex == 0)
+			else if (currentIndex == 0) {
+				for (TrackingLog log : existingLogs)
+					if (log.getId() != newTrackingLog.getId() && !newTrackingLog.getResolutionPercentage().equals(100.0) && log.getResolutionPercentage().equals(newTrackingLog.getResolutionPercentage()))
+						return false;
 				return true;
+			}
+
 		}
+
+		for (TrackingLog log : existingLogs)
+			if (log.getId() != newTrackingLog.getId() && !newTrackingLog.getResolutionPercentage().equals(100.0) && log.getResolutionPercentage().equals(newTrackingLog.getResolutionPercentage()))
+				return false;
 
 		if (previousLog != null)
 			return this.validatePercentage(newTrackingLog, previousLog, context);

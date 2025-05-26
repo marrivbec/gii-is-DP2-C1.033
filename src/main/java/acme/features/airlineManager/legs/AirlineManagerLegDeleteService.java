@@ -1,8 +1,6 @@
 
 package acme.features.airlineManager.legs;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -10,7 +8,6 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
-import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.leg.Leg;
 import acme.entities.leg.Status;
 import acme.realms.employee.AirlineManager;
@@ -65,12 +62,6 @@ public class AirlineManagerLegDeleteService extends AbstractGuiService<AirlineMa
 	@Override
 	public void perform(final Leg leg) {
 		this.repository.delete(leg);
-
-		Collection<FlightAssignment> flightAssignments;
-		flightAssignments = this.repository.findAllFlightAssignmentByLegId(leg.getId());
-		if (!flightAssignments.isEmpty())
-			this.repository.deleteAll(flightAssignments);
-		this.repository.delete(leg);
 	}
 
 	@Override
@@ -78,9 +69,9 @@ public class AirlineManagerLegDeleteService extends AbstractGuiService<AirlineMa
 		SelectChoices choices;
 		Dataset dataset;
 		choices = SelectChoices.from(Status.class, leg.getStatus());
-
+		Flight flight = leg.getFlight();
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival");
-		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		dataset.put("masterId", flight.getId());
 		dataset.put("draftMode", leg.isDraftMode());
 		dataset.put("status", choices);
 

@@ -18,6 +18,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.airline.Airline;
 import acme.entities.claim.Claim;
 import acme.entities.leg.Leg;
 import acme.entities.trackingLog.TrackingLog;
@@ -37,11 +38,11 @@ public interface AssistanceAgentClaimRepository extends AbstractRepository {
 	@Query("SELECT c FROM Claim c WHERE c.id NOT IN (SELECT t.claim.id FROM TrackingLog t) AND (c.assistanceAgents.id = :agentId)")
 	Collection<Claim> findAllEmptyClaimsByAgentId(int agentId);
 
-	@Query("SELECT l FROM Leg l WHERE l.scheduledArrival < CURRENT_TIMESTAMP AND l.draftMode = false")
-	Collection<Leg> findAllLeg();
+	@Query("SELECT l FROM Leg l WHERE l.scheduledArrival < CURRENT_TIMESTAMP AND l.draftMode = false AND l.aircraft.airline = :agentAirline")
+	Collection<Leg> findAllLeg(Airline agentAirline);
 
-	@Query("select l from Leg l where l.id = :id")
-	Leg findLegById(int id);
+	@Query("select l from Leg l where l.scheduledArrival < CURRENT_TIMESTAMP and l.draftMode = false and l.aircraft.airline = :agentAirline and l.id = :id")
+	Leg findLegById(Airline agentAirline, int id);
 
 	@Query("select tl FROM TrackingLog tl where tl.claim.id = :claimId")
 	Collection<TrackingLog> findTrackingLogsByClaimId(int claimId);

@@ -87,7 +87,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		String cod = booking.getLocatorCode();
 		Collection<BookingRecord> bookingRecords = this.repository.findBookingRById(booking.getId());
 		Collection<Booking> codigo = this.repository.findAllBookingLocatorCode(cod).stream().filter(x -> x.getId() != booking.getId()).toList();
-		if (booking.getFlight() != null && !booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment()))
+		if (booking.getFlight() != null && (booking.getPurchaseMoment() == null || booking.getFlight() == null || booking.getFlight().getScheduledDeparture() == null || !booking.getFlight().getScheduledDeparture().after(booking.getPurchaseMoment())))
 			super.state(false, "purchaseMoment", "acme.validation.booking.purchaseMoment.message");
 		if (!codigo.isEmpty())
 			super.state(false, "locatorCode", "acme.validation.booking.repeat-code.message");

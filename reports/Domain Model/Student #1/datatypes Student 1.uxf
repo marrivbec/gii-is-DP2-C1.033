@@ -12,9 +12,10 @@
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Status
 --
-+ CONFIRMED
-+ PENDING
++ ON_TIME
++ DELAYED
 + CANCELLED
++ LANDED
 
 
 bg=LIGHT_GRAY</panel_attributes>

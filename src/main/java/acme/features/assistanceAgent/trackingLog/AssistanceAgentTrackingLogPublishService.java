@@ -12,6 +12,10 @@
 
 package acme.features.assistanceAgent.trackingLog;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -62,17 +66,30 @@ public class AssistanceAgentTrackingLogPublishService extends AbstractGuiService
 
 	@Override
 	public void bind(final TrackingLog trackingLog) {
-		super.bindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "indicator", "resolution");
+		super.bindObject(trackingLog, "step", "resolutionPercentage", "indicator", "resolution");
 	}
 
 	@Override
 	public void validate(final TrackingLog trackingLog) {
-		boolean status;
-
+		List<TrackingLog> previousLogs = this.repository.findTrackingLogsByClaimIdOrderedByPercentage(trackingLog.getClaim().getId());
+		Collection<TrackingLog> logsWith100 = this.repository.findLogsWith100(trackingLog.getClaim().getId());
 		Claim claim = trackingLog.getClaim();
-		status = claim != null && !claim.isDraftMode();
 
-		super.state(status, "*", "acme.validation.trackingLog.unpublished.message");
+		if (!previousLogs.isEmpty()) {
+			TrackingLog lastLog = previousLogs.get(0);
+			if (lastLog.getResolutionPercentage() != null && trackingLog.getResolutionPercentage() != null && trackingLog.getId() != lastLog.getId())
+				if (lastLog.getResolutionPercentage() == 100.00 && trackingLog.getResolutionPercentage() == 100.00)
+					// solo puede repetirse el 100% si está publicada
+					if (lastLog.isDraftMode())
+						super.state(false, "resolutionPercentage", "acme.validation.trackingLog.publish.message");
+
+		}
+
+		if (logsWith100.stream().filter(x -> !x.isDraftMode()).collect(Collectors.toList()).size() + 1 > 2 && trackingLog.getResolutionPercentage() == 100)
+			super.state(false, "resolutionPercentage", "acme.validation.trackingLog.publish.message.completed");
+
+		if (claim != null && claim.isDraftMode())
+			super.state(false, "*", "acme.validation.trackingLog.unpublished.message");
 	}
 
 	@Override

@@ -1,6 +1,9 @@
 
 package acme.features.flightCrewMember.flightAssigment;
 
+import java.util.Collection;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -11,6 +14,7 @@ import acme.client.services.GuiService;
 import acme.entities.flightAssignment.DutyType;
 import acme.entities.flightAssignment.FlightAssignment;
 import acme.entities.flightAssignment.Status;
+import acme.entities.leg.Leg;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -51,6 +55,12 @@ public class FlightCrewMemberFlightAssigmentShowService extends AbstractGuiServi
 
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
+		Date moment = MomentHelper.getCurrentMoment();
+
+		Collection<Leg> l = this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId(), moment);
+
+		if (!l.contains(flightAssignment.getLeg()) && flightAssignment.getLeg() != null)
+			l.add(flightAssignment.getLeg());
 
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "flightCrewMember", "leg", "draftMode");
 
@@ -65,11 +75,7 @@ public class FlightCrewMemberFlightAssigmentShowService extends AbstractGuiServi
 		SelectChoices statusChoices = SelectChoices.from(Status.class, flightAssignment.getCurrentStatus());
 		dataset.put("statusChoices", statusChoices);
 
-		//		this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId()).stream().forEach(x -> System.out.println(x.getFlightNumber()));
-		//
-		//		System.out.println(this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId()).contains(flightAssignment.getLeg()));
-
-		SelectChoices legChoices = SelectChoices.from(this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId()), "flightNumber", flightAssignment.getLeg());
+		SelectChoices legChoices = SelectChoices.from(l, "flightNumber", flightAssignment.getLeg());
 		dataset.put("legChoices", legChoices);
 
 		super.getResponse().addData(dataset);

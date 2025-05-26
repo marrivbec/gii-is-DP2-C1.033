@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>510</x>
-      <y>252</y>
+      <y>318</y>
       <w>90</w>
       <h>30</h>
     </coordinates>
@@ -18,7 +18,7 @@ bg=pink</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>402</x>
-      <y>258</y>
+      <y>324</y>
       <w>120</w>
       <h>36</h>
     </coordinates>
@@ -34,7 +34,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>594</x>
-      <y>258</y>
+      <y>324</y>
       <w>210</w>
       <h>36</h>
     </coordinates>
@@ -50,7 +50,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1146</x>
-      <y>258</y>
+      <y>324</y>
       <w>198</w>
       <h>36</h>
     </coordinates>
@@ -66,7 +66,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>258</y>
+      <y>324</y>
       <w>408</w>
       <h>24</h>
     </coordinates>
@@ -79,7 +79,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>282</y>
+      <y>348</y>
       <w>246</w>
       <h>126</h>
     </coordinates>
@@ -95,7 +95,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>180</x>
-      <y>372</y>
+      <y>438</y>
       <w>384</w>
       <h>30</h>
     </coordinates>
@@ -108,7 +108,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1086</x>
-      <y>198</y>
+      <y>264</y>
       <w>150</w>
       <h>42</h>
     </coordinates>
@@ -119,7 +119,7 @@ bg=green</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>1098</x>
-      <y>180</y>
+      <y>246</y>
       <w>270</w>
       <h>24</h>
     </coordinates>
@@ -131,7 +131,7 @@ bg=orange</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>792</x>
-      <y>228</y>
+      <y>294</y>
       <w>360</w>
       <h>90</h>
     </coordinates>
@@ -153,8 +153,8 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1332</x>
-      <y>234</y>
-      <w>348</w>
+      <y>300</y>
+      <w>372</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -162,12 +162,62 @@ TrackingLog
 --
 + lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + step: String {Mandatory, ValidString(min = 1, max = 50), Automapped}
-+ resolutionPercentage: Double {Mandatory, ValidNumber(min = 0), Automapped}
++ resolutionPercentage: Double {Mandatory, @ValidNumber(min = 0, max = 100), Automapped}
 + indicator: Indicator {Mandatory, Valid, Automapped}
 + resolution: String {Optional, ValidString(max = 255), Automapped}
 + draftMode: boolean {Mandatory, Valid, Automapped}
 
 bg=green</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>888</x>
+      <y>240</y>
+      <w>168</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>@ValidClaimRegistrationMoment
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>252</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1458</x>
+      <y>216</y>
+      <w>168</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>@ValidTrackingLogResolution
+@ValidTrackingLogResolutionPercentage
+@ValidTrackingLogIndicatorPercentage
+@ValidTrackingLogUpdateMoment
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1536</x>
+      <y>258</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>

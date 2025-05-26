@@ -24,16 +24,21 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 	@Override
 	public void authorise() {
 		boolean status;
-		int activityLogId;
 		ActivityLog activityLog;
+		int id;
 		FlightCrewMember flightCrewMember;
 
-		activityLogId = super.getRequest().getData("id", int.class);
-		activityLog = this.repository.findActivityLogById(activityLogId);
-		flightCrewMember = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
-		status = super.getRequest().getPrincipal().hasRealm(flightCrewMember) && (activityLog == null || activityLog.isDraftMode());
+		id = super.getRequest().getData("id", int.class);
+		activityLog = this.repository.findActivityLogById(id);
+		FlightCrewMember fcm = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
+		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode();
 
-		super.getResponse().setAuthorised(status);
+		boolean status2;
+
+		status2 = activityLog != null && !activityLog.getFlightAssignment().isDraftMode();
+
+		super.getResponse().setAuthorised(status && status2);
 	}
 
 	@Override
@@ -50,7 +55,7 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 	@Override
 	public void bind(final ActivityLog activityLog) {
 
-		super.bindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+		super.bindObject(activityLog, "typeOfIncident", "description", "severityLevel");
 
 	}
 
@@ -62,6 +67,10 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 		status = flightAssignment != null && !flightAssignment.isDraftMode();
 
 		super.state(status, "*", "acme.validation.activity.unpublished.message");
+
+		boolean canbe = flightAssignment != null && activityLog.getRegistrationMoment().after(flightAssignment.getLeg().getScheduledArrival());
+		super.state(canbe, "registrationMoment", "acme.validation.activity.registrationMoment");
+
 	}
 
 	@Override
@@ -74,6 +83,7 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
+		dataset.put("fadf", activityLog.getFlightAssignment().isDraftMode());
 		dataset.put("masterId", activityLog.getFlightAssignment().getId());
 
 		super.getResponse().addData(dataset);

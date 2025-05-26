@@ -61,5 +61,7 @@ acme.validation.flightAssignment.leg.moment = The Flight Assignment cannot be li
 acme.validation.flightAssignment.flightCrewMember.available = Only flight crew members with an "AVAILABLE" status can be assigned to a leg
 acme.validation.flightAssignment.duty = Each leg can only have one pilot and one co-pilot
 
+acme.validation.activity.registrationMoment = The registration moment cannot be earlier than the scheduled arrival date
+
 
 
