@@ -16,8 +16,8 @@ AssistanceAgent
 + spokenLanguages: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
 + moment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + briefBio: String {Optional, ValidString(max = 255), Automapped}
-+ salary: Money {Mandatory, ValidMoney, Automapped}
-+ photo: String {Mandatory, ValidUrl, Automapped}
++ salary: Money {Optional, ValidMoney, Automapped}
++ photo: String {Optional, ValidUrl, Automapped}
 
 bg=pink</panel_attributes>
     <additional_attributes/>

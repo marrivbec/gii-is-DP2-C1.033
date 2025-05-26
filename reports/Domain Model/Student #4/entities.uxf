@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>6</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
-      <y>252</y>
-      <w>90</w>
-      <h>30</h>
+      <x>425</x>
+      <y>275</y>
+      <w>75</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AssistanceAgent
@@ -17,10 +17,10 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>402</x>
-      <y>258</y>
-      <w>120</w>
-      <h>36</h>
+      <x>335</x>
+      <y>280</y>
+      <w>100</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt; works for
 lt=&lt;-x
@@ -33,10 +33,10 @@ m2=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>594</x>
-      <y>258</y>
-      <w>210</w>
-      <h>36</h>
+      <x>495</x>
+      <y>280</y>
+      <w>175</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt; registered by 
 lt=&lt;-x
@@ -49,10 +49,10 @@ m2=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1146</x>
-      <y>258</y>
-      <w>198</w>
-      <h>36</h>
+      <x>955</x>
+      <y>280</y>
+      <w>165</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>tracked through &gt;
 lt=&lt;-x
@@ -66,9 +66,9 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>258</y>
-      <w>408</w>
-      <h>24</h>
+      <y>280</y>
+      <w>340</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline
@@ -78,10 +78,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>282</y>
-      <w>246</w>
-      <h>126</h>
+      <x>465</x>
+      <y>300</y>
+      <w>205</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>related with v
 lt=&lt;-x
@@ -94,10 +94,10 @@ m2=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>372</y>
-      <w>384</w>
-      <h>30</h>
+      <x>150</x>
+      <y>375</y>
+      <w>320</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -107,10 +107,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1086</x>
-      <y>198</y>
-      <w>150</w>
-      <h>42</h>
+      <x>905</x>
+      <y>230</y>
+      <w>125</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>230.0;10.0;10.0;50.0</additional_attributes>
@@ -118,10 +118,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1098</x>
-      <y>180</y>
-      <w>270</w>
-      <h>24</h>
+      <x>915</x>
+      <y>215</y>
+      <w>225</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>+ indicator = indicator of whether the claim is accepted or not.
 bg=orange</panel_attributes>
@@ -130,10 +130,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>228</y>
-      <w>360</w>
-      <h>90</h>
+      <x>660</x>
+      <y>255</y>
+      <w>300</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Claim
@@ -152,17 +152,17 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1332</x>
-      <y>234</y>
-      <w>348</w>
-      <h>90</h>
+      <x>1110</x>
+      <y>260</y>
+      <w>310</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 TrackingLog
 --
 + lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + step: String {Mandatory, ValidString(min = 1, max = 50), Automapped}
-+ resolutionPercentage: Double {Mandatory, ValidNumber(min = 0), Automapped}
++ resolutionPercentage: Double {Mandatory, @ValidNumber(min = 0, max = 100), Automapped}
 + indicator: Indicator {Mandatory, Valid, Automapped}
 + resolution: String {Optional, ValidString(max = 255), Automapped}
 + draftMode: boolean {Mandatory, Valid, Automapped}
