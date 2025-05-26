@@ -1,7 +1,6 @@
 
 package acme.entities.leg;
 
-import java.beans.Transient;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
@@ -13,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
