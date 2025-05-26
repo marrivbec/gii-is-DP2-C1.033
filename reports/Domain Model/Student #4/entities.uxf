@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>5</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>425</x>
-      <y>275</y>
-      <w>75</w>
-      <h>25</h>
+      <x>510</x>
+      <y>318</y>
+      <w>90</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AssistanceAgent
@@ -17,10 +17,10 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>335</x>
-      <y>280</y>
-      <w>100</w>
-      <h>30</h>
+      <x>402</x>
+      <y>324</y>
+      <w>120</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>&lt; works for
 lt=&lt;-x
@@ -33,10 +33,10 @@ m2=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
-      <y>280</y>
-      <w>175</w>
-      <h>30</h>
+      <x>594</x>
+      <y>324</y>
+      <w>210</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>&lt; registered by 
 lt=&lt;-x
@@ -49,10 +49,10 @@ m2=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>955</x>
-      <y>280</y>
-      <w>165</w>
-      <h>30</h>
+      <x>1146</x>
+      <y>324</y>
+      <w>198</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>tracked through &gt;
 lt=&lt;-x
@@ -66,9 +66,9 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>280</y>
-      <w>340</w>
-      <h>20</h>
+      <y>324</y>
+      <w>408</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline
@@ -78,10 +78,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>465</x>
-      <y>300</y>
-      <w>205</w>
-      <h>105</h>
+      <x>558</x>
+      <y>348</y>
+      <w>246</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>related with v
 lt=&lt;-x
@@ -94,10 +94,10 @@ m2=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>150</x>
-      <y>375</y>
-      <w>320</w>
-      <h>25</h>
+      <x>180</x>
+      <y>438</y>
+      <w>384</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -107,10 +107,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>905</x>
-      <y>230</y>
-      <w>125</w>
-      <h>35</h>
+      <x>1086</x>
+      <y>264</y>
+      <w>150</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>230.0;10.0;10.0;50.0</additional_attributes>
@@ -118,10 +118,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>915</x>
-      <y>215</y>
-      <w>225</w>
-      <h>20</h>
+      <x>1098</x>
+      <y>246</y>
+      <w>270</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>+ indicator = indicator of whether the claim is accepted or not.
 bg=orange</panel_attributes>
@@ -130,10 +130,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>255</y>
-      <w>300</w>
-      <h>75</h>
+      <x>792</x>
+      <y>294</y>
+      <w>360</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Claim
@@ -152,10 +152,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
-      <y>260</y>
-      <w>310</w>
-      <h>75</h>
+      <x>1332</x>
+      <y>300</y>
+      <w>372</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 TrackingLog
@@ -169,5 +169,55 @@ TrackingLog
 
 bg=green</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>888</x>
+      <y>240</y>
+      <w>168</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>@ValidClaimRegistrationMoment
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>252</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1458</x>
+      <y>216</y>
+      <w>168</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>@ValidTrackingLogResolution
+@ValidTrackingLogResolutionPercentage
+@ValidTrackingLogIndicatorPercentage
+@ValidTrackingLogUpdateMoment
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1536</x>
+      <y>258</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
