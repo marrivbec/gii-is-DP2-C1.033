@@ -35,7 +35,7 @@ public class FlightCrewMemberActivityLogDeleteService extends AbstractGuiService
 
 		boolean status2;
 
-		status2 = activityLog != null && !activityLog.getFlightAssignment().isDraftMode();
+		status2 = activityLog != null;
 
 		super.getResponse().setAuthorised(status && status2);
 	}
