@@ -1,3 +1,4 @@
+
 package acme.features.technician.involvedIn;
 
 import java.util.Collection;
@@ -6,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.aircraft.Aircraft;
 import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
 import acme.entities.task.Task;
@@ -27,4 +29,7 @@ public interface TechnicianInvolvesRepository extends AbstractRepository {
 
 	@Query("select i.maintenanceRecord from Involves i where i.id = :id")
 	MaintenanceRecord findMaintenanceRecordByInvolvesId(int id);
+
+	@Query("select a from Aircraft a")
+	Collection<Aircraft> findAircrafts();
 }

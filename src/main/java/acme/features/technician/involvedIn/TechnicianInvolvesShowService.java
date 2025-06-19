@@ -11,6 +11,7 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.task.Involves;
 import acme.entities.task.Task;
+
 import acme.realms.employee.Technician;
 
 @GuiService
@@ -22,13 +23,18 @@ public class TechnicianInvolvesShowService extends AbstractGuiService<Technician
 
 	@Override
 	public void authorise() {
+
 		boolean status;
 		int id;
+		Technician tech = null;
+
 		Involves involves;
 
 		id = super.getRequest().getData("id", int.class);
 		involves = this.repository.findInvolvesById(id);
-		status = involves != null && super.getRequest().getPrincipal().hasRealm(involves.getMaintenanceRecord().getTechnician());
+		if (involves != null)
+			tech = involves.getTask().getTechnician();
+		status = involves != null && super.getRequest().getPrincipal().hasRealm(tech);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -52,7 +58,7 @@ public class TechnicianInvolvesShowService extends AbstractGuiService<Technician
 		final boolean draftRecord;
 
 		tasks = this.repository.findAllTasks();
-		taskChoices = SelectChoices.from(tasks, "ticker", involves.getTask());
+		taskChoices = SelectChoices.from(tasks, "description", involves.getTask());
 
 		dataset = super.unbindObject(involves, "task");
 		dataset.put("maintenanceRecord", involves.getMaintenanceRecord().getId());

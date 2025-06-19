@@ -28,26 +28,14 @@ public class TechnicianRecordPublishService extends AbstractGuiService<Technicia
 	@Override
 	public void authorise() {
 		boolean status;
-		int mrId;
-		MaintenanceRecord mr;
+		int id;
+		MaintenanceRecord maintenanceRecord;
 		Technician technician;
 
-		mrId = super.getRequest().getData("id", int.class);
-		mr = this.repository.findRecordById(mrId);
-
-		technician = mr == null ? null : mr.getTechnician();
-		status = mr != null && mr.isDraftMode() && this.getRequest().getPrincipal().hasRealm(technician);
-
-		if (super.getRequest().hasData("aircraft")) {
-			int aircraftId = super.getRequest().getData("aircraft", int.class);
-			Aircraft aircraft = this.repository.findAircraftById(aircraftId);
-			Collection<Aircraft> available = this.repository.getAllAircraft();
-
-			if (aircraft == null && aircraftId != 0)
-				status = false;
-			else if (aircraft != null && !available.contains(aircraft))
-				status = false;
-		}
+		id = super.getRequest().getData("id", int.class);
+		maintenanceRecord = this.repository.findRecordById(id);
+		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
+		status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
 
 		super.getResponse().setAuthorised(status);
 	}

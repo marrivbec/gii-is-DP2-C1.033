@@ -5,13 +5,10 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
-import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.task.Involves;
 import acme.entities.task.Task;
-import acme.entities.task.TaskType;
 import acme.realms.employee.Technician;
 
 @GuiService
@@ -69,14 +66,14 @@ public class TechnicianTaskDeleteService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void unbind(final Task task) {
-		Dataset dataset;
-		SelectChoices choices;
+		//		Dataset dataset;
+		//		SelectChoices choices;
 
-		choices = SelectChoices.from(TaskType.class, task.getType());
+		//		choices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
-		dataset.put("types", choices);
+		//		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
+		//		dataset.put("types", choices);
 
-		super.getResponse().addData(dataset);
+		//		super.getResponse().addData(dataset);
 	}
 }

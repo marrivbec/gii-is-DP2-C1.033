@@ -2,6 +2,7 @@
 package acme.features.technician.maintenanceRecord;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -26,27 +27,22 @@ public class TechnicianRecordCreateService extends AbstractGuiService<Technician
 
 	@Override
 	public void authorise() {
-		String method = super.getRequest().getMethod();
-		boolean authorised = true;
 
-		if (method.equals("POST")) {
+		boolean status = true;
+
+		if (super.getRequest().hasData("id") && super.getRequest().getData("aircraft", int.class) != 0) {
 			int aircraftId = super.getRequest().getData("aircraft", int.class);
-			Aircraft aircraft = this.repository.findAircraftById(aircraftId);
-			Collection<Aircraft> available = this.repository.getAllAircraft();
-
-			if (aircraft == null && aircraftId != 0)
-				authorised = false;
-			else if (aircraft != null && !available.contains(aircraft))
-				authorised = false;
+			Aircraft a = this.repository.findAircraftById(aircraftId);
+			status = a != null;
+			@SuppressWarnings("unused")
+			MaintenanceStatus maintenanceRecordStatus = super.getRequest().getData("status", MaintenanceStatus.class);
 		}
 
-		super.getResponse().setAuthorised(authorised);
-
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		//no tengo ninguna derivada mas
 		Technician tech;
 		MaintenanceRecord record;
 
@@ -73,11 +69,18 @@ public class TechnicianRecordCreateService extends AbstractGuiService<Technician
 	}
 
 	@Override
-	public void validate(final MaintenanceRecord record) {
-		if (record.getAircraft() == null)
-			super.state(false, "aircraft", "technician.maintanence-record.error.no-aircraft");
-	}
+	public void validate(final MaintenanceRecord maintenanceRecord) {
+		boolean status = true;
 
+		Date inspection = maintenanceRecord.getNextInspectionDue();
+
+		Date moment = maintenanceRecord.getMaintenanceMoment();
+
+		if (inspection != null && moment != null)
+			status = inspection.after(moment);
+
+		super.state(status, "inspectionDueDate", "acme.validation.maintenanceRecord.nextInspectionPriorMaintenanceMoment.message");
+	}
 	@Override
 	public void perform(final MaintenanceRecord record) {
 		this.repository.save(record);
