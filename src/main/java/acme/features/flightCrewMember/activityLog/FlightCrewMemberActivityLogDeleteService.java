@@ -33,11 +33,7 @@ public class FlightCrewMemberActivityLogDeleteService extends AbstractGuiService
 		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
 		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode();
 
-		boolean status2;
-
-		status2 = activityLog != null;
-
-		super.getResponse().setAuthorised(status && status2);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -60,7 +56,7 @@ public class FlightCrewMemberActivityLogDeleteService extends AbstractGuiService
 
 	@Override
 	public void validate(final ActivityLog activityLog) {
-		;
+
 	}
 
 	@Override
