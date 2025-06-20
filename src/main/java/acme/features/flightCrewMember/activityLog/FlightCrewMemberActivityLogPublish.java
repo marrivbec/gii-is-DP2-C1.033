@@ -31,7 +31,7 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 		activityLog = this.repository.findActivityLogById(id);
 		FlightCrewMember fcm = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
 		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
-		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode();
+		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode() && !activityLog.getFlightAssignment().isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -62,7 +62,7 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 		//		status = flightAssignment != null && !flightAssignment.isDraftMode();
 		//
 		//		super.state(status, "*", "acme.validation.activity.unpublished.message");
-		//
+
 		//		boolean canbe = flightAssignment != null && activityLog.getRegistrationMoment().after(flightAssignment.getLeg().getScheduledArrival());
 		//		super.state(canbe, "registrationMoment", "acme.validation.activity.registrationMoment");
 
