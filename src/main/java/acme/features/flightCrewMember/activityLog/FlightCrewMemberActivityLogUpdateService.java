@@ -31,6 +31,7 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 		activityLog = this.repository.findActivityLogById(id);
 		FlightCrewMember fcm = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
 		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+
 		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
@@ -56,11 +57,6 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 	@Override
 	public void validate(final ActivityLog activityLog) {
-
-		//		FlightAssignment f = activityLog.getFlightAssignment();
-		//
-		//		boolean canbe = f != null && activityLog.getRegistrationMoment().after(f.getLeg().getScheduledArrival());
-		//		super.state(canbe, "registrationMoment", "acme.validation.activity.registrationMoment");
 
 	}
 

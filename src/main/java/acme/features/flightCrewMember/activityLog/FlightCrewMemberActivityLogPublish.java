@@ -56,15 +56,6 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 
 	@Override
 	public void validate(final ActivityLog activityLog) {
-		//		boolean status;
-		//
-		//		FlightAssignment flightAssignment = activityLog.getFlightAssignment();
-		//		status = flightAssignment != null && !flightAssignment.isDraftMode();
-		//
-		//		super.state(status, "*", "acme.validation.activity.unpublished.message");
-
-		//		boolean canbe = flightAssignment != null && activityLog.getRegistrationMoment().after(flightAssignment.getLeg().getScheduledArrival());
-		//		super.state(canbe, "registrationMoment", "acme.validation.activity.registrationMoment");
 
 	}
 

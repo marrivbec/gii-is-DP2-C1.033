@@ -34,7 +34,7 @@ public class AuthenticatedFlightCrewMemberUpdateService extends AbstractGuiServi
 		Airline airline;
 		int airlineId;
 
-		status = !super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
+		status = super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
 
 		method = super.getRequest().getMethod();
 

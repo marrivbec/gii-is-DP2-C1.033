@@ -30,9 +30,6 @@ public class AuthenticatedFlightCrewMemberCreateService extends AbstractGuiServi
 
 	@Override
 	public void authorise() {
-		//		boolean status;
-		//
-		//		status = !super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
 
 		boolean status;
 		boolean status2;
