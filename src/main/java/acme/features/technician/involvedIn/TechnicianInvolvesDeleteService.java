@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
 import acme.realms.employee.Technician;
 
@@ -17,13 +18,22 @@ public class TechnicianInvolvesDeleteService extends AbstractGuiService<Technici
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = false;
 		int id;
-		Involves involves;
+		Involves mt;
+		int technicianId;
 
-		id = super.getRequest().getData("id", int.class);
-		involves = this.repository.findInvolvesById(id);
-		status = involves != null && super.getRequest().getPrincipal().hasRealm(involves.getTask().getTechnician());
+		if (!super.getRequest().getMethod().equals("GET")) {
+			id = super.getRequest().getData("id", int.class);
+			mt = this.repository.findInvolvesById(id);
+			if (mt != null) {
+				MaintenanceRecord mr = mt.getMaintenanceRecord();
+				if (mr.isDraftMode()) {
+					technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+					status = technicianId == mr.getTechnician().getId();
+				}
+			}
+		}
 
 		super.getResponse().setAuthorised(status);
 	}
