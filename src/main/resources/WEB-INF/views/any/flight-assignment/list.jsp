@@ -16,6 +16,7 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
+
 	<acme:list-column code="flight-crew-member.flight-assignment.list.label.leg"  path="leg" width="10%"/>
 	<acme:list-column code="flight-crew-member.flight-assignment.list.label.duty" path="duty" width="10%"/>
 	<acme:list-column code="flight-crew-member.flight-assignment.list.label.moment" path="moment" width="10%"/>
