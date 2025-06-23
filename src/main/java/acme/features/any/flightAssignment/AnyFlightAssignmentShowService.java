@@ -38,7 +38,13 @@ public class AnyFlightAssignmentShowService extends AbstractGuiService<Any, Flig
 
 	@Override
 	public void unbind(final FlightAssignment completedFlightAssignment) {
+
+		int id = super.getRequest().getData("id", int.class);
+		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(id);
+
 		Dataset dataset = super.unbindObject(completedFlightAssignment, "duty", "moment", "currentStatus", "remarks", "flightCrewMember", "leg", "draftMode");
+
+		dataset.put("flightCrewMember", flightAssignment.getFlightCrewMember().getIdentity().getFullName());
 
 		SelectChoices dutyChoices = SelectChoices.from(DutyType.class, completedFlightAssignment.getDuty());
 		dataset.put("dutyChoices", dutyChoices);

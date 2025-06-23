@@ -77,10 +77,6 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 	@Override
 	public void validate(final ActivityLog activityLog) {
-		FlightAssignment f = activityLog.getFlightAssignment();
-
-		boolean canbe = f != null && activityLog.getRegistrationMoment().after(f.getLeg().getScheduledArrival());
-		super.state(canbe, "registrationMoment", "acme.validation.activity.registrationMoment");
 
 	}
 

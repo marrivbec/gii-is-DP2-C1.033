@@ -7,7 +7,6 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLog.ActivityLog;
-import acme.entities.flightAssignment.FlightAssignment;
 import acme.realms.employee.FlightCrewMember;
 
 @GuiService
@@ -32,13 +31,9 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 		activityLog = this.repository.findActivityLogById(id);
 		FlightCrewMember fcm = activityLog == null ? null : activityLog.getFlightAssignment().getFlightCrewMember();
 		flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
-		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode();
+		status = flightCrewMember.equals(fcm) && activityLog != null && activityLog.isDraftMode() && !activityLog.getFlightAssignment().isDraftMode();
 
-		boolean status2;
-
-		status2 = activityLog != null && !activityLog.getFlightAssignment().isDraftMode();
-
-		super.getResponse().setAuthorised(status && status2);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -61,15 +56,6 @@ public class FlightCrewMemberActivityLogPublish extends AbstractGuiService<Fligh
 
 	@Override
 	public void validate(final ActivityLog activityLog) {
-		boolean status;
-
-		FlightAssignment flightAssignment = activityLog.getFlightAssignment();
-		status = flightAssignment != null && !flightAssignment.isDraftMode();
-
-		super.state(status, "*", "acme.validation.activity.unpublished.message");
-
-		boolean canbe = flightAssignment != null && activityLog.getRegistrationMoment().after(flightAssignment.getLeg().getScheduledArrival());
-		super.state(canbe, "registrationMoment", "acme.validation.activity.registrationMoment");
 
 	}
 
