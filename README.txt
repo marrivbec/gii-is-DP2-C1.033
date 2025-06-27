@@ -23,7 +23,7 @@ the following resources:
 -**/Board/**
 https://github.com/users/marrivbec/projects/1
 
--**/Deciones de diseño/**
--**/Student#4/**
+- **/Deciones de diseño/**
+- **/Student#4/**
 Haciendo referencia al foro, al mensaje [D02-S04-05] escrito por MARTA DE LA CALLE GONZÁLEZ escrito el "March 12, 2025 2:34:40 PM CET". Se ha implementado el atributo “last update moment” de los objetos de tipo “Tracking log” como readonly, el cual se actualiza con la fecha actual cada vez que se actualiza un tracking log. Se ha implementado así según la respuesta ofrecida por "RAFAEL CORCHUELO GIL" en la fecha "March 13, 2025 10:16:15 AM CET".
         "A1: no me queda claro a qué “fecha” se refiere.  Entiendo que se refiere Ud. a usar el atributo “last update moment” de los objetos de tipo “Tracking log”.  Esto no funcionaría dado que dicho atributo se actualiza cada vez que se actualiza un  tracking log.  Por ejemplo: imagine que ahora mismo tiene un par de tracking logs del estilo (2025/01/01 00:00, 25%, “vla, vla”) y (2025/01/01 00:01, 50%, “bla, bla”).  Dentro de un rato descubre que el texto del primero está mal y lo corrige, de forma que ahora sus tracking logs son los siguientes: (2025/01/01 00:01, 50%, “bla, bla”) y (2025/01/01 00:02, 25%, “bla, bla”).  Es decir, ha perdido Ud. el orden y la secuencia sería incorrecta, cuando realmente es correcta, sólo que no la está Ud. ordenando bien."
