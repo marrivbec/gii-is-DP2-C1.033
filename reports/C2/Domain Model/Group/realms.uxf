@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>376</y>
+      <w>336</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Provider
+--
++ company: String {Mandatory, ValidString, Automapped}
++ sector: String {Mandatory, ValidString, Automapped}
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>208</y>
+      <w>416</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+--
++ employeeCode: String {Mandatory, Column(unique=true), ValidEmployeeCode}
++ phoneNumber: String {Mandatory, ValidPhone, Automapped}
++ physicalAddress: String {Mandatory, ValidLongText, Automapped}
++ city: String {Mandatory, ValidShortText, Automapped}
++ country: String {Mandatory, ValidShortText, Automapped}
+- earnedPoints: Integer {Optional, ValidEarnedPoints, Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>504</y>
+      <w>536</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Technician
+--
++ employeeCode: String {Mandatory, Column(unique=true), @ValidEmployeeCode}
++ phoneNumber: String {Mandatory, Pattern="^\+?\d{6,15}$", Automapped}
++ specialisation: String {Mandatory, MaxLength(50), Automapped}
++ healthTestPassed: Boolean {Mandatory, Automapped}
++ yearsExperience: Integer {Mandatory, Automapped}
+- certifications: String {Optional, MaxLength(255), Automapped}
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>504</y>
+      <w>408</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AirlineManager
+--
++ employeeCode: String {Mandatory, ValidEmployeeCode, Column(unique = true)}
++ yearsExp: Integer {Mandatory, Automapped}
++ dateBirth: LocalDate {Mandatory}
++ urlImage: String {Optional}
+
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>216</y>
+      <w>424</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+FlightCrewMembers
+--
++ employeeCode: String {Mandatory, ValidShortText, Column(unique = true)}
++ phoneNumber: Phone {Mandatory, ValidPhone, Automapped}
++ languageSkills: OperationalScope {Mandatory, ValidLongText, Automapped}
++ availabilityStatus: AvailabilityStatus {Mandatory, Valid, Automapped}
++ salary: Money {Mandatory, Valid, Automapped}
++ yearsOfExperience: Integer {Mandaroy, Valid, Automapped}
+
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>360</y>
+      <w>448</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AssistanceAgent
+--
++ employeeCode: String {Mandatory, ValidEmployeeCode, Column(unique=true)}
++ spokenLanguages: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
++ moment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ briefBio: String {Optional, ValidString(max = 255), Automapped}
++ salary: Money {Mandatory, ValidMoney, Automapped}
++ photo: String {Mandatory, ValidUrl, Automapped}
+
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
