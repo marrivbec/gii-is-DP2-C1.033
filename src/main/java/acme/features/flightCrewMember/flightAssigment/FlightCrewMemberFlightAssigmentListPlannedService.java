@@ -44,7 +44,7 @@ public class FlightCrewMemberFlightAssigmentListPlannedService extends AbstractG
 	@Override
 	public void unbind(final FlightAssignment plannedFlightAssignments) {
 
-		Dataset dataset = super.unbindObject(plannedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "leg");
+		Dataset dataset = super.unbindObject(plannedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "leg", "draftMode");
 
 		dataset.put("leg", plannedFlightAssignments.getLeg().getFlightNumber());
 

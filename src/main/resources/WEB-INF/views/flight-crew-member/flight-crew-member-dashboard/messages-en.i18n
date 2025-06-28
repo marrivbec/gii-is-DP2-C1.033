@@ -1,9 +1,17 @@
 flight-crew-member.flight-crew-member-dashboard.form.title = My Dashboard
 
 flight-crew-member.flight-crew-member-dashboard.label.last-five-destinations = Last 5 Destinations
+
 flight-crew-member.flight-crew-member-dashboard.label.fcm-assigned = Flight Crew Members in Last Leg
-flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status = Flight Assignments Grouped By Status (CONFIRMED, PENDING, CANCELLED)
-flight-crew-member.flight-crew-member-dashboard.label.legs-with-status = Number of Legs that have and Activity Log With 0-3, 4-7, 8-10 of Severity
-flight-crew-member.flight-crew-member-dashboard.label.statistics = Statistics (AVERAGE, MINIMUM, MAXIMUM, DEVIATION)
+
+flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-confirmed = Flight Assignments With Status CONFIRMED
+flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-pending = Flight Assignments With Status PENDING
+flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-cancelled = Flight Assignments With Status CANCELLED
+
+flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-03 = Number of Legs that have and Activity Log With 0-3 Severity
+flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-47 = Number of Legs that have and Activity Log With 4-7 Severity
+flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-810 = Number of Legs that have and Activity Log With 8-10 of Severity
+
+flight-crew-member.flight-crew-member-dashboard.label.statistics = Statistics in the last year (AVERAGE, MINIMUM, MAXIMUM, DEVIATION)
 
 

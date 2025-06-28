@@ -43,7 +43,7 @@ public class FlightCrewMemberFlightAssigmentListCompletedService extends Abstrac
 	@Override
 	public void unbind(final FlightAssignment completedFlightAssignments) {
 
-		Dataset dataset = super.unbindObject(completedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "leg");
+		Dataset dataset = super.unbindObject(completedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "leg", "draftMode");
 		dataset.put("leg", completedFlightAssignments.getLeg().getFlightNumber());
 
 		super.addPayload(dataset, completedFlightAssignments, "duty", "moment", "currentStatus", "remarks", "leg");

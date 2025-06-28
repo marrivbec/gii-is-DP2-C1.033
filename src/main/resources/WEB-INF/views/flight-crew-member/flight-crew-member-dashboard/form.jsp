@@ -34,18 +34,32 @@
     
      <table class="table table-bordered mx-auto">
         <tr>
-            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status" /></th>
+            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-confirmed" /></th>
             <td><acme:print value="${CONFIRMED}" /></td>
+        </tr>
+        <tr>
+            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-pending" /></th>
             <td><acme:print value="${PENDING}" /></td>
+        </tr>	
+        <tr>
+            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-cancelled" /></th>
             <td><acme:print value="${CANCELLED}" /></td>
         </tr>
+        
+        
     </table>
     
     <table class="table table-bordered mx-auto">
         <tr>
-            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.legs-with-status" /></th>
+            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-03" /></th>
             <td><acme:print value="${legsWithIncidentSeverity03}" /></td>
+        </tr>
+        <tr>
+            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-47" /></th>
             <td><acme:print value="${legsWithIncidentSeverity47}" /></td>
+        </tr>
+        <tr>
+            <th><acme:print code="flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-810" /></th>
             <td><acme:print value="${legsWithIncidentSeverity810}" /></td>
         </tr>
     </table>
