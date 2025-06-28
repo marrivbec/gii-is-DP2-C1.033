@@ -21,7 +21,7 @@
 	<acme:input-textbox code="authenticated.flight-crew-member.form.label.phoneNumber" path="phoneNumber"/>
 	<acme:input-textbox code="authenticated.flight-crew-member.form.label.languageSkills" path="languageSkills"/>
 	<acme:input-select code="authenticated.flight-crew-member.form.label.availabilityStatus" path="availabilityStatus" choices="${statusChoices}"/>
-	<acme:input-textbox code="authenticated.flight-crew-member.form.label.salary" path="salary"/>
+	<acme:input-money code="authenticated.flight-crew-member.form.label.salary" path="salary"/>
 	<acme:input-integer code="authenticated.flight-crew-member.form.label.yearsOfExperience" path="yearsOfExperience"/>
 	<jstl:if test="${_command == 'create'}">
 		<acme:submit code="authenticated.flight-crew-member.form.button.create" action="/authenticated/flight-crew-member/create"/>

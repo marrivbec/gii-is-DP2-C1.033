@@ -33,3 +33,13 @@ flight-crew-member.flight-assignment.list.label.leg = Número de vuelo:
 flight-crew-member.flight-assignment.list.label.draftMode = Modo Borrador:
 
 flight-crew-member.flight-assignment.list.button.create = Crear
+
+flight-crew-member.flight-assignment.form.title.leg = Detalles de la escala
+
+airlineManager.leg.form.label.scheduledDeparture = Salida Programada:
+airlineManager.leg.form.label.scheduledArrival = Llegada Programada:
+airlineManager.leg.form.label.status = Estado:
+airlineManager.leg.form.label.departureAirport = Aereopuerto de Salida:
+airlineManager.leg.form.label.arrivalAirport = Aereopuerto de llegada:
+airlineManager.leg.form.label.aircraft = Avión:
+airlineManager.leg.form.label.flight = Vuelo:

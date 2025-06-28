@@ -32,6 +32,7 @@ public class FlightCrewMemberFlightAssigmentShowService extends AbstractGuiServi
 	public void authorise() {
 
 		boolean status;
+
 		int flightAssignmentId;
 		FlightAssignment flightAssignment;
 		FlightCrewMember flightCrewMember;
@@ -55,6 +56,8 @@ public class FlightCrewMemberFlightAssigmentShowService extends AbstractGuiServi
 
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
+
+		Leg leg = flightAssignment.getLeg();
 		Date moment = MomentHelper.getCurrentMoment();
 
 		Collection<Leg> l = this.repository.findAllLegsFromAirline(flightAssignment.getFlightCrewMember().getAirline().getId(), moment);
@@ -77,6 +80,14 @@ public class FlightCrewMemberFlightAssigmentShowService extends AbstractGuiServi
 
 		SelectChoices legChoices = SelectChoices.from(l, "flightNumber", flightAssignment.getLeg());
 		dataset.put("legChoices", legChoices);
+
+		dataset.put("scheduledDeparture", leg.getScheduledDeparture());
+		dataset.put("scheduledArrival", leg.getScheduledArrival());
+		dataset.put("status", leg.getStatus());
+		dataset.put("departureAirport", leg.getDepartureAirport().getName());
+		dataset.put("arrivalAirport", leg.getArrivalAirport().getName());
+		dataset.put("aircraft", leg.getAircraft().getRegistrationNumber());
+		dataset.put("flight", leg.getFlight().getTag());
 
 		super.getResponse().addData(dataset);
 	}

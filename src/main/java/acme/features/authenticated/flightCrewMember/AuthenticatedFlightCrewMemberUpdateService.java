@@ -90,7 +90,7 @@ public class AuthenticatedFlightCrewMemberUpdateService extends AbstractGuiServi
 		dataset.put("statusChoices", statusChoices);
 		dataset.put("availabilityStatus", statusChoices.getSelected().getKey());
 
-		SelectChoices airlineChoices = SelectChoices.from(this.repository.findAllAirlines(), "iata", object.getAirline());
+		SelectChoices airlineChoices = SelectChoices.from(this.repository.findAllAirlines(), "name", object.getAirline());
 		dataset.put("airlineChoices", airlineChoices);
 		dataset.put("airline", airlineChoices.getSelected().getKey());
 
