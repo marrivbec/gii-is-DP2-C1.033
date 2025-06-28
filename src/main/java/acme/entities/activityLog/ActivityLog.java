@@ -24,6 +24,8 @@ import lombok.Setter;
 @Getter
 @Setter
 
+// En su gran mayoría, las consultas relacionadas con activityLog buscan mediante los id (los cuales ya maneja la DB). En caso contrario, no se han encontrado índices apropiados.
+
 public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------

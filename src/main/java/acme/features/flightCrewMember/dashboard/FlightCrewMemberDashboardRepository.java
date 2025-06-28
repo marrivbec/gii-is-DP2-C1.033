@@ -1,7 +1,6 @@
 
 package acme.features.flightCrewMember.dashboard;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.domain.Pageable;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.flightAssignment.FlightAssignment;
-import acme.realms.employee.FlightCrewMember;
+import acme.entities.flightAssignment.Status;
 
 @Repository
 public interface FlightCrewMemberDashboardRepository extends AbstractRepository {
@@ -26,17 +25,19 @@ public interface FlightCrewMemberDashboardRepository extends AbstractRepository 
 		""")
 	Integer legsWithSeverity(int inValue, int outValue, int flightCrewMemberId);
 
-	@Query("SELECT f FROM FlightAssignment f JOIN f.leg l WHERE f.flightCrewMember.id = :flightCrewMemberId ORDER BY l.scheduledArrival ASC")
-	List<FlightAssignment> findFlightAssignment(int flightCrewMemberId);
+	@Query("SELECT f FROM FlightAssignment f JOIN f.leg l WHERE f.flightCrewMember.id = :flightCrewMemberId ORDER BY l.scheduledArrival DESC")
+	List<FlightAssignment> findFlightAssignment(int flightCrewMemberId, Pageable pageable);
 
-	@Query("SELECT DISTINCT fa.flightCrewMember FROM FlightAssignment fa WHERE fa.leg.id = :legId")
-	List<FlightCrewMember> findCrewMembersInLastLeg(int legId);
+	@Query("SELECT DISTINCT fa.flightCrewMember.userAccount.username FROM FlightAssignment fa WHERE fa.leg.id = :legId")
+	List<String> memberLastLeg(int legId);
 
-	@Query("SELECT f.currentStatus, COUNT(f) FROM FlightAssignment f WHERE f.flightCrewMember.id = :flightCrewMemberId GROUP BY f.currentStatus")
-	List<Object[]> flightAssignmentsGroupedByStatus(int flightCrewMemberId);
+	@Query("SELECT COUNT(fa) FROM FlightAssignment fa WHERE fa.flightCrewMember.id = :flightCrewMemberId AND fa.currentStatus = :status")
+	int nFaByStatus(int flightCrewMemberId, Status status);
 
-	@Query("SELECT YEAR(fa.leg.scheduledArrival) as year, MONTH(fa.leg.scheduledArrival) as month, COUNT(fa) as count " + "FROM FlightAssignment fa WHERE fa.flightCrewMember = :flightCrewMember AND fa.leg.scheduledArrival BETWEEN :startDate AND :endDate "
-		+ "GROUP BY YEAR(fa.leg.scheduledArrival), MONTH(fa.leg.scheduledArrival)")
-	List<Object[]> countFlightAssignmentsPerMonth(FlightCrewMember flightCrewMember, Date startDate, Date endDate);
+	@Query("SELECT COUNT(fa) FROM FlightAssignment fa WHERE fa.flightCrewMember.id = :flightCrewMemberId AND EXTRACT(YEAR FROM fa.leg.scheduledArrival) = :year AND EXTRACT(MONTH FROM fa.leg.scheduledArrival) = :month")
+	Integer faInMonth(int flightCrewMemberId, int year, int month);
+
+	@Query("SELECT COUNT(fa) FROM FlightAssignment fa WHERE YEAR(fa.leg.scheduledArrival) = :moment AND fa.flightCrewMember.id = :crewMemberId")
+	Integer faLastYear(int moment, int crewMemberId);
 
 }

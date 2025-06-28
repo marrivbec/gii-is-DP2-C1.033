@@ -28,7 +28,7 @@ public interface FlightCrewMemberFlightAssigmentRepository extends AbstractRepos
 	@Query("SELECT flightAssig FROM FlightAssignment flightAssig WHERE flightAssig.flightCrewMember.id = :flightCrewMemberId AND flightAssig.leg.scheduledArrival < :moment")
 	Collection<FlightAssignment> findAllCompletedFlightAssignments(Date moment, int flightCrewMemberId);
 
-	@Query("SELECT COUNT(flightAssig) > 0 FROM FlightAssignment flightAssig WHERE flightAssig.leg.id = :legId AND (flightAssig.duty='PILOT' OR flightAssig.duty='COPILOT') AND flightAssig.duty = :duty AND flightAssig.id != :id")
+	@Query("SELECT COUNT(flightAssig) > 0 FROM FlightAssignment flightAssig WHERE flightAssig.leg.id = :legId AND (flightAssig.duty= acme.entities.flightAssignment.DutyType.COPILOT OR flightAssig.duty= acme.entities.flightAssignment.DutyType.PILOT) AND flightAssig.duty = :duty AND flightAssig.id != :id")
 	Boolean hasDutyAssigned(int legId, DutyType duty, int id);
 
 	@Query("""

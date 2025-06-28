@@ -27,7 +27,24 @@ import lombok.Setter;
 @Setter
 
 @Table(indexes = {
-	@Index(columnList = "leg_id, duty, id")
+
+	// Este sería el único índice apropiado de las consultas de FlightAssignmentRepository, proviene de: 
+	// @Query("SELECT COUNT(flightAssig) > 0 FROM FlightAssignment flightAssig WHERE flightAssig.leg.id = :legId AND (flightAssig.duty= acme.entities.flightAssignment.DutyType.COPILOT OR flightAssig.duty= acme.entities.flightAssignment.DutyType.PILOT) AND flightAssig.duty = :duty AND flightAssig.id != :id")
+	// Aunque sería un indice apropiado para poner, tras analizarlo en DBeaver observamos que no mejora excesivamente el rendimiento tras su uso, ya que al filtrar previamente por leg_id se reduce
+	// el número de flightAssignment significativamente.
+
+	@Index(columnList = "leg_id, duty, id"),
+
+	// Este índice proviene de la consulta: @Query("SELECT fa FROM FlightAssignment fa WHERE fa.draftMode = false")
+	// Aunque sea del requisito suplementario 19, tras analizarlo en DBeaver, vemos que mejora significativamente el rendimiento pasando de tipo ALL a REF
+
+	@Index(columnList = "draftMode"),
+
+	// Este índice proviene de la consulta: @Query("SELECT COUNT(fa) FROM FlightAssignment fa WHERE fa.flightCrewMember.id = :flightCrewMemberId AND fa.currentStatus = :status")
+	// Aunque este índice sea del requisito suplementario 15, tras analizarlo en DBeaver, vemos que la columna "rows" disminuye (8 sin índice, 6 con índice), pero no significativamente.
+
+	@Index(columnList = "flight_crew_member_id, currentStatus"),
+
 })
 
 public class FlightAssignment extends AbstractEntity {
