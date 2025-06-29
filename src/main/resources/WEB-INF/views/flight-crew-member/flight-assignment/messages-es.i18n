@@ -34,7 +34,7 @@ flight-crew-member.flight-assignment.list.label.draftMode = Modo Borrador:
 
 flight-crew-member.flight-assignment.list.button.create = Crear
 
-flight-crew-member.flight-assignment.form.title.leg = Detalles de la escala
+flight-crew-member.flight-assignment.form.title.leg = ------ Detalles de la escala ------
 
 airlineManager.leg.form.label.scheduledDeparture = Salida Programada:
 airlineManager.leg.form.label.scheduledArrival = Llegada Programada:

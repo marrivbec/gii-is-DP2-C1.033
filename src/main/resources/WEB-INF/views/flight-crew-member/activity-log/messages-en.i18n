@@ -25,5 +25,6 @@ flightCrewMember.activityLog.form.button.delete = Delete
 flightCrewMember.activityLog.list.label.registrationMoment = Registration Moment:
 flightCrewMember.activityLog.list.label.typeOfIncident = Type Of Incident:
 flightCrewMember.activityLog.list.label.severityLevel = Severity Level:
+flightCrewMember.activityLog.list.label.draftMode = DraftMode:
 
 flightCrewMember.activityLog.list.button.create = Create

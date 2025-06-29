@@ -35,9 +35,10 @@
 		
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 		
-			<h1>
+		
+			<h2>
 				<acme:print code="flight-crew-member.flight-assignment.form.title.leg"/>
-			</h1>
+			</h2>
 		
 			<acme:input-moment code="airlineManager.leg.form.label.scheduledDeparture" path="scheduledDeparture" readonly="true"/>
 			<acme:input-moment code="airlineManager.leg.form.label.scheduledArrival" path="scheduledArrival" readonly="true"/>
@@ -62,9 +63,10 @@
 		<jstl:when test="${acme:anyOf(_command, 'show') && draftMode == false && pastLeg }">
 			
 			
-			<h1>
+			
+			<h2>
 				<acme:print code="flight-crew-member.flight-assignment.form.title.leg"/>
-			</h1>
+			</h2>
 			
 			<acme:input-moment code="airlineManager.leg.form.label.scheduledDeparture" path="scheduledDeparture" readonly="true"/>
 			<acme:input-moment code="airlineManager.leg.form.label.scheduledArrival" path="scheduledArrival" readonly="true"/>
