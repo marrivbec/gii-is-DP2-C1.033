@@ -33,6 +33,7 @@ Haciendo referencia al foro, al mensaje "[D&T] Duda sobre el requisito individua
 En el requisito suplementario 15 se han implementado las estadísticas del dashboard teniendo en cuenta los meses del último año (los 12 meses anteriores a la fecha prestablecida por el Framework). Es decir todas las legs que cumplan la condición de que la propiedad scheduledArrival (entendiendo que los flightAssignment que han tenido en el último año son aquellos que han acabado y han tenido lugar en el mes de dicha propiedad) se encuentren en el intervalo de tiempo mencionado, se considerarán válidas para formar parte de las estadísticas. 
 
 Haciendo referencia al foro. al mensaje "[C2-S03-R08 & R09] Duda sobre creación de activity logs" escrito por MANUEL JESUS NIZA COBO, el "6/26/25 12:42 AM". Tenemos en cuenta varias decisiones de diseño: 
+
 - En el formulario de los flightAssignment se ha añadido información adicional sobre la leg seleccionada en dicho flightAssignment. En el formulario de creación no aparecerán dichos detalles para no sobrecargar de información la pantalla, unicamente en el show que será donde se muestren todos los detalles de la asignación.
 
 - Por otro lado, los detalles del FlightCrewMember se reducirán a que solamente aparezca su nombre, ya que como se indica en el mensaje del foro "no me queda totalmente claro si se les sacará algún partido o si realmente serán una ayuda".
@@ -40,4 +41,5 @@ Haciendo referencia al foro. al mensaje "[C2-S03-R08 & R09] Duda sobre creación
 - Con respecto al listado de los flightAssignment completados (anteriores a la fecha establecida por el sistema), se ha implementado un conjunto de datos donde los flightAssignment pueden estar tanto publicados como sin publicar en dicho listado, esto conlleva a la decisón de diseño en la que los flightAssignment que están en la lista de completados se puedan publicar (ya que se asignaron cuando dicho flitghAssignment estaba planeado, y si no tenemos dicha posibilidad tendríamos flightAssignment en la lista de completados sin opción a ser publicados), siempre que cumpla con el resto de condiciones que nos pide el cliente.
 En la lista de flightAssignment planeadas no se podrá asociar a una leg que ya haya ocurrido (por lo tanto ni llevar a cabo el método publish, el cual era requisito del cliente), esto se hace mostrando en el desplegable solamente aquellas leg que son futuras. 
 Esta decisión se ha tomado debido a los requisitos ciertamente incompletos que expone el cliente, además de la sugerencia establecida en el mensaje:  "céntrese ahora mismo en que su implementación no cumpla las condiciones de suspenso" (haciendo referencia al mensaje "Sufficient conditions to earn grade F" ).
+
 
