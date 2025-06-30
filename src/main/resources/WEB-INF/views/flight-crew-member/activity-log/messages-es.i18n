@@ -24,6 +24,7 @@ flightCrewMember.activityLog.form.button.delete = Eliminar
 
 flightCrewMember.activityLog.list.label.registrationMoment = Momento de registro:
 flightCrewMember.activityLog.list.label.typeOfIncident = Tipo de incidente:
-flightCrewMember.activityLog.list.label.severityLevel = Nivel de severidad:
+flightCrewMember.activityLog.list.label.severityLevel = Nivel de gravedad:
+flightCrewMember.activityLog.list.label.draftMode = Modo borrador:
 
 flightCrewMember.activityLog.list.button.create = Crear

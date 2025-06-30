@@ -91,10 +91,12 @@ public class FlightCrewMemberFlightAssigmentPublishService extends AbstractGuiSe
 			super.state(!isAssigned, "flightCrewMember", "acme.validation.flightAssignment.flightCrewMember.multipleLegs");
 		}
 
-		if (flightAssignment.getLeg() != null) {
-			boolean isPastLeg = flightAssignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
-			super.state(!isPastLeg, "leg", "acme.validation.flightAssignment.leg.moment");
-		}
+		// DECISIÓN DE DISEÑO EXPLICADA EN EL README
+
+		//		if (flightAssignment.getLeg() != null) {
+		//			boolean isPastLeg = flightAssignment.getLeg().getScheduledDeparture().before(MomentHelper.getCurrentMoment());
+		//			super.state(!isPastLeg, "leg", "acme.validation.flightAssignment.leg.moment");
+		//		}
 
 	}
 

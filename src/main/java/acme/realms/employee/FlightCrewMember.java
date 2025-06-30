@@ -33,6 +33,7 @@ public class FlightCrewMember extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	//@ValidEmployeeCode
 	@Column(unique = true)
 	private String				employeeCode;
 

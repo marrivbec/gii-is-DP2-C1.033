@@ -2,6 +2,13 @@ flight-crew-member.flight-crew-member-dashboard.form.title = Mi Dashboard
 
 flight-crew-member.flight-crew-member-dashboard.label.last-five-destinations = Últimos 5 destinos
 flight-crew-member.flight-crew-member-dashboard.label.fcm-assigned = Miembros de Tripulación de Vuelo en la última Escala
-flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status = Asignaciones de Vuelo agrupados por Estatus (CONFIRMED, PENDING, CANCELLED)
-flight-crew-member.flight-crew-member-dashboard.label.legs-with-status = Número de Escalas que tienen un Registro de Actividad con 0-3, 4-7, 8-10 de Severidad
-flight-crew-member.flight-crew-member-dashboard.label.statistics = Estadísticas del último año (PROMEDIO, MÍNIMO, MÁXIMO, DESVIACIÓN)
+
+flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-confirmed = Asignaciones de vuelo con Estado CONFIRMED
+flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-pending = Asignaciones de vuelo con Estado PENDING
+flight-crew-member.flight-crew-member-dashboard.label.grouped-by-status-cancelled = Asignaciones de vuelo con Estado CANCELLED
+
+flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-03 = Número de tramos que tienen un Registro de Actividad con una Gravedad 0-3 
+flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-47 = Número de tramos que tienen un Registro de Actividad con una Gravedad 4-7
+flight-crew-member.flight-crew-member-dashboard.label.legs-with-status-810 = Número de tramos que tienen un Registro de Actividad con una Gravedad 8-10
+
+flight-crew-member.flight-crew-member-dashboard.label.statistics = Estadísticas en el último año (AVERAGE, MINIMUM, MAXIMUM, DEVIATION)

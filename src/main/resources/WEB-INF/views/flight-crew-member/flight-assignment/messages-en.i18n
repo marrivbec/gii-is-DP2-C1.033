@@ -30,6 +30,16 @@ flight-crew-member.flight-assignment.list.label.currentStatus = Current Status:
 flight-crew-member.flight-assignment.list.label.remarks = Remarks:
 flight-crew-member.flight-assignment.list.label.leg = Flight Number:
 
-flight-crew-member.flight-assignment.list.label.draftMode = DraftMode:
+flight-crew-member.flight-assignment.list.label.draftMode = Draft Mode:
 
 flight-crew-member.flight-assignment.list.button.create = Create
+
+flight-crew-member.flight-assignment.form.title.leg = ------ Leg Details ------
+
+airlineManager.leg.form.label.scheduledDeparture = Scheduled Departure:
+airlineManager.leg.form.label.scheduledArrival = Scheduled Arrival:
+airlineManager.leg.form.label.status = Status:
+airlineManager.leg.form.label.departureAirport = Departure Airport:
+airlineManager.leg.form.label.arrivalAirport = Arrival Airport:
+airlineManager.leg.form.label.aircraft = Aircraft:
+airlineManager.leg.form.label.flight = Flight:

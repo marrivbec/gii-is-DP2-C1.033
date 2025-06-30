@@ -1,4 +1,4 @@
-<%--
+	<%--
 - form.jsp
 -
 - Copyright (C) 2012-2025 Rafael Corchuelo.
@@ -23,28 +23,66 @@
 	<acme:input-textarea code="flight-crew-member.flight-assignment.form.label.remarks" path="remarks" readonly="draftMode" placeholder = "remarks"/>
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.leg" path="leg" choices="${legChoices}" readonly="draftMode" />
 	
+	
+	
 	<jstl:choose>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.create" action="/flight-crew-member/flight-assignment/create"/>
 		</jstl:when>
 		
 		
+		
+		
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+		
+		
+			<h2>
+				<acme:print code="flight-crew-member.flight-assignment.form.title.leg"/>
+			</h2>
+		
+			<acme:input-moment code="airlineManager.leg.form.label.scheduledDeparture" path="scheduledDeparture" readonly="true"/>
+			<acme:input-moment code="airlineManager.leg.form.label.scheduledArrival" path="scheduledArrival" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.status" path="status" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.departureAirport" path="departureAirport" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.arrivalAirport" path="arrivalAirport" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.aircraft" path="aircraft" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.flight" path="flight" readonly="true"/>
+		
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.update" action="/flight-crew-member/flight-assignment/update"/>
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.publish" action="/flight-crew-member/flight-assignment/publish"/>
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.delete" action="/flight-crew-member/flight-assignment/delete"/>
+			
+			
+		
+			
 		<jstl:if test="${pastLeg }">
 			<acme:button code="flight-crew-member.flight-assignment.form.button.activityLogs" action="/flight-crew-member/activity-log/list?masterId=${id}"/>			
 			</jstl:if>
 		</jstl:when>
 		
 		<jstl:when test="${acme:anyOf(_command, 'show') && draftMode == false && pastLeg }">
-			<acme:button code="flight-crew-member.flight-assignment.form.button.activityLogs" action="/flight-crew-member/activity-log/list?masterId=${id}"/>			
+			
+			
+			
+			<h2>
+				<acme:print code="flight-crew-member.flight-assignment.form.title.leg"/>
+			</h2>
+			
+			<acme:input-moment code="airlineManager.leg.form.label.scheduledDeparture" path="scheduledDeparture" readonly="true"/>
+			<acme:input-moment code="airlineManager.leg.form.label.scheduledArrival" path="scheduledArrival" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.status" path="status" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.departureAirport" path="departureAirport" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.arrivalAirport" path="arrivalAirport" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.aircraft" path="aircraft" readonly="true"/>
+			<acme:input-textbox code="airlineManager.leg.form.label.flight" path="flight" readonly="true"/>		
+			
+			<acme:button code="flight-crew-member.flight-assignment.form.button.activityLogs" action="/flight-crew-member/activity-log/list?masterId=${id}"/>
+			
+				
 		</jstl:when>
-		
-		
-		
-		
+
 		
 	</jstl:choose>
+	
+	
 </acme:form>
