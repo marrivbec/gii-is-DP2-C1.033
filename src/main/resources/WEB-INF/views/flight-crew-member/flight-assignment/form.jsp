@@ -23,8 +23,14 @@
 	<acme:input-textarea code="flight-crew-member.flight-assignment.form.label.remarks" path="remarks" readonly="draftMode" placeholder = "remarks"/>
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.leg" path="leg" choices="${legChoices}" readonly="draftMode" />
 	
-	
-	
+	<acme:input-moment code="airlineManager.leg.form.label.scheduledDeparture" path="scheduledDeparture" readonly="true"/>
+	<acme:input-moment code="airlineManager.leg.form.label.scheduledArrival" path="scheduledArrival" readonly="true"/>
+	<acme:input-textbox code="airlineManager.leg.form.label.status" path="status" readonly="true"/>
+	<acme:input-textbox code="airlineManager.leg.form.label.departureAirport" path="departureAirport" readonly="true"/>
+	<acme:input-textbox code="airlineManager.leg.form.label.arrivalAirport" path="arrivalAirport" readonly="true"/>
+	<acme:input-textbox code="airlineManager.leg.form.label.aircraft" path="aircraft" readonly="true"/>
+	<acme:input-textbox code="airlineManager.leg.form.label.flight" path="flight" readonly="true"/>
+			
 	<jstl:choose>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.create" action="/flight-crew-member/flight-assignment/create"/>
