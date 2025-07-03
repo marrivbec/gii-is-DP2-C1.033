@@ -8,6 +8,7 @@ airline-manager.flight.form.label.tag = Etiqueta:
 airline-manager.flight.form.label.selfTransfer = Transferencia propia
 airline-manager.flight.form.label.cost = Costo:
 airline-manager.flight.form.label.description = Descripción:
+airline-manager.flight.form.label.originCity = Ciudad origen:
 airline-manager.flight.list.label.originCity = Ciudad origen:
 airline-manager.flight.form.label.destinationCity = Ciudad destino:
 airline-manager.flight.form.label.scheduledDeparture = Salida programada:
