@@ -1,12 +1,17 @@
 
 package acme.features.technician.involvedIn;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
+import acme.entities.task.Task;
 import acme.realms.employee.Technician;
 
 @GuiService
@@ -22,19 +27,15 @@ public class TechnicianInvolvesDeleteService extends AbstractGuiService<Technici
 		int id;
 		Involves mt;
 		int technicianId;
-
-		if (!super.getRequest().getMethod().equals("GET")) {
-			id = super.getRequest().getData("id", int.class);
-			mt = this.repository.findInvolvesById(id);
-			if (mt != null) {
-				MaintenanceRecord mr = mt.getMaintenanceRecord();
-				if (mr.isDraftMode()) {
-					technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
-					status = technicianId == mr.getTechnician().getId();
-				}
+		id = super.getRequest().getData("id", int.class);
+		mt = this.repository.findInvolvesById(id);
+		if (mt != null) {
+			MaintenanceRecord mr = mt.getMaintenanceRecord();
+			if (mr.isDraftMode()) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				status = technicianId == mr.getTechnician().getId();
 			}
 		}
-
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -66,6 +67,24 @@ public class TechnicianInvolvesDeleteService extends AbstractGuiService<Technici
 
 	@Override
 	public void unbind(final Involves involves) {
-		//
+		Dataset dataset;
+		SelectChoices taskChoices;
+		Collection<Task> tasks;
+		final boolean draftRecord;
+
+		int techniciandId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		tasks = this.repository.findTasksTechnician(techniciandId);
+		taskChoices = SelectChoices.from(tasks, "description", involves.getTask());
+
+		dataset = super.unbindObject(involves, "task");
+		dataset.put("maintenanceRecord", involves.getMaintenanceRecord().getId());
+		dataset.put("task", taskChoices.getSelected().getKey());
+		dataset.put("tasks", taskChoices);
+		dataset.put("taskTechnician", involves.getTask().getTechnician().getEmployeeCode());
+
+		draftRecord = involves.getMaintenanceRecord().isDraftMode();
+		super.getResponse().addGlobal("draftRecord", draftRecord);
+
+		super.getResponse().addData(dataset);
 	}
 }

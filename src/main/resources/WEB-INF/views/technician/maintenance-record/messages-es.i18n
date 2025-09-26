@@ -28,3 +28,4 @@ technician.maintenance-record.form.button.delete = Borrar
 technician.maintenance-record.form.button.publish = Publicar
 technician.maintenance-record.form.label.estimatedCost = Costes
 technician.maintenance-record.form.label.nextInspectionDue = Proxima inspección
+acme.validation.maintenanceRecord.nextInspectionPriorMaintenanceMoment.message= La fecha de la proxima inspección debe ocurrir después del momento de inspección

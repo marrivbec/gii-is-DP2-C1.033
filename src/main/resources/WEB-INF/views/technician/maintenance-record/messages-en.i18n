@@ -25,3 +25,4 @@ technician.maintenance-record.form.button.delete = Delete
 technician.maintenance-record.form.button.publish = Publish
 technician.task.form.button.createRecord= createRecord
 technician.task.list.button.task = task
+acme.validation.maintenanceRecord.nextInspectionPriorMaintenanceMoment.message= The next inspection date must be after the moment date

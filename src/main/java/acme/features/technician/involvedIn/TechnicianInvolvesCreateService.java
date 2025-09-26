@@ -26,12 +26,20 @@ public class TechnicianInvolvesCreateService extends AbstractGuiService<Technici
 		boolean status;
 		int id;
 		MaintenanceRecord maintenanceRecord;
-
+		int technicianId;
+		technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		id = super.getRequest().getData("masterId", int.class);
 		maintenanceRecord = this.repository.findMaintenanceRecordById(id);
 		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician());
-
-		super.getResponse().setAuthorised(status);
+		boolean validTask = true;
+		if (super.getRequest().getMethod().equals("POST")) {
+			int taskId = super.getRequest().getData("task", int.class);
+			if (taskId != 0) {
+				Task task = this.repository.findTaskById(taskId);
+				validTask = task.getTechnician().getId() == technicianId || !task.isDraftMode();
+			}
+		}
+		super.getResponse().setAuthorised(status && validTask);
 	}
 
 	@Override
@@ -80,8 +88,8 @@ public class TechnicianInvolvesCreateService extends AbstractGuiService<Technici
 		Dataset dataset;
 		SelectChoices taskChoices;
 		Collection<Task> tasks;
-
-		tasks = this.repository.findAllTasks();
+		int techniciandId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		tasks = this.repository.findTasksTechnician(techniciandId);
 		taskChoices = SelectChoices.from(tasks, "description", involves.getTask());
 
 		dataset = super.unbindObject(involves, "task");

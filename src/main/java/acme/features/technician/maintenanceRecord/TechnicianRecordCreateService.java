@@ -79,7 +79,7 @@ public class TechnicianRecordCreateService extends AbstractGuiService<Technician
 		if (inspection != null && moment != null)
 			status = inspection.after(moment);
 
-		super.state(status, "inspectionDueDate", "acme.validation.maintenanceRecord.nextInspectionPriorMaintenanceMoment.message");
+		super.state(status, "nextInspectionDue", "acme.validation.maintenanceRecord.nextInspectionPriorMaintenanceMoment.message");
 	}
 	@Override
 	public void perform(final MaintenanceRecord record) {
